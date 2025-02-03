@@ -5,5 +5,5 @@ void calc_integrals(int n, int nuclear_charge, int alpha, double* factorial, dou
 void calc_overlap(double * integrals, double* hydrogenic_wavefunction, double* recursion_coefficients, double* psi_1);
 void calc_hydrogenic_wavefunction(int nuclear_charge, int angular_momentum, int principle_quantum_num, double* factorial, double* hydrogenic_wavefunction);
 void calc_recursion_coefficients(int principle_quantum_num, int angular_momentum, int nuclear_charge, double* inhomogeneous_terms, double* integrals, double* recursion_coefficients);
-double calc_norm(int principle_quantum_num, int angular_momentum, double* hydrogenic_wavefunction, double* integrals, double norm);
+void calc_norm(int principle_quantum_num, double* psi_n, double* hydrogenic_wavefunction, double* integrals, double* psi_norm);
 double calc_energy(double* hydrogenic_wavefunction, double perturbation, double* psi_n, double* integrals, int power_of_r);

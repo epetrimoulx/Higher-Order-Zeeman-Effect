@@ -29,6 +29,7 @@ int main(int argc, char* argv[]) {
   double psi_1_r_squared_2[25] = {0};
   double factorial[25] = {0};
   double integrals[25] = {0};
+  double psi_norm[25] = {0};
   double harmonic_series[25] = {0};
   double inhomogeneous_terms[25] = {0};
   double recursion_coefficients[25] = {0};
@@ -83,7 +84,7 @@ int main(int argc, char* argv[]) {
   calc_hydrogenic_wavefunction(nuclear_charge, angular_momentum, principle_quantum_num, factorial, hydrogenic_wavefunction);
   
   // Calculate the norm
-  norm = calc_norm(principle_quantum_num, angular_momentum, hydrogenic_wavefunction, integrals, norm);
+  calc_norm(principle_quantum_num, hydrogenic_wavefunction, hydrogenic_wavefunction, integrals, psi_norm);
   
   /*
    * The Hamiltonian Operator term causes the LHS of the power series solution to the perturbation equation to have a lowest power of r^(j-2). The summation starts at j = 0, so the lowest power in our solution is r^-2. The inhomogeneous terms array thus has inhomogeneous_terms[0] = the inhomogeneous term corresponding to r^{-2}. This piece of code will need to be modified if the solution requires powers less than -2.
@@ -136,9 +137,11 @@ int main(int argc, char* argv[]) {
   
   // Calculate Psi_1
   calc_psi_1(recursion_coefficients, psi_1_r_squared);
+  // calc_norm(principle_quantum_num, psi_1_r_squared, hydrogenic_wavefunction, integrals, psi_norm);
 
   printf("The recursion coefficiens for r^2 at L = 0 are:\n");
   for(int i = 0; i < 25; i++) {
+    // psi_1_r_squared[i] = psi_norm[i];
     printf("%f\n", psi_1_r_squared[i]);
   }
 
@@ -160,8 +163,17 @@ int main(int argc, char* argv[]) {
   calc_recursion_coefficients(principle_quantum_num, angular_momentum, nuclear_charge, inhomogeneous_terms, integrals, recursion_coefficients);
   calc_psi_1(recursion_coefficients, psi_1_r_squared_2);
 
+  
+  // PERFORMING ANGULAR INTEGRAL SEGMENT (3j symbol)
+  for(int i = 1; i < 25; i++) {
+    psi_1_r_squared_2[i] *= sqrt(1.0 / 5.0);
+  }
+
+  // calc_norm(principle_quantum_num, psi_1_r_squared_2, hydrogenic_wavefunction, integrals, psi_norm);
+
   printf("The recursion coefficiens for r^2 at L = 2 are:\n");
   for(int i = 0; i < 25; i++) {
+    // psi_1_r_squared_2[i] = psi_norm[i];
     printf("%f\n", psi_1_r_squared_2[i]);
   }
 
@@ -174,13 +186,18 @@ int main(int argc, char* argv[]) {
     recursion_coefficients[i] = 0.0;
   }
 
-  // TEMPORARY CODE SEGMENT BELOW
+  // TEMP
+  double norm1 = 0, norm2 = 0;
   for(int i = 0; i < 25; i++) {
-    psi_1_r_squared_2[i] *= sqrt(1.0 / 5.0);
+      norm1 += psi_1_r_squared[i] * psi_1_r_squared[i];
+      norm2 += psi_1_r_squared_2[i] * psi_1_r_squared_2[i];
   }
+  printf("Norm psi_1_r_squared: %f\n", sqrt(norm1));
+  printf("Norm psi_1_r_squared_2: %f\n", sqrt(norm2));
+
 
   // Calculate E^(2)
-  energy[2] = calc_energy(hydrogenic_wavefunction, 1.0, psi_1_r_squared, integrals, 2) + calc_energy(hydrogenic_wavefunction, 1.0, psi_1_r_squared_2, integrals, 2);
+  energy[2] = calc_energy(hydrogenic_wavefunction, 1, psi_1_r_squared, integrals, 2) + calc_energy(hydrogenic_wavefunction, 1, psi_1_r_squared_2, integrals, 2);
 
   printf("\nE^(2)\n");
   printf("%f\n", energy[2]);
