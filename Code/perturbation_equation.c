@@ -160,7 +160,7 @@ void calc_norm(int principle_quantum_num, double* psi_n, double* hydrogenic_wave
     }
   }
 
-  printf("Fixed Norm: %f\n", norm);
+  printf("Norm: %f\n", norm);
 }
 
 /**

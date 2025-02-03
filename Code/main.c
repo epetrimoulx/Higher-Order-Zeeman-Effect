@@ -23,7 +23,6 @@ int main(int argc, char* argv[]) {
   int angular_momentum;
   int nuclear_charge;
 
-  double first_order_r_squared[25] = {0}; // Total r^2 first order perturbation
   double psi_1_one_over_r[25] = {0}; // 1/r perturbation solution (First Order)  
   double psi_1_r_squared[25] = {0}; // r^2 perturbation solutions. (First Order)
   double psi_1_r_squared_2[25] = {0};
@@ -35,8 +34,6 @@ int main(int argc, char* argv[]) {
   double recursion_coefficients[25] = {0};
   double hydrogenic_wavefunction[25] = {0};
   double energy[25] = {0}; // Each index is a higher order energy correction. Ex. energy[2] is the second order energy
-  double total_psi[25] = {0};
-  double norm = 0;
   
 
   // Assign values to n, l, and Z based on program arguments
@@ -80,7 +77,7 @@ int main(int argc, char* argv[]) {
   // For V = -1/r, needs to be changed for a different perturbation
   energy[1] = -nuclear_charge; 
     
-  // Calculate the hydrogenic wavefunction coefficients
+  // Calculate the radial hydrogenic wavefunction coefficients
   calc_hydrogenic_wavefunction(nuclear_charge, angular_momentum, principle_quantum_num, factorial, hydrogenic_wavefunction);
   
   // Calculate the norm
@@ -108,7 +105,7 @@ int main(int argc, char* argv[]) {
 
   
   printf("The recursion coefficiens for 1/r at L = 0 are:\n");
-  for(int i = 0; i < 25; i++) {
+  for(int i = 0; i < 5; i++) {
     printf("%f\n", psi_1_one_over_r[i]);
   }
 
@@ -140,10 +137,13 @@ int main(int argc, char* argv[]) {
   // calc_norm(principle_quantum_num, psi_1_r_squared, hydrogenic_wavefunction, integrals, psi_norm);
 
   printf("The recursion coefficiens for r^2 at L = 0 are:\n");
-  for(int i = 0; i < 25; i++) {
+  for(int i = 0; i < 5; i++) {
     // psi_1_r_squared[i] = psi_norm[i];
     printf("%f\n", psi_1_r_squared[i]);
   }
+
+  // TO BE REMOVED
+  psi_1_r_squared[0] = 0.0;
 
   /*
    * We will now compute the r^2 corrections to first order for l = 2
@@ -165,9 +165,9 @@ int main(int argc, char* argv[]) {
 
   
   // PERFORMING ANGULAR INTEGRAL SEGMENT (3j symbol)
-  for(int i = 1; i < 25; i++) {
-    psi_1_r_squared_2[i] *= sqrt(1.0 / 5.0);
-  }
+  // for(int i = 1; i < 25; i++) {
+  //   psi_1_r_squared_2[i] *= sqrt(1.0 / 5.0);
+  // }
 
   // calc_norm(principle_quantum_num, psi_1_r_squared_2, hydrogenic_wavefunction, integrals, psi_norm);
 
@@ -197,7 +197,7 @@ int main(int argc, char* argv[]) {
 
 
   // Calculate E^(2)
-  energy[2] = calc_energy(hydrogenic_wavefunction, 1, psi_1_r_squared, integrals, 2) + calc_energy(hydrogenic_wavefunction, 1, psi_1_r_squared_2, integrals, 2);
+  energy[2] = calc_energy(hydrogenic_wavefunction, 1, psi_1_r_squared, integrals, 2) - calc_energy(hydrogenic_wavefunction, 1, psi_1_r_squared_2, integrals, 2);
 
   printf("\nE^(2)\n");
   printf("%f\n", energy[2]);
