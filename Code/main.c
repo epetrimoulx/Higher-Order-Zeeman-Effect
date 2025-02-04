@@ -81,7 +81,7 @@ int main(int argc, char* argv[]) {
   calc_hydrogenic_wavefunction(nuclear_charge, angular_momentum, principle_quantum_num, factorial, hydrogenic_wavefunction);
   
   // Calculate the norm
-  calc_norm(principle_quantum_num, hydrogenic_wavefunction, hydrogenic_wavefunction, integrals, psi_norm);
+  // calc_norm(principle_quantum_num, hydrogenic_wavefunction, hydrogenic_wavefunction, integrals, psi_norm);
   
   /*
    * The Hamiltonian Operator term causes the LHS of the power series solution to the perturbation equation to have a lowest power of r^(j-2). The summation starts at j = 0, so the lowest power in our solution is r^-2. The inhomogeneous terms array thus has inhomogeneous_terms[0] = the inhomogeneous term corresponding to r^{-2}. This piece of code will need to be modified if the solution requires powers less than -2.
@@ -172,7 +172,7 @@ int main(int argc, char* argv[]) {
   // calc_norm(principle_quantum_num, psi_1_r_squared_2, hydrogenic_wavefunction, integrals, psi_norm);
 
   printf("The recursion coefficiens for r^2 at L = 2 are:\n");
-  for(int i = 0; i < 25; i++) {
+  for(int i = 0; i < 5; i++) {
     // psi_1_r_squared_2[i] = psi_norm[i];
     printf("%f\n", psi_1_r_squared_2[i]);
   }
