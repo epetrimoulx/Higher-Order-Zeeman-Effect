@@ -177,28 +177,36 @@ int main(int argc, char* argv[]) {
     printf("%f\n", psi_1_r_squared_2[i]);
   }
 
-  /**
-    Starting second order Calculations
-      Starting with r^2
-  **/
-  for(int i = 0; i < 25; i++) {
-    inhomogeneous_terms[i] = 0.0;
-    recursion_coefficients[i] = 0.0;
-  }
+  // /**
+  //   Starting second order Calculations
+  //     Starting with r^2
+  // **/
+  // for(int i = 0; i < 25; i++) {
+  //   inhomogeneous_terms[i] = 0.0;
+  //   recursion_coefficients[i] = 0.0;
+  // }
 
-  // TEMP
-  double norm1 = 0, norm2 = 0;
-  for(int i = 0; i < 25; i++) {
-      norm1 += psi_1_r_squared[i] * psi_1_r_squared[i];
-      norm2 += psi_1_r_squared_2[i] * psi_1_r_squared_2[i];
-  }
-  printf("Norm psi_1_r_squared: %f\n", sqrt(norm1));
-  printf("Norm psi_1_r_squared_2: %f\n", sqrt(norm2));
+  // // TEMP
+  // double norm1 = 0, norm2 = 0;
+  // for(int i = 0; i < 25; i++) {
+  //     norm1 += psi_1_r_squared[i] * psi_1_r_squared[i];
+  //     norm2 += psi_1_r_squared_2[i] * psi_1_r_squared_2[i];
+  // }
+  // printf("Norm psi_1_r_squared: %f\n", sqrt(norm1));
+  // printf("Norm psi_1_r_squared_2: %f\n", sqrt(norm2));
 
 
-  // Calculate E^(2)
-  energy[2] = calc_energy(hydrogenic_wavefunction, 1, psi_1_r_squared, integrals, 2) - calc_energy(hydrogenic_wavefunction, 1, psi_1_r_squared_2, integrals, 2);
+  // // Calculate E^(2)
+  // energy[2] = calc_energy(hydrogenic_wavefunction, 1, psi_1_r_squared, integrals, 2) - calc_energy(hydrogenic_wavefunction, 1, psi_1_r_squared_2, integrals, 2);
 
-  printf("\nE^(2)\n");
-  printf("%f\n", energy[2]);
+  // printf("\nE^(2)\n");
+  // printf("%f\n", energy[2]);
+
+
+  // NOT DONE BUT LOOKS PROMISING
+  double one_over_r_matrix_element = calc_matrix_elements(psi_1_r_squared, hydrogenic_wavefunction, 1, -1, integrals);
+  printf("\nRESULT r^2:\n%f\n", one_over_r_matrix_element);
+
+  double r_squared_matrix_element = calc_matrix_elements(psi_1_one_over_r, hydrogenic_wavefunction, 1.0/3.0, 2, integrals);
+  printf("\nRESULT 1/r:\n%f\n", one_over_r_matrix_element);
 }

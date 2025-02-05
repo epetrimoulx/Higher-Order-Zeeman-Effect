@@ -7,3 +7,4 @@ void calc_hydrogenic_wavefunction(int nuclear_charge, int angular_momentum, int 
 void calc_recursion_coefficients(int principle_quantum_num, int angular_momentum, int nuclear_charge, double* inhomogeneous_terms, double* integrals, double* recursion_coefficients);
 void calc_norm(int principle_quantum_num, double* psi_n, double* hydrogenic_wavefunction, double* integrals, double* psi_norm);
 double calc_energy(double* hydrogenic_wavefunction, double perturbation, double* psi_n, double* integrals, int power_of_r);
+double calc_matrix_elements(double* psi_1, double* psi_2, double perturbation, int power_of_r, double* integrals);

@@ -239,3 +239,15 @@ void calc_psi_1(double* recursion_coefficients, double* psi_1){
     psi_1[i] = psi_1[i] + recursion_coefficients[i];
   }
 }
+
+double calc_matrix_elements(double* psi_1, double* psi_2, double perturbation, int power_of_r, double* integrals) {
+  double result = 0;
+
+  for(int i = 0; i < 25; i++) {
+    for(int j = 0; j < 25; j++) {
+      result = result + psi_1[i] * psi_2[j] * integrals[i + j + 2 + power_of_r] * perturbation;
+    }
+  }
+
+  return result;
+}
