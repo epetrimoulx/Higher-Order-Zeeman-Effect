@@ -1,340 +1,143 @@
-\documentclass[a4paper,12pt,twoside]{report}
+\documentclass[12pt,oneside,final]{vlsithesis}
+\usepackage{enumitem}
 
-\usepackage{fontspec}
-\usepackage[english=british]{csquotes}
-\usepackage[xetex]{graphicx}
-\usepackage[sorting=none,style=phys,backend=biber,defernumbers=true]{biblatex}
-\usepackage[unicode]{hyperref}
-\usepackage{xcolor}
-\usepackage{amsmath}
-\usepackage[font=small,labelfont=bf]{caption}
-\usepackage{fancyhdr}
-\usepackage{titlesec}
-\usepackage{pdfpages}
-\usepackage{microtype}
-\usepackage{unicode-math}
-\usepackage{xpatch}
+% Steps defenition
+\newenvironment{steps}
+ {\begin{enumerate}[label=Step \arabic*:,leftmargin=*,align=left]}
+ {\end{enumerate}}
 
+\newenvironment{substeps}
+ {\begin{enumerate}[label=Step \arabic{enumi}.\alph*:,leftmargin=*,align=left]}
+ {\end{enumerate}}
 
-% metadata for the PDF file
-\hypersetup{
-    pdfauthor={Evan Petrimoulx},
-    pdftitle={The Quadratic Zeeman Effect},
-    pdfsubject={Atomic Physics},
-    pdfkeywords={Perturbation, Frobenius, Zeeman}
-}
+ % inv operation
+ \newcommand\inv[1]{#1\raisebox{1.15ex}{$\scriptscriptstyle-\!1$}}
+% Make table numbering based on the chapter
 
-\addbibresource{Thesis.bib}
+\title{Investigation of the Higher Order Zeeman Effect}
+\author{Evan M. R. Petrimoulx}
+\degree{Bachelors of Science (With Thesis)}
+\doctype{Thesis}
+\dept{Department of Physics}
+\numberofmembers{3}
 
-% you may put the publications you authored in a separate category
-\DeclareBibliographyCategory{MyArticles}
-\addtocategory{MyArticles}{Smith2017}
+\membera{Initial. Last Name }
+\depta{Department of Mechanical, Automotive and Materials Engineering}
+\memberb{Initial. Last Name }
+\deptb{School of Computer Science}
+\memberc{Initial. Last Name}
+\deptc{Department of Physics}
 
-% force the order you want by referencing them all here using \nocite
-\nocite{Smith2017}
-
-%%% BIBLATEX OPTIONS AND TWEAKS %%%
-
-% Biblatex enables editing .bib entries and configuring everything in your LaTeX document
-
-% get rid of the months
-\DeclareSourcemap{
-  \maps[datatype=bibtex]{
-    \map[overwrite]{
-      \step[fieldset=month, null]
-    }
-  }
-}
-
-% declare special bibliography contexts with optional prefixes
-\DeclareRefcontext{myarticles}{labelprefix=A}
-\DeclareRefcontext{books}{labelprefix=B}
-
-% change the typesetting of reference numbers in the bibliography
-
-\DeclareFieldFormat{labelnumberwidth}{#1\hspace{10pt}}
-
-% declare command \citenum that prints a plain reference number
-% can be used in a sentence
-
-\DeclareCiteCommand{\citenum}
-  {\printtext[bibhyperref]{\printfield{labelprefix}}}
-  {\printtext[bibhyperref]{\printfield{labelnumber}}}
-  {}
-  {}
-
-% produce clickable URL links for theses
-\letbibmacro{ORIG-institution+location+date}{institution+location+date}
-\renewbibmacro*{institution+location+date}
-{\iffieldundef{url}
-		{\usebibmacro{ORIG-institution+location+date}}
-		{\href{\thefield{url}}{\usebibmacro{ORIG-institution+location+date}}}
-}
-
-% small caps typesetting of author names
-\DeclareNameWrapperFormat{author}{\textsc{#1}}
-
-% make the 'and' between the last two authors upright and not small caps
-% taken from biblatex.def and modified
-\DeclareDelimFormat{finalnamedelim}{
-\textup{
-  \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
-  \addspace\bibstring{and}\space
-  }
-}
-
-% after the authors list, there is a colon and a newline
-\renewcommand{\labelnamepunct}{\addcolon\newline}
-
-% the newline between name and journal is tricky to add, because there is no command to redefine.
-% here is some black magic using the package xpatch
-% taken from https://tex.stackexchange.com/questions/351397/biblatex-add-line-breaks-after-author-and-title
+\defenseyear{2025}
+\defensedate{April 11, 2025} %Change the date here!
+\usepackage{makecell}
 \makeatletter
-\def\do#1{
-  \ifcsdef{blx@bbx@#1}
-    {\xpatchbibdriver{#1}
-       {\printlist{language}%
-        \newunit\newblock}
-       {\printlist{language}%
-        \printunit{\addcomma\newline}}
-       {}{}}
-    {}}
-\abx@doentrytypes
+     \renewcommand*\l@figure{\@dottedtocline{1}{1em}{3.2em}}
+     \renewcommand*\l@table{\@dottedtocline{1}{1em}{3.2em}}
 \makeatother
+\renewcommand\theadfont{\bfseries\sffamily}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{verbatim}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{url}
+\usepackage{footnote}
+\usepackage{listings}
+\usepackage{dsfont}
+\usepackage[algo2e, ruled, vlined]{algorithm2e} 
 
-% make the font size smaller for bibliography
-\renewcommand*{\bibfont}{\footnotesize}
- 
-% if you don't like titles in quotes, this gets rid of them
+%\usepackage{pgfplots} 
+%\usepackage{subfig}
+%\usepackage{subfig}
+%s\usepackage{unicode-math}
+%\usepackage{nomencl}
+\usepackage{rotating}
+\usepackage{tabularx}
+\newtheorem{Definition}{Definition}
+\graphicspath{{Fig/}{figures/}}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\tablename}{Table}
+\renewcommand\arraystretch{1.68}
+\captionsetup[table]{skip=10pt}
+\usepackage[numbers]{natbib}
+\bibliographystyle{apalike}
+\newtheorem{theorem}{Theorem}
+\let\counterwithout\relax
+\let\counterwithin\relax
+\usepackage{chngcntr}
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+\counterwithin{algorithm}{section}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
 
-%\DeclareFieldFormat[article,inproceedings,patent,incollection]{title}{%
-%  \iftoggle{bbx:chaptertitle}
-%    {#1\isdot}
-%    {}%
-%}
-
-
-
-
-%%% PAGE HEADERS AND FOOTERS %%%
-
-% !!! the narrow margins are inner margins, while the wider margins are outer margins
-% odd-numbered pages  1,3,5,... right side >>> __text____
-% even-numbered pages 2,4,6,... left side  >>> ____text__
-% see https://en.wikipedia.org/wiki/Canons_of_page_construction
-
-% page layout and margins are left at default settings
-
-\pagestyle{fancy}
-
-% this is here only so LaTeX does not complain
-\setlength{\headheight}{15pt}
-
-% the aim here is to have section names in the headings on the inner side
-% the way I think this works is:
-% when evaluating the \section[shortName]{fullName} command in the text, there is a \sectionmark command inside.
-% calling \markboth like below changes the current heading to shortName
-% works the same for chapters, both commands are redefined to cover the cases where the chapter does not contain a section immediately
-% !!! asterisk commands and table of contents do not contain marks, so you need to do it manually (see the main text)
-\renewcommand{\chaptermark}[1]{\markboth{\normalfont\sffamily\textsc{#1}}{}}
-\renewcommand{\sectionmark}[1]{\markboth{\normalfont\sffamily\textsc{#1}}{}}
-
-% remove page numbers from the footer and put it into the header (outer side)
-\fancyfoot{}
-\fancyhf[HLE,HRO]{\thepage}
-
-% redefine plain style to be compatible with fancy (beginning of chapters)
-\fancypagestyle{plain}{ %
-  \fancyhf{} % remove everything
-  \renewcommand{\headrulewidth}{0pt} % remove lines as well
-  \renewcommand{\footrulewidth}{0pt}
-}
-
-
-%%% MISCELLANEOUS %%%
-
-% hyperlinks are highlighted using colored text instead of colored boxes
-% !!! switch off for printing unless you want the color in print
-
-\hypersetup{
-    colorlinks,
-    linkcolor={red!50!black},
-    citecolor={blue!80!black},
-    urlcolor={blue!80!black}
-}
-
-
-% heading styles, sans serif
-
-% \def{\sffamily}
-
-\titleformat*{\section}{\LARGE}
-\titleformat*{\subsection}{\Large}
-\titleformat*{\subsubsection}{\large}
-\titleformat{\chapter}[display]
-{\huge}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
-
-% in case you like prefixes to distinguish tables and figures from other numbered references
-
-%\renewcommand{\thefigure}{F\arabic{chapter}.\arabic{figure}}
-%\renewcommand{\thetable}{T\arabic{chapter}.\arabic{table}}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\usepackage{enumitem}
+\def\UrlBreaks{\do\/\do-}
 \begin{document}
 
-\pagenumbering{roman}
-\pagestyle{empty}
+\maketitle
+\makeapproval
+\pagenumbering{Roman}
+\setcounter{page}{3}
 
-% LaTeX is not an efficient tool for visual typesetting, so the title page is done in Inkscape
-% \includepdf{title_page.pdf}
+\makedeclaration
 
-\centerline{\Large Abstract}
+\input{sections/Abstract.tex}
 
-\bigskip
-\noindent
+\dedication{I would like to dedicate this thesis to $\dots$}
 
-Since its discovery, the Zeeman effect has played a large role in the field of atomic physics and magnetometry, which is the study of the intensity of magnetic field across space and time. There have been several calculations to include the relativistic corrections \cite{2007Drake-Wu, Drake-Yan}, field inhomogeneities, and quadratic effects in hydrogenic systems \cite{Fontanari_Sadovskií_2015}. However, little is known about its behavior in multi-electron atoms such as $^3$He, which is of key interest in magnetometry and the muon magnetic moment anomaly $(\mu_g - 2)$, for which there is a 5.0 $\sigma$ discrepancy \cite{aguillard2023measurement} with the standard model prediction.
-
-Using perturbation theory, I have calculated analytic corrections to the Zeeman effect, including nonlinearities, for $^3$He$^+$. These calculations will be validated via the Dalgarno interchange theorem, and expanded to second order. The one electron perturbation of the nuclear charge gives the leading coefficient for the two electron case, giving us an analytic expression for the first quadratic Zeeman term in $^3$He. This work will be used in experimental research involving the construction of an absolute magnetometer based on $^3$He nuclear magnetic resonance at the University of Michigan \cite{Farooq_Chupp_Grange_Tewsley-Booth_Flay_Kawall_Sachdeva_Winter_2020} in conjunction with Klaus Blaum's Max Plank Heidelberg group on a self-calibrated measurement of the helion magnetic moment.
-
-\vfil
-
-\noindent\textbf{Keywords:} keywords
-
-\vfil
-
-{\centering
-\begin{tabular}{rl}
-Title: & The Quadratic Zeeman Effect	\\
-Author: & Evan Petrimoulx	\\
-Advisor: & Dr. Gordon Drake	\\
-Study programme: & Atomic Physics	\\
-Institution: & Department of Physics, Faculty of Science,\\
- & University of Windsor	\\
-Year: & 2025	\\
-Pages: & 100
-\end{tabular}
-}
-
-\vfil
-\noindent
-Legal and other disclaimers.
-
-\clearpage
-
-
-\mbox{}
-\vfil
-
-\centerline{\Large Acknowledgements}
-
-\bigskip
-
-\noindent
-Here I thank everyone who helped me while I was working on my thesis.
-
-\vfil
-
-\clearpage
-
-\pagestyle{fancy}
+\acknowledgements{$\dots$}
 
 \tableofcontents
-\markboth{\textsc{Contents}}{}
+\listoftables
+\listoffigures
+\listofabbreviation
 
-\chapter*{Preface}
-\addcontentsline{toc}{chapter}{Preface}
-\markboth{\normalfont\sffamily\textsc{Preface}}{}
-
-% this part may be included from a separate file by \input
-
-Here I explain my contribution to the thesis and how it came to be.
-
-\vspace{1cm}
-
-\noindent
-\parbox{.4\textwidth}{
-Olomouc
-\\
-April 2019
-}
-\hfill
-\parbox{.4\textwidth}{\flushright
-Evan Petrimoulx
-\\
-petrimoe@uwindsor.ca
-}
+% \clearpage
+\newlist{abbrv}{itemize}{1}
+\setlist[abbrv,1]{label=,labelwidth=1in,align=parleft,itemsep=0.1\baselineskip,leftmargin=!}
+% \chapter*{List of Abbreviations}
+% \chaptermark{\normalsize List of Abbreviations}
 
 \clearpage
-\pagestyle{empty}
-\cleardoublepage
-
 \pagenumbering{arabic}
-\pagestyle{fancy}
+\input{sections/Introduction.tex}
+\input{sections/Related-works.tex}
+\input{sections/Conclusion.tex}
+% \input{sections/Future-works.tex}
 
-%%% MAIN TEXT BEGINS %%%
-% it is best to have chapters in separate files and include them by \input
+\clearpage
+\addcontentsline{toc}{chapter}{REFERENCES}
+\nocite{*}
+\bibliography{sections/References} 
 
-\chapter{Introduction}
-\label{chapter.intro}
-\section{Background and Motivation}
-\section{Overview of Research}
-\section{Research Significance}
 
-% This is an intro.\autocite{Smith2017} It may cite some references.\autocite{Migdall2013Book,Straka2014,Straka2018Apr,Straka2019Thesis} Reference \citenum{Straka2019Thesis} is the original thesis typeset using the first version of this template.
+\clearpage
+\addcontentsline{toc}{chapter}{VITA AUCTORIS}
+{\thispagestyle{plain}
+\begin{flushleft}
+\LARGE\textbf{VITA AUCTORIS}
+\end{flushleft}
+\begin{table}[htbp]
+\begin{tabular}{p{0.3\linewidth}p{0.65\linewidth}}
+NAME: & Evan Petrimoulx \\
+Windsor Ontario, Canada: &\\
+2003: &  \\
+Highschool Diploma: &
+\vskip1em
+University of Windsor, Undergraduate Honours Physics, Windsor, Ontario, 2025 \\
+\end{tabular}
+\end{table}
+}
 
-\chapter{Theoretical Methods}
-\section{Atomic Units}
-\section{One-electron Schrodinger Equation}
-
-\section{Two-electron Wave Functions}
-\section{Hylleraas Wave Functions}
-\section{Integration Techniques}
-
-\chapter{Ground-state energies of H$^-$}
-
-\chapter{Higher order Zeeman Effects}
-
-\chapter{Conclusion and Future Work}
-
-\appendix
-
-\chapter{Methods of Solving the Perturbation Equation}
-\chapter{Vita Auctoris}
-
-% \section{The first section}
-
-% A picture is included in Figure \ref{fig}. Equations \eqref{SPDC.state} to \eqref{math.PoissonBayes} show some math. Thanks to the package \textsc{unicode-math}, you can insert Unicode mathematical symbols directly into the \LaTeX{} code.
-
-% \begin{align}\label{SPDC.state}
-% \left| \text{\sc SPDC} \right> &\approx \left| \text{vac.} \right> + \iint\limits_{\mathbf{k}_1,\mathbf{k}_2} \varPsi(\mathbf{k}_1,\mathbf{k}_2)a^\dagger_{\mathbf{k}_1}a^\dagger_{\mathbf{k}_2} \left|\text{vac.} \right>.
-% \\
-% \text{DFT}(f)_s &= \sum_{r=0}^{n-1} f_r e^{-2\pi r s/n},
-% \\
-% g^{(2)}(0) &\coloneq \frac{\langle n(n-1) \rangle}{\langle n \rangle^2} \approx \frac{2 p_2}{p_1^2} \approx \mathcal{R}\tau_c (2-\eta_t).
-% \\
-% \label{math.PoissonBayes}
-% P(\theta|N_m) &= \lim_{U \rightarrow \infty} \left( \frac{\frac{\theta^{N_m}}{N_m!} e^{-\theta} \cdot \frac{1}{U}}{\int_0^U \frac{\theta^{N_m}}{N_m!} e^{-\theta} \cdot \frac{1}{U}\,\text{d}\theta} \right) = \frac{\theta^{N_m}}{N_m!} e^{-\theta}.
-% \end{align}
-
-% \section[The second section]{The second section with a very long title that would not fit in the header}
-
-%%% REFERENCES %%%
-
-% \defbibheading{bibliography}[\bibname]{
-% 	\chapter*{References}
-% 	\addcontentsline{toc}{chapter}{References}
-% 	\markboth{\textsc{References}}{}
-% }
-
-% \printbibheading
-% \newrefcontext{myarticles}
-% \printbibliography[heading=subbibliography,resetnumbers,category=MyArticles,title={Articles covering the presented results}]
-% \newrefcontext{books}
-% \printbibliography[heading=subbibliography,resetnumbers,type=book,title={Books}]
-% \newrefcontext{nonbooks}
-% \printbibliography[heading=subbibliography,resetnumbers,nottype=book,notcategory=MyArticles,title={Articles, proceedings and theses}]
-
-\end{document}
+\end{document}  

@@ -1,0 +1,9 @@
+NOTES:
+------
+
+- The Hydrogenic Wavefunction needs to be normalized, but is only normalized if I include the Spherical Harmonic Term. However I am not supposed to include the spherical harmonic term since I am only dealing with the radial part of the wavefunction. How will this affect my routine when normalizing psi_1?
+
+- If I do not normalize, they already agree. Coincidence?
+
+- Confirm the equation we wrote on the paper. For V = 1/r, we use the r^2 wavefunctions? For V = r^2, we use the 1/r wavefunctions? 1/r does not have a L = 2 case, can I remove that in our formula? 
+

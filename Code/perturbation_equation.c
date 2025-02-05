@@ -130,6 +130,7 @@ void calc_hydrogenic_wavefunction(int nuclear_charge, int angular_momentum, int 
 void calc_norm(int principle_quantum_num, double* psi_n, double* hydrogenic_wavefunction, double* integrals, double* psi_norm) {
   double inner_product = 0;
   double hydrogenic_norm = 0;
+  double projection_coeff = 0;
   double norm = 0;
 
   // Calculate <\psi_n | \psi_0> and <\psi_0|\psi_0>
@@ -140,7 +141,7 @@ void calc_norm(int principle_quantum_num, double* psi_n, double* hydrogenic_wave
     }
   }
 
-  double projection_coeff = (hydrogenic_norm != 0) ? (inner_product / hydrogenic_norm) : 0.0;
+  projection_coeff = (hydrogenic_norm != 0) ? (inner_product / hydrogenic_norm) : 0.0;
 
   for(int i = 0; i < 25; i++) {
     psi_norm[i] = psi_n[i] - projection_coeff * hydrogenic_wavefunction[i];
