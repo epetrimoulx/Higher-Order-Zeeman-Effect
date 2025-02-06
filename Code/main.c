@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
   double psi_1_r_squared[25] = {0}; // r^2 perturbation solutions. (First Order)
   double psi_1_r_squared_2[25] = {0};
   double factorial[25] = {0};
-  double integrals[25] = {0};
+  double integrals[50] = {0};
   double psi_norm[25] = {0};
   double harmonic_series[25] = {0};
   double inhomogeneous_terms[25] = {0};
@@ -68,7 +68,7 @@ int main(int argc, char* argv[]) {
   calc_harmonic_series(25, harmonic_series);
 
   // Compute and store basic integrals
-  calc_integrals(25, nuclear_charge, 2, factorial, integrals);
+  calc_integrals(50, nuclear_charge, 2, factorial, integrals);
   
   energy[0] = -pow(nuclear_charge, 2) / 2.0;
 
