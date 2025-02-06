@@ -140,16 +140,6 @@ void calc_norm(int principle_quantum_num, double* psi_n, double* hydrogenic_wave
   for(int i = 0; i < 25; i++) {
     psi_norm[i] = psi_n[i] - inner_product * hydrogenic_wavefunction[i];
   }
-
-  double norm;
-  for(int i = 0; i < 25; i++) {
-    for(int j = 0; j < 25; j++) {
-      norm = norm + psi_norm[i] * psi_norm[j] * integrals[i + j + 2];
-    }
-  }
-
-  norm = 1.0 / sqrt(norm);
-  printf("NORM IS:\t%f\n", norm);
 }
 
 /**
@@ -231,6 +221,10 @@ void calc_psi_1(double* recursion_coefficients, double* psi_1){
 
 double calc_matrix_elements(double* psi_1, double* psi_2, double perturbation, int power_of_r, double* integrals) {
   double result = 0;
+
+  for(int i = 0; i < 25; i++) {
+    printf("psi_1[%d] = %f\tpsi_2[%d] = %f\n", i, psi_1[i], i, psi_2[i]);
+  }
 
   for(int i = 0; i < 25; i++) {
     for(int j = 0; j < 25; j++) {

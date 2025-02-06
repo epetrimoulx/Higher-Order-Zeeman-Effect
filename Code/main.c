@@ -7,8 +7,6 @@
  * @param argv array containing the principle quantum number, the angular momentum, and the nuclear charge.
 **/
 
-// RENAME SPHERICAL HARMONIC -> 3j SYMBOL, USE 3j SYMBOLS INSTEAD
-
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
@@ -72,7 +70,7 @@ int main(int argc, char* argv[]) {
   // Compute and store basic integrals
   calc_integrals(25, nuclear_charge, 2, factorial, integrals);
   
-  energy[0] = -nuclear_charge / (pow(principle_quantum_num, 2.0));
+  energy[0] = -pow(nuclear_charge, 2) / 2.0;
 
   // For V = -1/r, needs to be changed for a different perturbation
   energy[1] = -nuclear_charge; 
@@ -146,9 +144,6 @@ int main(int argc, char* argv[]) {
     printf("%f\n", psi_1_r_squared[i]);
   }
 
-  // // TO BE REMOVED
-  // psi_1_r_squared[0] = 0.0;
-
   /*
    * We will now compute the r^2 corrections to first order for l = 2
   */
@@ -176,21 +171,10 @@ int main(int argc, char* argv[]) {
     printf("%f\n", psi_1_r_squared_2[i]);
   }
 
-
-  // TEMP
-  double norm1 = 0, norm2 = 0;
-  for(int i = 0; i < 25; i++) {
-      norm1 += psi_1_r_squared[i] * psi_1_r_squared[i];
-      norm2 += psi_1_one_over_r[i] * psi_1_one_over_r[i];
-  }
-  printf("Norm psi_1_r_squared: %f\n", sqrt(norm1));
-  printf("Norm psi_1_over_r: %f\n", sqrt(norm2));
-
-
   // NOT DONE BUT LOOKS PROMISING
   double one_over_r_matrix_element = calc_matrix_elements(psi_1_r_squared, hydrogenic_wavefunction, 1, -1, integrals);
   printf("\nRESULT r^2:\n%f\n", one_over_r_matrix_element);
 
-  double r_squared_matrix_element = calc_matrix_elements(psi_1_one_over_r, hydrogenic_wavefunction, 1.0, 2, integrals);
+  double r_squared_matrix_element = calc_matrix_elements(psi_1_one_over_r, hydrogenic_wavefunction, 1, 2, integrals);
   printf("\nRESULT 1/r:\n%f\n", r_squared_matrix_element);
 }

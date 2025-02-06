@@ -1,0 +1,3 @@
+To Do:
+
+- Remove integrals array from the calc_recursion coefficients function
