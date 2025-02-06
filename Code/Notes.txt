@@ -1,5 +1,0 @@
-NOTES:
-------
-
-- The Hydrogenic Wavefunction needs to be normalized, but is only normalized if I include the Spherical Harmonic Term. However I am not supposed to include the spherical harmonic term since I am only dealing with the radial part of the wavefunction. How will this affect my routine when normalizing psi_1?
-
