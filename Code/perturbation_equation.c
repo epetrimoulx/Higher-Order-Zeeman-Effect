@@ -129,39 +129,27 @@ void calc_hydrogenic_wavefunction(int nuclear_charge, int angular_momentum, int 
 */
 void calc_norm(int principle_quantum_num, double* psi_n, double* hydrogenic_wavefunction, double* integrals, double* psi_norm) {
   double inner_product = 0;
-  double hydrogenic_norm = 0;
-  double projection_coeff = 0;
-  double norm = 0;
 
   // Calculate <\psi_n | \psi_0> and <\psi_0|\psi_0>
   for(int i = 0; i < 25; i++){
     for(int j = 0; j < 25; j++) {
       inner_product = inner_product + psi_n[i] * hydrogenic_wavefunction[j] * integrals[i + j + 2];
-      hydrogenic_norm = hydrogenic_norm + hydrogenic_wavefunction[i] * hydrogenic_wavefunction[j] * integrals[i + j + 2];
     }
   }
 
-  projection_coeff = (hydrogenic_norm != 0) ? (inner_product / hydrogenic_norm) : 0.0;
-
   for(int i = 0; i < 25; i++) {
-    psi_norm[i] = psi_n[i] - projection_coeff * hydrogenic_wavefunction[i];
+    psi_norm[i] = psi_n[i] - inner_product * hydrogenic_wavefunction[i];
   }
 
-  // **Compute the norm of psi_norm**
+  double norm;
   for(int i = 0; i < 25; i++) {
-    norm += psi_norm[i] * psi_norm[i];
-  }
-
-  norm = sqrt(norm);
-
-  // **Explicitly normalize psi_norm**
-  if (norm > 1e-10) {  // Avoid division by zero
-    for(int i = 0; i < 25; i++) {
-      psi_norm[i] /= norm;
+    for(int j = 0; j < 25; j++) {
+      norm = norm + psi_norm[i] * psi_norm[j] * integrals[i + j + 2];
     }
   }
 
-  printf("Norm: %f\n", norm);
+  norm = 1.0 / sqrt(norm);
+  printf("NORM IS:\t%f\n", norm);
 }
 
 /**

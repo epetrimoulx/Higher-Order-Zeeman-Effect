@@ -100,6 +100,12 @@ int main(int argc, char* argv[]) {
   // Calculate psi_1 for the 1/r potential
   calc_psi_1(recursion_coefficients, psi_1_one_over_r);
 
+  calc_norm(principle_quantum_num, psi_1_one_over_r, hydrogenic_wavefunction, integrals, psi_norm);
+
+  for(int i = 0; i < 25; i++) {
+    psi_1_one_over_r[i] = psi_norm[i];
+  }
+
   
   printf("The recursion coefficiens for 1/r at L = 0 are:\n");
   for(int i = 0; i < 5; i++) {
@@ -114,6 +120,7 @@ int main(int argc, char* argv[]) {
   for(int i = 0; i < 25; i++) {
     inhomogeneous_terms[i] = 0.0;
     recursion_coefficients[i] = 0.0;
+    psi_norm[i] = 0.0;
   }
 
   // Set up new first order energies
@@ -131,16 +138,16 @@ int main(int argc, char* argv[]) {
   
   // Calculate Psi_1
   calc_psi_1(recursion_coefficients, psi_1_r_squared);
-  // calc_norm(principle_quantum_num, psi_1_r_squared, hydrogenic_wavefunction, integrals, psi_norm);
+  calc_norm(principle_quantum_num, psi_1_r_squared, hydrogenic_wavefunction, integrals, psi_norm);
 
   printf("The recursion coefficiens for r^2 at L = 0 are:\n");
   for(int i = 0; i < 5; i++) {
-    // psi_1_r_squared[i] = psi_norm[i];
+    psi_1_r_squared[i] = psi_norm[i];
     printf("%f\n", psi_1_r_squared[i]);
   }
 
-  // TO BE REMOVED
-  psi_1_r_squared[0] = 0.0;
+  // // TO BE REMOVED
+  // psi_1_r_squared[0] = 0.0;
 
   /*
    * We will now compute the r^2 corrections to first order for l = 2
@@ -158,13 +165,8 @@ int main(int argc, char* argv[]) {
   inhomogeneous_terms[4] = -1.0;  
 
   calc_recursion_coefficients(principle_quantum_num, angular_momentum, nuclear_charge, inhomogeneous_terms, integrals, recursion_coefficients);
-  calc_psi_1(recursion_coefficients, psi_1_r_squared_2);
 
-  
-  // PERFORMING ANGULAR INTEGRAL SEGMENT (3j symbol)
-  // for(int i = 1; i < 25; i++) {
-  //   psi_1_r_squared_2[i] *= sqrt(1.0 / 5.0);
-  // }
+  calc_psi_1(recursion_coefficients, psi_1_r_squared_2);
 
   // calc_norm(principle_quantum_num, psi_1_r_squared_2, hydrogenic_wavefunction, integrals, psi_norm);
 
@@ -174,29 +176,21 @@ int main(int argc, char* argv[]) {
     printf("%f\n", psi_1_r_squared_2[i]);
   }
 
-  // /**
-  //   Starting second order Calculations
-  //     Starting with r^2
-  // **/
-  // for(int i = 0; i < 25; i++) {
-  //   inhomogeneous_terms[i] = 0.0;
-  //   recursion_coefficients[i] = 0.0;
-  // }
 
-  // // TEMP
-  // double norm1 = 0, norm2 = 0;
-  // for(int i = 0; i < 25; i++) {
-  //     norm1 += psi_1_r_squared[i] * psi_1_r_squared[i];
-  //     norm2 += psi_1_r_squared_2[i] * psi_1_r_squared_2[i];
-  // }
-  // printf("Norm psi_1_r_squared: %f\n", sqrt(norm1));
-  // printf("Norm psi_1_r_squared_2: %f\n", sqrt(norm2));
+  // TEMP
+  double norm1 = 0, norm2 = 0;
+  for(int i = 0; i < 25; i++) {
+      norm1 += psi_1_r_squared[i] * psi_1_r_squared[i];
+      norm2 += psi_1_one_over_r[i] * psi_1_one_over_r[i];
+  }
+  printf("Norm psi_1_r_squared: %f\n", sqrt(norm1));
+  printf("Norm psi_1_over_r: %f\n", sqrt(norm2));
 
 
   // NOT DONE BUT LOOKS PROMISING
   double one_over_r_matrix_element = calc_matrix_elements(psi_1_r_squared, hydrogenic_wavefunction, 1, -1, integrals);
   printf("\nRESULT r^2:\n%f\n", one_over_r_matrix_element);
 
-  double r_squared_matrix_element = calc_matrix_elements(psi_1_one_over_r, hydrogenic_wavefunction, 1.0/3.0, 2, integrals);
-  printf("\nRESULT 1/r:\n%f\n", one_over_r_matrix_element);
+  double r_squared_matrix_element = calc_matrix_elements(psi_1_one_over_r, hydrogenic_wavefunction, 1.0, 2, integrals);
+  printf("\nRESULT 1/r:\n%f\n", r_squared_matrix_element);
 }
