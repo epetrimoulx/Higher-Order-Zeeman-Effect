@@ -172,7 +172,7 @@ int main(int argc, char* argv[]) {
   }
 
   // NOT DONE BUT LOOKS PROMISING
-  double one_over_r_matrix_element = calc_matrix_elements(psi_1_r_squared, hydrogenic_wavefunction, 1, -1, integrals);
+  double one_over_r_matrix_element = calc_matrix_elements(psi_1_r_squared, hydrogenic_wavefunction, -1, -1, integrals);
   printf("\nRESULT r^2:\n%f\n", one_over_r_matrix_element);
 
   double r_squared_matrix_element = calc_matrix_elements(psi_1_one_over_r, hydrogenic_wavefunction, 1, 2, integrals);
