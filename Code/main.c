@@ -16,7 +16,7 @@
 const double EULER_MASCHERONI = 0.577215664901532860606512090082;
 const double PI = 3.141592653589793238462643383279502884;
 
-int main(int argc, char* argv[]) {
+int main(const int argc, char* argv[]) {
   int principle_quantum_num;
   int angular_momentum;
   int nuclear_charge;
@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
   double recursion_coefficients[25] = {0};
   double hydrogenic_wavefunction[25] = {0};
   double energy[25] = {0}; // Each index is a higher order energy correction. Ex. energy[2] is the second order energy
-  
+
 
   // Assign values to n, l, and Z based on program arguments
   switch(argc) {
@@ -60,51 +60,51 @@ int main(int argc, char* argv[]) {
 
   printf("Starting Calculation of (H\u2070 - E\u2070) |\u03C8\u00B9\u27E9 = (\u00B9/\u1D63 - E\u00B9) |\u03C8\u2070\u27E9\n");
   printf("N = %d\tL = %d\tZ = %d\n", principle_quantum_num, angular_momentum, nuclear_charge);
-  
+
   // Compute and store factorials
   calc_factorials(25, factorial);
- 
+
   // Compute and store harmonic_series
   calc_harmonic_series(25, harmonic_series);
 
   // Compute and store basic integrals
   calc_integrals(50, nuclear_charge, 2, factorial, integrals);
-  
+
   energy[0] = -pow(nuclear_charge, 2) / 2.0;
 
   // For V = -1/r, needs to be changed for a different perturbation
-  energy[1] = -nuclear_charge; 
-    
+  energy[1] = -nuclear_charge;
+
   // Calculate the radial hydrogenic wavefunction coefficients
   calc_hydrogenic_wavefunction(nuclear_charge, angular_momentum, principle_quantum_num, factorial, hydrogenic_wavefunction);
-  
+
   /*
    * The Hamiltonian Operator term causes the LHS of the power series solution to the perturbation equation to have a lowest power of r^(j-2). The summation starts at j = 0, so the lowest power in our solution is r^-2. The inhomogeneous terms array thus has inhomogeneous_terms[0] = the inhomogeneous term corresponding to r^{-2}. This piece of code will need to be modified if the solution requires powers less than -2.
    *
-   * Starting with a 1/r perturbation, there are two inhomogeneous terms: 
+   * Starting with a 1/r perturbation, there are two inhomogeneous terms:
        - r^-1
        - r^0
   */
 
   inhomogeneous_terms[1] = 1.0;        // -1/r term
   inhomogeneous_terms[2] = energy[1];  // r^0 term
-  
+
   // Calculate recursion coefficients
-  calc_recursion_coefficients(principle_quantum_num, angular_momentum, nuclear_charge, inhomogeneous_terms, integrals, recursion_coefficients);
+  calc_recursion_coefficients(angular_momentum, nuclear_charge, inhomogeneous_terms, recursion_coefficients);
 
   // Calculate a_0
   calc_overlap(integrals, hydrogenic_wavefunction, recursion_coefficients, psi_1_one_over_r);
-  
+
   // Calculate psi_1 for the 1/r potential
   calc_psi_1(recursion_coefficients, psi_1_one_over_r);
 
-  calc_norm(principle_quantum_num, psi_1_one_over_r, hydrogenic_wavefunction, integrals, psi_norm);
+  calc_norm(psi_1_one_over_r, hydrogenic_wavefunction, integrals, psi_norm);
 
   for(int i = 0; i < 25; i++) {
     psi_1_one_over_r[i] = psi_norm[i];
   }
 
-  
+
   printf("The recursion coefficients for \u00B9/\u1D63 at L = 0 are:\n");
   for(int i = 0; i < 25; i++) {
     printf("%f\n", psi_1_one_over_r[i]);
@@ -127,16 +127,16 @@ int main(int argc, char* argv[]) {
   // Set new inhomogeneous terms corresponding to r^2 case
   inhomogeneous_terms[2] = energy[1]; // r^0 term
   inhomogeneous_terms[4] = -1.0;      // r^2 term
-  
+
   // Calculate the new recursion coefficients
-  calc_recursion_coefficients(principle_quantum_num, angular_momentum, nuclear_charge, inhomogeneous_terms, integrals, recursion_coefficients);
+  calc_recursion_coefficients(angular_momentum, nuclear_charge, inhomogeneous_terms, recursion_coefficients);
 
   // Calculate a_0
   calc_overlap(integrals, hydrogenic_wavefunction, recursion_coefficients, psi_1_r_squared);
-  
+
   // Calculate Psi_1
   calc_psi_1(recursion_coefficients, psi_1_r_squared);
-  calc_norm(principle_quantum_num, psi_1_r_squared, hydrogenic_wavefunction, integrals, psi_norm);
+  calc_norm(psi_1_r_squared, hydrogenic_wavefunction, integrals, psi_norm);
 
   printf("The recursion coefficients for r\u00B2 at L = 0 are:\n");
   for(int i = 0; i < 25; i++) {
@@ -157,13 +157,13 @@ int main(int argc, char* argv[]) {
   energy[1] = 0.0;
 
   inhomogeneous_terms[2] = energy[1];
-  inhomogeneous_terms[4] = -1.0;  
+  inhomogeneous_terms[4] = -1.0;
 
-  calc_recursion_coefficients(principle_quantum_num, angular_momentum, nuclear_charge, inhomogeneous_terms, integrals, recursion_coefficients);
+  calc_recursion_coefficients(angular_momentum, nuclear_charge, inhomogeneous_terms, recursion_coefficients);
 
   calc_psi_1(recursion_coefficients, psi_1_r_squared_2);
 
-  calc_norm(principle_quantum_num, psi_1_r_squared_2, hydrogenic_wavefunction, integrals, psi_norm);
+  calc_norm(psi_1_r_squared_2, hydrogenic_wavefunction, integrals, psi_norm);
 
   printf("The recursion coefficients for r\u00B2 at L = 2 are:\n");
   for(int i = 0; i < 25; i++) {
@@ -171,9 +171,9 @@ int main(int argc, char* argv[]) {
     printf("%f\n", psi_1_r_squared_2[i]);
   }
 
-  double one_over_r_matrix_element = calc_matrix_elements(psi_1_r_squared, hydrogenic_wavefunction, -1, -1, integrals);
+  const double one_over_r_matrix_element = calc_matrix_elements(psi_1_r_squared, hydrogenic_wavefunction, -1, -1, integrals);
   printf("\nRESULT r\u00B2:\n%f\n", one_over_r_matrix_element);
 
-  double r_squared_matrix_element = calc_matrix_elements(psi_1_one_over_r, hydrogenic_wavefunction, 1, 2, integrals);
+  const double r_squared_matrix_element = calc_matrix_elements(psi_1_one_over_r, hydrogenic_wavefunction, 1, 2, integrals);
   printf("\nRESULT \u00B9/\u1D63:\n%f\n", r_squared_matrix_element);
 }

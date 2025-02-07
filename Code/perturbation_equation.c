@@ -4,7 +4,7 @@
 
 /**
   * @author Evan Petrimoulx
-  * @date January 24 2025
+  * @date January 24, 2025
   * @brief Calculates any arbitrary E^(n)
   *
   * @param hydrogenic_wavefunction <psi_0|
@@ -14,7 +14,7 @@
   * @param power_of_r The power of r in the perturbing term. Ensures the power of r in the integral is correct
   * @return E^(n)
 **/
-double calc_energy(double* hydrogenic_wavefunction, double perturbation, double* psi_n, double* integrals, int power_of_r) {
+double calc_energy(const double* hydrogenic_wavefunction, const double perturbation, const double* psi_n, const double* integrals, const int power_of_r) {
   double energy = 0.0;
   
   for(int i = 0; i < 25; i++) {
@@ -61,7 +61,7 @@ void calc_factorials(int n, double* factorial){
   * @param harmonic_series the array which stores the harmonic_series terms
   * @return harmonic_series array 
 */
-void calc_harmonic_series(int n, double* harmonic_series){
+void calc_harmonic_series(const int n, double* harmonic_series){
   harmonic_series[0] = 1.0;
 
   for(int i = 1; i < n; i++) {
@@ -82,7 +82,7 @@ void calc_harmonic_series(int n, double* harmonic_series){
   * @param integrals the array of integrals.
   * @return array of computed integrals
 */
-void calc_integrals(int n, int nuclear_charge, int alpha, double* factorial, double* integrals) {
+void calc_integrals(const int n, const int nuclear_charge, const int alpha, const double* factorial, double* integrals) {
   
   integrals[0] = 1.0 / (alpha * nuclear_charge);
   
@@ -93,9 +93,10 @@ void calc_integrals(int n, int nuclear_charge, int alpha, double* factorial, dou
 
 /**
   * @author Evan Petrimoulx
-  * @date January 01 2025
+  * @date January 01, 2025
   * @brief function to calculate the hydrogenic wavefunction coefficients for Psi_0, ignoring multiplying factors of r
   *
+  * @param nuclear_charge The nuclear charge of the system. Corresponds to atomic number Z
   * @param angular_momentum The angular momentum of the wavefunction
   * @param principle_quantum_num the principle quantum number n 
   * @param factorial an array of stored factorials
@@ -103,10 +104,8 @@ void calc_integrals(int n, int nuclear_charge, int alpha, double* factorial, dou
   *
   * @note Calculates the Radial Wavefunction R_nl(r) = 2Z/n^2 sqrt(Z(n-l-1)! / (n+l)!) (2Zr/n)^l exp(-Zr/n) L^(2l+1)_(n-l-1) (2Zr/n). Where L is the Laguerre Polynomial. This function calculates everything in this equation but leaves out all multiplying factors of r.
 */
-void calc_hydrogenic_wavefunction(int nuclear_charge, int angular_momentum, int principle_quantum_num, double* factorial, double* hydrogenic_wavefunction){
-  double term;
-  
-  term = 2.0 * (double) nuclear_charge / pow(principle_quantum_num, 2) * pow(2.0 * (double) nuclear_charge / (double) principle_quantum_num, angular_momentum) * sqrt((double)nuclear_charge * factorial[principle_quantum_num - angular_momentum - 1] / factorial[principle_quantum_num + angular_momentum]);
+void calc_hydrogenic_wavefunction(const int nuclear_charge, int angular_momentum, const int principle_quantum_num, const double* factorial, double* hydrogenic_wavefunction){
+  const double term = 2.0 * (double) nuclear_charge / pow(principle_quantum_num, 2) * pow(2.0 * (double) nuclear_charge / (double) principle_quantum_num, angular_momentum) * sqrt((double)nuclear_charge * factorial[principle_quantum_num - angular_momentum - 1] / factorial[principle_quantum_num + angular_momentum]);
 
   hydrogenic_wavefunction[0] = term;
 
@@ -120,14 +119,12 @@ void calc_hydrogenic_wavefunction(int nuclear_charge, int angular_momentum, int 
   * @date January 12th 2024
   * @brief function to calculate the norm of the hydrogenic wavefunction.
   *
-  * @param principle_quantum_num the principle quantum number (n)
-  * @param angular_momentum the angular momentum quantum number (l)
   * @param hydrogenic_wavefunction an array containing all of the coefficients of the hydrogenic radial wavefunction R_nl(r)
   * @param integrals an array containing all computed integrals needed for calculation
-  * @param norm the norm that is returned after the calculation is completed.
+  * @param psi_norm The resultant normalized array
   * @return the norm of the hydrogenic_wavefunction
 */
-void calc_norm(int principle_quantum_num, double* psi_n, double* hydrogenic_wavefunction, double* integrals, double* psi_norm) {
+void calc_norm(const double *psi_n, const double *hydrogenic_wavefunction, const double *integrals, double *psi_norm) {
   double inner_product = 0;
 
   // Calculate <\psi_n | \psi_0> and <\psi_0|\psi_0>
@@ -147,16 +144,13 @@ void calc_norm(int principle_quantum_num, double* psi_n, double* hydrogenic_wave
   * @date January 12th 2024
   * @brief Function to calculate the recursion coefficients a_j for the power series solution to the perturbation equation
   *
-  * @param principle_quantum_num the principle quantum number (n)
   * @param angular_momentum the angular momentum quantum number (l)
   * @param nuclear_charge The nuclear charge of the system. This is the quantum number (Z)
-  * @param hydrogenic_wavefunction the array containing the coefficients of the hydrogenic radial wavefunction R_nl(r)
   * @param inhomogeneous_terms the array containing the inhomogeneous terms in the perturbation equation
-  * @param integrals the array of integrals used to calculate the orthogonality condition
   * @param recursion_coefficients The resultant array with the calculated a_j values
   * @return the recursion coefficients
 **/
-void calc_recursion_coefficients(int principle_quantum_num, int angular_momentum, int nuclear_charge, double* inhomogeneous_terms, double* integrals, double* recursion_coefficients){
+void calc_recursion_coefficients(const int angular_momentum, const int nuclear_charge, const double *inhomogeneous_terms, double *recursion_coefficients){
   
   // Calculate the terms in the series, look for terminating case
   recursion_coefficients[0] = inhomogeneous_terms[0] / (0.5 * (angular_momentum * (angular_momentum + 1)));
@@ -187,7 +181,7 @@ void calc_recursion_coefficients(int principle_quantum_num, int angular_momentum
   * @param psi_1 the resultant array containing the final psi_1
   * @return psi_1
 **/
-void calc_overlap(double * integrals, double* hydrogenic_wavefunction, double* recursion_coefficients, double* psi_1) {
+void calc_overlap(const double * integrals, const double* hydrogenic_wavefunction, const double* recursion_coefficients, double* psi_1) {
   double overlap_integral = 0;
   
   // Calculate <psi_0 | psi_1>
@@ -212,14 +206,14 @@ void calc_overlap(double * integrals, double* hydrogenic_wavefunction, double* r
   * @param recursion_coefficients Array of all calculated recursion coefficients
   * @return psi_1
 **/
-void calc_psi_1(double* recursion_coefficients, double* psi_1){
+void calc_psi_1(const double* recursion_coefficients, double* psi_1){
   // Combine a_0 with the other a_j terms to get the final answer
   for(int i = 0; i < 25; i++) {
     psi_1[i] = psi_1[i] + recursion_coefficients[i];
   }
 }
 
-double calc_matrix_elements(double* psi_1, double* psi_2, double perturbation, int power_of_r, double* integrals) {
+double calc_matrix_elements(const double* psi_1, const double* psi_2, const double perturbation, const int power_of_r, const double* integrals) {
   double result = 0;
 
   for(int i = 0; i < 25; i++) {
