@@ -52,13 +52,13 @@ int main(int argc, char* argv[]) {
       nuclear_charge = atoi(argv[3]);
       break;
    default:
-     principle_quantum_num = 1;
-     angular_momentum = 0;
-     nuclear_charge = 1;
-     break;
+      principle_quantum_num = 1;
+      angular_momentum = 0;
+      nuclear_charge = 1;
+      break;
   }
 
-  printf("Starting Calculation of (H\u2070 - E\u2070) |\u03C8\u00B9\u27E9 = (1/r - E\u00B9) |\u03C8\u2070\u27E9\n");
+  printf("Starting Calculation of (H\u2070 - E\u2070) |\u03C8\u00B9\u27E9 = (\u00B9/\u1D63 - E\u00B9) |\u03C8\u2070\u27E9\n");
   printf("N = %d\tL = %d\tZ = %d\n", principle_quantum_num, angular_momentum, nuclear_charge);
   
   // Compute and store factorials
@@ -105,7 +105,7 @@ int main(int argc, char* argv[]) {
   }
 
   
-  printf("The recursion coefficiens for \u00B9/\u1D63 at L = 0 are:\n");
+  printf("The recursion coefficients for \u00B9/\u1D63 at L = 0 are:\n");
   for(int i = 0; i < 25; i++) {
     printf("%f\n", psi_1_one_over_r[i]);
   }
@@ -138,7 +138,7 @@ int main(int argc, char* argv[]) {
   calc_psi_1(recursion_coefficients, psi_1_r_squared);
   calc_norm(principle_quantum_num, psi_1_r_squared, hydrogenic_wavefunction, integrals, psi_norm);
 
-  printf("The recursion coefficiens for r\u00B2 at L = 0 are:\n");
+  printf("The recursion coefficients for r\u00B2 at L = 0 are:\n");
   for(int i = 0; i < 25; i++) {
     psi_1_r_squared[i] = psi_norm[i];
     printf("%f\n", psi_1_r_squared[i]);
@@ -165,16 +165,15 @@ int main(int argc, char* argv[]) {
 
   calc_norm(principle_quantum_num, psi_1_r_squared_2, hydrogenic_wavefunction, integrals, psi_norm);
 
-  printf("The recursion coefficiens for r\u00B2 at L = 2 are:\n");
+  printf("The recursion coefficients for r\u00B2 at L = 2 are:\n");
   for(int i = 0; i < 25; i++) {
     psi_1_r_squared_2[i] = psi_norm[i];
     printf("%f\n", psi_1_r_squared_2[i]);
   }
 
-  // NOT DONE BUT LOOKS PROMISING
   double one_over_r_matrix_element = calc_matrix_elements(psi_1_r_squared, hydrogenic_wavefunction, -1, -1, integrals);
-  printf("\nRESULT r^2:\n%f\n", one_over_r_matrix_element);
+  printf("\nRESULT r\u00B2:\n%f\n", one_over_r_matrix_element);
 
   double r_squared_matrix_element = calc_matrix_elements(psi_1_one_over_r, hydrogenic_wavefunction, 1, 2, integrals);
-  printf("\nRESULT 1/r:\n%f\n", r_squared_matrix_element);
+  printf("\nRESULT \u00B9/\u1D63:\n%f\n", r_squared_matrix_element);
 }
