@@ -1,7 +1,7 @@
 /**
  * @author Evan Petrimoulx
  * @date December 8th 2024
- * @brief Program to solve the inhomogeneous perturbation equation by the method of Frobenius for an arbitrary state
+ * @brief Program to solve the inhomogeneous perturbation equation by the method of Frobenius for an arbitrary state and calculate the higher order Zeeman effect
  *
  * @param argc The number of arguments
  * @param argv array containing the principle quantum number, the angular momentum, and the nuclear charge.
@@ -58,7 +58,7 @@ int main(int argc, char* argv[]) {
      break;
   }
 
-  printf("Starting Calculation of (H^(0) - E^(0)) |psi^(1)> = (1/r - E^(1)) |psi^(0)>\n");
+  printf("Starting Calculation of (H\u2070 - E\u2070) |\u03C8\u00B9\u27E9 = (1/r - E\u00B9) |\u03C8\u2070\u27E9\n");
   printf("N = %d\tL = %d\tZ = %d\n", principle_quantum_num, angular_momentum, nuclear_charge);
   
   // Compute and store factorials
@@ -105,8 +105,8 @@ int main(int argc, char* argv[]) {
   }
 
   
-  printf("The recursion coefficiens for 1/r at L = 0 are:\n");
-  for(int i = 0; i < 5; i++) {
+  printf("The recursion coefficiens for \u00B9/\u1D63 at L = 0 are:\n");
+  for(int i = 0; i < 25; i++) {
     printf("%f\n", psi_1_one_over_r[i]);
   }
 
@@ -138,8 +138,8 @@ int main(int argc, char* argv[]) {
   calc_psi_1(recursion_coefficients, psi_1_r_squared);
   calc_norm(principle_quantum_num, psi_1_r_squared, hydrogenic_wavefunction, integrals, psi_norm);
 
-  printf("The recursion coefficiens for r^2 at L = 0 are:\n");
-  for(int i = 0; i < 5; i++) {
+  printf("The recursion coefficiens for r\u00B2 at L = 0 are:\n");
+  for(int i = 0; i < 25; i++) {
     psi_1_r_squared[i] = psi_norm[i];
     printf("%f\n", psi_1_r_squared[i]);
   }
@@ -163,11 +163,11 @@ int main(int argc, char* argv[]) {
 
   calc_psi_1(recursion_coefficients, psi_1_r_squared_2);
 
-  // calc_norm(principle_quantum_num, psi_1_r_squared_2, hydrogenic_wavefunction, integrals, psi_norm);
+  calc_norm(principle_quantum_num, psi_1_r_squared_2, hydrogenic_wavefunction, integrals, psi_norm);
 
-  printf("The recursion coefficiens for r^2 at L = 2 are:\n");
-  for(int i = 0; i < 5; i++) {
-    // psi_1_r_squared_2[i] = psi_norm[i];
+  printf("The recursion coefficiens for r\u00B2 at L = 2 are:\n");
+  for(int i = 0; i < 25; i++) {
+    psi_1_r_squared_2[i] = psi_norm[i];
     printf("%f\n", psi_1_r_squared_2[i]);
   }
 

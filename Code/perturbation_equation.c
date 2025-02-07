@@ -222,13 +222,9 @@ void calc_psi_1(double* recursion_coefficients, double* psi_1){
 double calc_matrix_elements(double* psi_1, double* psi_2, double perturbation, int power_of_r, double* integrals) {
   double result = 0;
 
-  printf("Enterig]ng new calc\n");
   for(int i = 0; i < 25; i++) {
     for(int j = 0; j < 25; j++) {
       result = result + psi_1[i] * psi_2[j] * integrals[i + j + 2 + power_of_r] * perturbation;
-      if(psi_1[i] * psi_2[j] * integrals[i + j + 2 + power_of_r] * perturbation != 0.0) {
-        printf("\n\n\nintegrals[%d] = %f\ni, j = %d, %d\npsi_1[%d] = %f\t psi_2[%d] = %f\nresult = %f\n\n\n", i + j + 2 + power_of_r, integrals[i + j + 2 + power_of_r], i, j, i, psi_1[i], j, psi_2[j], result);
-      }
     }
   }
 
