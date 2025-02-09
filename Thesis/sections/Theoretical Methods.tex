@@ -49,12 +49,57 @@
 
 
     \section{One-electron Shrödinger equation} \label{sec:Schrodinger_Equation}
-    \section{Perturbation Theory} \label{sec:Perturbation_Theory}
-        To quantify how a magnetic field affects atomic energy levels, we must determine the shifts induced by the Zeeman interaction. Since this interaction modifies the Hamiltonian slightly compared to the field-free case, we can utilize perturbation theory to provide a systematic way to approximate the new eigenvalues and eigenstates.
+        Discovered by Schrödinger in 1926, the Schrödinger equation is a non-relativistic solution to the two body problem involving an orbiting electron and its nucleus\footnote{It is assumed here that the nucleus is a point particle with infinite mass.}. The electron interacts with the nucleus via the Coulomb interaction described by the following potential
+
+        \begin{align}
+            V(\vec{r}) = -\frac{Z e^2}{4\pi \epsilon_0 \vec{r}}
+        \end{align}
+
+        In atomic units 
+
+        \begin{align}
+            V(\vec{r}) = -\frac{Z}{\vec{r}}
+        \end{align}
+
+        \noindent We can write the energy of the system using the Hamiltonian, where our potential is the Coulomb potential. We then come up with 
+
+        \begin{align}
+            H = \frac{p^2}{2m} - \frac{Z}{\vec{r}}
+        \end{align}
+
+        \noindent However, quantum mechanics dictates that all observable quantities must be determined by hermitian operators that act on the wavefunction $\psi$. The wavefunction $\psi$ is described as a normalized vector in Hilbert space, $\mathcal{H}$ containing all information pertaining to the system. This means that the momentum needs to be a hermitian operator that acts on the wavefunction, and that our Hamiltonian is also a hermitian operator that satisfies the following eigenvalue problem 
+
+        \begin{align}
+            \hat{H} \vert\psi \rangle = E_n \vert \psi \rangle
+        \end{align}
+
+        This is what is known as the Schrödinger equation. It can be applied to our two-body problem by substituting the momentum for its quantum operator analog. This results in the following expression in atomic units 
+
+        \begin{align}
+            \hat{H} \psi  = \frac{1}{2} \nabla^2 \psi - \frac{Z}{r} \psi = E_n \psi 
+        \end{align}
+
+        We now have a second-order partial differential equation. Assuming a separable solution allows one to split the solution to any hydrogenic system into two parts; The radial part and the angular part. For our two body atomic system the solutions for each can be written in terms of Laguerre polynomials and Spherical Harmonics\footnote{The derivation will be shown in the appendix for both the angular and radial parts of the wavefunction.}.
+
+        \begin{align}
+            \psi_{nlm} = R_{nl}(r) \mathcal{Y}^l_m (\cos \theta)
+        \end{align}
+
+        \noindent The radial equation has the following solutions 
+
+        % \begin{align}
+            
+        % \end{align}
+
+        The ability to separate the solution into two independant parts is a key feature which will be exploited when evaluating integrals involving these wavefunctions in Chapter~\ref{sec:Zeeman-Effect}
+
     \section{Integration Techniques} \label{sec:Integration_Techniques}
         \subsection{The total integral} \label{sec:The_Total_Integral}
         \subsection{The angular part} \label{sec:The_Angular_Part}
         \subsection{The radial part} \label{sec:The_Radial_Part}
+
+    \section{Perturbation Theory} \label{sec:Perturbation_Theory}
+        To quantify how a magnetic field affects atomic energy levels, we must determine the shifts induced by the Zeeman interaction. Since this interaction modifies the Hamiltonian slightly compared to the field-free case, we can utilize perturbation theory to provide a systematic way to approximate the new eigenvalues and eigenstates.
     \section{Recursion relations} \label{sec:Recursion_Relations}
     \section{The Dalgarno Interchange Theorem} \label{sec:Dalgarno_Interchange_Theorem}
     
