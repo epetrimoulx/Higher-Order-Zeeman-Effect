@@ -1,13 +1,61 @@
-\chapter{Theoretical Methods}
+\chapter{Theoretical Methods} \label{Theoretical_Methods}
     \section{Overview}
-    \section{Atomic Units}
-    \section{One-electron Shrödinger equation}
-    \section{Perturbation Theory}
-    \section{Integration Techniques}
-        \subsection{The total integral}
-        \subsection{The angular part}
-        \subsection{The radial part}
-        \subsection{Recursion relations}
-    \section{The Dalgarno Interchange Theorem}
+        This chapter will provide an overview of all theoretical methods used throughout my dissertation. It will provide the theoretical building blocks upon which the dissertation is constructed, ranging from the set of units used in the problem, to perturbation equation solutions and methods for verifying calculations\footnote{Majority of the material discussed throughout this chapter are inspired and shaped by G. W. F. Drake. References will be included where needed.}. As stated in the introduction, this thesis is based upon calculating matrix elements between two sets of wavefunctions connected by an operator. These matrix elements arise from perturbation theory and are necessary for computing energy shifts due to external fields such as those present in the higher-order Zeeman effect. The foundation of theory will be presented here, but the more specific calculations related to solving for the Zeeman effect will be presented in the relevant chapter below.
+
+        I will begin by first discussing atomic units in Sec.~\ref{sec:atomic_units}, then move on and introduce the Schrödinger equation for the one-electron problem as well as its solution in Sec.~\ref{sec:Schrodinger_Equation}. In this section I will also discuss the significance and impact of the canonical momentum, and emphasize its importance in solving for the Zeeman effect. I will then introduce Perturbation Theory in Sec.~\ref{sec:Perturbation_Theory}, and describe how it can be used to approximate the new eigenvalues and eigenstates of the Zeeman-perturbed Hamiltonian. Sec.~\ref{sec:Integration_Techniques} will discuss various integration techniques that will be implemented both analytically and programmatically in order to simplify the calculation process, followed by an introduction to solving recursion relations in Sec.~\ref{sec:Recursion_Relations}. This is the core step in determining the perturbed wavefunctions used throughout the rest of the study. Finally, this chapter will conclude with the discussion of the Dalgarno Interchange Theorem and how it can serve as a critical check on the correctness of the obtained perturbed wavefunctions.
+    \section{Atomic Units} \label{sec:atomic_units}    
+        First proposed by Hartree in November of 1928, atomic units have since become the standard across all of atomic physics. Atomic units were designed with the purpose of "\textit{eliminating various universal constants from equations and also to avoid high powers of 10 in numerical work}" \ref{atomic_units_definition}. Hartree proposed that we measure the mass in terms of the mass of the electron $m_e$, charge in terms of the electron charge, $e$, the vacuum permittivity in terms of $4\pi \epsilon_0$, and the angular momentum in terms of $\hbar$. Written mathematically we can say
+        \begin{align}
+            \hbar = m_e = e = 4\pi \epsilon_0 = 1
+        \end{align}
+
+        \noindent Scaling these units out of the problem greatly simplifies our calculation, and once a result is found, one can multiply the unscaled units back into the answer to retrieve the desired result in standard SI units. While this was proposed long before the field of computational physics emerged, it is of key importance that one implements this technique for any atomic physics simulation. Machine error is an unavoidable reality of programmed computation and working in units which avoids extreme values both large and small can help mitigate the uncertainty present in high precision calculations.
+
+        A consequence of utilizing atomic units is the need to redefine key fundamental physical quantities in terms of these scaled values. An example of key importance in the investigation of the higher-order Zeeman effect is the atomic unit of magnetic field strength, otherwise referred to as the atomic unit of magnetic flux density \ref{Atomic_unit_of_field_strength}.
+
+        \begin{align}
+            B_{\text{a.u.}} = \frac{\hbar}{e a_0^2}
+        \end{align}
+
+        This value is composed of the Bohr radius, which is defined as the most probable distance between an electron in the ground state of hydrogen and its nucleus. It can be described by the following equation \ref{Griffiths_2018}
+
+        \begin{align}
+            a_0 = \frac{4\pi \epsilon_0 \hbar^2}{e^2 m_e} = \frac{\hbar}{m_e c \alpha} \label{eq:bohr_radius}
+        \end{align}
+
+        The Bohr radius itself is defined using a similar combination of fundamental constants which after applying the rules for atomic units, should equal $1$. We can see now that all units in the atomic unit of field strength also become $1$ as intended. At the end of our problem, we can simply multiply the determined result by the atomic unit of magnetic field strength when its constants are not scaled to $1$, and retrieve our desired result in SI units. This is equivalent to multiplying the result in atomic units by \ref{Atomic_unit_of_field_strength}.
+
+        \begin{align}
+            B_{\text{a.u.}} = 2.35051757077(73) \times 10^5 \text{ T}
+        \end{align}
+
+        The numbers in parenthesis here denote the uncertainty of the quantity. Another key benefit in atomic units is that it allows us to define almost all fundamental quantities in terms of two constants; the speed of light, $c$ and the fine structure constant, $\alpha$.\footnote{The fine structure constant was introduced in 1916 by Arnold Sommerfeld when he was investigating the gap in the spectral lines of the hydrogen atom. He compared his work with the Michelson Morley experiment from 1887 where the spectral lines were shown and it was deduced that the universe is not permeated by the aether \ref{Michelson_Morley_1887}}
+
+        The fine structure constant can be written as the following dimensionless quantity
+
+        \begin{align}
+            \alpha = \frac{e^2}{4\pi \epsilon_0 \hbar c} = 7.2973525643(11) \times 10^{-3}   
+        \end{align}
+
+        \noindent which in atomic units is just the following relationship with the speed of light 
+
+        \begin{align}
+            \alpha = \frac{1}{c} \label{eq:Fine_Structure_Scaled}
+        \end{align}
+
+        \noindent The fine structure constant is often used as an essential expansion parameter, treating relativity as a perturbation in $\alpha$. More on this will be discussed in Sec.~\ref{sec:Relativistic_Correction}. Applying the atomic unit scaling to the fine structure constant shown in equation \eqref{eq:Fine_Structure_Scaled} confirms that the second equivalence in equation \eqref{eq:bohr_radius} remains equal to $1$. 
+
+        Applying this technique to problems in atomic physics gives a powerful way of simplifying calculations while providing an easy conversion factor to SI units for comparison of theory and experiment. This dissertation will discuss all equations and quantities in atomic units unless further specified otherwise.
+
+
+    \section{One-electron Shrödinger equation} \label{sec:Schrodinger_Equation}
+    \section{Perturbation Theory} \label{sec:Perturbation_Theory}
+        To quantify how a magnetic field affects atomic energy levels, we must determine the shifts induced by the Zeeman interaction. Since this interaction modifies the Hamiltonian slightly compared to the field-free case, we can utilize perturbation theory to provide a systematic way to approximate the new eigenvalues and eigenstates.
+    \section{Integration Techniques} \label{sec:Integration_Techniques}
+        \subsection{The total integral} \label{sec:The_Total_Integral}
+        \subsection{The angular part} \label{sec:The_Angular_Part}
+        \subsection{The radial part} \label{sec:The_Radial_Part}
+    \section{Recursion relations} \label{sec:Recursion_Relations}
+    \section{The Dalgarno Interchange Theorem} \label{sec:Dalgarno_Interchange_Theorem}
     
     
