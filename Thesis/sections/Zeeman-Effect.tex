@@ -1,0 +1,73 @@
+\chapter{The Higher Order Zeeman Effect}
+    \section{Overview}
+    \section{History}
+    \section{Motivation}
+        \subsection{The $g-2$ experiment}
+        \subsection{High-precision magnetometry}
+        \subsection{Connection to Atomic Physics}
+    \section{The Zeeman effect in Hydrogen}
+    \section{The Zeeman effect in Helium-3}
+    \section{The higher-order Zeeman effect}
+        \subsection{The quadratic Zeeman effect}
+            The non-relativistic Hamiltonian for an $n$ electron system in atomic units can be expressed as follows
+            \begin{align}
+                \hat{H} = \sum_{i = 1}^n \frac{\left(\vec{p}_i - e\vec{A}_i \right)^2}{2m} + V
+            \end{align}
+
+            \noindent using the cannonical momentum instead of the classical momentum is essential to account for electromagnetic interactions. The vector potential $\vec{A}$ can be described in terms of the magnetic field
+
+            \begin{align}
+                \vec{A} = \frac{B}{2} \left( y\hat{x} - x\hat{y} \right)
+            \end{align}
+
+            \noindent which when expanded gives us the operator corresponding to the quadratic Zeeman effect
+
+            \begin{align}
+                \hat{H}_Z^{(2)} = \frac{B^2 e^2}{8m} \sum_{i = 1}^n (x_i^2 + y_i^2)
+            \end{align}
+
+            \noindent This operator can be expressed in spherical coordinates, written in terms of Legendre Polynomials
+
+            \begin{align}
+                \hat{H}^{(2)}_Z = \frac{B^2 e^2}{12m} \sum_{i = 1}^n r_i^2 \left( P_0(\cos \theta) - P_2(\cos \theta) \right)
+            \end{align}
+
+            \noindent $^3$He$^+$ is a system which contains only one electron, so we can drop the summation which accounts for all electrons to get our final quadratic Zeeman operator
+
+            \begin{align}
+                \hat{H}^{(2)}_Z(^3\text{He}^+) = \frac{B^2 e^2}{12m} r^2 \left( P_0(\cos \theta) - P_2(\cos \theta) \right)
+            \end{align}
+
+            % NOTE: Talk about here why the quadratic Zeeman effect provides a shift to the energy for both possible values of magnetic quantum number evenly, so the overall energy is changed slightly, but the difference between the energy split states remains the same.
+        \subsection{The magnetic dipole moment operator}
+            The magnetic dipole moment operator represents the interaction of a magnetic dipole moment with an external magnetic field. It is described via the following relation
+
+            \begin{align}
+                Q_{M1} = \mu_B \left( 1 - \frac{2p^2}{3m^2 c^2} + \frac{Ze^2}{3mc^2r} \right) \vec{\sigma} \cdot \vec{B}
+            \end{align}
+
+            \noindent Where $\mu_B$ is the Bohr magneton
+            
+            \begin{align}
+                \mu_B = \frac{e \hbar}{2mc}
+            \end{align}
+
+            \noindent The second term in the brackets of the magnetic dipole moment operator accounts for the relativistic correction to the kinetic energy of the electron, and the third term is the potential energy due to the Coulomb interaction between the electron and the nucleus. The first term corresponds to the ordinary Zeeman Effect, which does not contribute to the sum over states due to orthogonality.
+
+            The ordinary Zeeman effect contributes to $Q_{M1}$ in $^3$He$^+$ because it has non-zero spin due to the missing electron. For systems such as $^3$He, the ordinary Zeeman effect will not contribute.
+
+        \subsection{The relativistic correction to $^3$He$^+$}
+            Combining the magnetic dipole moment with the quadratic Zeeman operator, we can write down the relativistic
+            corrections for $^3$He$^+$. Written in terms of pseudostates the relativistic correction is
+
+            \begin{align}
+                C_{\text{rel}}^{(2)} =\sum_{\substack{n = -\infty \\ n \neq 0}}^{\infty}
+                \frac{\langle \psi_0 \vert H_Z^{(2)} \vert \psi_n \rangle \langle \psi_n \vert Q_{M1} \vert \psi_0 \rangle}{E_0 - E_n}
+            \end{align}
+
+            % NOTE: Ask drake again how the relativistic correction relates to the overall higher order Zeeman Effect. Description needs to be here
+
+
+
+
+

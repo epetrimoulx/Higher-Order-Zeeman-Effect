@@ -15,6 +15,7 @@
 // Define constants here
 const double EULER_MASCHERONI = 0.577215664901532860606512090082;
 const double PI = 3.141592653589793238462643383279502884;
+const double FINE_STRUCTURE_CONST = 7.29735256e-3;
 
 int main(const int argc, char* argv[]) {
   int principle_quantum_num;
@@ -176,4 +177,11 @@ int main(const int argc, char* argv[]) {
 
   const double r_squared_matrix_element = calc_matrix_elements(psi_1_one_over_r, hydrogenic_wavefunction, 1, 2, integrals);
   printf("\nRESULT \u00B9/\u1D63:\n%f\n", r_squared_matrix_element);
+
+  // Calculate The relativistic correction for ^3He^+
+  const double a_coefficient = -2.0/3.0; // In a.u
+  const double b_coefficient = -1.0/6.0; // In a.u
+  const double relativistic_correction = (a_coefficient + b_coefficient) * one_over_r_matrix_element * pow(FINE_STRUCTURE_CONST, 2);
+
+  printf("The relativistic correction to \u00B3He\u207A is:\n%e \u03C3\u20D7 \u22C5 B\u20D7\n", relativistic_correction);
 }

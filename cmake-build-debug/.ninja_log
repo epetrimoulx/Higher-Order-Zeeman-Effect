@@ -1,0 +1,25 @@
+# ninja log v6
+1	62	1738943113429975028	CMakeFiles/Quadratic_Zeeman_Effect.dir/Code/main.c.o	23735c144615b1f0
+1	63	1738943113430237653	CMakeFiles/Quadratic_Zeeman_Effect.dir/Code/perturbation_equation.c.o	b9b7e1caee54016c
+63	93	1738943113491990195	Quadratic_Zeeman_Effect	47390d859138db6f
+1	45	1738943543366287628	CMakeFiles/Quadratic_Zeeman_Effect.dir/Code/main.c.o	23735c144615b1f0
+2	45	1738943543366716670	CMakeFiles/Quadratic_Zeeman_Effect.dir/Code/perturbation_equation.c.o	b9b7e1caee54016c
+45	78	1738943543409992368	Quadratic_Zeeman_Effect	47390d859138db6f
+1	42	1738943768151034286	CMakeFiles/Quadratic_Zeeman_Effect.dir/Code/perturbation_equation.c.o	b9b7e1caee54016c
+42	72	1738943768191963737	Quadratic_Zeeman_Effect	47390d859138db6f
+2	41	1738943913260463261	CMakeFiles/Quadratic_Zeeman_Effect.dir/Code/perturbation_equation.c.o	b9b7e1caee54016c
+41	70	1738943913299813756	Quadratic_Zeeman_Effect	47390d859138db6f
+3	44	1738943965946835683	CMakeFiles/Quadratic_Zeeman_Effect.dir/Code/main.c.o	23735c144615b1f0
+44	73	1738943965988255009	Quadratic_Zeeman_Effect	47390d859138db6f
+1	33	1738944012872374535	CMakeFiles/Quadratic_Zeeman_Effect.dir/Code/main.c.o	23735c144615b1f0
+33	60	1738944012904214372	Quadratic_Zeeman_Effect	47390d859138db6f
+1	38	1738944125206126764	CMakeFiles/Quadratic_Zeeman_Effect.dir/Code/main.c.o	23735c144615b1f0
+38	67	1738944125243387386	Quadratic_Zeeman_Effect	47390d859138db6f
+4	209	1739035709132682448	CMakeFiles/Quadratic_Zeeman_Effect.dir/Code/main.c.o	23735c144615b1f0
+209	330	1739035709338032308	Quadratic_Zeeman_Effect	47390d859138db6f
+2	44	1739037534589446882	CMakeFiles/Quadratic_Zeeman_Effect.dir/Code/main.c.o	23735c144615b1f0
+44	73	1739037534631345073	Quadratic_Zeeman_Effect	47390d859138db6f
+2	46	1739047693340369433	CMakeFiles/Quadratic_Zeeman_Effect.dir/Code/main.c.o	23735c144615b1f0
+46	77	1739047693384531927	Quadratic_Zeeman_Effect	47390d859138db6f
+1	33	1739047730190369574	CMakeFiles/Quadratic_Zeeman_Effect.dir/Code/main.c.o	23735c144615b1f0
+33	62	1739047730222240700	Quadratic_Zeeman_Effect	47390d859138db6f
