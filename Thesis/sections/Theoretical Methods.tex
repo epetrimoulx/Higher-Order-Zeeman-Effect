@@ -2,7 +2,7 @@
     \section{Overview}
         This chapter will provide an overview of all theoretical methods used throughout my dissertation. It will provide the theoretical building blocks upon which the dissertation is constructed, ranging from the set of units used in the problem, to perturbation equation solutions and methods for verifying calculations\footnote{Majority of the material discussed throughout this chapter are inspired and shaped by G. W. F. Drake. References will be included where needed.}. As stated in the introduction, this thesis is based upon calculating matrix elements between two sets of wavefunctions connected by an operator. These matrix elements arise from perturbation theory and are necessary for computing energy shifts due to external fields such as those present in the higher-order Zeeman effect. The foundation of theory will be presented here, but the more specific calculations related to solving for the Zeeman effect will be presented in the relevant chapter below.
 
-        I will begin by first discussing atomic units in Sec.~\ref{sec:atomic_units}, then move on and introduce the Schrödinger equation for the one-electron problem as well as its solution in Sec.~\ref{sec:Schrodinger_Equation}. In this section I will also discuss the significance and impact of the canonical momentum, and emphasize its importance in solving for the Zeeman effect. I will then introduce Perturbation Theory in Sec.~\ref{sec:Perturbation_Theory}, and describe how it can be used to approximate the new eigenvalues and eigenstates of the Zeeman-perturbed Hamiltonian. Sec.~\ref{sec:Integration_Techniques} will discuss various integration techniques that will be implemented both analytically and programmatically in order to simplify the calculation process, followed by an introduction to solving recursion relations in Sec.~\ref{sec:Recursion_Relations}. This is the core step in determining the perturbed wavefunctions used throughout the rest of the study. Finally, this chapter will conclude with the discussion of the Dalgarno Interchange Theorem and how it can serve as a critical check on the correctness of the obtained perturbed wavefunctions.
+        I will begin by first discussing atomic units in Sec.~\ref{sec:atomic_units}, then move on and introduce the Schrödinger equation for the one-electron problem as well as its solution for hydrogenic wavefunctions in Sec.~\ref{sec:Schrodinger_Equation}. In this section I will also discuss the significance and impact of the canonical momentum, and emphasize its importance in solving for the Zeeman effect. I will then introduce Perturbation Theory in Sec.~\ref{sec:Perturbation_Theory}, and describe how it can be used to approximate the new eigenvalues and eigenstates of the Zeeman-perturbed Hamiltonian. Sec.~\ref{sec:Integration_Techniques} will discuss various integration techniques that will be implemented both analytically and programmatically in order to simplify the calculation process, followed by an introduction to solving recursion relations in Sec.~\ref{sec:Recursion_Relations}. This is the core step in determining the perturbed wavefunctions used throughout the rest of the study. Finally, this chapter will conclude with the discussion of the Dalgarno Interchange Theorem and how it can serve as a critical check on the correctness of the obtained perturbed wavefunctions.
     \section{Atomic Units} \label{sec:atomic_units}    
         First proposed by Hartree in November of 1928, atomic units have since become the standard across all of atomic physics. Atomic units were designed with the purpose of "\textit{eliminating various universal constants from equations and also to avoid high powers of 10 in numerical work}" \ref{atomic_units_definition}. Hartree proposed that we measure the mass in terms of the mass of the electron $m_e$, charge in terms of the electron charge, $e$, the vacuum permittivity in terms of $4\pi \epsilon_0$, and the angular momentum in terms of $\hbar$. Written mathematically we can say
         \begin{align}
@@ -17,7 +17,7 @@
             B_{\text{a.u.}} = \frac{\hbar}{e a_0^2}
         \end{align}
 
-        This value is composed of the Bohr radius, which is defined as the most probable distance between an electron in the ground state of hydrogen and its nucleus. It can be described by the following equation \ref{Griffiths_2018}
+        This value is composed of the Bohr radius $a_0$, electron charge $e$, and $\hbar$, the unit of action. The Bohr radius is defined as the most probable distance between an electron in the ground state of hydrogen and its nucleus. It can be described by the following equation \ref{Griffiths_2018}
 
         \begin{align}
             a_0 = \frac{4\pi \epsilon_0 \hbar^2}{e^2 m_e} = \frac{\hbar}{m_e c \alpha} \label{eq:bohr_radius}
@@ -43,7 +43,7 @@
             \alpha = \frac{1}{c} \label{eq:Fine_Structure_Scaled}
         \end{align}
 
-        \noindent The fine structure constant is often used as an essential expansion parameter, treating relativity as a perturbation in $\alpha$. More on this will be discussed in Sec.~\ref{sec:Relativistic_Correction}. Applying the atomic unit scaling to the fine structure constant shown in equation \eqref{eq:Fine_Structure_Scaled} confirms that the second equivalence in equation \eqref{eq:bohr_radius} remains equal to $1$. 
+        \noindent The fine structure constant is often used as an essential expansion parameter, treating relativity as a perturbation in $\alpha$.\footnote{More on this will be discussed in Sec.~\ref{sec:Relativistic_Correction}} Applying the atomic unit scaling to the fine structure constant shown in equation \eqref{eq:Fine_Structure_Scaled} confirms that the second equivalence in equation \eqref{eq:bohr_radius} remains equal to $1$. 
 
         Applying this technique to problems in atomic physics gives a powerful way of simplifying calculations while providing an easy conversion factor to SI units for comparison of theory and experiment. This dissertation will discuss all equations and quantities in atomic units unless further specified otherwise.
 
@@ -55,7 +55,7 @@
             V(\vec{r}) = -\frac{Z e^2}{4\pi \epsilon_0 \vec{r}}
         \end{align}
 
-        In atomic units 
+        In atomic units the expression simplifies to the following
 
         \begin{align}
             V(\vec{r}) = -\frac{Z}{\vec{r}}
@@ -79,19 +79,25 @@
             \hat{H} \psi  = \frac{1}{2} \nabla^2 \psi - \frac{Z}{r} \psi = E_n \psi 
         \end{align}
 
-        We now have a second-order partial differential equation. Assuming a separable solution allows one to split the solution to any hydrogenic system into two parts; The radial part and the angular part. For our two body atomic system the solutions for each can be written in terms of Laguerre polynomials and Spherical Harmonics\footnote{The derivation will be shown in the appendix for both the angular and radial parts of the wavefunction.}.
+        We now have a second-order partial differential equation. Assuming a separable solution allows one to split the solution to any hydrogenic system into two parts; The radial part and the angular part.
 
         \begin{align}
             \psi_{nlm} = R_{nl}(r) \mathcal{Y}^l_m (\cos \theta)
         \end{align}
 
-        \noindent The radial equation has the following solutions 
+        \noindent For our two body atomic system the solutions for each can be written in terms of Laguerre polynomials and Spherical Harmonics\footnote{The derivation will be shown in the appendix for both the angular and radial parts of the wavefunction.}. The radial equation has the following solutions \ref{Atomic_Physics_Handbook}
 
-        % \begin{align}
-            
-        % \end{align}
+        \begin{align}
+            R_{nl}(r) = \frac{2Z}{n^2} \sqrt{\frac{Z(n - l - 1)!}{(n + l)!}} \left( \frac{2Zr}{n} \right)^l e^{\frac{-Zr}{n}} L_{n - l - 1}^{(2l + 1)} \left( 2Zr/n \right)
+        \end{align}
 
-        The ability to separate the solution into two independant parts is a key feature which will be exploited when evaluating integrals involving these wavefunctions in Chapter~\ref{sec:Zeeman-Effect}
+        Where $Z$ is the nuclear charge atomic number, $l$ is the angular momentum quantum number, $n$ is the principle quantum number, and $L_{n - l - 1}^{(2l + 1)} (2Zr/n)$ is the generalized Laguerre polynomial (which I have defined in Appendix \ref{sec:Laguerre_Polynomial}). Additionally, the spherical harmonics can be written as
+
+        \begin{align}
+            \mathcal{Y}^m_l (\theta, \phi) = (-1)^m \sqrt{\frac{(2l + 1)}{4 \pi}\frac{(l - m)!}{(l + m)!}} P_l^m (\cos \theta) e^{i m \phi}
+        \end{align}
+
+        Where $l$ is the angular momentum quantum number, $m$ is the magnetic quantum number, and $P_l^m (\cos \theta)$ is the associated Legendre polynomial (which I will discuss further in Appendix \ref{sec:Legendre_Polynomial}). A key feature of the spherical harmonics which I will utilize in Sec.~\ref{sec:Integration_Techniques} is that the spherical harmonics form a normalized complete set of orthogonal basis functions. The ability to separate the solution into two independant parts plays a crucial role in simplifying the task at hand and will be exploited when evaluating integrals involving these wavefunctions in Chapter~\ref{sec:Zeeman-Effect}.
 
     \section{Integration Techniques} \label{sec:Integration_Techniques}
         \subsection{The total integral} \label{sec:The_Total_Integral}
