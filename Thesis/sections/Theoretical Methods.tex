@@ -88,21 +88,61 @@
         \noindent For our two body atomic system the solutions for each can be written in terms of Laguerre polynomials and Spherical Harmonics\footnote{The derivation will be shown in the appendix for both the angular and radial parts of the wavefunction.}. The radial equation has the following solutions \ref{Atomic_Physics_Handbook}
 
         \begin{align}
-            R_{nl}(r) = \frac{2Z}{n^2} \sqrt{\frac{Z(n - l - 1)!}{(n + l)!}} \left( \frac{2Zr}{n} \right)^l e^{\frac{-Zr}{n}} L_{n - l - 1}^{(2l + 1)} \left( 2Zr/n \right)
+            R_{nl}(r) = \frac{2Z}{n^2} \sqrt{\frac{Z(n - l - 1)!}{(n + l)!}} \left( \frac{2Zr}{n} \right)^l e^{\frac{-Zr}{n}} L_{n - l - 1}^{(2l + 1)} \left( 2Zr/n \right) \label{eq:radial_equation}
         \end{align}
 
         Where $Z$ is the nuclear charge atomic number, $l$ is the angular momentum quantum number, $n$ is the principle quantum number, and $L_{n - l - 1}^{(2l + 1)} (2Zr/n)$ is the generalized Laguerre polynomial (which I have defined in Appendix \ref{sec:Laguerre_Polynomial}). Additionally, the spherical harmonics can be written as
 
         \begin{align}
-            \mathcal{Y}^m_l (\theta, \phi) = (-1)^m \sqrt{\frac{(2l + 1)}{4 \pi}\frac{(l - m)!}{(l + m)!}} P_l^m (\cos \theta) e^{i m \phi}
+            \mathcal{Y}^m_l (\theta, \phi) = (-1)^m \sqrt{\frac{(2l + 1)}{4 \pi}\frac{(l - m)!}{(l + m)!}} P_l^m (\cos \theta) e^{i m \phi} \label{eq:angular_equation}
         \end{align}
 
         Where $l$ is the angular momentum quantum number, $m$ is the magnetic quantum number, and $P_l^m (\cos \theta)$ is the associated Legendre polynomial (which I will discuss further in Appendix \ref{sec:Legendre_Polynomial}). A key feature of the spherical harmonics which I will utilize in Sec.~\ref{sec:Integration_Techniques} is that the spherical harmonics form a normalized complete set of orthogonal basis functions. The ability to separate the solution into two independant parts plays a crucial role in simplifying the task at hand and will be exploited when evaluating integrals involving these wavefunctions in Chapter~\ref{sec:Zeeman-Effect}.
 
     \section{Integration Techniques} \label{sec:Integration_Techniques}
-        \subsection{The total integral} \label{sec:The_Total_Integral}
+        In this section of the dissertation, I will discuss the standard approach to solving the integrals pertaining to the various matrix elements required throughout. As discussed in the previous section, the ability to separate the solution into a radial part as well as an angular part significantly simplifies the solution process. Instead of having to integrate a single function over all three dimensions in spherical coordinates, we can split the solution into two steps which can be calculated independantly.
+
+        \begin{align}
+            \langle \psi^n \vert V \vert \psi_m \rangle = \int_{0}^{\infty} r^2 \; \psi^n(r) V(r) \psi^m(r) \; dr \int_\Omega \sin \theta \; \psi^n(\theta, \phi) V(\theta, \phi) \psi^m(\theta, \phi) \; d\Omega
+        \end{align}
+
+        Where $\Omega$ represents the solid angles for $\theta$ and $\phi$. The total problem can then be solved with the simple combination of calculated integrals.
+
+        \begin{align}
+             \langle \psi^n \vert V \vert \psi_m \rangle = I_{\text{radial}} \cdot I_{\text{angular}}
+        \end{align}
+
+        While this may look obvious, it is only from the fact that the wavefunctions are separable that allows us to split the problem apart. The section serves as a general introduction to the process of calculating matrix elements, but Sec.~\ref{sec:The_Angular_Part} and Sec.~\ref{sec:The_Radial_Part} will discuss further the specifics and techniques used to calculate each piece of the solution.
+
         \subsection{The angular part} \label{sec:The_Angular_Part}
+        % As mentioned previously, the angular part of the 
+        % \begin{align}
+        %     I_{\text{angular}} = \int_0^\pi \int_0^{2\pi}\sin \theta \mathcal{Y}^m_l (\theta, \phi) \; d\theta d\phi 
+        % \end{align}
         \subsection{The radial part} \label{sec:The_Radial_Part}
+            The radial part of the hydrogenic wavefunction will exploit the general form of $R_{nl}(r)$, stated in equation \ref{eq:radial_equation}. The perturbed wavefunctions will thus also resemble a similar form since they serve as small corrections to the original solution\footnote{See Sec.~\ref{sec:Perturbation_Theory} for more details.}. Removing the terms not dependant on $r$ outside of the integrand (which are dependant on the perturbed wavefunction being investigated as well as the angular momentum and principle quantum numbers), we are always left with a series of integrals that resemble the following form\footnote{This is shown explicitly in Sec.~\ref{sec:Laguerre_Polynomial}.}
+
+            \begin{align}
+                I_{\text{radial}} = \int_0^\infty r^j e^{-\alpha r}
+            \end{align}
+
+            Where $j \in \mathbb{Z}$, and $\alpha \in \mathbb{R}$. This integral is a special one, being in the form of the Gamma function integral\footnote{This function is technically Gamma function-esque, but can be manipulated into the form of the Gamma function. This is shown in greater detail in Sec.~\ref{sec:Gamma_Function}.}, $\Gamma(z)$. The Gamma function integral has the following solution 
+
+            \begin{align}
+                \int_0^\infty r^j e^{-\alpha r} = \frac{\Gamma(j + 1)}{\alpha^{j + 1}}
+            \end{align}
+
+            Where as long as $j + 1 \in \mathbb{Z}^+$, we can write
+
+            \begin{align}
+                \int_0^\infty r^j e^{-\alpha r} = \frac{j!}{\alpha^{j + 1}}
+            \end{align}
+
+            Fitting the integrals to the Gamma function not only makes the task of computing the integrals significantly easier, but also makes the integration computationally stable. The solution provides a simple formula to implement when calculating radial integrals, and allows one to skip the implementation of well known integration methods such as Simpson's rule or any Runge-Kutta methods. While these methods are powerful, they do have significant drawbacks compared to the derived formula due to error propagation and machine-precision.
+            
+            The ability to compute these radial hydrogenic wavefunction integrals exactly is not only a satisfying result mathematically, but opens the door for more difficult problems in atomic physics where machine error is the determining step in the accuracy of a high-precision calculation\footnote{Such problems include the calculation of Hylleraas wavefunctions for three body atomic systems such as H$^-$, He, or Li$^+$.}.
+            
+            
 
     \section{Perturbation Theory} \label{sec:Perturbation_Theory}
         To quantify how a magnetic field affects atomic energy levels, we must determine the shifts induced by the Zeeman interaction. Since this interaction modifies the Hamiltonian slightly compared to the field-free case, we can utilize perturbation theory to provide a systematic way to approximate the new eigenvalues and eigenstates.
