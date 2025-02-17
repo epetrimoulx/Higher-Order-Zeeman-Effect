@@ -181,7 +181,8 @@ int main(const int argc, char* argv[]) {
   // Calculate The relativistic correction for ^3He^+
   const double a_coefficient = -2.0/3.0; // In a.u
   const double b_coefficient = -1.0/6.0; // In a.u
-  const double relativistic_correction = (a_coefficient + b_coefficient) * one_over_r_matrix_element * pow(FINE_STRUCTURE_CONST, 2);
+  const double relativistic_correction = (a_coefficient + b_coefficient) * one_over_r_matrix_element;
 
-  printf("The relativistic correction to \u00B3He\u207A is:\n%e \u03C3\u20D7 \u22C5 B\u20D7\n", relativistic_correction);
+  printf("The relativistic correction to \u00B3He\u207A is:\n%f\u03B1\u00B9 \u03C3\u20D7 \u22C5 B\u20D7\n", relativistic_correction);
+  printf("Multiplying by \u03B1 the result is:\n%e  \u03C3\u20D7\u22C5 B\u20D7\n", relativistic_correction * pow(FINE_STRUCTURE_CONST, 2));
 }
