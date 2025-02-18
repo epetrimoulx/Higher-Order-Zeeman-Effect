@@ -111,16 +111,16 @@
         \subsection{The angular part} \label{sec:The_Angular_Part}
         As mentioned previously, the angular part of the solution to Hydrogen is as follows
         \begin{align}
-            I_{\text{angular}} = \int_0^\pi \int_0^{2\pi}\sin \theta \;\mathcal{Y}^m_l (\theta, \phi) \; d\theta d\phi 
+            I_{\text{angular}} = \int_0^\pi \int_0^{2\pi}\sin \theta \;\mathcal{Y}^m_l (\theta, \phi) \; d\theta d\phi \label{eq:hydrogen_spherical_harmonic}
         \end{align}
 
         Since we will be using the Hydrogenic wavefunctions to calculate matrix elements for the higher order Zeeman effect, we expect to see integrals of this form with one or more spherical harmonics within the integrand. Depending on the angular momentum quantum number and the magnetic quantum number, these spherical harmonics may be easy or quite difficult to integrate. However, we can simplify the calculation of the angular integrals by exploiting the nature of the spherical harmonic function. Since it forms a complete set of orthogonal basis functions, for any integral involving two spherical harmonics we can write:
 
         \begin{align}
-            \int_0^\pi \int_0^{2\pi} \mathcal{Y}^m_l(\theta, \phi) \mathcal{Y}^{m^\prime}_{l^\prime} (\theta, \phi) \; d\theta d\phi = \delta_{ll^\prime} \delta_{mm^\prime}
+            \int_0^\pi \int_0^{2\pi} \mathcal{Y}^m_l(\theta, \phi) \mathcal{Y}^{m^\prime}_{l^\prime} (\theta, \phi) \; d\theta d\phi = \delta_{ll^\prime} \delta_{mm^\prime}\label{eq:delta_spherical_harmonic}
         \end{align}
 
-        So for all angular integrals where the spherical harmonics contain different angular momentum and magnetic quantum numbers, the result will be zero. However, if given a scenario where we need to couple three angular momenta together (i.e, we have three spherical harmonic functions to integrate), we can use the Wigner 3j symbols to couple the angular momenta in replacement of the integral. The Wigner 3j symbols are defined as \ref{Wigner-3j}
+        This rule is extendable to any number of coupled spherical harmonics. For all angular integrals where the spherical harmonics contain different angular momentum and magnetic quantum numbers, the result will be zero. However, if given a scenario where we need to couple three angular momenta together (i.e, we have three spherical harmonic functions to integrate), we can use the Wigner 3j symbols to couple the angular momenta in replacement of the integral. The Wigner 3j symbols are defined as \ref{Wigner-3j}
 
         \begin{align}
             \int_0^\pi \int_0^{2\pi} \sin \theta \; d\theta d\phi\;& \mathcal{Y}^{m_1}_{l_1}(\theta, \phi) \mathcal{Y}^{m_2}_{l_2} (\theta, \phi) \mathcal{Y}^{m_3}_{l_3} (\theta, \phi) =\\
@@ -136,16 +136,40 @@
         Where the set of $6$ parameters inside the brackets at the end of the expression is called a $3$j Symbol, which has the following definiton:
 
         \begin{align}
-            \begin{pmatrix}
+            &\begin{pmatrix}
                 j_1 & j_2 & j_3\\
                 m_1 & m_2 & m_3
-            \end{pmatrix} &= \delta(m_1 + m_2 + m_3, 0) (-1)^{j_1 - j_2 - m_3} \;\times \\
+            \end{pmatrix} = \delta(m_1 + m_2 + m_3, 0) (-1)^{j_1 - j_2 - m_3} \;\times \\
             & \sqrt{\frac{(j_1 + j_2 - j_3)! (j_1 - j_2 + j_3)!(-j_1 + j_2 + j_3)!}{(j_1 + j_2 + j_3 + 1)!}} \;\times \nonumber \\
             &\sqrt{(j_1 - m_1)!(j_1 + m_1)!(j_2 + m_2)!(j_3 - m_3)! (j_3 + m_3)!} \;\times \nonumber\\
              &\sum_{N}^{K} \frac{(-1)^k}{k!(j_1 + j_2 - j_3 - k)!(j_1 - m_1 - k)!(j_2  + m_2 - k)!(j_3 - j_1 + m_1 + k)!(j_3 - j_1 - m_2 + k)!}\nonumber
         \end{align}
 
-        Where $K \equiv \text{max}(0, j_2 - j_3 - M-1, j_1 - j_3 + m_2)$, and $N \equiv \text{min}(j_1 + j_2 - j_3, j_1 - m_1, j_2 + m_2)$
+        \noindent Where $K \equiv \text{max}(0, j_2 - j_3 - M-1, j_1 - j_3 + m_2)$, and $N \equiv \text{min}(j_1 + j_2 - j_3, j_1 - m_1, j_2 + m_2)$. This provides a closed form solution to any angular integrals involving three angular momenta. This technique can be applied to systems with a singular spherical harmonic by coupling two more systems with some angular momenta into the problem. This is allowed because of equation \eqref{eq:delta_spherical_harmonic}, where as long as we divide by the constants associated with the angular momenta we are coupling, is equivalent to multiplying the problem by then constant one. The equivalent expression of the problem in equation \eqref{eq:hydrogen_spherical_harmonic} for the ground state is\footnote{Since $\mathcal{Y}^0_0 (\theta, \phi) = \sqrt{\frac{1}{4\pi}}$, we multiply the result by $4\pi$ to make the multiplication of two more zeroed spherical harmonics equivalent to mulitplying by one, and maintain an equality between the LHS and RHS of the equation.}
+            \begin{align}
+                I_{\text{angular}} = 4\pi \int_0^\pi \int_0^{2\pi}\sin \theta \;\mathcal{Y}^0_0 (\theta, \phi) \mathcal{Y}^0_0 (\theta, \phi) \mathcal{Y}^0_0 (\theta, \phi)\; d\theta d\phi
+            \end{align}
+        which using the Wigner-3j symbols simplifies to:
+        \begin{align}
+            I_{\text{angular}} = 4\pi \sqrt{\frac{(2l + 1)}{4 \pi}} \begin{pmatrix}
+                0 & 0 & 0 \\
+                0 & 0 & 0
+            \end{pmatrix} \begin{pmatrix}
+                0 & 0 & 0 \\
+                0 & 0 & 0 
+            \end{pmatrix} \nonumber
+        \end{align}
+
+        We now have: 
+
+        \begin{align}
+            I_{\text{angular}} = \sqrt{4\pi}
+        \end{align}
+
+        Which is equivalent to the integration of the singular $\mathcal{Y}^0_0$ integral by itself! This can be done for any angular momentum and magnetic quantum number, and will always yield the same result. The ability to substitute the angular part of the integral with a closed form solution in terms of Wigner-3j symbols allows for easy computation providing exact analytic solutions to part of the problem being discussed. While this is typically used for systems where the coupling of 3 angular momenta is necessary, this coupling can be exploited into a sort of pseudo-coupling which we can use to greatly simplify a normally unpleasant calculation.
+
+        Additionally, we can further exploit the fact that spherical harmonics form a complete set of orthogonal basis functions, we can express any function of $\theta$ and $\phi$ as a linear combination of spherical harmonics. This technique allows us to replace any matrix element containing an angular contribution (such as $\cos \theta$, as seen in Sec.~\ref{sec:Zeeman-Effect}) with a linear combination of spherical harmonic functions. We can then apply the same process of integration utilizing the Wigner-3j coefficients to compute the matrix element without having to perform any actual integration.
+
 
         \subsection{The radial part} \label{sec:The_Radial_Part}
             The radial part of the hydrogenic wavefunction will exploit the general form of $R_{nl}(r)$, stated in equation \ref{eq:radial_equation}. The perturbed wavefunctions will thus also resemble a similar form since they serve as small corrections to the original solution\footnote{See Sec.~\ref{sec:Perturbation_Theory} for more details.}. Removing the terms not dependant on $r$ outside of the integrand (which are dependant on the perturbed wavefunction being investigated as well as the angular momentum and principle quantum numbers), we are always left with a series of integrals that resemble the following form\footnote{This is shown explicitly in Sec.~\ref{sec:Laguerre_Polynomial}.}
