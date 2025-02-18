@@ -9,7 +9,7 @@
             \hbar = m_e = e = 4\pi \epsilon_0 = 1
         \end{align}
 
-        \noindent Scaling these units out of the problem greatly simplifies our calculation, and once a result is found, one can multiply the unscaled units back into the answer to retrieve the desired result in standard SI units. While this was proposed long before the field of computational physics emerged, it is of key importance that one implements this technique for any atomic physics simulation. Machine error is an unavoidable reality of programmed computation and working in units which avoids extreme values both large and small can help mitigate the uncertainty present in high precision calculations.
+        \noindent Scaling these units out of the problem greatly simplifies our calculation, and once a result is found, one can multiply the unscaled units back into the answer to retrieve the desired result in standard SI units. While the use of atomic units was proposed long before the field of computational physics emerged, it is of key importance that one implements this technique for any atomic physics simulation. Machine error is an unavoidable reality of programmed computation and working in units which avoids extreme values both large and small can help mitigate the uncertainty present in high precision calculations.
 
         A consequence of utilizing atomic units is the need to redefine key fundamental physical quantities in terms of these scaled values. An example of key importance in the investigation of the higher-order Zeeman effect is the atomic unit of magnetic field strength, otherwise referred to as the atomic unit of magnetic flux density \ref{Atomic_unit_of_field_strength}.
 
@@ -55,16 +55,10 @@
             V(\vec{r}) = -\frac{Z e^2}{4\pi \epsilon_0 \vec{r}}
         \end{align}
 
-        In atomic units the expression simplifies to the following
-
-        \begin{align}
-            V(\vec{r}) = -\frac{Z}{\vec{r}}
-        \end{align}
-
         \noindent We can write the energy of the system using the Hamiltonian, where our potential is the Coulomb potential. We then come up with 
 
         \begin{align}
-            H = \frac{p^2}{2m} - \frac{Z}{\vec{r}}
+            H = \frac{p^2}{2m} -\frac{Z e^2}{4\pi \epsilon_0 \vec{r}}
         \end{align}
 
         \noindent However, quantum mechanics dictates that all observable quantities must be determined by hermitian operators that act on the wavefunction $\psi$. The wavefunction $\psi$ is described as a normalized vector in Hilbert space, $\mathcal{H}$ containing all information pertaining to the system. This means that the momentum needs to be a hermitian operator that acts on the wavefunction, and that our Hamiltonian is also a hermitian operator that satisfies the following eigenvalue problem 
@@ -73,10 +67,10 @@
             \hat{H} \vert\psi \rangle = E_n \vert \psi \rangle
         \end{align}
 
-        This is what is known as the Schrödinger equation. It can be applied to our two-body problem by substituting the momentum for its quantum operator analog. This results in the following expression in atomic units 
+        This is what is known as the Schrödinger equation. It can be applied to our two-body problem by substituting the momentum for its quantum operator analog. This results in the following expression 
 
         \begin{align}
-            \hat{H} \psi  = \frac{1}{2} \nabla^2 \psi - \frac{Z}{r} \psi = E_n \psi 
+            \hat{H} \psi  = \frac{-\hbar^2}{2m_e} \nabla^2 \psi -\frac{Z e^2}{4\pi \epsilon_0 \vec{r}} \psi = E_n \psi 
         \end{align}
 
         We now have a second-order partial differential equation. Assuming a separable solution allows one to split the solution to any hydrogenic system into two parts; The radial part and the angular part.
@@ -115,10 +109,44 @@
         While this may look obvious, it is only from the fact that the wavefunctions are separable that allows us to split the problem apart. The section serves as a general introduction to the process of calculating matrix elements, but Sec.~\ref{sec:The_Angular_Part} and Sec.~\ref{sec:The_Radial_Part} will discuss further the specifics and techniques used to calculate each piece of the solution.
 
         \subsection{The angular part} \label{sec:The_Angular_Part}
-        % As mentioned previously, the angular part of the 
-        % \begin{align}
-        %     I_{\text{angular}} = \int_0^\pi \int_0^{2\pi}\sin \theta \mathcal{Y}^m_l (\theta, \phi) \; d\theta d\phi 
-        % \end{align}
+        As mentioned previously, the angular part of the solution to Hydrogen is as follows
+        \begin{align}
+            I_{\text{angular}} = \int_0^\pi \int_0^{2\pi}\sin \theta \;\mathcal{Y}^m_l (\theta, \phi) \; d\theta d\phi 
+        \end{align}
+
+        Since we will be using the Hydrogenic wavefunctions to calculate matrix elements for the higher order Zeeman effect, we expect to see integrals of this form with one or more spherical harmonics within the integrand. Depending on the angular momentum quantum number and the magnetic quantum number, these spherical harmonics may be easy or quite difficult to integrate. However, we can simplify the calculation of the angular integrals by exploiting the nature of the spherical harmonic function. Since it forms a complete set of orthogonal basis functions, for any integral involving two spherical harmonics we can write:
+
+        \begin{align}
+            \int_0^\pi \int_0^{2\pi} \mathcal{Y}^m_l(\theta, \phi) \mathcal{Y}^{m^\prime}_{l^\prime} (\theta, \phi) \; d\theta d\phi = \delta_{ll^\prime} \delta_{mm^\prime}
+        \end{align}
+
+        So for all angular integrals where the spherical harmonics contain different angular momentum and magnetic quantum numbers, the result will be zero. However, if given a scenario where we need to couple three angular momenta together (i.e, we have three spherical harmonic functions to integrate), we can use the Wigner 3j symbols to couple the angular momenta in replacement of the integral. The Wigner 3j symbols are defined as \ref{Wigner-3j}
+
+        \begin{align}
+            \int_0^\pi \int_0^{2\pi} \sin \theta \; d\theta d\phi\;& \mathcal{Y}^{m_1}_{l_1}(\theta, \phi) \mathcal{Y}^{m_2}_{l_2} (\theta, \phi) \mathcal{Y}^{m_3}_{l_3} (\theta, \phi) =\\
+             &\sqrt{\frac{(2l_1 + 1)(2l_2 + 1) (2l_3 + 1)}{4 \pi}} \begin{pmatrix}
+                l_1 & l_2 & l_3 \\
+                0 & 0 & 0
+            \end{pmatrix} \begin{pmatrix}
+                l_1 & l_2 & l_3 \\
+                m_1 & m_2 & m_3 
+            \end{pmatrix} \nonumber
+        \end{align}
+
+        Where the set of $6$ parameters inside the brackets at the end of the expression is called a $3$j Symbol, which has the following definiton:
+
+        \begin{align}
+            \begin{pmatrix}
+                j_1 & j_2 & j_3\\
+                m_1 & m_2 & m_3
+            \end{pmatrix} &= \delta(m_1 + m_2 + m_3, 0) (-1)^{j_1 - j_2 - m_3} \;\times \\
+            & \sqrt{\frac{(j_1 + j_2 - j_3)! (j_1 - j_2 + j_3)!(-j_1 + j_2 + j_3)!}{(j_1 + j_2 + j_3 + 1)!}} \;\times \nonumber \\
+            &\sqrt{(j_1 - m_1)!(j_1 + m_1)!(j_2 + m_2)!(j_3 - m_3)! (j_3 + m_3)!} \;\times \nonumber\\
+             &\sum_{N}^{K} \frac{(-1)^k}{k!(j_1 + j_2 - j_3 - k)!(j_1 - m_1 - k)!(j_2  + m_2 - k)!(j_3 - j_1 + m_1 + k)!(j_3 - j_1 - m_2 + k)!}\nonumber
+        \end{align}
+
+        Where $K \equiv \text{max}(0, j_2 - j_3 - M-1, j_1 - j_3 + m_2)$, and $N \equiv \text{min}(j_1 + j_2 - j_3, j_1 - m_1, j_2 + m_2)$
+
         \subsection{The radial part} \label{sec:The_Radial_Part}
             The radial part of the hydrogenic wavefunction will exploit the general form of $R_{nl}(r)$, stated in equation \ref{eq:radial_equation}. The perturbed wavefunctions will thus also resemble a similar form since they serve as small corrections to the original solution\footnote{See Sec.~\ref{sec:Perturbation_Theory} for more details.}. Removing the terms not dependant on $r$ outside of the integrand (which are dependant on the perturbed wavefunction being investigated as well as the angular momentum and principle quantum numbers), we are always left with a series of integrals that resemble the following form\footnote{This is shown explicitly in Sec.~\ref{sec:Laguerre_Polynomial}.}
 
@@ -126,7 +154,7 @@
                 I_{\text{radial}} = \int_0^\infty r^j e^{-\alpha r}
             \end{align}
 
-            Where $j \in \mathbb{Z}$, and $\alpha \in \mathbb{R}$. This integral is a special one, being in the form of the Gamma function integral\footnote{This function is technically Gamma function-esque, but can be manipulated into the form of the Gamma function. This is shown in greater detail in Sec.~\ref{sec:Gamma_Function}.}, $\Gamma(z)$. The Gamma function integral has the following solution 
+            Where $j \in \mathbb{R}$, and $\alpha \in \mathbb{R}$. This integral is a special one, being in the form of the Gamma function integral\footnote{This function is technically Gamma function-esque, but can be manipulated into the form of the Gamma function. This is shown in greater detail in Sec.~\ref{sec:Gamma_Function}.}, $\Gamma(z)$. The Gamma function integral has the following solution 
 
             \begin{align}
                 \int_0^\infty r^j e^{-\alpha r} = \frac{\Gamma(j + 1)}{\alpha^{j + 1}}
@@ -140,7 +168,7 @@
 
             Fitting the integrals to the Gamma function not only makes the task of computing the integrals significantly easier, but also makes the integration computationally stable. The solution provides a simple formula to implement when calculating radial integrals, and allows one to skip the implementation of well known integration methods such as Simpson's rule or any Runge-Kutta methods. While these methods are powerful, they do have significant drawbacks compared to the derived formula due to error propagation and machine-precision.
             
-            The ability to compute these radial hydrogenic wavefunction integrals exactly is not only a satisfying result mathematically, but opens the door for more difficult problems in atomic physics where machine error is the determining step in the accuracy of a high-precision calculation\footnote{Such problems include the calculation of Hylleraas wavefunctions for three body atomic systems such as H$^-$, He, or Li$^+$.}.
+            The ability to compute these radial hydrogenic wavefunction integrals exactly is not only a satisfying result mathematically, but opens the door for more difficult problems in atomic physics where machine error is the determining step in the accuracy of a high-precision calculation\footnote{Such problems include the calculation of Hylleraas wavefunctions for three body atomic systems such as H$^-$, He, or Li$^+$, where the radial integrals follow a similar but more complex closed form solution.}.
             
             
 
