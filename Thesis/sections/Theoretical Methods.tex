@@ -48,7 +48,7 @@
         Applying this technique to problems in atomic physics gives a powerful way of simplifying calculations while providing an easy conversion factor to SI units for comparison of theory and experiment. This dissertation will discuss all equations and quantities in atomic units unless further specified otherwise.
 
 
-    \section{One-electron Shrödinger equation} \label{sec:Schrodinger_Equation}
+    \section{One-electron Schrödinger equation} \label{sec:Schrodinger_Equation}
         Discovered by Schrödinger in 1926, the Schrödinger equation is a non-relativistic solution to the two body problem involving an orbiting electron and its nucleus\footnote{It is assumed here that the nucleus is a point particle with infinite mass.}. The electron interacts with the nucleus via the Coulomb interaction described by the following potential
 
         \begin{align}
@@ -94,19 +94,19 @@
         Where $l$ is the angular momentum quantum number, $m$ is the magnetic quantum number, and $P_l^m (\cos \theta)$ is the associated Legendre polynomial (which I will discuss further in Appendix \ref{sec:Legendre_Polynomial}). A key feature of the spherical harmonics which I will utilize in Sec.~\ref{sec:Integration_Techniques} is that the spherical harmonics form a normalized complete set of orthogonal basis functions. The ability to separate the solution into two independant parts plays a crucial role in simplifying the task at hand and will be exploited when evaluating integrals involving these wavefunctions in Chapter~\ref{sec:Zeeman-Effect}.
 
     \section{Integration Techniques} \label{sec:Integration_Techniques}
-        In this section of the dissertation, I will discuss the standard approach to solving the integrals pertaining to the various matrix elements required throughout. As discussed in the previous section, the ability to separate the solution into a radial part as well as an angular part significantly simplifies the solution process. Instead of having to integrate a single function over all three dimensions in spherical coordinates, we can split the solution into two steps which can be calculated independantly.
+        In this section of the dissertation, I will discuss the standard approach to solving the integrals pertaining to the various matrix elements required throughout. A matrix element is an operator - usually a perturbed Hamiltonian, that is used to approximate the behaviour of quantum systems under small disturbances. Calculating thier expectation values gives insight to the systems behaviour, revealing properties such as transition rates or behaviour in an external field \ref{}. The calculation of these matrix elements requires integration over the states as well as the operator acting on a state, which can involve radial and angular pieces. As discussed in the previous section, the ability to separate the solution into a radial part as well as an angular part significantly simplifies the solution process. Instead of having to integrate a single function over all three dimensions in spherical coordinates, we can split the solution into two steps which can be calculated independantly.
 
         \begin{align}
-            \langle \psi^n \vert V \vert \psi_m \rangle = \int_{0}^{\infty} r^2 \; \psi^n(r) V(r) \psi^m(r) \; dr \int_\Omega \sin \theta \; \psi^n(\theta, \phi) V(\theta, \phi) \psi^m(\theta, \phi) \; d\Omega
+            \langle \psi^n \vert V \vert \psi^m \rangle = \int_{0}^{\infty} r^2 \; \psi^n(r) V(r) \psi^m(r) \; dr \int_\Omega \sin \theta \; \psi^n(\theta, \phi) V(\theta, \phi) \psi^m(\theta, \phi) \; d\Omega
         \end{align}
 
         Where $\Omega$ represents the solid angles for $\theta$ and $\phi$. The total problem can then be solved with the simple combination of calculated integrals.
 
         \begin{align}
-             \langle \psi^n \vert V \vert \psi_m \rangle = I_{\text{radial}} \cdot I_{\text{angular}}
+             \langle \psi^n \vert V \vert \psi^m \rangle = I_{\text{radial}} \cdot I_{\text{angular}}
         \end{align}
 
-        While this may look obvious, it is only from the fact that the wavefunctions are separable that allows us to split the problem apart. The section serves as a general introduction to the process of calculating matrix elements, but Sec.~\ref{sec:The_Angular_Part} and Sec.~\ref{sec:The_Radial_Part} will discuss further the specifics and techniques used to calculate each piece of the solution.
+        The section serves as a general introduction to the process of calculating matrix elements, but Sec.~\ref{sec:The_Angular_Part} and Sec.~\ref{sec:The_Radial_Part} will discuss further the specifics and techniques used to calculate each piece of the solution.
 
         \subsection{The angular part} \label{sec:The_Angular_Part}
         As mentioned previously, the angular part of the solution to Hydrogen is as follows
@@ -145,7 +145,7 @@
              &\sum_{N}^{K} \frac{(-1)^k}{k!(j_1 + j_2 - j_3 - k)!(j_1 - m_1 - k)!(j_2  + m_2 - k)!(j_3 - j_1 + m_1 + k)!(j_3 - j_1 - m_2 + k)!}\nonumber
         \end{align}
 
-        \noindent Where $K \equiv \text{max}(0, j_2 - j_3 - M-1, j_1 - j_3 + m_2)$, and $N \equiv \text{min}(j_1 + j_2 - j_3, j_1 - m_1, j_2 + m_2)$. This provides a closed form solution to any angular integrals involving three angular momenta. This technique can be applied to systems with a singular spherical harmonic by coupling two more systems with some angular momenta into the problem. This is allowed because of equation \eqref{eq:delta_spherical_harmonic}, where as long as we divide by the constants associated with the angular momenta we are coupling, is equivalent to multiplying the problem by then constant one. The equivalent expression of the problem in equation \eqref{eq:hydrogen_spherical_harmonic} for the ground state is\footnote{Since $\mathcal{Y}^0_0 (\theta, \phi) = \sqrt{\frac{1}{4\pi}}$, we multiply the result by $4\pi$ to make the multiplication of two more zeroed spherical harmonics equivalent to mulitplying by one, and maintain an equality between the LHS and RHS of the equation.}
+        \noindent Where $K \equiv \text{max}(0, j_2 - j_3 - M-1, j_1 - j_3 + m_2)$, and $N \equiv \text{min}(j_1 + j_2 - j_3, j_1 - m_1, j_2 + m_2)$. This provides a closed form solution to any angular integrals involving three angular momenta. This technique can be applied to systems with a singular spherical harmonic by coupling two more systems with some angular momenta into the problem. This is allowed because of equation \eqref{eq:delta_spherical_harmonic}, where as long as we divide by the constants associated with the angular momenta we are coupling, is equivalent to multiplying the problem by the constant one. The equivalent expression of the problem in equation \eqref{eq:hydrogen_spherical_harmonic} for the ground state is\footnote{Since $\mathcal{Y}^0_0 (\theta, \phi) = \sqrt{\frac{1}{4\pi}}$, we multiply the result by $4\pi$ to make the multiplication of two more zeroed spherical harmonics equivalent to mulitplying by one, and maintain an equality between the LHS and RHS of the equation.}
             \begin{align}
                 I_{\text{angular}} = 4\pi \int_0^\pi \int_0^{2\pi}\sin \theta \;\mathcal{Y}^0_0 (\theta, \phi) \mathcal{Y}^0_0 (\theta, \phi) \mathcal{Y}^0_0 (\theta, \phi)\; d\theta d\phi
             \end{align}
@@ -197,8 +197,108 @@
             
 
     \section{Perturbation Theory} \label{sec:Perturbation_Theory}
-        To quantify how a magnetic field affects atomic energy levels, we must determine the shifts induced by the Zeeman interaction. Since this interaction modifies the Hamiltonian slightly compared to the field-free case, we can utilize perturbation theory to provide a systematic way to approximate the new eigenvalues and eigenstates.
+        To quantify how a magnetic field affects atomic energy levels, we must determine the shifts induced by the Zeeman interaction. Since this interaction modifies the Hamiltonian slightly compared to the field-free case, we can utilize perturbation theory to provide a systematic way to approximate the new eigenvalues and eigenstates.\\
+
+        To start we can write the perturbed Hamiltonian as a sum of two terms
+
+        \begin{align}
+            \hat{H} = H^0 + \lambda H^\prime
+        \end{align}
+
+        Where $H^0$ is the standard Hamiltonian and $H^\prime$ is the perturbation. $\lambda$ is a small weighting coefficient which keeps the perturbation small. We can then expand the wavefunction and the energy of the system as a power series in $\lambda$
+
+        \begin{align}
+            \psi_n &= \psi_n^0 + \lambda \psi_n^1 + \lambda^2 \psi_n^2 + \dots\\
+            E_n &= E_n^0 + \lambda E_n^1 + \lambda^2 E_n^2 + \dots
+        \end{align}
+
+        Where each superscript is a higher order correction to the original wavefunction. Each higher order term is less impactful to the solution (by a factor of $\lambda$) but still contributes a small amount. We can write out the first order perturbation equation as the following
+
+        \begin{align}
+            \left( H^0 - E^0 \right) \vert \psi^1 \rangle = \left(V - E^1 \right) \vert \psi^0 \rangle
+        \end{align}
+
+        To find the first order correction to the energy, $E^1$, we simply multiply through by $\vert \psi^0 \rangle$
+
+        \begin{align}
+            \langle \psi^0 \vert H^0 - E^0 \vert \psi^1 \rangle = \langle \psi^0 \vert V \vert \psi^0 \rangle -E^1 \langle \psi^0  \vert \psi^0 \rangle
+        \end{align}
+
+        Which by orthogonality, makes the first term 0, and the last term 1. We then end up with
+
+        \begin{align}
+            E^1 = \langle \psi^0 \vert V \vert \psi^0 \rangle
+        \end{align}
+
+        In general, any higher order energy can be found with the following expression, which stems from the same process performed here for the first order energy
+        \begin{align}
+            E^n = \langle \psi_{n-1} \vert V \vert \psi_0 \rangle
+        \end{align}
+
+        Similarly to the standard quantum mechanical Hamiltonian, the perturbation equation is a second order partial differential equation. However, the perturbing term in the equation as well as the higher order corrections to the energy serve as inhomogenous terms, meaning we cannot use separation of variables. To solve this, we can assume that the higher order wavefunction is of the form of a power series, and use the method of Frobenius to check if a solution of this form exists. This will be discussed further in the following section. 
+
+        To calculate a higher order correction to the wavefunction, we repeat a similar process. This time starting with the second order equation
+        \begin{align}
+            \left( H^0 - E^0 \right) \vert \psi^2 \rangle = \left(V - E^1 \right) \vert \psi^1 \rangle + E^2 \vert \psi^0 \rangle
+        \end{align}
+
+        As it can be seen above, the second order solution requires the solution from the first order equation. The requirement of solving the previous correction in order to get the current one makes the processing of calculating higher order corrections quite laborious, and developming a method to solve for higher order corrections computationally removes the burden of solving lengthy equations by hand. The adaptation of solving the higher order perturbation equations computationlaly will be discussed in Sec.~\ref{sec:Program_perturbation}.
+
     \section{Recursion relations} \label{sec:Recursion_Relations}
+        When solving the perturbation equation, you end up with an inhomogeneous second order partial differential equation. To solve for the radial piece of the corrected wavefunction, one must use the method of Frobenius. The method of Frobenius involves assuming the solution is of the form of a power series, and then solving for terminating recursion relations to check if a solution exists. The method of solving these recurrence relations is what will be highlighted in the section below. 
+
+        A recurrence relation is an equation where the $n^{\text{th}}$ term of a sequence is dependant on some combination of its previous terms in the sequence. A simple example of a recurrence relation is the Fibonacci numbers
+
+        \begin{align}
+            F_n = F_{n - 1} + F_{n - 2}
+        \end{align}
+
+        But these equations can only be solved if there is a base case. A base case is the condition that somewhere, the sequence stops, or is no longer defined by its previous term. A good example of this is the factorial function. The $n^{\text{th}}$ factorial number is determined by 
+
+        \begin{align}
+            n! = n(n-1)!
+        \end{align}
+
+        Where $0!$ is not dependant on $-1!$, but is equivalent to $1$. The recurrence relation stops here. If the recurrence relation did not have a base case, and kept referring to the previous iteration forever, there would be no solution to $n!$. Recurrence relations can be written going downwards, as shown by the Fibonacci numbers and the factorial examples, or they can be written going upwards. This recurrence relation has a similar but less common form, where the $n-1^{\text{th}}$ term depends on the $n^{\text{th}}$ term. In this case, the recurrence can still be solved, but you must show that the base case lies somewhere above the current index of your recurrence, or you need to show that the sequence terminates. This means that after a certain point, you can prove that the series is equal to zero for every future term. This is best shown by the following recurrence relation 
+        \begin{align}
+            \sum_{j = 0}^\infty \left[ Z(j - 1) a_{j - 1} - \frac{j(j+1)}{2} a_j \right] r^{j - 2} = -\left(\frac{1}{r} + Z\right)
+        \end{align}
+
+        We can identify the recurrence relation by writing out values for different $j$ 
+
+        \begin{align}
+            j &= 0 & -Za_{-1} = 0&\\ \nonumber
+            j &= 1 & a_1 = -1&\\ \nonumber
+            j &= 2 & Za_1 - 3a_2 = -Z&\\ \nonumber
+            & & -Z + 3a_2 = -Z&\\ \nonumber
+            & & a_2 = 0&\\ \nonumber
+            j &= 3 & 2Za_2 + 6a_3 = 0&\\ \nonumber
+            & & a_3 = 0&\\ \nonumber
+            & \vdots & \vdots & \\
+        \end{align}
+
+        And we can see here that for every term after $a_1$, the series gives zero. Our recurrence relation was used for each iteration including the base case for $j = 0$ and we have shown that the sequence terminates, providing a non-divergent answer. If this was the solution to our PDE given by the Frobenius method, it would mean that the solution is in the form of a power series and the PDE is solved using our closed form solution.
+
     \section{The Dalgarno Interchange Theorem} \label{sec:Dalgarno_Interchange_Theorem}
+        Now that we have discussed the setup for solving our perturbation equation and the matrix elements associated with it, as well as laid the ground work for the Hydrogenic wavefunctions, we need a way to confirm our calculations. This presents itself as the Dalgarno Interchange Theorem. The theorem states that given any two perturbations $V$ and $W$, thier first order equations can be written as follows:
+
+        \begin{align}
+            \left( H^0 - E^0 \right) \psi^1 + V \psi^0 &= E^1 \psi^0 \label{eq:Dalgarno_1}\\
+            \left( H^0 - E^0 \right) \varphi^1 + W \psi^0 &= F^1 \psi^0 \label{eq:Dalgarno_2}
+        \end{align}
+
+        Multiplying equation \eqref{eq:Dalgarno_1} by $\varphi^1$ and equation \eqref{eq:Dalgarno_2} by $\psi^1$ and then subtracting \eqref{eq:Dalgarno_1} from \eqref{eq:Dalgarno_2} gives us
+
+        \begin{align}
+            \langle \psi^0 \vert V \vert \psi^1 \rangle - \langle \psi^0 \vert W \vert \varphi^1 \rangle = 0
+        \end{align}
+
+        Therefore 
+
+        \begin{align}
+            \langle \psi^0 \vert V \vert \psi_1 \rangle = \langle \psi^0 \vert W \vert \varphi^1 \rangle
+        \end{align}
+
+        So given any two perturbations, we can solve thier respective perturbation equations to retrieve $\varphi^1$ and $\psi^1$. Using these solutions we can compute two matrix elements with the perturbed wavefunction and its opposing perturbation from the other equation, and the result should be the same! This method serves as a check that our solutions are correct. Once I have calculated both perturbing terms for the magnetic dipole operator and the relativistic correction, I can apply the Dalgarno Interchange theorem to verify my calculations are successful.
     
     
