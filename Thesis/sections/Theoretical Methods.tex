@@ -3,12 +3,13 @@
         This chapter will provide an overview of all theoretical methods used throughout this dissertation. It will provide the theoretical building blocks upon which the dissertation is constructed, ranging from the set of units used in the problem, to perturbation equation solutions and methods for verifying calculations. As stated in the introduction, this thesis is based upon calculating matrix elements between two sets of wavefunctions connected by an operator. These matrix elements arise from perturbation theory and are necessary for computing energy shifts due to external fields such as those present in the higher-order Zeeman effect. The foundation of theory will be presented here, but the more specific calculations related to solving for the Zeeman effect will be presented in the relevant chapter below.
 
         The chapter will begin by first discussing atomic units in Sec.~\ref{sec:atomic_units}, then move on and introduce the Schrödinger equation for the one-electron problem as well as its solution for hydrogenic wavefunctions in Sec.~\ref{sec:Schrodinger_Equation}. Next, Perturbation Theory will be introduced in Sec.~\ref{sec:Perturbation_Theory}, and describe how it can be used to approximate the new eigenvalues and eigenstates of the Zeeman-perturbed Hamiltonian. Sec.~\ref{sec:Integration_Techniques} will discuss various integration techniques that will be implemented both analytically and programmatically in order to simplify the calculation process, followed by an introduction to solving recursion relations in Sec.~\ref{sec:Recursion_Relations}. This is the core step in determining the perturbed wavefunctions used throughout the rest of the study. Finally, this chapter will conclude with the discussion of the Dalgarno Interchange Theorem and how it can serve as a critical check on the correctness of the obtained perturbed wavefunctions.
-    \section{Atomic Units} \label{sec:atomic_units}    
-        First proposed by Hartree in November of 1928, atomic units have since become the standard across all of atomic physics. Atomic units were designed with the purpose of "\textit{eliminating various universal constants from equations and also to avoid high powers of 10 in numerical work}" \ref{atomic_units_definition}. Hartree proposed that we measure the mass in terms of the mass of the electron $m_e$, charge in terms of the electron charge, $e$, the vacuum permittivity in terms of $4\pi \epsilon_0$, and the angular momentum in terms of $\hbar$. Their standard definitions in both S.I. units and atomic units are stated in Table.~\ref{tab:units} \ref{hbar_value}\ref{electron_mass_value} \ref{electron_charge_value} \ref{fine_structure_value} \ref{speed_of_light_value} \ref{electric_permittivity_value}. Written mathematically we can say
 
-        \begin{figure}
+    \section{Atomic Units} \label{sec:atomic_units}    
+        First proposed by Hartree in November of 1928, atomic units have since become the standard across all of atomic physics. Atomic units were designed with the purpose of "\textit{eliminating various universal constants from equations and also to avoid high powers of 10 in numerical work}" \ref{atomic_units_definition}. Hartree proposed that physical quantities such as the mass are measured in terms of the mass of the electron $m_e$. The charge measured in terms of the electron charge, $e$, the vacuum permittivity in terms of $4\pi \epsilon_0$, and the angular momentum in terms of $\hbar$. Their standard definitions in both S.I. units and atomic units are stated in Table.~\ref{tab:units} \ref{hbar_value}\ref{electron_mass_value} \ref{electron_charge_value} \ref{fine_structure_value} \ref{speed_of_light_value} \ref{electric_permittivity_value}. Written mathematically;
+
+        \begin{figure}[b]
             \centering 
-            \label{tab:units}\caption{Table of fundamental constants expressed in S.I. units and atomic units.}
+            \label{tab:units}
             \resizebox{\columnwidth}{!}{
                 \begin{tabular}{|c|l|l|c|}
                     \hline
@@ -23,13 +24,14 @@
                     \hline     
                 \end{tabular}
             }
+            \caption{Table of fundamental constants expressed in S.I. units and atomic units.}
         \end{figure}
         
         \begin{align}
             \hbar = m_e = e = 4\pi \epsilon_0 = 1\;.
         \end{align}
 
-        \noindent Scaling these units out of the problem greatly simplifies the calculation, and once a result is found, one can multiply the unscaled units back into the answer to retrieve the desired result in standard SI units. While the use of atomic units was proposed long before the field of computational physics emerged, it is of key importance that one implements this technique for any atomic physics simulation. Machine error is an unavoidable reality of programmed computation and working in units which avoids extreme values both large and small can help mitigate the uncertainty present in high precision calculations.
+        \noindent Scaling these units out of the problem greatly simplifies the calculation. Once a result is found, one can multiply the unscaled units back into the answer to retrieve the desired result in standard SI units. While the use of atomic units can make any work done by hand much simpler to manage, it can also benefit numerical work that is done computationally. Machine error is an unavoidable reality of programmed solutions and working in units which avoids extreme values both large and small can help mitigate the uncertainty present in high precision calculations. This thesis will utilize atomic units both analytically and numerically to simplify the calculation process throughout.
 
         A consequence of utilizing atomic units is the need to redefine key fundamental physical quantities in terms of these scaled values. An example of key importance in the investigation of the higher-order Zeeman effect is the atomic unit of magnetic field strength, otherwise referred to as the atomic unit of magnetic flux density \ref{Atomic_unit_of_field_strength}.
 
@@ -43,7 +45,7 @@
             a_0 = \frac{4\pi \epsilon_0 \hbar^2}{e^2 m_e} = \frac{\hbar}{m_e c \alpha} \label{eq:bohr_radius}\;.
         \end{align}
 
-        The Bohr radius itself is defined using a similar combination of fundamental constants which after applying the rules for atomic units, should equal $1$. We can see now that all units in the atomic unit of field strength also become $1$ as intended. At the end of the problem, we can simply multiply the determined result by the atomic unit of magnetic field strength when its constants are not scaled to $1$, and retrieve the desired result in SI units. This is equivalent to multiplying the result in atomic units by \ref{Atomic_unit_of_field_strength}.
+        The Bohr radius itself is defined using a similar combination of fundamental constants which after applying the rules for atomic units, should equal $1$. It can now be seen that all units in the atomic unit of field strength also become $1$ as intended. At the end of the problem, the desired result in S.I units can be retrieved by simply multipling the determined result by the atomic unit of magnetic field strength when its constants are not scaled to $1$. This is equivalent to multiplying the result in atomic units by \ref{Atomic_unit_of_field_strength}.
 
         \begin{align}
             B_{\text{a.u.}} = 2.35051757077(73) \times 10^5 \text{ T}
@@ -51,7 +53,7 @@
 
         The numbers in parenthesis here denote the uncertainty of the quantity. Another key benefit in atomic units is that it allows us to define almost all fundamental quantities in terms of two constants; the speed of light, $c$ and the fine structure constant, $\alpha$. This allows one to express key physical laws in a way that highlights fundamental dimensionless relationships rather than specific unit-dependant values.\\
 
-        The fine structure constant was introduced in 1916 by Arnold Sommerfeld when he was investigating the gap in the spectral lines of the hydrogen atom. He compared his work with the Michelson Morley experiment from 1887 where the spectral lines were shown and it was deduced that the universe is not permeated by the aether \ref{Michelson_Morley_1887}. It is defined as the following dimensionless quantity
+        The fine structure constant was introduced in 1916 by Arnold Sommerfeld when he was investigating the gap in the spectral lines of the hydrogen atom \ref{Sommerfeld_1916}. He compared his work with the Michelson Morley experiment from 1887 where the spectral lines were shown and it was deduced that the universe is not permeated by the aether \ref{Michelson_Morley_1887}. It is defined as the following dimensionless quantity
 
         \begin{align}
             \alpha = \frac{e^2}{4\pi \epsilon_0 \hbar c} = 7.2973525643(11) \times 10^{-3}   
@@ -69,13 +71,13 @@
 
 
     \section{One-electron Schrödinger equation} \label{sec:Schrodinger_Equation}
-        Discovered by Schrödinger in 1926, the Schrödinger equation is a non-relativistic solution to any quantum-mechanical system. For now, we will consider the two-body problem with a nucleus and a single orbiting electron\footnote{It is assumed here that the nucleus is a point particle with infinite mass.}. The electron interacts with the nucleus via the Coulomb interaction described by the following potential
+        Discovered by Schrödinger in 1926, the Schrödinger equation is a non-relativistic solution to any quantum-mechanical system \ref{Schrödinger_1926}. Consider the two-body problem with a nucleus and a single orbiting electron\footnote{It is assumed here that the nucleus is a point particle with infinite mass.}. The electron interacts with the nucleus via the Coulomb interaction described by the following potential
 
         \begin{align}
             V(\vec{r}) = -\frac{Z e^2}{4\pi \epsilon_0 \vec{r}}\;.
         \end{align}
 
-        \noindent We can write the energy of the system using the Hamiltonian, where the potential is the Coulomb potential. We then come up with 
+        \noindent the energy of the system can be written using the Hamiltonian, where the potential is the Coulomb potential. This can be written as follows;
 
         \begin{align}
             H = \frac{p^2}{2m} -\frac{Z e^2}{4\pi \epsilon_0 \vec{r}}\;.
@@ -93,10 +95,10 @@
             \hat{H} \psi  = \frac{-\hbar^2}{2m_e} \nabla^2 \psi -\frac{Z e^2}{4\pi \epsilon_0 \vec{r}} \psi = E_n \psi 
         \end{align}
 
-        We now have a second-order partial differential equation. Assuming a separable solution allows one to split the solution to any hydrogenic system into two parts; The radial part and the angular part.
+        This is a second-order partial differential equation. Assuming a separable solution allows one to split the solution to any hydrogenic system into two parts; The radial part and the angular part.
 
         \begin{align}
-            \psi_{nlm} = R_{nl}(r) \mathcal{Y}^l_m (\cos \theta)
+            \psi_{nlm} = R_{nl}(r) Y^l_m (\cos \theta)
         \end{align}
 
         \noindent For a two body atomic system the solutions for each can be written in terms of Laguerre polynomials and Spherical Harmonics. The radial equation has the following solutions \ref{Atomic_Physics_Handbook}
@@ -108,13 +110,13 @@
         Where $Z$ is the nuclear charge atomic number, $l$ is the angular momentum quantum number, $n$ is the principle quantum number, and $L_{n - l - 1}^{(2l + 1)} (2Zr/n)$ is the generalized Laguerre polynomial (which is defined in Appendix \ref{sec:Laguerre_Polynomial}). Additionally, the spherical harmonics can be written as
 
         \begin{align}
-            \mathcal{Y}^m_l (\theta, \phi) = (-1)^m \sqrt{\frac{(2l + 1)}{4 \pi}\frac{(l - m)!}{(l + m)!}} P_l^m (\cos \theta) e^{i m \phi} \label{eq:angular_equation}
+            Y^m_l (\theta, \phi) = (-1)^m \sqrt{\frac{(2l + 1)}{4 \pi}\frac{(l - m)!}{(l + m)!}} P_l^m (\cos \theta) e^{i m \phi} \label{eq:angular_equation}
         \end{align}
 
         Where $l$ is the angular momentum quantum number, $m$ is the magnetic quantum number, and $P_l^m (\cos \theta)$ is the associated Legendre polynomial (which will be discussed further in Appendix \ref{sec:Legendre_Polynomial}). A key feature of the spherical harmonics which will be utilized in Sec.~\ref{sec:Integration_Techniques} is that the spherical harmonics form a normalized complete set of orthogonal basis functions. The ability to separate the solution into two independant parts plays a crucial role in simplifying the task at hand and will be exploited when evaluating integrals involving these wavefunctions in Chapter~\ref{sec:Zeeman-Effect}.
 
     \section{Integration Techniques} \label{sec:Integration_Techniques}
-        In this section of the dissertation, standard approach to solving the integrals pertaining to the various matrix elements required throughout will be discussed. A matrix element is an operator - usually a perturbed Hamiltonian, that is used to approximate the behaviour of quantum systems under small disturbances. Calculating thier expectation values gives insight to the system's behaviour, revealing properties such as transition rates or behaviour in an external field \ref{}. The calculation of these matrix elements requires integration over the states as well as the operator acting on a state, which can involve radial and angular pieces. As discussed in the previous section, the ability to separate the solution into a radial part as well as an angular part significantly simplifies the solution process relative to a direct calculation. Instead of having to integrate a single function over all three dimensions in spherical coordinates, we can split the solution into two steps which can be calculated independantly.
+        In this section of the dissertation, standard approach to solving the integrals pertaining to the various matrix elements required throughout will be discussed. A matrix element is an operator - usually a perturbed Hamiltonian, that is used to approximate the behaviour of quantum systems under small disturbances. Calculating thier expectation values gives insight to the system's behaviour, revealing properties such as transition rates or behaviour in an external field \ref{}. The calculation of these matrix elements requires integration over the states as well as the operator acting on a state, which can involve radial and angular pieces. As discussed in the previous section, the ability to separate the solution into a radial part as well as an angular part significantly simplifies the solution process relative to a direct calculation. Instead of having to integrate a single function over all three dimensions in spherical coordinates, the solution can be split into two steps which can be calculated independantly.
 
         \begin{align}
             \langle \psi^n \vert V \vert \psi^m \rangle = \int_{0}^{\infty} r^2 \; \psi^n(r) V_r \psi^m(r) \; dr \int_\Omega \sin \theta \; \psi^n(\theta, \phi) V_\Omega \psi^m(\theta, \phi) \; d\Omega
@@ -134,16 +136,16 @@
             I_{\text{angular}} = \int_\Omega \sin \theta \; \psi^n(\theta, \phi) V_\Omega \psi^m(\theta, \phi) \; d\Omega \label{eq:hydrogen_spherical_harmonic}
         \end{align}
 
-        Since we will be using the Hydrogenic wavefunctions to calculate matrix elements for the higher order Zeeman effect, we expect to see integrals of this form with one or more spherical harmonics within the integrand. Depending on the angular momentum quantum number and the magnetic quantum number, these spherical harmonics may be easy or quite difficult to integrate. However, we can simplify the calculation of the angular integrals by exploiting the nature of the spherical harmonic function. Since it forms a complete set of orthogonal basis functions, for any integral involving two spherical harmonics we can write:
+        Since hydrogenic wavefunctions will be used to calculate matrix elements for the higher order Zeeman effect, integrals of this form with one or more spherical harmonics within the integrand will appear. The calculation of the angular integrals can be simplified by exploiting the nature of the spherical harmonic function. Since it forms a complete set of orthogonal basis functions, for any integral involving $\theta$ and $\phi$, the integrand can be written in terms of spherical harmonic functions. Using the orthogonality of the basis functions the integral of any two spherical harmonics can be written as
 
         \begin{align}
-            \int_0^\pi \int_0^{2\pi} \mathcal{Y}^m_l(\theta, \phi) \mathcal{Y}^{m^\prime}_{l^\prime} (\theta, \phi) \; d\theta d\phi = \delta_{ll^\prime} \delta_{mm^\prime}\label{eq:delta_spherical_harmonic}
+            \int_0^\pi \int_0^{2\pi} Y^m_l(\theta, \phi) Y^{m^\prime}_{l^\prime} (\theta, \phi) \; d\theta d\phi = \delta_{ll^\prime} \delta_{mm^\prime}\label{eq:delta_spherical_harmonic}\;.
         \end{align}
 
-        This rule is extendable to any number of coupled spherical harmonics. For all angular integrals where the spherical harmonics contain different angular momentum and magnetic quantum numbers, the result will be zero. However, if given a scenario where we need to couple three angular momenta together (i.e, we have three spherical harmonic functions to integrate), we can use the Wigner 3j symbols to couple the angular momenta in replacement of the integral. The Wigner 3j symbols are defined as \ref{Wigner-3j}
+        For all angular integrals where the spherical harmonics contain different angular momentum or magnetic quantum numbers, the result will be zero. If given a scenario where three angular momenta are coupled together (i.e, there are three spherical harmonic functions to integrate), the Wigner 3j symbols can be used to couple the angular momenta in replacement of the integral. The Wigner 3j symbols are defined as \ref{Wigner-3j}
 
         \begin{align}
-            \int_0^\pi \int_0^{2\pi} \sin \theta \; d\theta d\phi\;& \mathcal{Y}^{m_1}_{l_1}(\theta, \phi) \mathcal{Y}^{m_2}_{l_2} (\theta, \phi) \mathcal{Y}^{m_3}_{l_3} (\theta, \phi) =\\
+            \int_0^\pi \int_0^{2\pi} \sin \theta \; d\theta d\phi\;& Y^{m_1}_{l_1}(\theta, \phi) Y^{m_2}_{l_2} (\theta, \phi) Y^{m_3}_{l_3} (\theta, \phi) =\\
              &\sqrt{\frac{(2l_1 + 1)(2l_2 + 1) (2l_3 + 1)}{4 \pi}} \begin{pmatrix}
                 l_1 & l_2 & l_3 \\
                 0 & 0 & 0
@@ -153,139 +155,130 @@
             \end{pmatrix} \nonumber
         \end{align}
 
-        Where the set of $6$ parameters inside the brackets at the end of the expression is called a $3$j Symbol, which has the following definiton:
+        Where the set of $6$ parameters inside the brackets at the end of the expression is called a $3$j Symbol, which has the following definiton \ref{edmonds_book}:
 
-        \begin{align}
+        \begin{align} \label{3j_1}
             &\begin{pmatrix}
                 j_1 & j_2 & j_3\\
                 m_1 & m_2 & m_3
-            \end{pmatrix} = \delta(m_1 + m_2 + m_3, 0) (-1)^{j_1 - j_2 - m_3} \;\times \\
-            & \sqrt{\frac{(j_1 + j_2 - j_3)! (j_1 - j_2 + j_3)!(-j_1 + j_2 + j_3)!}{(j_1 + j_2 + j_3 + 1)!}} \;\times \nonumber \\
-            &\sqrt{(j_1 - m_1)!(j_1 + m_1)!(j_2 + m_2)!(j_3 - m_3)! (j_3 + m_3)!} \;\times \nonumber\\
-             &\sum_{N}^{K} \frac{(-1)^k}{k!(j_1 + j_2 - j_3 - k)!(j_1 - m_1 - k)!(j_2  + m_2 - k)!(j_3 - j_1 + m_1 + k)!(j_3 - j_1 - m_2 + k)!}\nonumber
+            \end{pmatrix} = (-1)^{j_1 - j_2 - m_3} \left( 2j_2 + 1\right)^{\frac{1}{2}} \langle j_1, m_1, j_2, m_2 \vert j_1, j_2, j_3 - m_3 \rangle
         \end{align}
 
-        \noindent Where $K \equiv \text{max}(0, j_2 - j_3 - M-1, j_1 - j_3 + m_2)$, and $N \equiv \text{min}(j_1 + j_2 - j_3, j_1 - m_1, j_2 + m_2)$. This provides a closed form solution to any angular integrals involving three angular momenta. This technique can be applied to systems with a singular spherical harmonic by coupling two more systems with some angular momenta into the problem. This is allowed because of equation \eqref{eq:delta_spherical_harmonic}, where as long as we divide by the constants associated with the angular momenta we are coupling, is equivalent to multiplying the problem by the constant one. The equivalent expression of the problem in equation \eqref{eq:hydrogen_spherical_harmonic} for the ground state is\footnote{Since $\mathcal{Y}^0_0 (\theta, \phi) = \sqrt{\frac{1}{4\pi}}$, we multiply the result by $4\pi$ to make the multiplication of two more zeroed spherical harmonics equivalent to mulitplying by one, and maintain an equality between the LHS and RHS of the equation.}
-            \begin{align}
-                I_{\text{angular}} = 4\pi \int_0^\pi \int_0^{2\pi}\sin \theta \;\mathcal{Y}^0_0 (\theta, \phi) \mathcal{Y}^0_0 (\theta, \phi) \mathcal{Y}^0_0 (\theta, \phi)\; d\theta d\phi
-            \end{align}
-        which using the Wigner-3j symbols simplifies to:
+        Where $\langle j_1, m_1, j_2, m_2 \vert j_1, j_2, j_3, - m_3 \rangle$ is known as a vector coupling coefficient and is defined as \ref{edmonds_book}
+
+        \small
         \begin{align}
-            I_{\text{angular}} = 4\pi \sqrt{\frac{(2l + 1)}{4 \pi}} \begin{pmatrix}
-                0 & 0 & 0 \\
-                0 & 0 & 0
-            \end{pmatrix} \begin{pmatrix}
-                0 & 0 & 0 \\
-                0 & 0 & 0 
-            \end{pmatrix} \nonumber
+            \langle &j_1, m_1, j_2, m_2 \vert j_1, j_2, j, m \rangle = \delta(m_1 + m_2 + m) \;\times \label{3j_2}\\
+            &\sqrt{\frac{(2j+1)(j_1 + j_2 - j)!(j_1 - j_2 + j)!(-j_1 + j_2 + j)!}{(j_1 + j_2 + j + 1)!}}\;\times \nonumber\\
+            &\sqrt{(j_1 + m_1)!(j_1 - m_1)!(j_2 + m_2)!(j_2 - m_2)!(j+m)!(j-m)!} \; \times \nonumber\\
+            & \sum_z \frac{(-1)^z}{z!(j_1 + j_2 - j - z)!(j_1 - m_1 - z)!(j_2 + m_2 - z)!(j-j_2+m_1+z)!(j-j_1-m_2 + z)!} \nonumber
         \end{align}
 
-        We now have: 
-
-        \begin{align}
-            I_{\text{angular}} = \sqrt{4\pi}
-        \end{align}
-
-        Which is equivalent to the integration of the singular $\mathcal{Y}^0_0$ integral by itself! This can be done for any angular momentum and magnetic quantum number, and will always yield the same result. The ability to substitute the angular part of the integral with a closed form solution in terms of Wigner-3j symbols allows for easy computation providing exact analytic solutions to part of the problem being discussed. While this is typically used for systems where the coupling of 3 angular momenta is necessary, this coupling can be exploited into a sort of pseudo-coupling which we can use to greatly simplify a normally unpleasant calculation.
-
-        Additionally, we can further exploit the fact that spherical harmonics form a complete set of orthogonal basis functions, we can express any function of $\theta$ and $\phi$ as a linear combination of spherical harmonics. This technique allows us to replace any matrix element containing an angular contribution (such as $\cos \theta$, as seen in Sec.~\ref{sec:Zeeman-Effect}) with a linear combination of spherical harmonic functions. We can then apply the same process of integration utilizing the Wigner-3j coefficients to compute the matrix element without having to perform any actual integration.
-
+        \normalsize
+        This provides a closed form solution to any angular integrals involving three angular momenta. Since the spherical harmonics form a complete set of orthonormal functions, any expression in terms of 3 or more angular momenta can be written by substituting linear combinations of spherical harmonics for the angular parts of the integral. The $3-j$ symbols can be applied to such a system allowing us to avoid the integral and replace it with the closed form solution in equations \eqref{3j_1} and \eqref{3j_2}. 
+    
+        The ability to substitute the angular part of the integral with a closed form solution in terms of Wigner-3j symbols allows for easy computation providing exact analytic solutions to part of the problem being discussed.
 
         \subsection{The radial part} \label{sec:The_Radial_Part}
-            The radial part of the hydrogenic wavefunction is $R_{nl}(r)$, stated in equation \ref{eq:radial_equation}. The perturbed wavefunctions will thus also resemble a similar form since they serve as small corrections to the original solution\footnote{See Sec.~\ref{sec:Perturbation_Theory} for more details.}. Removing the terms not dependant on $r$ outside of the integrand (which are dependant on the perturbed wavefunction being investigated as well as the angular momentum and principle quantum numbers), we are always left with a series of integrals that resemble the following form\footnote{This is shown explicitly in Sec.~\ref{sec:Laguerre_Polynomial}.}
+            The radial part of the hydrogenic wavefunction is $R_{nl}(r)$, stated in equation \ref{eq:radial_equation}. The perturbed wavefunctions will thus also resemble a similar form since they serve as small corrections to the original solution\footnote{See Sec.~\ref{sec:Perturbation_Theory} for more details.}. Removing the terms not dependant on $r$ outside of the integrand (which are dependant on the perturbed wavefunction being investigated as well as the angular momentum and principle quantum numbers), a series of integrals that resemble the following form emerge\footnote{This is shown explicitly in Sec.~\ref{sec:Laguerre_Polynomial}.}
 
             \begin{align}
                 I_{\text{radial}} = \int_0^\infty r^j e^{-\alpha r}
             \end{align}
 
-            Where $j \in \mathbb{R}$, and $\alpha \in \mathbb{R}$. This integral is a special one, being in the form of the Gamma function integral\footnote{This function is technically Gamma function-esque, but can be manipulated into the form of the Gamma function. This is shown in greater detail in Sec.~\ref{sec:Gamma_Function}.}, $\Gamma(z)$. The Gamma function integral has the following solution 
+            \noindent Where $j \in \mathbb{R}$, and $\alpha \in \mathbb{R}$. This integral is a special one, being in the form of the Gamma function integral\footnote{This function is technically Gamma function-esque, but can be manipulated into the form of the Gamma function. This is shown in greater detail in Sec.~\ref{sec:Gamma_Function}.}, $\Gamma(z)$. The Gamma function integral has the following solution 
 
             \begin{align}
                 \int_0^\infty r^j e^{-\alpha r} = \frac{\Gamma(j + 1)}{\alpha^{j + 1}}
             \end{align}
 
-            Where as long as $j + 1 \in \mathbb{Z}^{0,+}$, we can write
+            Where as long as $j + 1 \in \mathbb{Z}^{0,+}$, the Gamma function simplifies to a factorial, and the following relation emerges;
 
             \begin{align}
-                \int_0^\infty r^j e^{-\alpha r} = \frac{j!}{\alpha^{j + 1}}
+                \int_0^\infty r^j e^{-\alpha r} = \frac{j!}{\alpha^{j + 1}}\;.
             \end{align}
 
-            Fitting the integrals to the Gamma function not only makes the task of computing the integrals significantly easier, but also makes the integration computationally stable. The solution provides a simple formula to implement when calculating radial integrals, and allows one to skip the implementation of well known numerical integration methods such as Simpson's rule or any Runge-Kutta methods. While these methods are powerful, they do have significant drawbacks compared to the derived analytical solutions due to error propagation and machine-precision.
+            \noindent Fitting the integrals to the Gamma function not only makes the task of computing the integrals significantly easier, but also makes the integration computationally stable. The solution provides a simple formula to implement when calculating radial integrals, and allows one to skip the implementation of well known numerical integration methods such as Euler's method or any Runge-Kutta methods \ref{Numerical_recipes}. While these methods are powerful, they do have significant drawbacks compared to the derived analytical solutions due to error propagation and machine-precision.
             
             The ability to compute these radial hydrogenic wavefunction integrals exactly is not only a satisfying result mathematically, but opens the door for more difficult problems in atomic physics where machine error is the determining step in the accuracy of a high-precision calculation\footnote{Such problems include the calculation of Hylleraas wavefunctions for three body atomic systems such as H$^-$, He, or Li$^+$, where the radial integrals follow a similar but more complex closed form solution.}.
             
             
 
     \section{Perturbation Theory} \label{sec:Perturbation_Theory}
-        To quantify how a magnetic field affects atomic energy levels, we must determine the shifts induced by the Zeeman interaction. Since this interaction modifies the Hamiltonian slightly compared to the field-free case, we can utilize perturbation theory to provide a systematic way to approximate the new eigenvalues and eigenstates.\\
+        To quantify how a magnetic field affects atomic energy levels, the shifts induced by the Zeeman interaction must be determined. Since this interaction modifies the Hamiltonian slightly compared to the field-free case, perturbation theory can be utilized to provide a systematic way to approximate the new eigenvalues and eigenstates.\\
 
-        To start we can write the perturbed Hamiltonian as a sum of two terms
+        \noindent perturbed Hamiltonian can be written as a sum of two terms;
 
         \begin{align}
-            \hat{H} = H^0 + \lambda H^\prime
+            \hat{H} = H^0 + \lambda H^\prime\;.
         \end{align}
 
-        Where $H^0$ is the standard Hamiltonian and $H^\prime$ is the perturbation. $\lambda$ is a small weighting coefficient which keeps the perturbation small. We can then expand the wavefunction and the energy of the system as a power series in $\lambda$
+        \noindent Where $H^0$ is the standard Hamiltonian and $H^\prime$ is the perturbation. $\lambda$ is a small weighting coefficient which keeps the perturbation small. expanding the wavefunction and the energy of the system as a power series in $\lambda$ gives \ref{Griffiths_2018}
 
         \begin{align}
             \psi_n &= \psi_n^0 + \lambda \psi_n^1 + \lambda^2 \psi_n^2 + \dots\\
-            E_n &= E_n^0 + \lambda E_n^1 + \lambda^2 E_n^2 + \dots
+            E_n &= E_n^0 + \lambda E_n^1 + \lambda^2 E_n^2 + \dots\;.
         \end{align}
 
-        Where each superscript is a higher order correction to the original wavefunction. Each higher order term is less impactful to the solution (by a factor of $\lambda$) but still contributes a small amount. We can write out the first order perturbation equation as the following
+        \noindent Where each superscript is a higher order correction to the original wavefunction. Each higher order term is less impactful to the solution (by a factor of $\lambda$) but still contributes a small amount. The first order perturbation equation can be described as the following;
 
         \begin{align}
-            \left( H^0 - E^0 \right) \vert \psi^1 \rangle = \left(V - E^1 \right) \vert \psi^0 \rangle
+            \left( H^0 - E^0 \right) \vert \psi^1 \rangle = \left(V - E^1 \right) \vert \psi^0 \rangle\;.
         \end{align}
 
-        To find the first order correction to the energy, $E^1$, we simply multiply through by $\vert \psi^0 \rangle$
+        \noindent To find the first order correction to the energy, $E^1$, simply multiply through by $\vert \psi^0 \rangle$. This gives
 
         \begin{align}
-            \langle \psi^0 \vert H^0 - E^0 \vert \psi^1 \rangle = \langle \psi^0 \vert V \vert \psi^0 \rangle -E^1 \langle \psi^0  \vert \psi^0 \rangle
+            \langle \psi^0 \vert H^0 - E^0 \vert \psi^1 \rangle = \langle \psi^0 \vert V \vert \psi^0 \rangle -E^1 \langle \psi^0  \vert \psi^0 \rangle\;.
         \end{align}
 
-        Which by orthogonality, makes the first term 0, and the last term 1. This is because of the normalization condition for the fully perturbed wavefunction. The normalization condition states that for each order of the perturbation 
+        \noindent Which by orthogonality, makes the first term 0, and the last term 1. This is because of the normalization condition for the fully perturbed wavefunction. The normalization condition states that for each order of the perturbation 
         
         \begin{align}
             \langle \psi^n \vert \psi^n \rangle = 1\;.
         \end{align}
 
-        But since $\vert \psi^0 \rangle$ is already normalized, the first order correction must then also satisfy 
+        \noindent But since $\vert \psi^0 \rangle$ is already normalized, the first order correction must then also satisfy 
 
         \begin{align}
-            \langle \psi^0 \vert \psi^1 \rangle = 0
+            \langle \psi^0 \vert \psi^1 \rangle = 0\;.
         \end{align}
-        
-        Which ensures that the two states are orthogonal. We then end up with
+        \noindent Which ensures that the two states are orthogonal. The end result is
 
         \begin{align}
-            E^1 = \langle \psi^0 \vert V \vert \psi^0 \rangle
+            E^1 = \langle \psi^0 \vert V \vert \psi^0 \rangle\;.
         \end{align}
 
-        In general, any higher order energy can be found with the following expression, which stems from the same process performed here for the first order energy
+        In general, any higher order energy can be found with the following expression, which stems from the same process performed here for the first order energy.
         \begin{align}
-            E^n = \langle \psi_{n-1} \vert V \vert \psi_0 \rangle
+            E^n = \langle \psi_{n-1} \vert V \vert \psi_0 \rangle\;.
         \end{align}
 
-        Similarly to the standard quantum mechanical Hamiltonian, the perturbation equation is a second order partial differential equation. However, the perturbing term in the equation as well as the higher order corrections to the energy serve as inhomogenous terms, meaning we cannot use separation of variables. To solve this, we can assume that the higher order wavefunction is of the form of a power series, and use the method of Frobenius to check if a solution of this form exists. This will be discussed further in the following section. 
+        \noindent Similarly to the standard quantum mechanical Hamiltonian, the perturbation equation is a second order partial differential equation. However, the perturbing term in the equation as well as the higher order corrections to the energy serve as inhomogenous terms, meaning separation of variables cannot be used. To solve this, one can assume that the higher order wavefunction is of the form of a power series, and use the method of Frobenius to check if a solution of this form exists. This will be discussed further in the following section. 
 
-        To calculate a higher order correction to the wavefunction, we repeat a similar process. This time starting with the second order equation
+        To calculate a higher order correction to the wavefunction, a similar process is repeated. This time starting with the second order equation
         \begin{align}
-            \left( H^0 - E^0 \right) \vert \psi^2 \rangle = \left(V - E^1 \right) \vert \psi^1 \rangle + E^2 \vert \psi^0 \rangle
+            \left( H^0 - E^0 \right) \vert \psi^2 \rangle = \left(V - E^1 \right) \vert \psi^1 \rangle + E^2 \vert \psi^0 \rangle\;.
         \end{align}
 
-        As it can be seen above, the second order solution requires the solution from the first order equation. The requirement of solving the previous correction in order to get the current one makes the processing of calculating higher order corrections quite laborious, and developming a method to solve for higher order corrections computationally removes the burden of solving lengthy equations by hand. The adaptation of solving the higher order perturbation equations computationlaly will be discussed in Sec.~\ref{sec:Program_perturbation}.
+        \noindent As it can be seen above, the second order solution requires the solution from the first order equation. The requirement of solving the previous correction in order to get the current one makes the processing of calculating higher order corrections quite laborious, and developing a method to solve for higher order corrections computationally removes the burden of solving lengthy equations by hand. The adaptation of solving the higher order perturbation equations computationlaly will be discussed in Sec.~\ref{sec:Program_perturbation}.
 
     \section{Recursion relations} \label{sec:Recursion_Relations}
-        When solving the perturbation equation, you end up with an inhomogeneous second order partial differential equation. To solve for the radial piece of the corrected wavefunction, one must use the method of Frobenius. The method of Frobenius involves assuming the solution is of the form of a power series, and then solving for terminating recursion relations to check if a solution exists. The method of solving these recurrence relations is what will be highlighted in the section below. 
-
-        A recurrence relation is an equation where the $n^{\text{th}}$ term of a sequence is dependant on some combination of its previous terms in the sequence. A simple example of a recurrence relation is the Fibonacci numbers
-
+        When solving the perturbation equation, you end up with an inhomogeneous second order partial differential equation. To solve for the radial piece of the corrected wavefunction, one must use the method of Frobenius. The method of Frobenius was developed by Ferdinand Georg Frobenius in 1869 and is a method of solving equations of the following form \ref{Weber1869}:
+        
         \begin{align}
-            F_n = F_{n - 1} + F_{n - 2}
+            \frac{d^2 u}{dx^2} + \frac{d^2 u}{dy^2} + k^2 u = 0\;.
         \end{align}
 
-        But these equations can only be solved if there is a base case. A base case is the condition that somewhere, the sequence stops, or is no longer defined by its previous term. A good example of this is the factorial function. The $n^{\text{th}}$ factorial number is determined by 
+        \noindent The method of Frobenius involves assuming the solution is of the form of a power series, and then solving for terminating recursion relations to check if a solution exists. The method of solving these recurrence relations is what will be highlighted in the section below. 
+
+        A recurrence relation is an equation where the $n^{\text{th}}$ term of a sequence is dependant on some combination of its previous terms in the sequence. A simple example of a recurrence relation is the Fibonacci numbers \ref{Liber_Abaci}.
+
+        \begin{align}
+            F_n = F_{n - 1} + F_{n - 2}\;.
+        \end{align}
+
+        \noindent But these equations can only be solved if there is a base case. A base case is the condition that somewhere, the sequence stops, or is no longer defined by its previous term. A good example of this is the factorial function. The $n^{\text{th}}$ factorial number is determined by 
 
         \begin{align}
             n! = n(n-1)!
@@ -293,10 +286,10 @@
 
         Where $0!$ is not dependant on $-1!$, but is equivalent to $1$. The recurrence relation stops here. If the recurrence relation did not have a base case, and kept referring to the previous iteration forever, there would be no solution to $n!$. Recurrence relations can be written going downwards, as shown by the Fibonacci numbers and the factorial examples, or they can be written going upwards. This recurrence relation has a similar but less common form, where the $n-1^{\text{th}}$ term depends on the $n^{\text{th}}$ term. In this case, the recurrence can still be solved, but you must show that the base case lies somewhere above the current index of your recurrence, or you need to show that the sequence terminates. This means that after a certain point, you can prove that the series is equal to zero for every future term. This is best shown by the following recurrence relation 
         \begin{align}
-            \sum_{j = 0}^\infty \left[ Z(j - 1) a_{j - 1} - \frac{j(j+1)}{2} a_j \right] r^{j - 2} = -\left(\frac{1}{r} + Z\right)
+            \sum_{j = 0}^\infty \left[ Z(j - 1) a_{j - 1} - \frac{j(j+1)}{2} a_j \right] r^{j - 2} = -\left(\frac{1}{r} + Z\right)\;.
         \end{align}
 
-        We can identify the recurrence relation by writing out values for different $j$ 
+        \noindent The recurrence relation can be identified by writing out values for different $j$ 
 
         \begin{align}
             j &= 0 & -Za_{-1} = 0&\\ \nonumber
@@ -309,28 +302,30 @@
             & \vdots & \vdots & \\
         \end{align}
 
-        And we can see here that for every term after $a_1$, the series gives zero. The recurrence relation was used for each iteration including the base case for $j = 0$ and we have shown that the sequence terminates, providing a non-divergent answer. If this was the solution to the PDE given by the Frobenius method, it would mean that the solution is in the form of a power series and the PDE is solved using the closed form solution.
+        \noindent It can be seen here that for every term after $a_1$, the series gives zero. The recurrence relation was used for each iteration including the base case for $j = 0$ and it has been shown that the sequence terminates, providing a non-divergent answer. If this was the solution to the PDE given by the Frobenius method, it would mean that the solution is in the form of a power series and the PDE is solved using the closed form solution.
 
     \section{The Dalgarno Interchange Theorem} \label{sec:Dalgarno_Interchange_Theorem}
-        Now that we have discussed the setup for solving the perturbation equation and the matrix elements associated with it, as well as laid the ground work for the Hydrogenic wavefunctions, we need a way to confirm the calculations. This presents itself as the Dalgarno Interchange Theorem. The theorem states that given any two perturbations $V$ and $W$, thier first order equations can be written as follows:
+        Now that the setup for solving the perturbation equation, the matrix elements associated with it, and the ground work for the Hydrogenic wavefunctions has been laid out, a way to confirm the calculations is required. This presents itself as the Dalgarno Interchange Theorem. The theorem states that given any two perturbations $V$ and $W$, thier first order equations can be written as follows:
 
         \begin{align}
             \left( H^0 - E^0 \right) \psi^1 + V \psi^0 &= E^1 \psi^0 \label{eq:Dalgarno_1}\\
-            \left( H^0 - E^0 \right) \varphi^1 + W \psi^0 &= F^1 \psi^0 \label{eq:Dalgarno_2}
+            \left( H^0 - E^0 \right) \varphi^1 + W \psi^0 &= F^1 \psi^0 \label{eq:Dalgarno_2}\;.
         \end{align}
 
-        Multiplying equation \eqref{eq:Dalgarno_1} by $\varphi^1$ and equation \eqref{eq:Dalgarno_2} by $\psi^1$ and then subtracting \eqref{eq:Dalgarno_1} from \eqref{eq:Dalgarno_2} gives us
+        Multiplying equation \eqref{eq:Dalgarno_1} by $\varphi^1$ and equation \eqref{eq:Dalgarno_2} by $\psi^1$ and then subtracting \eqref{eq:Dalgarno_1} from \eqref{eq:Dalgarno_2} gives
 
         \begin{align}
-            \langle \psi^0 \vert V \vert \psi^1 \rangle - \langle \psi^0 \vert W \vert \varphi^1 \rangle = 0
+            \langle \psi^0 \vert V \vert \psi^1 \rangle - \langle \psi^0 \vert W \vert \varphi^1 \rangle = 0\;.
         \end{align}
 
-        Therefore 
+        \noindent Therefore 
 
         \begin{align}
-            \langle \psi^0 \vert V \vert \psi_1 \rangle = \langle \psi^0 \vert W \vert \varphi^1 \rangle
+            \langle \psi^0 \vert V \vert \psi_1 \rangle = \langle \psi^0 \vert W \vert \varphi^1 \rangle\;.
         \end{align}
 
-        So given any two perturbations, we can solve thier respective perturbation equations to retrieve $\varphi^1$ and $\psi^1$. Using these solutions we can compute two matrix elements with the perturbed wavefunction and its opposing perturbation from the other equation, and the result should be the same! This method serves as a check that the solutions are correct. Once the perturbing terms for the magnetic dipole operator and the relativistic correction have been calculated, the Dalgarno Interchange theorem can be used to verify that the calculations were successful.
+        So given any two perturbations, the respective perturbation equations can be solved to retrieve $\varphi^1$ and $\psi^1$. Using these solutions the two matrix elements can be computed with the perturbed wavefunction and its opposing perturbation from the opposing equation, and the result should be the same! This method serves as a check that the solutions are correct. Once the perturbing terms for the magnetic dipole operator and the relativistic correction have been calculated, the Dalgarno Interchange theorem can be used to verify that the calculations were successful.\\
+
+        The synthesis of all these methods is reached by perturbing the nuclear charge of the hydrogen atom to model a $^3$He$^+$ atom, and then solving the perturbation equation to find the higher order Zeeman effects. This will require the calculation of matrix elements for $\frac{1}{r}$ (The nuclear charge perturbation), and for the cubic Zeeman effect, the $r^2$ matrix element for relativistic effects. these matrix elements can be computed by utilizing the discussed integration techniques above, as well as verify the calculated results for each using the Dalgarno interchange theorem.
     
     
