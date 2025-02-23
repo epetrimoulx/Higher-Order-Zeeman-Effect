@@ -5,11 +5,10 @@
         The chapter will begin by first discussing atomic units in Sec.~\ref{sec:atomic_units}, then move on and introduce the Schrödinger equation for the one-electron problem as well as its solution for hydrogenic wavefunctions in Sec.~\ref{sec:Schrodinger_Equation}. Next, Perturbation Theory will be introduced in Sec.~\ref{sec:Perturbation_Theory}, and describe how it can be used to approximate the new eigenvalues and eigenstates of the Zeeman-perturbed Hamiltonian. Sec.~\ref{sec:Integration_Techniques} will discuss various integration techniques that will be implemented both analytically and programmatically in order to simplify the calculation process, followed by an introduction to solving recursion relations in Sec.~\ref{sec:Recursion_Relations}. This is the core step in determining the perturbed wavefunctions used throughout the rest of the study. Finally, this chapter will conclude with the discussion of the Dalgarno Interchange Theorem and how it can serve as a critical check on the correctness of the obtained perturbed wavefunctions.
 
     \section{Atomic Units} \label{sec:atomic_units}    
-        First proposed by Hartree in November of 1928, atomic units have since become the standard across all of atomic physics. Atomic units were designed with the purpose of "\textit{eliminating various universal constants from equations and also to avoid high powers of 10 in numerical work}" \ref{atomic_units_definition}. Hartree proposed that physical quantities such as the mass are measured in terms of the mass of the electron $m_e$. The charge measured in terms of the electron charge, $e$, the vacuum permittivity in terms of $4\pi \epsilon_0$, and the angular momentum in terms of $\hbar$. Their standard definitions in both S.I. units and atomic units are stated in Table.~\ref{tab:units} \ref{hbar_value}\ref{electron_mass_value} \ref{electron_charge_value} \ref{fine_structure_value} \ref{speed_of_light_value} \ref{electric_permittivity_value}. Written mathematically;
+        First proposed by Hartree in November of 1928, atomic units have since become the standard across all of atomic physics. Atomic units were designed with the purpose of "\textit{eliminating various universal constants from equations and also to avoid high powers of 10 in numerical work}" \cite{atomic_units_definition}. Hartree proposed that physical quantities such as the mass are measured in terms of the mass of the electron $m_e$. The charge measured in terms of the electron charge, $e$, the vacuum permittivity in terms of $4\pi \epsilon_0$, and the angular momentum in terms of $\hbar$. Their standard definitions in both S.I. units and atomic units are stated in Table.~\ref{tab:units} \cite{electron_mass_value, electron_charge_value, fine_structure_value, hbar_value, speed_of_light_value, electric_permittivity_value}. Written mathematically;
 
         \begin{figure}[b]
             \centering 
-            \label{tab:units}
             \resizebox{\columnwidth}{!}{
                 \begin{tabular}{|c|l|l|c|}
                     \hline
@@ -24,7 +23,7 @@
                     \hline     
                 \end{tabular}
             }
-            \caption{Table of fundamental constants expressed in S.I. units and atomic units.}
+            \caption{Table of fundamental constants expressed in S.I. units and atomic units.}\label{tab:units}
         \end{figure}
         
         \begin{align}
@@ -33,19 +32,19 @@
 
         \noindent Scaling these units out of the problem greatly simplifies the calculation. Once a result is found, one can multiply the unscaled units back into the answer to retrieve the desired result in standard SI units. While the use of atomic units can make any work done by hand much simpler to manage, it can also benefit numerical work that is done computationally. Machine error is an unavoidable reality of programmed solutions and working in units which avoids extreme values both large and small can help mitigate the uncertainty present in high precision calculations. This thesis will utilize atomic units both analytically and numerically to simplify the calculation process throughout.
 
-        A consequence of utilizing atomic units is the need to redefine key fundamental physical quantities in terms of these scaled values. An example of key importance in the investigation of the higher-order Zeeman effect is the atomic unit of magnetic field strength, otherwise referred to as the atomic unit of magnetic flux density \ref{Atomic_unit_of_field_strength}.
+        A consequence of utilizing atomic units is the need to redefine key fundamental physical quantities in terms of these scaled values. An example of key importance in the investigation of the higher-order Zeeman effect is the atomic unit of magnetic field strength, otherwise referred to as the atomic unit of magnetic flux density \cite{Atomic_unit_of_field_strength}.
 
         \begin{align}
             B_{\text{a.u.}} = \frac{\hbar}{e a_0^2}\;.
         \end{align}
 
-        This value is composed of the Bohr radius $a_0$, electron charge $e$, and $\hbar$, the unit of action. The Bohr radius is defined as the most probable distance between an electron in the ground state of hydrogen and its nucleus. It can be described by the following equation \ref{Griffiths_2018}
+        This value is composed of the Bohr radius $a_0$, electron charge $e$, and $\hbar$, the unit of action. The Bohr radius is defined as the most probable distance between an electron in the ground state of hydrogen and its nucleus. It can be described by the following equation \cite{Griffiths_2018}
 
         \begin{align}
             a_0 = \frac{4\pi \epsilon_0 \hbar^2}{e^2 m_e} = \frac{\hbar}{m_e c \alpha} \label{eq:bohr_radius}\;.
         \end{align}
 
-        The Bohr radius itself is defined using a similar combination of fundamental constants which after applying the rules for atomic units, should equal $1$. It can now be seen that all units in the atomic unit of field strength also become $1$ as intended. At the end of the problem, the desired result in S.I units can be retrieved by simply multipling the determined result by the atomic unit of magnetic field strength when its constants are not scaled to $1$. This is equivalent to multiplying the result in atomic units by \ref{Atomic_unit_of_field_strength}.
+        The Bohr radius itself is defined using a similar combination of fundamental constants which after applying the rules for atomic units, should equal $1$. It can now be seen that all units in the atomic unit of field strength also become $1$ as intended. At the end of the problem, the desired result in S.I units can be retrieved by simply multipling the determined result by the atomic unit of magnetic field strength when its constants are not scaled to $1$. This is equivalent to multiplying the result in atomic units by \cite{Atomic_unit_of_field_strength}.
 
         \begin{align}
             B_{\text{a.u.}} = 2.35051757077(73) \times 10^5 \text{ T}
@@ -53,7 +52,7 @@
 
         The numbers in parenthesis here denote the uncertainty of the quantity. Another key benefit in atomic units is that it allows us to define almost all fundamental quantities in terms of two constants; the speed of light, $c$ and the fine structure constant, $\alpha$. This allows one to express key physical laws in a way that highlights fundamental dimensionless relationships rather than specific unit-dependant values.\\
 
-        The fine structure constant was introduced in 1916 by Arnold Sommerfeld when he was investigating the gap in the spectral lines of the hydrogen atom \ref{Sommerfeld_1916}. He compared his work with the Michelson Morley experiment from 1887 where the spectral lines were shown and it was deduced that the universe is not permeated by the aether \ref{Michelson_Morley_1887}. It is defined as the following dimensionless quantity
+        The fine structure constant was introduced in 1916 by Arnold Sommerfeld when he was investigating the gap in the spectral lines of the hydrogen atom \cite{Sommerfeld_1916}. He compared his work with the Michelson Morley experiment from 1887 where the spectral lines were shown and it was deduced that the universe is not permeated by the aether \cite{Michelson_Morley_1887}. It is defined as the following dimensionless quantity
 
         \begin{align}
             \alpha = \frac{e^2}{4\pi \epsilon_0 \hbar c} = 7.2973525643(11) \times 10^{-3}   
@@ -71,7 +70,7 @@
 
 
     \section{One-electron Schrödinger equation} \label{sec:Schrodinger_Equation}
-        Discovered by Schrödinger in 1926, the Schrödinger equation is a non-relativistic solution to any quantum-mechanical system \ref{Schrödinger_1926}. Consider the two-body problem with a nucleus and a single orbiting electron\footnote{It is assumed here that the nucleus is a point particle with infinite mass.}. The electron interacts with the nucleus via the Coulomb interaction described by the following potential
+        Discovered by Schrödinger in 1926, the Schrödinger equation is a non-relativistic solution to any quantum-mechanical system \cite{Schrödinger_1926}. Consider the two-body problem with a nucleus and a single orbiting electron\footnote{It is assumed here that the nucleus is a point particle with infinite mass.}. The electron interacts with the nucleus via the Coulomb interaction described by the following potential
 
         \begin{align}
             V(\vec{r}) = -\frac{Z e^2}{4\pi \epsilon_0 \vec{r}}\;.
@@ -101,7 +100,7 @@
             \psi_{nlm} = R_{nl}(r) Y^l_m (\cos \theta)
         \end{align}
 
-        \noindent For a two body atomic system the solutions for each can be written in terms of Laguerre polynomials and Spherical Harmonics. The radial equation has the following solutions \ref{Atomic_Physics_Handbook}
+        \noindent For a two body atomic system the solutions for each can be written in terms of Laguerre polynomials and Spherical Harmonics. The radial equation has the following solutions \cite{Atomic_Physics_Handbook}
 
         \begin{align}
             R_{nl}(r) = \frac{2Z}{n^2} \sqrt{\frac{Z(n - l - 1)!}{(n + l)!}} \left( \frac{2Zr}{n} \right)^l e^{\frac{-Zr}{n}} L_{n - l - 1}^{(2l + 1)} \left( 2Zr/n \right) \label{eq:radial_equation}
@@ -142,7 +141,7 @@
             \int_0^\pi \int_0^{2\pi} Y^m_l(\theta, \phi) Y^{m^\prime}_{l^\prime} (\theta, \phi) \; d\theta d\phi = \delta_{ll^\prime} \delta_{mm^\prime}\label{eq:delta_spherical_harmonic}\;.
         \end{align}
 
-        For all angular integrals where the spherical harmonics contain different angular momentum or magnetic quantum numbers, the result will be zero. If given a scenario where three angular momenta are coupled together (i.e, there are three spherical harmonic functions to integrate), the Wigner 3j symbols can be used to couple the angular momenta in replacement of the integral. The Wigner 3j symbols are defined as \ref{Wigner-3j}
+        For all angular integrals where the spherical harmonics contain different angular momentum or magnetic quantum numbers, the result will be zero. If given a scenario where three angular momenta are coupled together (i.e, there are three spherical harmonic functions to integrate), the Wigner 3j symbols can be used to couple the angular momenta in replacement of the integral. The Wigner 3j symbols are defined as \cite{Wigner-3j}
 
         \begin{align}
             \int_0^\pi \int_0^{2\pi} \sin \theta \; d\theta d\phi\;& Y^{m_1}_{l_1}(\theta, \phi) Y^{m_2}_{l_2} (\theta, \phi) Y^{m_3}_{l_3} (\theta, \phi) =\\
@@ -155,7 +154,7 @@
             \end{pmatrix} \nonumber
         \end{align}
 
-        Where the set of $6$ parameters inside the brackets at the end of the expression is called a $3$j Symbol, which has the following definiton \ref{edmonds_book}:
+        Where the set of $6$ parameters inside the brackets at the end of the expression is called a $3$j Symbol, which has the following definiton \cite{edmonds_book}:
 
         \begin{align} \label{3j_1}
             &\begin{pmatrix}
@@ -164,7 +163,7 @@
             \end{pmatrix} = (-1)^{j_1 - j_2 - m_3} \left( 2j_2 + 1\right)^{\frac{1}{2}} \langle j_1, m_1, j_2, m_2 \vert j_1, j_2, j_3 - m_3 \rangle
         \end{align}
 
-        Where $\langle j_1, m_1, j_2, m_2 \vert j_1, j_2, j_3, - m_3 \rangle$ is known as a vector coupling coefficient and is defined as \ref{edmonds_book}
+        Where $\langle j_1, m_1, j_2, m_2 \vert j_1, j_2, j_3, - m_3 \rangle$ is known as a vector coupling coefficient and is defined as \cite{edmonds_book}
 
         \small
         \begin{align}
@@ -180,7 +179,7 @@
         The ability to substitute the angular part of the integral with a closed form solution in terms of Wigner-3j symbols allows for easy computation providing exact analytic solutions to part of the problem being discussed.
 
         \subsection{The radial part} \label{sec:The_Radial_Part}
-            The radial part of the hydrogenic wavefunction is $R_{nl}(r)$, stated in equation \ref{eq:radial_equation}. The perturbed wavefunctions will thus also resemble a similar form since they serve as small corrections to the original solution\footnote{See Sec.~\ref{sec:Perturbation_Theory} for more details.}. Removing the terms not dependant on $r$ outside of the integrand (which are dependant on the perturbed wavefunction being investigated as well as the angular momentum and principle quantum numbers), a series of integrals that resemble the following form emerge\footnote{This is shown explicitly in Sec.~\ref{sec:Laguerre_Polynomial}.}
+            The radial part of the hydrogenic wavefunction is $R_{nl}(r)$, stated in equation \eqref{eq:radial_equation}. The perturbed wavefunctions will thus also resemble a similar form since they serve as small corrections to the original solution\footnote{See Sec.~\ref{sec:Perturbation_Theory} for more details.}. Removing the terms not dependant on $r$ outside of the integrand (which are dependant on the perturbed wavefunction being investigated as well as the angular momentum and principle quantum numbers), a series of integrals that resemble the following form emerge\footnote{This is shown explicitly in Sec.~\ref{sec:Laguerre_Polynomial}.}
 
             \begin{align}
                 I_{\text{radial}} = \int_0^\infty r^j e^{-\alpha r}
@@ -198,7 +197,7 @@
                 \int_0^\infty r^j e^{-\alpha r} = \frac{j!}{\alpha^{j + 1}}\;.
             \end{align}
 
-            \noindent Fitting the integrals to the Gamma function not only makes the task of computing the integrals significantly easier, but also makes the integration computationally stable. The solution provides a simple formula to implement when calculating radial integrals, and allows one to skip the implementation of well known numerical integration methods such as Euler's method or any Runge-Kutta methods \ref{Numerical_recipes}. While these methods are powerful, they do have significant drawbacks compared to the derived analytical solutions due to error propagation and machine-precision.
+            \noindent Fitting the integrals to the Gamma function not only makes the task of computing the integrals significantly easier, but also makes the integration computationally stable. The solution provides a simple formula to implement when calculating radial integrals, and allows one to skip the implementation of well known numerical integration methods such as Euler's method or any Runge-Kutta methods \cite{Numerical_recipes}. While these methods are powerful, they do have significant drawbacks compared to the derived analytical solutions due to error propagation and machine-precision.
             
             The ability to compute these radial hydrogenic wavefunction integrals exactly is not only a satisfying result mathematically, but opens the door for more difficult problems in atomic physics where machine error is the determining step in the accuracy of a high-precision calculation\footnote{Such problems include the calculation of Hylleraas wavefunctions for three body atomic systems such as H$^-$, He, or Li$^+$, where the radial integrals follow a similar but more complex closed form solution.}.
             
@@ -213,7 +212,7 @@
             \hat{H} = H^0 + \lambda H^\prime\;.
         \end{align}
 
-        \noindent Where $H^0$ is the standard Hamiltonian and $H^\prime$ is the perturbation. $\lambda$ is a small weighting coefficient which keeps the perturbation small. expanding the wavefunction and the energy of the system as a power series in $\lambda$ gives \ref{Griffiths_2018}
+        \noindent Where $H^0$ is the standard Hamiltonian and $H^\prime$ is the perturbation. $\lambda$ is a small weighting coefficient which keeps the perturbation small. expanding the wavefunction and the energy of the system as a power series in $\lambda$ gives \cite{Griffiths_2018}
 
         \begin{align}
             \psi_n &= \psi_n^0 + \lambda \psi_n^1 + \lambda^2 \psi_n^2 + \dots\\
@@ -264,7 +263,7 @@
         \noindent As it can be seen above, the second order solution requires the solution from the first order equation. The requirement of solving the previous correction in order to get the current one makes the processing of calculating higher order corrections quite laborious, and developing a method to solve for higher order corrections computationally removes the burden of solving lengthy equations by hand. The adaptation of solving the higher order perturbation equations computationlaly will be discussed in Sec.~\ref{sec:Program_perturbation}.
 
     \section{Recursion relations} \label{sec:Recursion_Relations}
-        When solving the perturbation equation, you end up with an inhomogeneous second order partial differential equation. To solve for the radial piece of the corrected wavefunction, one must use the method of Frobenius. The method of Frobenius was developed by Ferdinand Georg Frobenius in 1869 and is a method of solving equations of the following form \ref{Weber1869}:
+        When solving the perturbation equation, you end up with an inhomogeneous second order partial differential equation. To solve for the radial piece of the corrected wavefunction, one must use the method of Frobenius. The method of Frobenius was developed by Ferdinand Georg Frobenius in 1869 and is a method of solving equations of the following form \cite{Weber1869}:
         
         \begin{align}
             \frac{d^2 u}{dx^2} + \frac{d^2 u}{dy^2} + k^2 u = 0\;.
@@ -272,7 +271,7 @@
 
         \noindent The method of Frobenius involves assuming the solution is of the form of a power series, and then solving for terminating recursion relations to check if a solution exists. The method of solving these recurrence relations is what will be highlighted in the section below. 
 
-        A recurrence relation is an equation where the $n^{\text{th}}$ term of a sequence is dependant on some combination of its previous terms in the sequence. A simple example of a recurrence relation is the Fibonacci numbers \ref{Liber_Abaci}.
+        A recurrence relation is an equation where the $n^{\text{th}}$ term of a sequence is dependant on some combination of its previous terms in the sequence. A simple example of a recurrence relation is the Fibonacci numbers \cite{Liber_Abaci}.
 
         \begin{align}
             F_n = F_{n - 1} + F_{n - 2}\;.

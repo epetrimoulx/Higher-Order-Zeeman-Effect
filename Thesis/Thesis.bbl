@@ -1,123 +1,143 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
 
-\bibitem[Ato, ]{Atomic_unit_of_field_strength}
+\bibitem{Atomic_unit_of_field_strength}
 Codata value: atomic unit of magnetic flux density.
 
-\bibitem[ele, a]{electron_mass_value}
+\bibitem{electron_mass_value}
 Codata value: electron mass.
 
-\bibitem[ele, b]{electron_charge_value}
+\bibitem{electron_charge_value}
 Codata value: elementary charge.
 
-\bibitem[fin, ]{fine_structure_value}
+\bibitem{fine_structure_value}
 Codata value: fine-structure constant.
 
-\bibitem[hba, ]{hbar_value}
+\bibitem{hbar_value}
 Codata value: reduced planck constant.
 
-\bibitem[spe, ]{speed_of_light_value}
+\bibitem{speed_of_light_value}
 Codata value: speed of light in vacuum.
 
-\bibitem[ele, c]{electric_permittivity_value}
+\bibitem{electric_permittivity_value}
 Codata value: vacuum electric permittivity.
 
-\bibitem[Ato, 2006]{Atomic_Physics_Handbook}
- (2006).
-\newblock {\em Springer Handbook of Atomic, Molecular, and Optical Physics}.
-\newblock Springer Handbooks. Springer New York, New York, NY.
+\bibitem{Atomic_Physics_Handbook}
+{\em Springer Handbook of Atomic, Molecular, and Optical Physics}.
+\newblock Springer Handbooks. Springer New York, New York, NY, 2006.
 
-\bibitem[Num, 2007]{Numerical_recipes}
- (2007).
-\newblock {\em Numerical recipes: the art of scientific computing}.
-\newblock Cambridge University Press, Cambridge, UK; New York, 3rd ed edition.
+\bibitem{aguillard2023measurement}
+DP~Aguillard, T~Albahri, D~Allspach, A~Anisenkov, K~Badgley, S~Bae{\ss}ler,
+  I~Bailey, L~Bailey, VA~Baranov, E~Barlas-Yucel, et~al.
+\newblock Measurement of the positive muon anomalous magnetic moment to 0.20
+  ppm.
+\newblock {\em Physical review letters}, 131(16):161802, 2023.
 
-\bibitem[Aguillard et~al., 2023]{aguillard2023measurement}
-Aguillard, D., Albahri, T., Allspach, D., Anisenkov, A., Badgley, K., Bae{\ss}ler, S., Bailey, I., Bailey, L., Baranov, V., Barlas-Yucel, E., et~al. (2023).
-\newblock Measurement of the positive muon anomalous magnetic moment to 0.20 ppm.
-\newblock {\em Physical review letters}, 131(16):161802.
+\bibitem{Anthony_Sebastian_1994}
+John~M. Anthony and Kunnat~J. Sebastian.
+\newblock Relativistic corrections to the zeeman effect in hydrogenlike atoms
+  and positronium.
+\newblock {\em Physical Review A}, 49(1):192--206, Jan 1994.
 
-\bibitem[Anthony and Sebastian, 1994]{Anthony_Sebastian_1994}
-Anthony, J.~M. and Sebastian, K.~J. (1994).
-\newblock Relativistic corrections to the zeeman effect in hydrogenlike atoms and positronium.
-\newblock {\em Physical Review A}, 49(1):192--206.
-
-\bibitem[Drake, 1988]{Drake_1987-2}
-Drake, G. (1988).
-\newblock High precision variational calculations for the $1s21s$ state of h- and the $1s21s$, $1s2s$ $1s$ and $1s2s$ $3s$ states of helium.
-\newblock {\em Nuclear Instruments and Methods in Physics Research Section B: Beam Interactions with Materials and Atoms}, 31(1):7--13.
-
-\bibitem[Drake, 1987]{Drake_1987}
-Drake, G. W.~F. (1987).
+\bibitem{Drake_1987}
+G.~W.~F. Drake.
 \newblock New variational techniques for the $1snd$ states of helium.
-\newblock {\em Physical Review Letters}, 59(14):1549--1552.
+\newblock {\em Physical Review Letters}, 59(14):1549--1552, Oct 1987.
 
-\bibitem[Drake and Makowski, 1988]{Drake_Makowski_1988}
-Drake, G. W.~F. and Makowski, A.~J. (1988).
-\newblock High-precision eigenvalues for the $1s2p^1p$ and $^3p$ states of helium.
-\newblock {\em Journal of the Optical Society of America B}, 5(10):2207.
+\bibitem{Drake_Makowski_1988}
+G.~W.~F. Drake and A.~J. Makowski.
+\newblock High-precision eigenvalues for the $1s2p^1p$ and $^3p$ states of
+  helium.
+\newblock {\em Journal of the Optical Society of America B}, 5(10):2207, Oct
+  1988.
 
-\bibitem[Drake and Yan, 1992]{Drake_Yan_1992}
-Drake, G. W.~F. and Yan, Z.-C. (1992).
-\newblock Energies and relativistic corrections for the rydberg states of helium: Variational results and asymptotic analysis.
-\newblock {\em Physical Review A}, 46(5):2378--2409.
+\bibitem{Drake_Yan_1992}
+G.~W.~F. Drake and Zong-Chao Yan.
+\newblock Energies and relativistic corrections for the rydberg states of
+  helium: Variational results and asymptotic analysis.
+\newblock {\em Physical Review A}, 46(5):2378--2409, Sep 1992.
 
-\bibitem[Edmonds, 2016]{edmonds_book}
-Edmonds, A.~R. (2016).
+\bibitem{Drake_1987-2}
+G.W.F. Drake.
+\newblock High precision variational calculations for the $1s21s$ state of h-
+  and the $1s21s$, $1s2s$ $1s$ and $1s2s$ $3s$ states of helium.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section B:
+  Beam Interactions with Materials and Atoms}, 31(1):7--13, 1988.
+
+\bibitem{edmonds_book}
+A.~R. Edmonds.
 \newblock {\em Angular Momentum in Quantum Mechanics}.
-\newblock Investigations in Physics. Princeton University Press, Princeton, NJ.
+\newblock Investigations in Physics. Princeton University Press, Princeton, NJ,
+  2016.
 
-\bibitem[Farooq et~al., 2020]{Farooq_Chupp_Grange_Tewsley-Booth_Flay_Kawall_Sachdeva_Winter_2020}
-Farooq, M., Chupp, T., Grange, J., Tewsley-Booth, A., Flay, D., Kawall, D., Sachdeva, N., and Winter, P. (2020).
+\bibitem{Farooq_Chupp_Grange_Tewsley-Booth_Flay_Kawall_Sachdeva_Winter_2020}
+Midhat Farooq, Timothy Chupp, Joe Grange, Alec Tewsley-Booth, David Flay, David
+  Kawall, Natasha Sachdeva, and Peter Winter.
 \newblock Absolute magnetometry with he-3.
-\newblock {\em Physical Review Letters}, 124(22).
+\newblock {\em Physical Review Letters}, 124(22), Jun 2020.
 
-\bibitem[Fibonacci, 1202]{Liber_Abaci}
-Fibonacci, L. (1202).
+\bibitem{Liber_Abaci}
+L.~Fibonacci.
 \newblock {\em Liber Abaci}.
+\newblock 1202.
 
-\bibitem[Fontanari and Sadovskií, 2015]{Fontanari_Sadovskií_2015}
-Fontanari, D. and Sadovskií, D.~A. (2015).
-\newblock Perturbations of the hydrogen atom by inhomogeneous static electric and magnetic fields.
-\newblock {\em Journal of Physics A: Mathematical and Theoretical}, 48(9):095203.
+\bibitem{Fontanari_Sadovskií_2015}
+Daniele Fontanari and Dmitrií~A Sadovskií.
+\newblock Perturbations of the hydrogen atom by inhomogeneous static electric
+  and magnetic fields.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  48(9):095203, Feb 2015.
 
-\bibitem[Griffiths, 2018]{Griffiths_2018}
-Griffiths, D.~J. (2018).
+\bibitem{Griffiths_2018}
+David~J. Griffiths.
 \newblock {\em Introduction to Quantum Mechanics}.
-\newblock Cambridge University Press, Cambridge, 3rd ed edition.
+\newblock Cambridge University Press, Cambridge, 3rd ed edition, 2018.
 
-\bibitem[Hartree, 1928]{atomic_units_definition}
-Hartree, D.~R. (1928).
-\newblock The wave mechanics of an atom with a non-coulomb central field. part i. theory and methods.
-\newblock {\em Mathematical Proceedings of the Cambridge Philosophical Society}, 24(1):89--110.
+\bibitem{atomic_units_definition}
+D.~R. Hartree.
+\newblock The wave mechanics of an atom with a non-coulomb central field. part
+  i. theory and methods.
+\newblock {\em Mathematical Proceedings of the Cambridge Philosophical
+  Society}, 24(1):89--110, January 1928.
 
-\bibitem[Michelson and Morley, 1887]{Michelson_Morley_1887}
-Michelson, A.~A. and Morley, E.~W. (1887).
+\bibitem{Michelson_Morley_1887}
+A.~A. Michelson and E.~W. Morley.
 \newblock On the relative motion of the earth and the luminiferous ether.
-\newblock {\em American Journal of Science}, s3-34(203):333--345.
+\newblock {\em American Journal of Science}, s3-34(203):333--345, November
+  1887.
 
-\bibitem[Schrödinger, 1926]{Schrödinger_1926}
-Schrödinger, E. (1926).
+\bibitem{Numerical_recipes}
+W.H. Press.
+\newblock {\em Numerical recipes: the art of scientific computing}.
+\newblock Cambridge University Press, Cambridge, UK; New York, 3rd ed edition,
+  2007.
+
+\bibitem{Schrödinger_1926}
+E.~Schrödinger.
 \newblock An undulatory theory of the mechanics of atoms and molecules.
-\newblock {\em Physical Review}, 28(6):1049--1070.
+\newblock {\em Physical Review}, 28(6):1049--1070, December 1926.
 
-\bibitem[Sommerfeld, 1916]{Sommerfeld_1916}
-Sommerfeld, A. (1916).
+\bibitem{Sommerfeld_1916}
+A.~Sommerfeld.
 \newblock Zur quantentheorie der spektrallinien.
-\newblock {\em Annalen der Physik}, 356(17):1--94.
+\newblock {\em Annalen der Physik}, 356(17):1--94, January 1916.
 
-\bibitem[Weber, 1869]{Weber1869}
-Weber, H. (1869).
+\bibitem{Weber1869}
+H.~Weber.
 \newblock Ueber die integration der partiellen differentialgleichung:.
-\newblock {\em Mathematische Annalen}, 1:1--36.
+\newblock {\em Mathematische Annalen}, 1:1--36, 1869.
 
-\bibitem[{Wu} and {Drake}, 2007]{2007Drake-Wu}
-{Wu}, Q. and {Drake}, G.~W.~F. (2007).
-\newblock {Precision Hyperfine Structure of 2;\^3P State of \^3He with External Magnetic}.
-\newblock 38:R1.060.
+\bibitem{2007Drake-Wu}
+Qixue {Wu} and G.~W.~F. {Drake}.
+\newblock {Precision Hyperfine Structure of 2;\^3P State of \^3He with External
+  Magnetic}.
+\newblock 38:R1.060, June 2007.
 
-\bibitem[Yan and Drake, 1994]{Drake-Yan}
-Yan, Z.-C. and Drake, G. W.~F. (1994).
-\newblock High-precision calculations of the zeeman effect in the 2${\mathrm{}}^{3}$${\mathit{p}}_{\mathit{j}}$, 2${\mathrm{}}^{1}$${\mathit{p}}_{1}$, 2${\mathrm{}}^{3}$${\mathit{s}}_{1}$, and 3${\mathrm{}}^{3}$${\mathit{p}}_{\mathit{j}}$ states of helium.
-\newblock {\em Phys. Rev. A}, 50:R1980--R1983.
+\bibitem{Drake-Yan}
+Zong-Chao Yan and G.~W.~F. Drake.
+\newblock High-precision calculations of the zeeman effect in the
+  2${\mathrm{}}^{3}$${\mathit{p}}_{\mathit{j}}$,
+  2${\mathrm{}}^{1}$${\mathit{p}}_{1}$, 2${\mathrm{}}^{3}$${\mathit{s}}_{1}$,
+  and 3${\mathrm{}}^{3}$${\mathit{p}}_{\mathit{j}}$ states of helium.
+\newblock {\em Phys. Rev. A}, 50:R1980--R1983, Sep 1994.
 
 \end{thebibliography}
