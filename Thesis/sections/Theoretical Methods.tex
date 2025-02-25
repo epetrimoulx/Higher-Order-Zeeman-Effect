@@ -1,8 +1,8 @@
 \chapter{Theoretical Methods} \label{Theoretical_Methods}
     \section{Overview}
-        This chapter will provide an overview of all theoretical methods used throughout this dissertation. It will provide the theoretical building blocks upon which the dissertation is constructed, ranging from the set of units used in the problem, to perturbation equation solutions and methods for verifying calculations. As stated in the introduction, this thesis is based upon calculating matrix elements between two sets of wavefunctions connected by an operator. These matrix elements arise from perturbation theory and are necessary for computing energy shifts due to external fields such as those present in the higher-order Zeeman effect. The foundation of theory will be presented here, but the more specific calculations related to solving for the Zeeman effect will be presented in the relevant chapter below.
+        This chapter provides an overview of all theoretical methods used throughout this dissertation. It gives the theoretical building blocks upon which the dissertation is constructed, ranging from the set of units used in the problem, to perturbation equation solutions and methods for verifying calculations. As stated in the introduction, this thesis is based upon calculating matrix elements between two sets of wavefunctions connected by an operator. These matrix elements arise from perturbation theory and are necessary for computing energy shifts due to external fields such as those present in the higher-order Zeeman effect. The foundation of theory is presented here, but the more specific calculations related to solving for the Zeeman effect are presented in the relevant chapter below.
 
-        The chapter will begin by first discussing atomic units in Sec.~\ref{sec:atomic_units}, then move on and introduce the Schrödinger equation for the one-electron problem as well as its solution for hydrogenic wavefunctions in Sec.~\ref{sec:Schrodinger_Equation}. Next, Perturbation Theory will be introduced in Sec.~\ref{sec:Perturbation_Theory}, and describe how it can be used to approximate the new eigenvalues and eigenstates of the Zeeman-perturbed Hamiltonian. Sec.~\ref{sec:Integration_Techniques} will discuss various integration techniques that will be implemented both analytically and programmatically in order to simplify the calculation process, followed by an introduction to solving recursion relations in Sec.~\ref{sec:Recursion_Relations}. This is the core step in determining the perturbed wavefunctions used throughout the rest of the study. Finally, this chapter will conclude with the discussion of the Dalgarno Interchange Theorem and how it can serve as a critical check on the correctness of the obtained perturbed wavefunctions.
+        The chapter begins first by discussing atomic units in Sec.~\ref{sec:atomic_units}, then introduces the Schrödinger equation for the one-electron problem as well as its solution for hydrogenic wavefunctions in Sec.~\ref{sec:Schrodinger_Equation}. Next, Perturbation Theory is introduced in Sec.~\ref{sec:Perturbation_Theory}, and how it is to approximate the new eigenvalues and eigenstates of the Zeeman-perturbed Hamiltonian is discussed. Sec.~\ref{sec:Integration_Techniques} reviews various integration techniques that are implemented both analytically and programmatically in order to simplify the calculation process, followed by an introduction to solving recursion relations in Sec.~\ref{sec:Recursion_Relations}. This is the core step in determining the perturbed wavefunctions used throughout the rest of the study. Finally, this chapter concludes with the discussion of the Dalgarno Interchange Theorem and how it serves as a critical check on the correctness of the obtained perturbed wavefunctions.
 
     \section{Atomic Units} \label{sec:atomic_units}    
         First proposed by Hartree in November of 1928, atomic units have since become the standard across all of atomic physics. Atomic units were designed with the purpose of "\textit{eliminating various universal constants from equations and also to avoid high powers of 10 in numerical work}" \cite{atomic_units_definition}. Hartree proposed that physical quantities such as the mass are measured in terms of the mass of the electron $m_e$. The charge measured in terms of the electron charge, $e$, the vacuum permittivity in terms of $4\pi \epsilon_0$, and the angular momentum in terms of $\hbar$. Their standard definitions in both S.I. units and atomic units are stated in Table.~\ref{tab:units} \cite{electron_mass_value, electron_charge_value, fine_structure_value, hbar_value, speed_of_light_value, electric_permittivity_value}. Written mathematically;
@@ -30,7 +30,7 @@
             \hbar = m_e = e = 4\pi \epsilon_0 = 1\;.
         \end{align}
 
-        \noindent Scaling these units out of the problem greatly simplifies the calculation. Once a result is found, one can multiply the unscaled units back into the answer to retrieve the desired result in standard SI units. While the use of atomic units can make any work done by hand much simpler to manage, it can also benefit numerical work that is done computationally. Machine error is an unavoidable reality of programmed solutions and working in units which avoids extreme values both large and small can help mitigate the uncertainty present in high precision calculations. This thesis will utilize atomic units both analytically and numerically to simplify the calculation process throughout.
+        \noindent Scaling these units out of the problem greatly simplifies the calculation. Once a result is found, multiplying the unscaled units back into the answer retrieves the desired result in standard SI units. While the use of atomic units can make any work done by hand much simpler to manage, it also benefits numerical work that is done computationally. Machine error is an unavoidable reality of programmed solutions and working in units which avoids extreme values both large and small helps to mitigate the uncertainty present in high precision calculations. In addition, exact analytical results need not be limited by the values of the fundamental constants. This thesis utilizes atomic units both analytically and numerically to simplify the calculation process throughout.
 
         A consequence of utilizing atomic units is the need to redefine key fundamental physical quantities in terms of these scaled values. An example of key importance in the investigation of the higher-order Zeeman effect is the atomic unit of magnetic field strength, otherwise referred to as the atomic unit of magnetic flux density \cite{Atomic_unit_of_field_strength}.
 
@@ -38,19 +38,19 @@
             B_{\text{a.u.}} = \frac{\hbar}{e a_0^2}\;.
         \end{align}
 
-        This value is composed of the Bohr radius $a_0$, electron charge $e$, and $\hbar$, the unit of action. The Bohr radius is defined as the most probable distance between an electron in the ground state of hydrogen and its nucleus. It can be described by the following equation \cite{Griffiths_2018}
+        \noindent This value is composed of the Bohr radius $a_0$, electron charge $e$, and $\hbar$, the unit of action. The Bohr radius is defined as the most probable distance between an electron in the ground state of hydrogen and its nucleus. It can be described by the following equation \cite{Griffiths_2018}
 
         \begin{align}
             a_0 = \frac{4\pi \epsilon_0 \hbar^2}{e^2 m_e} = \frac{\hbar}{m_e c \alpha} \label{eq:bohr_radius}\;.
         \end{align}
 
-        The Bohr radius itself is defined using a similar combination of fundamental constants which after applying the rules for atomic units, should equal $1$. It can now be seen that all units in the atomic unit of field strength also become $1$ as intended. At the end of the problem, the desired result in S.I units can be retrieved by simply multipling the determined result by the atomic unit of magnetic field strength when its constants are not scaled to $1$. This is equivalent to multiplying the result in atomic units by \cite{Atomic_unit_of_field_strength}.
+        \noindent The Bohr radius itself is defined using a similar combination of fundamental constants which after applying the rules for atomic units, should equal $1$. It can now be seen that all units in the atomic unit of field strength also become $1$ as intended. At the end of the problem, the desired result in S.I units is retrieved by simply multipling the determined result by the atomic unit of magnetic field strength when its constants are not scaled to $1$. This is equivalent to multiplying the result in atomic units by \cite{Atomic_unit_of_field_strength}.
 
         \begin{align}
             B_{\text{a.u.}} = 2.35051757077(73) \times 10^5 \text{ T}
         \end{align}
 
-        The numbers in parenthesis here denote the uncertainty of the quantity. Another key benefit in atomic units is that it allows us to define almost all fundamental quantities in terms of two constants; the speed of light, $c$ and the fine structure constant, $\alpha$. This allows one to express key physical laws in a way that highlights fundamental dimensionless relationships rather than specific unit-dependant values.\\
+        \noindent The numbers in parenthesis here denote the uncertainty of the quantity. Another key benefit in atomic units is that it allows us to define almost all fundamental quantities in terms of two constants; the speed of light, $c$ and the fine structure constant, $\alpha$. This allows one to express key physical laws in a way that highlights fundamental dimensionless relationships rather than specific unit-dependant values.\\
 
         The fine structure constant was introduced in 1916 by Arnold Sommerfeld when he was investigating the gap in the spectral lines of the hydrogen atom \cite{Sommerfeld_1916}. He compared his work with the Michelson Morley experiment from 1887 where the spectral lines were shown and it was deduced that the universe is not permeated by the aether \cite{Michelson_Morley_1887}. It is defined as the following dimensionless quantity
 
@@ -64,43 +64,43 @@
             \alpha = \frac{1}{c} \label{eq:Fine_Structure_Scaled}\;.
         \end{align}
 
-        \noindent The fine structure constant is often used as an essential expansion parameter, treating relativistic effects as a perturbation in $\alpha$.\footnote{More on this will be discussed in Sec.~\ref{sec:Relativistic_Correction}} Applying the atomic unit scaling to the fine structure constant shown in equation \eqref{eq:Fine_Structure_Scaled} confirms that the second equivalence in equation \eqref{eq:bohr_radius} remains equal to $1$. 
+        \noindent The fine structure constant is often used as an essential expansion parameter, treating relativistic effects as a perturbation in $\alpha$.\footnote{More on this is discussed in Sec.~\ref{sec:Relativistic_Correction}} Applying the atomic unit scaling to the fine structure constant shown in equation \eqref{eq:Fine_Structure_Scaled} confirms that the second equivalence in equation \eqref{eq:bohr_radius} remains equal to $1$. 
 
-        Applying this technique to problems in atomic physics gives a powerful way of simplifying calculations while providing an easy conversion factor to SI units for comparison of theory and experiment. This dissertation will discuss all equations and quantities in atomic units unless further specified otherwise.
+        Applying this technique to problems in atomic physics gives a powerful way of simplifying calculations while providing an easy conversion factor to SI units for comparison of theory and experiment. This dissertation considers all equations and quantities in atomic units unless further specified otherwise.
 
 
     \section{One-electron Schrödinger equation} \label{sec:Schrodinger_Equation}
-        Discovered by Schrödinger in 1926, the Schrödinger equation is a non-relativistic solution to any quantum-mechanical system \cite{Schrödinger_1926}. Consider the two-body problem with a nucleus and a single orbiting electron\footnote{It is assumed here that the nucleus is a point particle with infinite mass.}. The electron interacts with the nucleus via the Coulomb interaction described by the following potential
+        Discovered by Schrödinger in 1926, the Schrödinger equation is a nonrelativistic solution to any quantum-mechanical system \cite{Schrödinger_1926}. Consider the two-body problem with a nucleus and a single orbiting electron\footnote{It is assumed here that the nucleus is a point particle with infinite mass.}. The electron interacts with the nucleus via the Coulomb interaction described by the potential
 
         \begin{align}
             V(\vec{r}) = -\frac{Z e^2}{4\pi \epsilon_0 \vec{r}}\;.
         \end{align}
 
-        \noindent the energy of the system can be written using the Hamiltonian, where the potential is the Coulomb potential. This can be written as follows;
+        \noindent The energy of the system is written using the Hamiltonian, where the potential is the Coulomb potential. This can be written as
 
         \begin{align}
             H = \frac{p^2}{2m} -\frac{Z e^2}{4\pi \epsilon_0 \vec{r}}\;.
         \end{align}
 
-        \noindent All observable quantities correspond to hermitian operators that act on the wavefunction $\psi$. The wavefunction $\psi$ is described as a normalized vector in Hilbert space, $\mathcal{H}$ containing all information pertaining to the system. The Hamiltonian is thus a hermitian operator that satisfies the following eigenvalue problem 
+        \noindent All observable quantities correspond to hermitian operators that act on the wavefunction $\psi$. The wavefunction $\psi$ is a normalized vector in Hilbert space, $\mathcal{H}$ containing all information pertaining to the system. The Hamiltonian is thus a hermitian operator that satisfies the eigenvalue problem 
 
         \begin{align}
             \hat{H} \vert\psi \rangle = E_n \vert \psi \rangle
         \end{align}
 
-        This is the Schrödinger equation. It can be applied to the two-body problem by substituting the momentum for its quantum operator analog. This results in the following expression 
+        \noindent This is the Schrödinger equation. It can be applied to the two-body problem by substituting for the momentum its quantum operator analog. This results in the expression 
 
         \begin{align}
-            \hat{H} \psi  = \frac{-\hbar^2}{2m_e} \nabla^2 \psi -\frac{Z e^2}{4\pi \epsilon_0 \vec{r}} \psi = E_n \psi 
+            \hat{H} \psi  = \frac{-\hbar^2}{2m_e} \nabla^2 \psi -\frac{Z e^2}{4\pi \epsilon_0 \vec{r}} \psi = E_n \psi \;.
         \end{align}
 
-        This is a second-order partial differential equation. Assuming a separable solution allows one to split the solution to any hydrogenic system into two parts; The radial part and the angular part.
+        \noindent This is a second-order partial differential equation. Assuming spherical symmetry allows one to split the solution to any system into two separable parts; The radial part and the angular part.
 
         \begin{align}
             \psi_{nlm} = R_{nl}(r) Y^l_m (\cos \theta)
         \end{align}
 
-        \noindent For a two body atomic system the solutions for each can be written in terms of Laguerre polynomials and Spherical Harmonics. The radial equation has the following solutions \cite{Atomic_Physics_Handbook}
+        \noindent For a two body hydrogenic system the solutions for each are written in terms of Laguerre polynomials and spherical harmonics. The radial equation has the following solutions \cite{Atomic_Physics_Handbook}
 
         \begin{align}
             R_{nl}(r) = \frac{2Z}{n^2} \sqrt{\frac{Z(n - l - 1)!}{(n + l)!}} \left( \frac{2Zr}{n} \right)^l e^{\frac{-Zr}{n}} L_{n - l - 1}^{(2l + 1)} \left( 2Zr/n \right) \label{eq:radial_equation}
