@@ -1,5 +1,4 @@
 \chapter{Theoretical Methods} \label{Theoretical_Methods}
-% ALSO ADD HYDROGENIC WAVEFUNCTION IN TERMS OF HYPERGEOMETRIC FUNCTION - Bethe and Salpeter    3.17 in Bethe and Salpeter
 
 \section{Overview}
         This chapter provides an overview of all theoretical methods used throughout this dissertation. It gives the theoretical building blocks upon which the dissertation is constructed, ranging from the set of units used in the problem, to perturbation equation solutions and methods for verifying calculations. As stated in the introduction, this thesis is based upon calculating matrix elements between two sets of wavefunctions connected by an operator. These matrix elements arise from perturbation theory and are necessary for computing energy shifts due to external fields such as those present in the higher-order Zeeman effect. The foundation of theory is presented here, but the more specific calculations related to solving for the Zeeman effect are presented in the relevant chapter below.
@@ -108,7 +107,13 @@
             R_{nl}(r) = \frac{2Z}{n^2} \sqrt{\frac{Z(n - l - 1)!}{(n + l)!}} \left( \frac{2Zr}{n} \right)^l e^{\frac{-Zr}{n}} L_{n - l - 1}^{(2l + 1)} \left( 2Zr/n \right) \label{eq:radial_equation}
         \end{align}
 
-       \noindent Where $Z$ is the nuclear charge atomic number, $l$ is the angular momentum quantum number, $n$ is the principle quantum number, and $L_{n - l - 1}^{(2l + 1)} (2Zr/n)$ is the generalized Laguerre polynomial (which is defined in Appendix \ref{sec:Laguerre_Polynomial}). Additionally, the spherical harmonics are
+       \noindent Where $Z$ is the nuclear charge atomic number, $l$ is the angular momentum quantum number, $n$ is the principle quantum number, and $L_{n - l - 1}^{(2l + 1)} (2Zr/n)$ is the generalized Laguerre polynomial (which is defined in Appendix \ref{sec:Laguerre_Polynomial}). The radial part of the solution can also be written in terms of the confluent hypergeometric function \cite{Bethe_Salpeter_1977}
+
+        \begin{align}
+            R_{nl}(r) = \frac{1}{(2l + 1)} \sqrt{\frac{(n+l)!}{(n - l - 1)! 2n}}& \left( \frac{2Z}{n} \right)^{\frac{3}{2}} e^{\frac{-Zr}{n}} \times \\
+            \left(\frac{2Zr}{n} \right) &F\left(-(n - l - 1), 2l + 2, \frac{2Zr}{n}\right) \nonumber
+        \end{align}
+       \noindent Additionally, the spherical harmonics are
 
         \begin{align}
             Y^m_l (\theta, \phi) = (-1)^m \sqrt{\frac{(2l + 1)}{4 \pi}\frac{(l - m)!}{(l + m)!}} P_l^m (\cos \theta) e^{i m \phi} \label{eq:angular_equation}
