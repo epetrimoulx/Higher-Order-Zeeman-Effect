@@ -205,7 +205,7 @@
             \vert \psi^{(1)} \rangle = \frac{Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{\pi}} \left[ \frac{11}{2} \frac{1}{Z^4} - \frac{r^2}{Z^2} - \frac{r^3}{3Z} \right]
         \end{align}
 
-        
+
     \section{The Cubic Zeeman Effect}
         The following section discusses the main focus of this thesis, the Cubic Zeeman effect. While the linear Zeeman affect as well as the quadratic Zeeman effect have been studied for hydrogenic systems, little is known about any higher order contributions. This section investigates the combination of the magnetic dipole moment operator and and the quadratic Zeeman effect to determine the relativistic effects of $^3$He$^+$ that when applied, reveal a contribution to the energy shift that is dependant on the cube of the magnetic field strength.
 
@@ -227,6 +227,68 @@
             \noindent The second term in the brackets of the magnetic dipole moment operator accounts for the relativistic correction to the kinetic energy of the electron, and the third term is the potential energy due to the Coulomb interaction between the electron and the nucleus. The first term corresponds to the ordinary Zeeman Effect, which does not contribute to the sum over states due to orthogonality.
 
             The ordinary Zeeman effect contributes to $Q_{M1}$ in $^3$He$^+$ because it has non-zero spin due to the missing electron. For systems such as $^3$He, the ordinary Zeeman effect will not contribute.
+
+            The $Q_{M1}$ operator can be written in terms of the Hamiltonian, which is done as follows
+
+            \begin{align}
+                Q_{M1} = \mu_B \left(1 - \frac{4}{3mc^2} \frac{p^2}{2m} + \frac{Ze^2}{3mc^2r} \right) \vec{\sigma} \cdot \vec{B}
+            \end{align}
+
+            \noindent Rearranging the standard Hamiltonian for the $\frac{p^2}{2m}$ term gives
+
+            \begin{align}
+                \frac{p^2}{2m} = \hat{H} + \frac{Ze^2}{4\pi \epsilon_0 r}
+            \end{align}
+
+            \noindent Substituting into the equation for $Q_{M1}$
+
+            \begin{align}
+                Q_{M1} = \mu_B \vec{\sigma} \cdot \vec{B} + \frac{\mu_B}{3mc^2} \left[-4\left(\hat{H} + \frac{Ze^2}{4\pi \epsilon_0 r} \right) + \frac{Ze^2}{r} \right] \vec{\sigma} \cdot \vec{B}
+            \end{align}
+
+            The operator is now defined only in terms of constants and $r^{-1}$ terms. These terms are combined together for an overall $r^{-1}$ term. The magnetic dipole moment operator is then written as a perturbation of $-r^{-1}$ to the Hamiltonian. Since the $p^2$ is written in terms of the original Hamiltonian, there is not a need to perform a perturbation about $p^2$ in order to receive the desired result.
+
+            % THIS SECTION NEEDS STRENGTHENING - IT IS CURRENTLY WEAK
+            % THE JUMP FROM QM1 TO 1/r IS NOT EXPLAINED WELL
+
+            \begin{align}
+                \left(H^{(0)} - E^{(0)}\right) \vert \varPsi^{(1)}\rangle = \left( -\frac{1}{r} - E^{(1)} \right) \frac{e^{-Zr}}{\sqrt{\pi}}
+            \end{align}
+
+            \noindent Similarly to Sec~.\ref{sec:quadratic_zeeman}, the first order corrected wavefunction is assumed to be of the form of a power series, so that the method of Frobenius can be applied. This gives a similar result to the quadratic Zeeman derivation, but the inhomogeneous terms on the right hand side of the equation now correlate to different powers of $r$.
+
+            \begin{align}
+                \sum_{j = 0}^\infty \left[ Z(j-1)a_{j-1} - \frac{j(j+1)}{2} a_j \right] r^{j -2} = \left( \frac{1}{r} - E^{(1)} \right) \frac{-1}{\sqrt{\pi}}
+            \end{align}
+
+            \noindent Where $E^{(1)}$ is defined by equation \eqref{eq:Energy0_Perturbation}
+
+            \begin{align}
+                E^{(1)} = Z
+            \end{align}
+
+            \noindent This gives the final result before the recursion relation step
+            \begin{align}
+                \sum_{j = 0}^\infty \left[ Z(j-1)a_{j-1} - \frac{j(j+1)}{2} a_j \right] r^{j -2} = \left( \frac{1}{r} + Z \right) \frac{-1}{\sqrt{\pi}}\;.
+            \end{align}
+
+            \noindent The recursion relation is solved once again similarly to that of the quadratic Zeeman perturbation, but this time only a single term in the series appears as nonzero. The first order correction to the hydrogenic wavefunction for a $\frac{1}{r}$ perturbation is 
+
+            \begin{align}
+                \vert \varPsi^{(1)} \rangle = a_0 e^{-Zr} + a_1 re^{-Zr}
+            \end{align}
+
+            \noindent The $a_0$ term is determined by the orthogonality imposed on the system once again and the integration yields 
+            
+            \begin{align}
+                a_0 = \frac{3}{2Z\sqrt{\pi}}\;.
+            \end{align}
+
+            Thus the final expression for the correction to the hydrogenic wavefunction for a perturbation of the mangetic dipole operator is 
+
+            \begin{align}
+                \vert \varPsi^{(1)} \rangle = \frac{1}{\sqrt{\pi}} e^{-Zr} \left( \frac{3}{2Z} - r\right)
+            \end{align}
 
         \subsection{The relativistic correction to $^3$He$^+$}\label{sec:Relativistic_Correction}
             Combining the magnetic dipole moment with the quadratic Zeeman operator, we can write down the relativistic corrections for $^3$He$^+$. Written in terms of pseudostates the relativistic correction is
