@@ -10,15 +10,19 @@
     \section{History}\label{sec:history}
         The Zeeman effect was first introduced by Pieter Zeeman, who discovered in 1896 that in the presence of a static magnetic field, spectral lines could be split into many components. After the discovery of quantum mechanics, the behaviour was found to be described as a perturbation of the Hamiltonian using the magnetic moment of the atom and the magnetic field.   
         
-        % \begin{figure}
-            % PUT SPECTRAL LINE SPLITTING IMAGE HERE
-        % \end{figure}
+        \begin{figure}
+            \begin{center}
+                % \input{Graphs/zgraph1.tex}
+                % \input{Graphs/zgraph2.tex}
+                % \input{Graphs/zgraph3.tex}
+            \end{center}
+        \end{figure}
     
         Since it's discovery, the Zeeman effect has played a large role in the field of atomic physics and magnetometry, which is the study of the intensity of magnetic field across space and time. There have been several calculations to include the relativistic corrections \cite{2007Drake-Wu, Drake-Yan}, field inhomogeneities, and quadratic effects in hydrogenic systems \cite{Fontanari_Sadovskií_2015}. However, little is known about its behavior in helium atoms such as $^3$He$^+$ and $^3$He, which is of key interest in magnetometry and the muon magnetic moment anomaly $(\mu_g - 2)$, for which there is a 5.0 $\sigma$ discrepancy \cite{aguillard2023measurement} with the standard model prediction.
 
     \section{Motivation}\label{sec:motivation}
         \subsection{The $g-2$ experiment}\label{sec:g-2}
-        The Dirac equation is a very successful and well studied equation in quantum mechanics. Its success comes from its ability to predict 2 important phenomena; the existence of antimatter and the magnetic dipole moment of the electron.The Dirac equation predicts that the magnetic dipole of the electron should be twice that of the classical prediction. This result is expressed in terms of the g-factor which the Dirac equation predicts is equal to 2. While the Dirac prediction is much closer to experimental findings, there is still a difference between the experimentally measured value of g and the equations prediction. This is called the $g-2$ anomaly. The anomaly is represented by
+        The Dirac equation is a very successful and well studied equation in quantum mechanics. Its success comes from its ability to predict 2 important phenomena; the existence of antimatter and the magnetic dipole moment of the electron. The Dirac equation predicts that the magnetic dipole of the electron should be twice that of the classical prediction. This result is expressed in terms of the g-factor which the Dirac equation predicts is equal to 2. While the Dirac prediction is much closer to experimental findings, there is still a difference between the experimentally measured value of g and the equations prediction. This is called the $g-2$ anomaly. The anomaly is represented by
 
 
         \begin{align}
@@ -31,74 +35,114 @@
             a^{\text{SM}}_\mu = a_\mu^{\text{QED}} + a_\mu^{\text{EW}} + a_\mu^{\text{hadron}}
         \end{align}
 
-        \noindent The first two terms can be derived from first principles, but the hadronic term cannot be calculated precisely on its own and is estimated from experimental results. The effort to measure the muon magnetic moment precisely is an active area of research. The work presented in this thesis aids in the investigation of the $g-2$ anomaly by providing corrections to the Zeeman splitting in $^3$He$+$, the element used in the magnetometry experiment to measure the anomaly.
-
-
-
+        \noindent The first two terms can be derived from first principles, but the hadronic term cannot be calculated precisely on its own and is estimated from experimental results. The effort to measure the muon magnetic moment precisely is an active area of research. The work presented in this thesis aids in the investigation of the $g-2$ anomaly by providing corrections to the Zeeman splitting in $^3$He$+$, the element used in the magnetometry experiment to measure the anomaly. Accounting for higher order corrections to the Zeeman effect may help consolidate the discrepancy between theory and experiment and help researchers further understand the muon magnetic moment and its impact on muonic systems.
 
         \subsection{High-precision magnetometry}\label{sec:High-Precision-magnetometry}
         \subsection{Connection to Atomic Physics}\label{sec:Connection_To_AMO}
+
     \section{The Zeeman effect in Hydrogen}\label{sec:Ordinary_Zeeman}
-    \section{The Zeeman effect in Helium-3}\label{sec:Ordinary_Zeeman_He3}
-    \section{The higher-order Zeeman effect}\label{sec:Higher_Zeeman}
-        \subsection{The quadratic Zeeman effect}\label{sec:quadratic_zeeman}
-            The non-relativistic Hamiltonian for an $n$ electron system in atomic units can be expressed as follows
-            \begin{align}
-                \hat{H} = \sum_{i = 1}^n \frac{\left(\vec{p}_i - e\vec{A}_i \right)^2}{2m} + V
-            \end{align}
+        When an atom is placed in an external magnetic field, its energy levels are shifted. The shifting of energy levels is known as the Zeeman effect. The effect can be written as a perturbation to the Hamiltonian \cite{Griffiths_2018}
 
-            \noindent using the cannonical momentum instead of the classical momentum is essential to account for electromagnetic interactions. The vector potential $\vec{A}$ can be described in terms of the magnetic field
+        \begin{align}
+            \hat{H}_Z = - \left(\vec{\mu_l} + \vec{\mu_s} \right) \cdot \vec{B}\;.
+        \end{align}
 
-            \begin{align}
-                \vec{A} = \frac{B}{2} \left( y\hat{x} - x\hat{y} \right)
-            \end{align}
+        \noindent $\mu_l$ is the orbital dipole moment, and $\mu_s$ is the spin magnetic dipole moment, which have the definitions
 
-            \noindent which when expanded gives us the operator corresponding to the quadratic Zeeman effect
+        \begin{align}
+            \vec{\mu_l} &= - \frac{e}{2m} \vec{L} & 
+            \vec{\mu_s} &= - \frac{e}{m} \vec{S}
+        \end{align}
 
-            \begin{align}
-                \hat{H}_Z^{(2)} = \frac{B^2 e^2}{8m} \sum_{i = 1}^n (x_i^2 + y_i^2)
-            \end{align}
+        \noindent So the first order Zeeman effect Hamiltonian is 
+        \begin{align}   
+            \hat{H}_Z = \frac{e}{2m} \left( \vec{L} + 2\vec{S} \right) \cdot \vec{B}            
+        \end{align}
 
-            \noindent This operator can be expressed in spherical coordinates, written in terms of Legendre Polynomials
+        \noindent and has the following eigen energy solutions 
 
-            \begin{align}
-                \hat{H}^{(2)}_Z = \frac{B^2 e^2}{12m} \sum_{i = 1}^n r_i^2 \left( P_0(\cos \theta) - P_2(\cos \theta) \right)
-            \end{align}
+        \begin{align}
+            E_{n, m_s, m_l} = - \frac{E_0}{n^2} + \mu_B B(m_l + 2m_s)\;.
+        \end{align}
 
-            \noindent $^3$He$^+$ is a system which contains only one electron, so we can drop the summation which accounts for all electrons to get our final quadratic Zeeman operator
+        \noindent So it is seen that depending on the magnetic quantum number, the energy levels split apart. Their corresponding new energies depend on this magnetic quantum number as well as the principle quantum number $n$, and scale linearly with magnetic field strength $B$.
+       
+    % \section{The Zeeman effect in Helium-3}\label{sec:Ordinary_Zeeman_He3}
+    \section{The quadratic Zeeman effect}\label{sec:quadratic_zeeman}
+        The quadratic Zeeman effect is derived using the Schrodinger equation and the canonical momentum. The canonical momentum is a conserved quantity that describes a moving charged particle. It can be written as 
 
-            \begin{align}
-                \hat{H}^{(2)}_Z(^3\text{He}^+) = \frac{B^2 e^2}{12m} r^2 \left( P_0(\cos \theta) - P_2(\cos \theta) \right)
-            \end{align}
+        \begin{align}
+            \vec{p} = m\vec{v} + e\vec{A}\;.
+        \end{align}
 
-            % NOTE: Talk about here why the quadratic Zeeman effect provides a shift to the energy for both possible values of magnetic quantum number evenly, so the overall energy is changed slightly, but the difference between the energy split states remains the same.
-        \subsection{The magnetic dipole moment operator}\label{sec:magnetic_dipole_operator}
-            The magnetic dipole moment operator represents the interaction of a magnetic dipole moment with an external magnetic field. It is described via the following relation
+        \noindent Where $m\vec{v}$ is the classical definition of the momentum, and $e\vec{A}$ is the extension from electrodynamics that accounts for the impact of an external magnetic field on a charged particle. This term is required in order to ensure that the conservation of momentum holds true, since charged particles subject to an external magnetic field travel in a circular path dependant on the direction of the field.\\
+        
+        The canonical momentum then is also written in replacement to the typical momentum operator in quantum mechanics, giving the canonical momentum operator 
 
-            \begin{align}
-                Q_{M1} = \mu_B \left( 1 - \frac{2p^2}{3m^2 c^2} + \frac{Ze^2}{3mc^2r} \right) \vec{\sigma} \cdot \vec{B}
-            \end{align}
+        \begin{align}
+            \hat{p}_{\text{canonical}} = i \hbar \vec{\nabla} + e \hat{A} \;.
+        \end{align}
 
-            \noindent Where $\mu_B$ is the Bohr magneton
-            
-            \begin{align}
-                \mu_B = \frac{e \hbar}{2mc}
-            \end{align}
+        \noindent Where $\hat{A}$ is the vector potential operator. For an external magnetic field of strength $B$ pointing in the $\hat{k}$ direction the operator becomes 
 
-            \noindent The second term in the brackets of the magnetic dipole moment operator accounts for the relativistic correction to the kinetic energy of the electron, and the third term is the potential energy due to the Coulomb interaction between the electron and the nucleus. The first term corresponds to the ordinary Zeeman Effect, which does not contribute to the sum over states due to orthogonality.
+        \begin{align}
+            \hat{A} = \frac{B}{2} \left(y \hat{i} - x \hat{j} \right)\;.
+        \end{align}
 
-            The ordinary Zeeman effect contributes to $Q_{M1}$ in $^3$He$^+$ because it has non-zero spin due to the missing electron. For systems such as $^3$He, the ordinary Zeeman effect will not contribute.
+        \noindent Substituting this in for the vector potential operator in the canonical momentum and placing it into the Hamiltonian equation one gets 
 
-        \subsection{The relativistic correction to $^3$He$^+$}\label{sec:Relativistic_Correction}
-            Combining the magnetic dipole moment with the quadratic Zeeman operator, we can write down the relativistic
-            corrections for $^3$He$^+$. Written in terms of pseudostates the relativistic correction is
+        \begin{align}
+            \hat{H} = \frac{\left(i\hbar \vec{\nabla} + \frac{Be}{2}\left(y \hat{i} - x \hat{j} \right)\right)^2}{2m_e} - \frac{Ze^2}{4 \pi \epsilon_0 \vec{r}}\;.
+        \end{align}
 
-            \begin{align}
-                C_{\text{rel}}^{(2)} =\sum_{\substack{n = -\infty \\ n \neq 0}}^{\infty}
-                \frac{\langle \psi_0 \vert H_Z^{(2)} \vert \psi_n \rangle \langle \psi_n \vert Q_{M1} \vert \psi_0 \rangle}{E_0 - E_n}
-            \end{align}
+        \noindent Which when expanded gives
+        \small
+        \begin{align}
+            \hat{H} = \frac{-\hbar^2 \nabla^2}{2m} - \frac{i\hbar e B}{4mc} \vec{\nabla} \cdot \left[y\hat{i} - x\hat{j} \right] - \frac{i\hbar e B}{4mc} \left[y\hat{i} - x\hat{j} \right] \cdot \vec{\nabla} + \frac{e^2B^2}{8mc} \left(x^2 + y^2\right) - \frac{Ze^2}{4\pi \epsilon_0 r}\;.
+        \end{align}
+        \normalsize
 
-            % NOTE: Ask drake again how the relativistic correction relates to the overall higher order Zeeman Effect. Description needs to be here
+        \noindent The $B^2$ term is the quadratic Zeeman effect and is written on its own as
+        \begin{align}
+            \hat{H}_Z = \frac{B^2e^2}{8m_e} (x^2 + y^2)\;.
+        \end{align}
+
+        \noindent Using $x^2 + y^2 = r^2 - z^2 = \frac{2}{3}r^2\left[ P_0(\cos \theta) - P_2(\cos \theta)\right]$ where $P_2(\cos \theta) = \frac{1}{2}\left(3\cos^2\theta - 1\right)$ and $P_0(\cos \theta) = 1$ are a Legendre polynomials,
+
+        \begin{align}
+            \hat{H}_Z = \frac{B^2e^2}{8m_e} (P_0(\cos \theta) - P_2(\cos \theta))\;.
+        \end{align}
+
+        % PUT ENERGY EQUATION HERE
+
+        % NOTE: Talk about here why the quadratic Zeeman effect provides a shift to the energy for both possible values of magnetic quantum number evenly, so the overall energy is changed slightly, but the difference between the energy split states remains the same.
+    \section{The magnetic dipole moment operator}\label{sec:magnetic_dipole_operator}
+        The magnetic dipole moment operator represents the interaction of a magnetic dipole moment with an external magnetic field. It is described via the following relation
+
+        \begin{align}
+            Q_{M1} = \mu_B \left( 1 - \frac{2p^2}{3m^2 c^2} + \frac{Ze^2}{3mc^2r} \right) \vec{\sigma} \cdot \vec{B}
+        \end{align}
+
+        \noindent Where $\mu_B$ is the Bohr magneton
+        
+        \begin{align}
+            \mu_B = \frac{e \hbar}{2mc}
+        \end{align}
+
+        \noindent The second term in the brackets of the magnetic dipole moment operator accounts for the relativistic correction to the kinetic energy of the electron, and the third term is the potential energy due to the Coulomb interaction between the electron and the nucleus. The first term corresponds to the ordinary Zeeman Effect, which does not contribute to the sum over states due to orthogonality.
+
+        The ordinary Zeeman effect contributes to $Q_{M1}$ in $^3$He$^+$ because it has non-zero spin due to the missing electron. For systems such as $^3$He, the ordinary Zeeman effect will not contribute.
+
+    \subsection{The relativistic correction to $^3$He$^+$}\label{sec:Relativistic_Correction}
+        Combining the magnetic dipole moment with the quadratic Zeeman operator, we can write down the relativistic
+        corrections for $^3$He$^+$. Written in terms of pseudostates the relativistic correction is
+
+        \begin{align}
+            C_{\text{rel}}^{(2)} =\sum_{\substack{n = -\infty \\ n \neq 0}}^{\infty}
+            \frac{\langle \psi_0 \vert H_Z^{(2)} \vert \psi_n \rangle \langle \psi_n \vert Q_{M1} \vert \psi_0 \rangle}{E_0 - E_n}
+        \end{align}
+
+        % NOTE: Ask drake again how the relativistic correction relates to the overall higher order Zeeman Effect. Description needs to be here
 
     \section{Results}\label{sec:results}
 
