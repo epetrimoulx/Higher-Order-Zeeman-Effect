@@ -9,14 +9,6 @@
 
     \section{History}\label{sec:history}
         The Zeeman effect was first introduced by Pieter Zeeman, who discovered in 1896 that in the presence of a static magnetic field, spectral lines could be split into many components. After the discovery of quantum mechanics, the behaviour was found to be described as a perturbation of the Hamiltonian using the magnetic moment of the atom and the magnetic field.   
-        
-        \begin{figure}
-            \begin{center}
-                % \input{Graphs/zgraph1.tex}
-                % \input{Graphs/zgraph2.tex}
-                % \input{Graphs/zgraph3.tex}
-            \end{center}
-        \end{figure}
     
         Since it's discovery, the Zeeman effect has played a large role in the field of atomic physics and magnetometry, which is the study of the intensity of magnetic field across space and time. There have been several calculations to include the relativistic corrections \cite{2007Drake-Wu, Drake-Yan}, field inhomogeneities, and quadratic effects in hydrogenic systems \cite{Fontanari_Sadovskií_2015}. However, little is known about its behavior in helium atoms such as $^3$He$^+$ and $^3$He, which is of key interest in magnetometry and the muon magnetic moment anomaly $(\mu_g - 2)$, for which there is a 5.0 $\sigma$ discrepancy \cite{aguillard2023measurement} with the standard model prediction.
 
@@ -65,7 +57,7 @@
             E_{n, m_s, m_l} = - \frac{E_0}{n^2} + \mu_B B(m_l + 2m_s)\;.
         \end{align}
 
-        \noindent So it is seen that depending on the magnetic quantum number, the energy levels split apart. Their corresponding new energies depend on this magnetic quantum number as well as the principle quantum number $n$, and scale linearly with magnetic field strength $B$.
+        \noindent So it is seen that depending on the magnetic quantum number, the energy levels split apart. Their corresponding new energies depend on this magnetic quantum number as well as the principle quantum number $n$, and scale linearly with magnetic field strength $B$. This is shown effectively in figure~.\ref{fig:a}.
        
     % \section{The Zeeman effect in Helium-3}\label{sec:Ordinary_Zeeman_He3}
     \section{The quadratic Zeeman effect}\label{sec:quadratic_zeeman}
@@ -116,33 +108,133 @@
         % PUT ENERGY EQUATION HERE
 
         % NOTE: Talk about here why the quadratic Zeeman effect provides a shift to the energy for both possible values of magnetic quantum number evenly, so the overall energy is changed slightly, but the difference between the energy split states remains the same.
-    \section{The magnetic dipole moment operator}\label{sec:magnetic_dipole_operator}
-        The magnetic dipole moment operator represents the interaction of a magnetic dipole moment with an external magnetic field. It is described via the following relation
+
+        \begin{figure}[h]
+            \centering
+            \begin{subfigure}{0.28\linewidth}
+                \resizebox{\textwidth}{!}{\input{Graphs/zgraph1.tex}}
+                \caption{The ordinary Zeeman effect}
+                \label{fig:a}
+            \end{subfigure}
+            \hfill
+            \begin{subfigure}{0.32\linewidth}
+                \resizebox{0.9\textwidth}{!}{\input{Graphs/zgraph2.tex}}
+                \caption{The quadratic Zeeman effect}
+                \label{fig:b}
+            \end{subfigure}
+            \hfill
+            \begin{subfigure}{0.28\linewidth}
+                \resizebox{\textwidth}{!}{\input{Graphs/zgraph3.tex}}
+                \caption{The cubic Zeeman effect}
+                \label{fig:c}
+            \end{subfigure}
+            \caption{The Zeeman effect energy splitting for each order}
+            \label{fig:overall}
+        \end{figure}
+
+        \noindent The total Hamiltonian including the quadratic Zeeman perturbation is then 
 
         \begin{align}
-            Q_{M1} = \mu_B \left( 1 - \frac{2p^2}{3m^2 c^2} + \frac{Ze^2}{3mc^2r} \right) \vec{\sigma} \cdot \vec{B}
+            \hat{H} = - \frac{\hbar^2}{2m_e} \nabla^2 - \frac{Ze^2}{4\pi \epsilon_0 r} + \frac{B^2e^2}{8m_e} (P_0(\cos \theta) - P_2(\cos \theta))\;. \label{eq:r_sqrd_perturbation}
         \end{align}
 
-        \noindent Where $\mu_B$ is the Bohr magneton
+        \noindent Where the quadratic Zeeman term is treated as a perturbation. Using the ground state wavefunction of hydrogen for $Z = 2$ for the $^3$He$^+$ atom, the perturbation equation then reads 
+
+        \begin{align}
+            \left(- \frac{\hbar^2}{2m_e} \nabla^2 - \frac{Ze^2}{4\pi \epsilon_0 r} - E^{(0)} \right) \vert \psi^{(1)} \rangle = \left(\frac{B^2e^2}{8m_e}r^2 - E^{(1)} \right) \frac{Z^\frac{3}{2} e^{-Zr}}{\sqrt{\pi}}\;.
+        \end{align}
+
+        \noindent Where the $P_2(\cos \theta)$ term is zero since the problem involves spherically symmetric $S$ states. This perturbation equation can be solved using the method of Frobenius, where the form of $\vert \psi^{(1)} \rangle$ is assumed to be of a power series.
+
+        \begin{align}
+            \vert \psi^{(1)} \rangle = \sum_{j = 0}^\infty Z^{\frac{3}{2}} a_j r^j e^{-Zr}
+        \end{align}
+
+        \noindent Inserting $\vert \psi^{(1)} \rangle$ into the perturbation equation the expression reads 
+
+        \begin{align}
+            \left(- \frac{\hbar^2}{2m_e} \nabla^2 - \frac{Ze^2}{4\pi \epsilon_0 r} - E^{(0)} \right) \sum_{j = 0}^\infty a_j r^j e^{-Zr} = \left(\frac{B^2e^2}{8m_e}r^2 - E^{(1)} \right) \frac{e^{-Zr}}{\sqrt{\pi}}\;.
+        \end{align}
+
+        \noindent Performing the differentiation followed by a shift of summation indices the expression simplifies to
+        \begin{align}
+            \sum_{j = 0}^\infty \left[ Z(j - 1)a_{j-1} - \frac{j(j+1)}{2}a_j \right]r^{j-2} = -\left(r^2 + E^{(1)} \right) \frac{1}{\sqrt{pi}}\;.
+        \end{align}
+
+        \noindent Using equation \eqref{eq:Energy0_Perturbation}, $E^{(1)}$ is found to be 
+
+        \begin{align}
+            E^{(1)} = \frac{-3}{Z^2}\;.
+        \end{align}
+
+        \noindent So the final expression before solving the recursion relation in the method of Frobenius yields 
+        \begin{align}
+            \sum_{j = 0}^\infty \left[ Z(j - 1)a_{j-1} - \frac{j(j+1)}{2}a_j \right]r^{j-2} = -\left(r^2 + \frac{-3}{Z^2} \right) \frac{1}{\sqrt{\pi}}\;.
+        \end{align}
+
+        Grouping the powers of $r$ from the LHS and the RHS of the equation produces a set of recursive relations that need to be solved. After substituting the correct integers for $j$ for each equation it is seen that there are only two instances when the series terms are non-zero. These terms are for $j = 2$ and $j = 3$. All other terms in the series are zero and thus non-contributing. The solution for $\vert \psi^{(1)} \rangle$ is thus 
+
+        \begin{align}
+            \vert \psi^{(1)} \rangle = \sum_{j = 0}^\infty a_j r^j e^{-Zr} = a_0 e^{-Zr} + a_2 r^2 e^{-Zr} + a_3 r^3 e^{-Zr}
+        \end{align}
+
+        \noindent Plugging in the found values for $a_2$ and $a_3$ yield 
+
+        \begin{align}
+            \vert \psi^{(1)} \rangle = \sum_{j = 0}^\infty a_j r^j e^{-Zr} = a_0 e^{-Zr} - \frac{1}{Z^2 \sqrt{\pi}} r^2 e^{-Zr} - \frac{1}{3Z \sqrt{\pi}} r^3 e^{-Zr}\;.
+        \end{align}
+        Currently, $a_0$ is still undetermined. It is found by imposing the orthogonality condition between $\vert \psi^{(0)} \rangle$ and $\vert \psi^{(1)} \rangle$
+
+        \begin{align}
+            \langle \psi^{(0)} \vert \psi^{(1)} \rangle = 0\;.
+        \end{align}
+
+        This orthogonality relation is a choice, and it not required by any law or rule. It is necessary in order to compute $a_0$ and is only allowed to be chosen due to the nature of the perturbation equation. It exploits the use of the Hermition property of the Hamiltonian that allows the operator to act to the left instead of the right. Multiplying through the original perturbation equation given in \eqref{eq:r_sqrd_perturbation} ensures that $\left(\hat{H} - E^{(0)} \right)$ is zero, implying that any quantity can be can be added to $\vert \psi^{(1)}$ and the equation still holds true. Thus, we can add some amount to $\vert \psi^{(1)} \rangle$ to ensure it is orthogonal without breaking the equality. This is a subtle trick, but one that is necessary to compute the full perturbed wavefunction\footnote{Further explanation of the Hermitian operator rule as well as imposing the orthogonality condition is shown in Appendix~.\ref{sec:Hermitian_Left}}. The $a_0$ coefficient can thus be determined by calculating the integral 
+        \begin{align}
+            \langle \psi^{(0)} \vert \psi^{(1)} \rangle = \int_0^\infty \int_0^\pi \int_0^{2\pi} r^2 \sin \theta \left(a_0 - \frac{1}{Z^2 \sqrt{\pi}} r^2 - \frac{1}{3Z \sqrt{\pi}} r^3 \right) \frac{Z^{\frac{3}{2}} e^{-2Zr}}{\sqrt{\pi}} = 0\;.
+        \end{align}
+
+        \noindent And so $a_0$ is found to be 
+
+        \begin{align}
+            a_0 = \frac{11}{2} \frac{1}{Z^4 \sqrt{\pi}}\;.
+        \end{align}
+        \noindent Thus, the full first order correction to the hydrogenic wavefunction for an atom subject to an external magnetic field is 
+
+        \begin{align}
+            \vert \psi^{(1)} \rangle = \frac{Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{\pi}} \left[ \frac{11}{2} \frac{1}{Z^4} - \frac{r^2}{Z^2} - \frac{r^3}{3Z} \right]
+        \end{align}
+
         
-        \begin{align}
-            \mu_B = \frac{e \hbar}{2mc}
-        \end{align}
+    \section{The Cubic Zeeman Effect}
+        The following section discusses the main focus of this thesis, the Cubic Zeeman effect. While the linear Zeeman affect as well as the quadratic Zeeman effect have been studied for hydrogenic systems, little is known about any higher order contributions. This section investigates the combination of the magnetic dipole moment operator and and the quadratic Zeeman effect to determine the relativistic effects of $^3$He$^+$ that when applied, reveal a contribution to the energy shift that is dependant on the cube of the magnetic field strength.
 
-        \noindent The second term in the brackets of the magnetic dipole moment operator accounts for the relativistic correction to the kinetic energy of the electron, and the third term is the potential energy due to the Coulomb interaction between the electron and the nucleus. The first term corresponds to the ordinary Zeeman Effect, which does not contribute to the sum over states due to orthogonality.
+        The section starts out by first introducing the magnetic dipole moment operator ($Q_{M1}$) and discusses its properties and significance to the Zeeman effect. Sec.~\ref{sec:Relativistic_Correction} discusses the combination of the magnetic dipole moment operator with the quadratic Zeeman effect discussed in Sec~.\ref{sec:quadratic_zeeman} to calculate the relativistic corrections to $^3$He$^+$. Accounting for both interactions gives a correction to the energy splitting of $^3$He$^+$ dependant on $B^3$.
 
-        The ordinary Zeeman effect contributes to $Q_{M1}$ in $^3$He$^+$ because it has non-zero spin due to the missing electron. For systems such as $^3$He, the ordinary Zeeman effect will not contribute.
+        \subsection{The magnetic dipole moment operator}\label{sec:magnetic_dipole_operator}
+            The magnetic dipole moment operator represents the interaction of a magnetic dipole moment with an external magnetic field. It is described via the following relation
 
-    \subsection{The relativistic correction to $^3$He$^+$}\label{sec:Relativistic_Correction}
-        Combining the magnetic dipole moment with the quadratic Zeeman operator, we can write down the relativistic
-        corrections for $^3$He$^+$. Written in terms of pseudostates the relativistic correction is
+            \begin{align}
+                Q_{M1} = \mu_B \left( 1 - \frac{2p^2}{3m^2 c^2} + \frac{Ze^2}{3mc^2r} \right) \vec{\sigma} \cdot \vec{B}
+            \end{align}
 
-        \begin{align}
-            C_{\text{rel}}^{(2)} =\sum_{\substack{n = -\infty \\ n \neq 0}}^{\infty}
-            \frac{\langle \psi_0 \vert H_Z^{(2)} \vert \psi_n \rangle \langle \psi_n \vert Q_{M1} \vert \psi_0 \rangle}{E_0 - E_n}
-        \end{align}
+            \noindent Where $\mu_B$ is the Bohr magneton
+            
+            \begin{align}
+                \mu_B = \frac{e \hbar}{2mc}
+            \end{align}
 
-        % NOTE: Ask drake again how the relativistic correction relates to the overall higher order Zeeman Effect. Description needs to be here
+            \noindent The second term in the brackets of the magnetic dipole moment operator accounts for the relativistic correction to the kinetic energy of the electron, and the third term is the potential energy due to the Coulomb interaction between the electron and the nucleus. The first term corresponds to the ordinary Zeeman Effect, which does not contribute to the sum over states due to orthogonality.
+
+            The ordinary Zeeman effect contributes to $Q_{M1}$ in $^3$He$^+$ because it has non-zero spin due to the missing electron. For systems such as $^3$He, the ordinary Zeeman effect will not contribute.
+
+        \subsection{The relativistic correction to $^3$He$^+$}\label{sec:Relativistic_Correction}
+            Combining the magnetic dipole moment with the quadratic Zeeman operator, we can write down the relativistic corrections for $^3$He$^+$. Written in terms of pseudostates the relativistic correction is
+
+            \begin{align}
+                C_{\text{rel}}^{(2)} =\sum_{\substack{n = -\infty \\ n \neq 0}}^{\infty}
+                \frac{\langle \psi_0 \vert H_Z^{(2)} \vert \psi_n \rangle \langle \psi_n \vert Q_{M1} \vert \psi_0 \rangle}{E_0 - E_n}
+            \end{align}
 
     \section{Results}\label{sec:results}
 
