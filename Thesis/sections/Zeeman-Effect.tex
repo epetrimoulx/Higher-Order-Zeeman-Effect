@@ -5,15 +5,37 @@
         In this chapter the Zeeman Effect is introduced, and the motivation, direct applications, and the higher order Zeeman Effect is discussed. The main focus of this chapter is to show the effect of the quadratic Zeeman Effect, and show how using the magnetic dipole operator in conjunction with the relativistic corrections to $^3$He$^+$ yields a cubic Zeeman Effect. The effects of both the quadratic and cubic corrections are discussed in great detail, and the impact of the effect on high precision measurements is displayed for various magnetic field strengths.\\
 
         % PUT SOMETHING HERE FOR APPLICATIONS IN AMO
-       Sec.~\ref{sec:history} starts with the history of the Zeeman effect, its origins and discovery. Afterwards the motivation for the project in Sec.~\ref{sec:motivation} is discussed. Here, some current experiments in the field such as the $g-2$ experiment conducted at the Max Planck Institute as well as applications to high-precision magnetometry are highlighted. Some additional applications in the field of atomic physics such as $\dots$ are introduced as well. In Sec.~\ref{sec:Ordinary_Zeeman}, the ordinary Zeeman effect is discussed, introducing its theory and application to atomic systems such as $^3$He$^+$. After introducing the ordinary Zeeman effect the quadratic Zeeman effect is introduced, where it is derived using the canonical momentum and a description of its impact on an atom subjected to a magnetic field is given. Moving towards higher order systems, the cubic Zeeman effect of this thesis is then introduced. Starting with the effects that contribute to the cubic Zeeman effect such as the magnetic dipole operator in Sec.~\ref{sec:magnetic_dipole_operator} and relativistic corrections to the $^3$He$^+$ ion in Sec.~\ref{sec:Relativistic_Correction}, these effects are combined to yield a $B^3$ contribution to the energy splitting within the presence of an external magnetic field. Afterwards, Sec.~\ref{sec:results} discusses the results of the calculation and its applications.
+       Sec.~\ref{sec:history} starts with the history of the Zeeman effect, its origins and discovery. Afterwards the motivation for the project in Sec.~\ref{sec:motivation} is discussed. Here, some current experiments in the field such as the $g-2$ experiment conducted at the Max Planck Institute as well as applications to high-precision magnetometry are highlighted. Some additional applications in the field of atomic physics such as $\dots$ are introduced as well. In Sec.~\ref{sec:Ordinary_Zeeman}, the ordinary Zeeman effect is discussed, introducing its theory and application to atomic systems such as $^3$He$^+$. After introducing the ordinary Zeeman effect the quadratic Zeeman effect is introduced, where it is derived using the canonical momentum and a description of its impact on an atom subjected to a magnetic field is given. Moving towards higher order systems, the cubic Zeeman effect is introduced. Starting with the effects that contribute to the cubic Zeeman effect such as the magnetic dipole operator in Sec.~\ref{sec:magnetic_dipole_operator} and relativistic corrections to the $^3$He$^+$ ion in Sec.~\ref{sec:Relativistic_Correction}, these effects are combined to yield a $B^3$ contribution to the energy splitting within the presence of an external magnetic field. Afterwards, Sec.~\ref{sec:results} discusses the results of the calculation and its applications.
 
     \section{History}\label{sec:history}
-        The Zeeman effect was first introduced by Pieter Zeeman, who discovered in 1896 that in the presence of a static magnetic field, spectral lines could be split into many components. After the discovery of quantum mechanics, the behaviour was found to be described as a perturbation of the Hamiltonian using the magnetic moment of the atom and the magnetic field.     
+        The Zeeman effect was first introduced by Pieter Zeeman, who discovered in 1896 that in the presence of a static magnetic field, spectral lines could be split into many components. After the discovery of quantum mechanics, the behaviour was found to be described as a perturbation of the Hamiltonian using the magnetic moment of the atom and the magnetic field.   
+        
+        % \begin{figure}
+            % PUT SPECTRAL LINE SPLITTING IMAGE HERE
+        % \end{figure}
     
-        Since it's discovery, the Zeeman effect has played a large role in the field of atomic physics and magnetometry, which is the study of the intensity of magnetic field across space and time. There have been several calculations to include the relativistic corrections \cite{2007Drake-Wu, Drake-Yan}, field inhomogeneities, and quadratic effects in hydrogenic systems \cite{Fontanari_Sadovskií_2015}. However, little is known about its behavior in multi-electron atoms such as $^3$He$^+$ and $^3$He, which is of key interest in magnetometry and the muon magnetic moment anomaly $(\mu_g - 2)$, for which there is a 5.0 $\sigma$ discrepancy \cite{aguillard2023measurement} with the standard model prediction.
+        Since it's discovery, the Zeeman effect has played a large role in the field of atomic physics and magnetometry, which is the study of the intensity of magnetic field across space and time. There have been several calculations to include the relativistic corrections \cite{2007Drake-Wu, Drake-Yan}, field inhomogeneities, and quadratic effects in hydrogenic systems \cite{Fontanari_Sadovskií_2015}. However, little is known about its behavior in helium atoms such as $^3$He$^+$ and $^3$He, which is of key interest in magnetometry and the muon magnetic moment anomaly $(\mu_g - 2)$, for which there is a 5.0 $\sigma$ discrepancy \cite{aguillard2023measurement} with the standard model prediction.
 
     \section{Motivation}\label{sec:motivation}
         \subsection{The $g-2$ experiment}\label{sec:g-2}
+        The Dirac equation is a very successful and well studied equation in quantum mechanics. Its success comes from its ability to predict 2 important phenomena; the existence of antimatter and the magnetic dipole moment of the electron.The Dirac equation predicts that the magnetic dipole of the electron should be twice that of the classical prediction. This result is expressed in terms of the g-factor which the Dirac equation predicts is equal to 2. While the Dirac prediction is much closer to experimental findings, there is still a difference between the experimentally measured value of g and the equations prediction. This is called the $g-2$ anomaly. The anomaly is represented by
+
+
+        \begin{align}
+            a = \frac{g - 2}{2}\;.
+        \end{align}
+
+        \noindent The discrepancy of g is caused by higher-order contributions from quantum field theory and to this day is yet to be properly explained. 
+
+        \begin{align}
+            a^{\text{SM}}_\mu = a_\mu^{\text{QED}} + a_\mu^{\text{EW}} + a_\mu^{\text{hadron}}
+        \end{align}
+
+        \noindent The first two terms can be derived from first principles, but the hadronic term cannot be calculated precisely on its own and is estimated from experimental results. The effort to measure the muon magnetic moment precisely is an active area of research. The work presented in this thesis aids in the investigation of the $g-2$ anomaly by providing corrections to the Zeeman splitting in $^3$He$+$, the element used in the magnetometry experiment to measure the anomaly.
+
+
+
+
         \subsection{High-precision magnetometry}\label{sec:High-Precision-magnetometry}
         \subsection{Connection to Atomic Physics}\label{sec:Connection_To_AMO}
     \section{The Zeeman effect in Hydrogen}\label{sec:Ordinary_Zeeman}
