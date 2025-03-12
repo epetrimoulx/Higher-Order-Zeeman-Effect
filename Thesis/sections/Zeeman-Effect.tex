@@ -1,6 +1,12 @@
 % FIGURE OUT WHAT TO DO WITH THE B^2 TERMS THROUGHOUT THE PERTURBATION
-% DO THEY CARRY THROUGH? OR ARE THEY SCALED OUT?
+% DO THEY CARRY THROUGH? OR ARE THEY SCALED OUT?  --> Carries through with V only
 
+% MOVE linear to quadratic section, show derivation from p_canonical. 
+% Defining \rho - Zr scales Z out of the problem (simplicity)
+% Make sure to also include Z^{3/2}
+% \sigma \cdot B is the splitting - N term like this in quadratic - no noticable split shift - only shifts both states equally.
+% Remove c's in denominator.
+% Remove derivation of Hydrogen
 \chapter{The Higher Order Zeeman Effect}\label{sec:Zeeman-Effect}
     \section{Overview}
         In this chapter the Zeeman Effect is introduced, and the motivation, direct applications, and the higher order Zeeman Effect is discussed. The main focus of this chapter is to show the effect of the quadratic Zeeman Effect, and show how using the magnetic dipole operator in conjunction with the relativistic corrections to $^3$He$^+$ yields a cubic Zeeman Effect. The effects of both the quadratic and cubic corrections are discussed in great detail, and the impact of the effect on high precision measurements is displayed for various magnetic field strengths.\\
@@ -295,7 +301,7 @@
             Combining the magnetic dipole moment with the quadratic Zeeman operator, we can write down the relativistic corrections for $^3$He$^+$. Written in terms of pseudostates the relativistic correction is
 
             \begin{align}
-                C_{\text{rel}}^{(2)} =\sum_{\substack{n = -\infty \\ n \neq 0}}^{\infty}
+                C_{\text{rel}}^{(2)} =\sum_{\substack{n = 1}}^{\infty}
                 \frac{\langle \psi_0 \vert H_Z^{(2)} \vert \psi_n \rangle \langle \psi_n \vert Q_{M1} \vert \psi_0 \rangle}{E_0 - E_n}
             \end{align}
 
