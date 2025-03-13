@@ -10,10 +10,55 @@
         \end{align}
         For the case where the input parameter $z \in \mathbb{Z}^+$, the function is equal to 
         \begin{align}
-            \Gamma{n} = (n - 1)!\;.
+            \Gamma(n) = (n - 1)!\;.
         \end{align}
 
-        This is a relation of key importance in Sec~.\ref{sec:The_Radial_Part}, where the radial integral is replaced with a factorial function for positive integers of $j$ in the sum.
+        \noindent This is a relation of key importance in Sec.~\ref{sec:The_Radial_Part}, where the radial integral is replaced with a factorial function for positive integers of $j$ in the sum.\\
+
+        The gamma function also has an integral definition, which is known as the Euler integral
+
+        \begin{align}
+            \Gamma(z) = \int_0^\infty e^{-t} t^{z-1} dt, \hspace{1cm} \mathfrak{R}e(z) > 0\;.
+        \end{align}
+
+        \noindent This integral is defined as long as the real part of $z$ is greater than zero. This integral closely resembles the radial integrals present in Sec.~\ref{sec:The_Radial_Part}, which are of the form
+
+        \begin{align}
+            I_{\text{radial}} = \int_0^\infty r^j e^{-\alpha r} dr
+        \end{align}
+
+        \noindent To fit the gamma function, perform a change of variables $t = \alpha r$, $dt = \alpha dr$.
+
+        \begin{align}
+            I_{\text{radial}} &= \int_0^\infty \left( \frac{t}{\alpha} \right)^j e^{-t} \frac{1}{\alpha} dt
+        \end{align}
+        %
+        \begin{align}
+            I_{\text{radial}} &= \frac{1}{\alpha^{j+1}}\int_0^\infty {t}^j e^{-t} dt
+        \end{align}
+
+        \noindent So the solution to the radial integral is shown to be 
+
+        \begin{align}
+            I_{\text{radial}} = \frac{\Gamma(j+1)}{\alpha^{j+1}}
+        \end{align}
+
+        \noindent if $j \in \mathbb{Z}^+$, the relationship between the gamma function and the factorial function can be used. The values of $j$ are the summation indices for each power of $r$\footnote{See sections \ref{sec:quadratic_zeeman} and \ref{sec:magnetic_dipole_operator} for the summation expressions for each.}. Since the summation indices are constrained to a set of integers from 0 to infinity, it can be said that 
+
+        \begin{align}
+            \forall j, j \in Z^{0+}
+        \end{align}
+
+        \noindent Additionally, the $0^{\text{th}}$ power of $r$ (corresponding to $j = 0$) does not appear in the recursion relations of the expanded sum in \ref{sec:magnetic_dipole_operator}, and is zero in \ref{sec:quadratic_zeeman}. This further restricts the set of $j$ indices in both problems to 
+
+        \begin{align}
+            \forall j, j\in \mathbb{N}
+        \end{align}
+
+        \noindent Since the set of natural numbers only contains positive integers, the euler integral only evaluates values for positive integer $j$. The gamma function by its original definition is then replaced by the factorial function, giving the solution to the radial integrals used in sections \ref{sec:The_Radial_Part}, \ref{sec:quadratic_zeeman} and \ref{sec:magnetic_dipole_operator}.
+
+        
+
 
 
 
