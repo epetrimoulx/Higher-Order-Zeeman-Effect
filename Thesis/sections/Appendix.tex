@@ -1,11 +1,25 @@
-\chapter{Methods of solving for higher-order perturbations programmatically} \label{sec:Program_perturbation}
-\chapter{Derivation of the Hydrogen Atom}
 \chapter{Derivation of the Recursion Relations}
 \chapter{Hermitian Properties of the Hamiltonian} \label{sec:Hermitian_Left}
 \chapter{Special Functions}
     \section{Overview}
-    \section{Gamma Function} \label{sec:Gamma_Function}
+        This section of the appendix discusses the special functions used throughout this thesis, providing their definitions and properties in greater detail than discussed in the main body of this paper. The introduction to these functions will be brief, and are placed here for convenience of the reader. Sec~.\ref{sec:Gamma_Function} introduces the gamma function and its properties, and its use in providing a closed solution to many of the integrals present in the matrix elements discussed in Sec~.\ref{sec:Integration_Techniques} is highlighted. Sections \ref{sec:Laguerre_Polynomial} and \ref{sec:Spherical_Harmonics} introduce the Laguerre polynomials and the spherical harmonic function respectively, which are key to the solution of hydrogenic wavefunctions used in this thesis. Additionally, the confluent hypergeometric function is discussed in Sec~.\ref{sec:Confluent_Hypergeometric_Function}, where an alternative formulation of the radial wavefunctions for hydrogen is given. Finally, the chapter will conclude with the description of Legendre polynomials, which can be used in a similar manner to the spherical harmonics due to their property of forming a complete set of orthogonal functions.
+    \section{The gamma function} \label{sec:Gamma_Function}
+        The gamma function $\Gamma(z)$ is an extension of the factorial function into the complex plane. 
+        \begin{align}
+            \Gamma(z) \in \mathbb{C} 
+        \end{align}
+        For the case where the input parameter $z \in \mathbb{Z}^+$, the function is equal to 
+        \begin{align}
+            \Gamma{n} = (n - 1)!\;.
+        \end{align}
+
+        This is a relation of key importance in Sec~.\ref{sec:The_Radial_Part}, where the radial integral is replaced with a factorial function for positive integers of $j$ in the sum.
+
+
+
+
     \section{Laguerre Polynomials} \label{sec:Laguerre_Polynomial}
+    \section{Spherical Harmonics} \label{sec:Spherical_Harmonics}
+    \section{Confluent Hypergeometric Function} \label{sec:Confluent_Hypergeometric_Function}
     \section{Legendre Polynomials} \label{sec:Legendre_Polynomial}
-    \section{Spherical Harmonics}
-    \section{Confluent Hypergeometric Function}
+\chapter{Methods of solving for higher-order perturbations programmatically} \label{sec:Program_perturbation}
