@@ -163,13 +163,13 @@
             \end{tabular}
         \end{figure}
 
-        Similarly to the Legendre polynomials and spherical harmonic functions, the Laguerre polynomials also form a complete set of orthogonal basis functions.
+        \noindent Similarly to the Legendre polynomials and spherical harmonic functions, the Laguerre polynomials also form a complete set of orthogonal basis functions.
 
         \begin{align}
             \int_0^\infty L_n(x) L_m(x) e^{-x} dx = \delta_{m n}
         \end{align}
 
-        The Laguerre polynomials are used to described the radial part of the solution to hydrogenic wavefunctions, as discussed in Sec.~\ref{sec:The_Radial_Part}. 
+        \noindent The Laguerre polynomials are used to described the radial part of the solution to hydrogenic wavefunctions, as discussed in Sec.~\ref{sec:The_Radial_Part}. 
         \section{Spherical Harmonics} \label{sec:Spherical_Harmonics}
         Spherical harmonics appear most commonly when solving Laplace's equations in spherical coordinates. It is composed of the Legendre polynomials with an additional phase about the azimuthal angle $\phi$ \cite{Riley_Hobson_Bence_2006}. Laplace's equation is 
 
@@ -217,6 +217,8 @@
             \label{tab:spherical_harmonic}
         \end{figure}
 
+        \noindent The spherical harmonic functions play a key role in the solution to the angular part of the hydrogenic wavefunctions in the derivation of the quadratic Zeeman effect and the magnetic dipole moment operator.
+
         \section{Confluent Hypergeometric Function} \label{sec:Confluent_Hypergeometric_Function}
         The confluent hypergeometric function is a special form of the standard hypergeometric function. The confluent hypergeometric functions are produced from the solution to the differential equation 
 
@@ -248,7 +250,8 @@
             L_n^k(x) = (-1)^k \frac{d^k}{dx^k} L_{n+k}(x)\;.
         \end{align}
 
-        \noindent In the relation given in equation \eqref{eq:confluent-hypergeometric}, $k = {b-1}$, and $n = a$.
+        \noindent In the relation given in equation \eqref{eq:confluent-hypergeometric}, $k = {b-1}$, and $n = a$. The confluent hypergeometric function is used to represent the radial solutions to the hydrogenic wavefunctions discussed in sections \ref{sec:quadratic_zeeman} and \ref{sec:magnetic_dipole_operator}.
 
 
 \chapter{Methods of solving for higher-order perturbations programmatically} \label{sec:Program_perturbation}
+    This section includes the codes implemented to solve higher order perturbations for the quadratic Zeeman effect and the magnetic dipole moment operator. The codes can be found on the authors GitHub page at
