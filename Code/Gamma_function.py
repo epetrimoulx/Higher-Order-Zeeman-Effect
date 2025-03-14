@@ -16,15 +16,13 @@ def main() -> None:
     for i in range(0, 15):
         Factorial_fn[i] = math.factorial(i)
 
-    print(Factorial_fn)
-
     # Seaborn and Matplotlib settings
     sns.set_style("whitegrid")
     plt.figure(figsize=(12, 8))
 
     # Plot Real and Imaginary parts of Gamma(z)
-    plt.plot(z.real, Gamma_fn.real, color='blue', linewidth=2, label=r"$\Gamma(x)$")
-    plt.plot(x, Factorial_fn, color = 'red', linewidth=2, label=r"$x!$")
+    sns.lineplot(x=z.real, y=Gamma_fn.real, color='blue', linewidth=2, label=r"$\Gamma(x)$")
+    sns.lineplot(x=x, y=Factorial_fn, color = 'red', linewidth=2, label=r"$x!$")
 
     plt.yscale("log")
     # Titles and Labels
