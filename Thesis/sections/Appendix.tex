@@ -171,7 +171,7 @@
 
         The Laguerre polynomials are used to described the radial part of the solution to hydrogenic wavefunctions, as discussed in Sec.~\ref{sec:The_Radial_Part}. 
         \section{Spherical Harmonics} \label{sec:Spherical_Harmonics}
-        Spherical harmonics appear most commonly when solving Laplace's equations in spherical coordinates. It is composed of the Legendre polynomials with an additional phase about the azimuthal angle $\phi$. Laplace's equation is 
+        Spherical harmonics appear most commonly when solving Laplace's equations in spherical coordinates. It is composed of the Legendre polynomials with an additional phase about the azimuthal angle $\phi$ \cite{Riley_Hobson_Bence_2006}. Laplace's equation is 
 
         \begin{align}
             \nabla^2 f(r, \theta, \phi) = 0
@@ -180,11 +180,75 @@
         \noindent The solution to this equation is separable, so the angular part of the solution can be written as a product of two functions 
 
         \begin{align}
-            \Theta (\theta) \Phi(\phi) = P^l_m(\cos(\theta)) e^{im\phi}\;.
+            \Theta (\theta) \Phi(\phi) = P^m_l(\cos(\theta)) e^{im\phi}\;.
         \end{align}
 
-        The product of these two 
+        \noindent The product of these two angular functions is called the spherical harmonic function, it is denoted by 
+
+        \begin{align}
+            Y^m_l (\theta, \phi) = P^m_l(\cos(\theta)) e^{im\phi}\;.
+        \end{align}
+
+        \noindent Where $P^l_m(\cos \theta)$ is the associated Legendre polynomial, which is related to the standard Legendre polynomial by 
+
+        \begin{align}
+            P^m_l(x) = (-1)^m (1-x^2)^{\frac{m}{2}} \frac{d^m}{dx^m} \left(P_l(x) \right)
+        \end{align}
+
+        The spherical harmonic functions for a complete set of orthogonal basis functions 
+
+        \begin{align}
+            \int_0^{2\pi} \int_0^\pi Y^m_l(\theta, \phi) Y^{m^\prime}_{l^\prime}(\theta, \phi) d\theta d\phi = \delta_{ll^\prime}\delta_{mm^\prime}
+        \end{align}
+
+        \begin{figure}[h]
+            \centering 
+            \resizebox{\columnwidth}{!}{
+                \begin{tabular}{l l l}
+                    Spherical harmonic functions&\\
+                    \hline 
+                    $Y^0_0 (\theta, \phi) = \sqrt{\frac{1}{4\pi}}$ & & \\
+                    $Y^0_1 (\theta, \phi_) = \sqrt{\frac{3}{4\pi}} \cos \theta$ & $Y^{\pm1}_{1} (\theta, \phi) = \mp \sqrt{\frac{3}{8\pi}} \sin \theta e^{\pm i \phi}$ &\\
+                    $Y^0_2 (\theta, \phi) = \sqrt{\frac{5}{16\pi}} (3 \cos^2\theta - 1)$ & $Y^{\pm 1}_2 (\theta, \phi) = \mp \sqrt{\frac{15}{8\pi}} \sin\theta \cos\theta e^{\pm i\phi}$ & $Y^{\pm 2}_2(\theta, \phi) = \sqrt{\frac{15}{32\pi}} \sin^2 \theta e^{\pm2i\phi}$\\
+                    \hline
+                \end{tabular}
+            }
+            \caption{Table of the first few spherical harmonic functions}
+            \label{tab:spherical_harmonic}
+        \end{figure}
+
         \section{Confluent Hypergeometric Function} \label{sec:Confluent_Hypergeometric_Function}
+        The confluent hypergeometric function is a special form of the standard hypergeometric function. The confluent hypergeometric functions are produced from the solution to the differential equation 
+
+        \begin{align}
+            xy^{\prime \prime} + (c - x)y^\prime - ay = 0
+        \end{align}
+
+        \noindent where there are two possible solutions 
+
+        \begin{align}
+            y_1(x) &= 1 + \frac{a}{c} \frac{x}{1!} + \frac{a(a+1)}{c(c+1)}\frac{x^2}{2!} + \dots \equiv M(a, c ;x)\\
+            y_2(x) &= x^{1-c}M(a-c + 1, 2 - c; x)\;.
+        \end{align}
+
+        \noindent The function $M(a, c;x)$ is called the confluent hypergeometric function \cite{Riley_Hobson_Bence_2006}. It can also be described by the following integral 
+
+        \begin{align}
+            M(a, c; x) = \frac{\Gamma(c)}{\Gamma(a)\Gamma(c - a)} \int_0^1 e^{tx} t^{a-1} (1 - t)^{c - a - 1} dt,
+        \end{align}
+
+        \noindent which converges so long that $c > a > 0$. The confluent hypergeometric function is a more generalized version of many of the special functions discussed in this chapter, and depending on the choice of $a$ and $c$, are capable of producing the other special functions. For example, the Laguerre polynomials can be expressed in terms of the confluent hypergeometric function as 
+
+        \begin{align}
+            M(a, b; x) = \frac{\Gamma(1 - a) \Gamma(b)}{\Gamma(b - a)} L_a^{b-1}(x)\;. \label{eq:confluent-hypergeometric}
+        \end{align}
+
+        \noindent $L_a^{b-1}(x)$ is known as the associated Laguerre polynomial, and is related to the standard Laguerre polynomial discussed in Sec.~\ref{sec:Laguerre_Polynomial} by 
+        \begin{align}
+            L_n^k(x) = (-1)^k \frac{d^k}{dx^k} L_{n+k}(x)\;.
+        \end{align}
+
+        \noindent In the relation given in equation \eqref{eq:confluent-hypergeometric}, $k = {b-1}$, and $n = a$.
 
 
 \chapter{Methods of solving for higher-order perturbations programmatically} \label{sec:Program_perturbation}
