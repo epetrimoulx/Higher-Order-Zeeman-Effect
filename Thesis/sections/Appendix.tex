@@ -254,4 +254,24 @@
 
 
 \chapter{Methods of solving for higher-order perturbations programmatically} \label{sec:Program_perturbation}
-    This section serves as a reference to the codes implemented to solve higher order perturbations for the quadratic Zeeman effect and the magnetic dipole moment operator. The codes can be found on the authors GitHub page at \href{https://github.com/epetrimoulx/Quadratic-Zeeman-Effect}{epetrimoulx/Higher-Order-Zeeman-Effect}. 
+    This section serves as a reference to the codes implemented to solve higher order perturbations for the quadratic Zeeman effect and the magnetic dipole moment operator. The codes can be found on the authors GitHub page at \href{https://github.com/epetrimoulx/Quadratic-Zeeman-Effect}{epetrimoulx/Higher-Order-Zeeman-Effect}. The code is designed such that the order of the perturbation being considered is decided by the user. The first and second order perturbation equations look like 
+
+    \begin{align}
+        \left( H^0 - E^0 \right) \vert \psi^{1}\rangle &= \left( V - E^{1}\right) \vert \psi^{0} \rangle \\
+        \left( H^0 - E^0 \right) \vert \psi^{2}\rangle &= V \vert \psi^{1}\rangle + E^{1} \vert \psi^{1} \rangle + E^{2} \vert \psi^{0} \rangle
+    \end{align}
+
+    \noindent The second order perturbation equation is dependant on the answer for $\vert \psi^{(1)} \rangle$ from the first order perturbation equation. However, if the second order solution is expressed in terms of the first order solution
+
+    \begin{align}
+        \left( H^0 - E^0 \right) \vert \psi^{2}\rangle &= \left(V - E^{1}\right) (H^0 - E^0)^{-1} E^{(1)} |\psi^{(0)}\rangle + E^{2} |\psi^{0}\rangle\;.
+    \end{align}
+
+    \noindent This can be treated as just solving the first order equation again but with a modified inhomogeneous term on the RHS of the equation. 
+    
+    \begin{align}
+        \left( H^0 - E^0 \right) \vert \psi^{n} \rangle &= F(V, \psi^{n-1}) + E^{n} \vert \psi^{0} \rangle\;.
+    \end{align}
+
+    \noindent This "folding" of the perturbation equation at higher order onto itself using the previous solutions from the lower order equations allows for the iterative calculation of higher order perturbations. The main issue with this strategy is that the equations become too long for any human to do by hand, but computationally, this can be calculated to $n^\text{th}$ order easily. 
+
