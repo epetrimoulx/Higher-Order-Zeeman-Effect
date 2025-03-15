@@ -73,7 +73,7 @@ void calc_harmonic_series(const int n, double* harmonic_series){
 /**
   * @author Evan Petrimoulx
   * @date December 8th 2024 
-  * @brief Calculates and stores integrals of the form  ∫ rʲ e⁻ᵅᶻʳ dr
+  * @brief Calculates and stores integrals of the form  \int r^j e^{-\alpha Zr} dr
   *
   * @param n the number of integrals to calculate. is also j in the mathematical expression.
   * @param nuclear_charge the nuclear charge (Z)
