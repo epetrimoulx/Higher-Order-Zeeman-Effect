@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Thesis.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 20 items.
+Database file #1: sections/References.bib
+Warning--I didn't find a database entry for "Bethe_Salpeter_1977"
+Warning--I didn't find a database entry for "Wigner-3j"
+Warning--to sort, need author or key in electron_mass_value
+Warning--to sort, need author or key in electron_charge_value
+Warning--to sort, need author or key in fine_structure_value
+Warning--to sort, need author or key in hbar_value
+Warning--to sort, need author or key in speed_of_light_value
+Warning--to sort, need author or key in electric_permittivity_value
+Warning--to sort, need author or key in Atomic_unit_of_field_strength
+Warning--to sort, need author, editor, or key in Atomic_Physics_Handbook
+Warning--empty author and editor in Atomic_Physics_Handbook
+Warning--empty publisher in Liber_Abaci
+Warning--empty journal in 2007Drake-Wu
+You've used 30 entries,
+            2118 wiz_defined-function locations,
+            697 strings with 8855 characters,
+and the built_in function-call counts, 8016 in all, are:
+= -- 749
+> -- 318
+< -- 0
++ -- 135
+- -- 102
+* -- 570
+:= -- 1300
+add.period$ -- 77
+call.type$ -- 30
+change.case$ -- 137
+chr.to.int$ -- 0
+cite$ -- 41
+duplicate$ -- 309
+empty$ -- 730
+format.name$ -- 102
+if$ -- 1695
+int.to.chr$ -- 0
+int.to.str$ -- 30
+missing$ -- 29
+newline$ -- 138
+num.names$ -- 44
+pop$ -- 160
+preamble$ -- 1
+purify$ -- 110
+quote$ -- 0
+skip$ -- 232
+stack$ -- 0
+substring$ -- 448
+swap$ -- 29
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 106
+warning$ -- 11
+while$ -- 60
+width$ -- 32
+write$ -- 291
+(There were 13 warnings)

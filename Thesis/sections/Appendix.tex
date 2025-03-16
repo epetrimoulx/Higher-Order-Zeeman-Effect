@@ -1,6 +1,100 @@
 % FIX GRAPHS NOT APPEARING
 \chapter{Derivation of the Recursion Relations}
-\chapter{Hermitian Properties of the Hamiltonian} \label{sec:Hermitian_Left}
+    The aim of this section is to guide the reader through a more in depth derivation of the recursion relations for the quadratic zeeman effect as well as the magnetic dipole operator perturbations to the Hamiltonian. Starting with the first order perturbation equation
+
+    \begin{align}
+        \left(H^0 - E^0 \right) \vert \psi^1 \rangle = \left( V + E^1  \right) \vert \psi^0 \rangle\;,
+    \end{align}
+
+    \noindent $E^1$ can be found by multiplying through by $\langle \psi^0 \vert$
+    \begin{align}
+        \langle \psi^0 \vert H^0 - E^0 \vert \psi^1 \rangle &= \langle \psi^0 \vert V + E^1 \vert \psi^0 \rangle \;.
+    \end{align}
+    \noindent The first term is $0$ due to the orthogonality of states which is imposed and discussed in Sec.~\ref{sec:Zeeman-Effect}. The expression now reads 
+
+    \begin{align}
+        &\langle \psi^0 \vert V - E^1 \vert \psi^0 \rangle = 0 \\
+        &\langle \psi^0 \vert V \vert \psi^0 \rangle =  \langle \psi^0 \vert E^1 \vert \psi^0 \rangle\\
+        &\langle \psi^0 \vert V \vert \psi^0 \rangle =  E^1 \langle \psi^0 \vert \psi^0 \rangle
+    \end{align}
+
+    \noindent So 
+
+    \begin{align}
+        E^1 = \langle \psi^0 \vert V \vert \psi^0 \rangle\;.
+    \end{align}
+
+    \noindent For the $r^2$ perturbation, one gets 
+
+    \begin{align}
+        E^1 &= \int^\infty_0\int_0^\pi  \int_0^{2\pi} r^2 \sin\theta \frac{2Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{4\pi}} \; \frac{B^2e^2}{8m}r^2\;  \frac{2Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{4\pi}} \;dr\; d\theta\; d\phi\\ \nonumber\\
+        E^1 &= {4\pi} \int_0^\infty \frac{Z^3 e^{-2Zr}}{\pi} \; \frac{B^2e^2}{8m}r^4 \;dr\\ \nonumber\\
+        E^1 &= \frac{Z^3 B^2 e^2}{2m} \frac{4!}{(2Z)^5} \\ \nonumber \\
+        E^1 &= \frac{3 B^2 e^2}{8Z^2m}
+    \end{align}
+
+    \noindent Here, we let $\frac{B^2 e^2}{m} \equiv \gamma^2$, similarly to \cite{Killingbeck_1979}, and we end up with the final result for $E^1$ to be 
+
+    \begin{align}
+        \frac{1}{8} \gamma^2 \frac{3}{Z^2}\;.
+    \end{align}
+
+    \noindent The perturbing potential $V$ also is written in terms of $\gamma^2$
+    \begin{align}
+        V = \frac{B^2 e^2}{8m} r^2 = \frac{1}{8} \gamma^2 r^2
+    \end{align}
+
+    \noindent Assuming that $\vert \psi^1 \rangle$ is of the form of a power series 
+    \begin{align}
+        \vert \psi^1 \rangle = \sum_{j = 0}^\infty Z^{\frac{3}{2}} a_j r^j e^{-Zr}
+    \end{align}
+    \noindent and substituting both $E^1$ and $\vert \psi^1 \rangle$ into the perturbation equation we get 
+
+    \begin{align}
+        \left(H^0 - E^0 \right) \sum_{j = 0}^\infty Z^{\frac{3}{2}} a_j r^j e^{-Zr} = \left( \frac{1}{8} \gamma r^2 + \frac{1}{8} \gamma \frac{3}{Z^2} \right) \frac{Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{\pi}}\;.
+    \end{align}
+
+    Substituting the Hamiltonian in atomic units 
+
+    \begin{align}
+        \left(\frac{1}{2}\nabla^2 + \frac{Z}{r} - E_0\right) \sum_{j = 0}^\infty a_j r^j e^{-Zr} = \left(\frac{1}{8} \gamma r^2 + \frac{1}{8} \gamma \frac{3}{Z^2} \right) \frac{e^{-Zr}}{\sqrt{\pi}}
+    \end{align}
+    \begin{align}
+        \frac{1}{2} \frac{1}{r^2} \frac{\partial}{\partial r} \left(r^2 \frac{\partial}{\partial r} \right) \sum_{j = 0}^\infty a_j r^j e^{-Zr} + Z \sum_{j = 0}^\infty a_j r^{j - 1} e^{-Zr} - E^0 \sum_{j = 0}^\infty a_j r^j e^{-Zr} \nonumber\\ = \left(\frac{1}{8} \gamma r^2 + \frac{1}{8} \gamma \frac{3}{Z^2} \right) \frac{e^{-Zr}}{\sqrt{\pi}}\;.
+    \end{align}
+    \begin{align}
+        \left( \frac{Z^2}{2} - E^0\right) \sum_{j = 0}^\infty a_j r^j - Zr \sum_{j = 0}^\infty a_j r^{j -2} (j + 1) + \sum_{j = 0}^\infty \frac{j(j+1)}{2} a_j r^{j - 2} \nonumber\\+ Z \sum_{j = 0}^\infty a_j r^{j -1} - E^0 \sum_{j = 0}^\infty a_j r^j = \left(\frac{1}{8} \gamma r^2 + \frac{1}{8} \gamma \frac{3}{Z^2} \right)
+    \end{align}
+
+    \noindent Since $E^0 = \frac{Z^2}{2}$, the first term is zero and the equation becomes 
+
+    \begin{align}
+        -Zr \sum_{j = 0}^\infty a_j r^{j - 2} (j + 1)  \dots \dtos \dtots
+    \end{align}
+
+
+
+\chapter{Left-acting Operators} \label{sec:Hermitian_Left}
+    This section contains the proof for the ability of hermitian operators to act to the left as well as to the right. The specific case discussed here uses the Hamiltonian, but this can be similarly shown for any hermitian operator. Given the matrix element
+    \begin{align}
+        \langle \psi \vert \hat{H} \vert \phi \rangle &= \int^\infty_{-\infty} \psi^*(x) \hat{H} \phi(x) dx\\
+        \langle \psi \vert \hat{H} \vert \phi \rangle &= \int^\infty_{-\infty} \psi^*(x) -i\hbar\frac{d \phi(x)}{dx} dx\;,
+    \end{align}
+
+    \noindent applying integration by parts gives 
+
+    \begin{align}
+        \langle \psi \vert \hat{H} \vert \phi \rangle &= \left[\psi^*(x) \phi(x) \right]^\infty_{-\infty} - \int_{-\infty}^\infty -i\hbar \frac{d\psi^*(x)}{dx} \phi(x) dx\\
+        \langle \psi \vert \hat{H} \vert \phi \rangle &= \int_{-\infty}^\infty i\hbar \frac{d\psi^*(x)}{dx} \phi(x) dx\;.
+    \end{align}
+
+    \noindent Which is the same as writing
+
+    \begin{align}
+        \langle \psi \vert \hat{H} \vert \phi \rangle = \int^\infty_{-\infty} \phi(x) \hat{H} \psi^*(x) dx
+    \end{align}
+
+    \noindent So it is shown that the Hamiltonian is capable of acting to the right or to the left, and it is up to the user which way they want to apply the operation.
 \chapter{Special Functions}
     \section{Overview}
         This section of the appendix discusses the special functions used throughout this thesis, providing their definitions and properties in greater detail than discussed in the main body of this paper. The introduction to these functions is brief, and are placed here for convenience of the reader. Sec~.\ref{sec:Gamma_Function} introduces the gamma function and its properties, and its use in providing a closed solution to many of the integrals present in the matrix elements discussed in Sec~.\ref{sec:Integration_Techniques} is highlighted. Sections \ref{sec:Laguerre_Polynomial} and \ref{sec:Spherical_Harmonics} introduce the Laguerre polynomials and the spherical harmonic function respectively, which are key to the solution of hydrogenic wavefunctions used in this thesis. Additionally, the confluent hypergeometric function is discussed in Sec~.\ref{sec:Confluent_Hypergeometric_Function}, where an alternative formulation of the radial wavefunctions for hydrogen is given. Finally, the chapter concludes with the description of Legendre polynomials, which can be used in a similar manner to the spherical harmonics due to their property of forming a complete set of orthogonal functions.
@@ -273,5 +367,5 @@
         \left( H^0 - E^0 \right) \vert \psi^{n} \rangle &= F(V, \psi^{n-1}) + E^{n} \vert \psi^{0} \rangle\;.
     \end{align}
 
-    \noindent This "folding" of the perturbation equation at higher order onto itself using the previous solutions from the lower order equations allows for the iterative calculation of higher order perturbations. The main issue with this strategy is that the equations become too long for any human to do by hand, but computationally, this can be calculated to $n^\text{th}$ order easily. 
+    \noindent This ``folding'' of the perturbation equation at higher order onto itself using the previous solutions from the lower order equations allows for the iterative calculation of higher order perturbations. The main issue with this strategy is that the equations become too long for any human to do by hand, but computationally, this can be calculated to $n^\text{th}$ order easily so long that the user carefully accounts for higher order contributing states such as the $d$-states which arise in second order perturbations of $r^2$. 
 
