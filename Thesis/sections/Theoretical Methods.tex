@@ -1,4 +1,3 @@
-% FIX 3j SYMBOLS WITH CODE AARON SENT YOU
 % FIX MINUS SIGN IN PERTURBATION EQUATION - REFER TO GRIFFITHS EQUATION 7.10!!!!!!!
 
 \chapter{Theoretical Methods} \label{Theoretical_Methods}
@@ -101,28 +100,28 @@
         \noindent This is a second-order partial differential equation. Assuming spherical symmetry allows one to split the solution to any system into two separable parts; The radial part and the angular part.
 
         \begin{align}
-            \psi_{nlm} = R_{nl}(r) Y^l_m (\cos \theta)
+            \psi_{nlm} = R_{nl}(r) Y^\ell_m (\cos \theta)
         \end{align}
 
         \noindent For a two body hydrogenic system the solutions for each are written in terms of Laguerre polynomials and spherical harmonics. The radial equation has the following solutions \cite{Atomic_Physics_Handbook}
 
         \begin{align}
-            R_{nl}(r) = \frac{2Z}{n^2} \sqrt{\frac{Z(n - l - 1)!}{(n + l)!}} \left( \frac{2Zr}{n} \right)^l e^{\frac{-Zr}{n}} L_{n - l - 1}^{(2l + 1)} \left( 2Zr/n \right) \label{eq:radial_equation}
+            R_{nl}(r) = \frac{2Z}{n^2} \sqrt{\frac{Z(n - \ell - 1)!}{(n + \ell)!}} \left( \frac{2Zr}{n} \right)^\ell e^{\frac{-Zr}{n}} L_{n - \ell - 1}^{(2\ell + 1)} \left( 2Zr/n \right) \label{eq:radial_equation}
         \end{align}
 
-       \noindent Where $Z$ is the nuclear charge atomic number, $l$ is the angular momentum quantum number, $n$ is the principle quantum number, and $L_{n - l - 1}^{(2l + 1)} (2Zr/n)$ is the generalized Laguerre polynomial (which is defined in Appendix \ref{sec:Laguerre_Polynomial}). The radial part of the solution can also be written in terms of the confluent hypergeometric function \cite{Bethe_Salpeter_1977}
+       \noindent Where $Z$ is the nuclear charge atomic number, $\ell$ is the angular momentum quantum number, $n$ is the principle quantum number, and $L_{n - \ell - 1}^{(2\ell + 1)} (2Zr/n)$ is the generalized Laguerre polynomial (which is defined in Appendix \ref{sec:Laguerre_Polynomial}). The radial part of the solution can also be written in terms of the confluent hypergeometric function \cite{Bethe_Salpeter_1977}
 
         \begin{align}
-            R_{nl}(r) = \frac{1}{(2l + 1)} \sqrt{\frac{(n+l)!}{(n - l - 1)! 2n}}& \left( \frac{2Z}{n} \right)^{\frac{3}{2}} e^{\frac{-Zr}{n}} \times \\
-            \left(\frac{2Zr}{n} \right) &F\left(-(n - l - 1), 2l + 2, \frac{2Zr}{n}\right) \nonumber
+            R_{nl}(r) = \frac{1}{(2\ell + 1)} \sqrt{\frac{(n+\ell)!}{(n - \ell - 1)! 2n}}& \left( \frac{2Z}{n} \right)^{\frac{3}{2}} e^{\frac{-Zr}{n}} \times \\
+            \left(\frac{2Zr}{n} \right) &F\left(-(n - \ell - 1), 2\ell + 2, \frac{2Zr}{n}\right) \nonumber
         \end{align}
        \noindent Additionally, the spherical harmonics are
 
         \begin{align}
-            Y^m_l (\theta, \phi) = (-1)^m \sqrt{\frac{(2l + 1)}{4 \pi}\frac{(l - m)!}{(l + m)!}} P_l^m (\cos \theta) e^{i m \phi} \label{eq:angular_equation}
+            Y^m_\ell (\theta, \phi) = (-1)^m \sqrt{\frac{(2\ell + 1)}{4 \pi}\frac{(\ell - m)!}{(\ell + m)!}} P_\ell^m (\cos \theta) e^{i m \phi} \label{eq:angular_equation}
         \end{align}
 
-        where $l$ is the angular momentum quantum number, $m$ is the magnetic quantum number, and $P_l^m (\cos \theta)$ is the associated Legendre polynomial (which is discussed further in Appendix \ref{sec:Legendre_Polynomial}). A key feature of the spherical harmonics which is utilized in Sec.~\ref{sec:Integration_Techniques} is that the spherical harmonics form a normalized complete set of orthogonal basis functions. The ability to separate the solution into two independant parts plays a crucial role in simplifying the task at hand and is exploited when evaluating integrals involving these wavefunctions in Chapter~\ref{sec:Zeeman-Effect}.
+        where $\ell$ is the angular momentum quantum number, $m$ is the magnetic quantum number, and $P_\ell^m (\cos \theta)$ is the associated Legendre polynomial (which is discussed further in Appendix \ref{sec:Legendre_Polynomial}). A key feature of the spherical harmonics which is utilized in Sec.~\ref{sec:Integration_Techniques} is that the spherical harmonics form a normalized complete set of orthogonal basis functions. The ability to separate the solution into two independant parts plays a crucial role in simplifying the task at hand and is exploited when evaluating integrals involving these wavefunctions in Chapter~\ref{sec:Zeeman-Effect}.
 
     \section{Integration Techniques} \label{sec:Integration_Techniques}
         In this section s standard approach to solving the integrals pertaining to the various matrix elements required throughout is discussed. A matrix element of an operator $V$, such as $\langle\psi^n \vert V \vert \psi^m \rangle$, where $V$ is a perturbed Hamiltonian, can be used to approximate the behaviour of quantum systems under small disturbances. Calculating their matrix elements gives insight to the system's behaviour, revealing properties such as transition rates or behaviour in an external field \ref{}. The calculation of these matrix elements requires integration over the states as well as the operator acting on a state, which can involve radial and angular pieces. As discussed in the previous section, the ability to separate the solution into a radial part as well as an angular part significantly simplifies the solution process relative to a direct calculation. Instead of having to integrate a single function over all three dimensions in spherical coordinates, the solution is split into two steps which are calculated independantly. Assuming that $V(\vec{r})$ can also be partitioned into $V(\vec{r}) = V_r V_\Omega$,
@@ -148,26 +147,22 @@
         \noindent Since hydrogenic wavefunctions are used to calculate matrix elements for the higher order Zeeman effect, integrals of this form with one or more spherical harmonics within the integrand appear. The calculation of the angular integrals is simplified by exploiting the nature of the spherical harmonic function. Since it forms a complete set of orthogonal basis functions, for any integral involving $\theta$ and $\phi$, the integrand is written in terms of spherical harmonic functions. Using the orthogonality of the basis functions the integral of any two spherical harmonics is
 
         \begin{align}
-            \int_0^\pi \int_0^{2\pi} Y^m_l(\theta, \phi) Y^{m^\prime}_{l^\prime} (\theta, \phi) \; d\theta d\phi = \delta_{ll^\prime} \delta_{mm^\prime}\label{eq:delta_spherical_harmonic}\;.
+            \int_0^\pi \int_0^{2\pi} Y^m_\ell(\theta, \phi) Y^{m^\prime}_{\ell^\prime} (\theta, \phi) \; d\theta d\phi = \delta_{ll^\prime} \delta_{mm^\prime}\label{eq:delta_spherical_harmonic}\;.
         \end{align}
 
         For all angular integrals where the spherical harmonics contain different angular momentum or magnetic quantum numbers, the result is zero. If given a scenario where three spherical harmonics are multiplied together (i.e, there are three spherical harmonic functions to integrate), the result can be expressed in terms of Wigner $3j$-symbols according to \cite{Wigner-3j}
 
         \begin{align}
-            \int_0^\pi \int_0^{2\pi} \sin \theta \; d\theta d\phi\;& Y^{m_1}_{l_1}(\theta, \phi) Y^{m_2}_{l_2} (\theta, \phi) Y^{m_3}_{l_3} (\theta, \phi) =\\
-             &\sqrt{\frac{(2l_1 + 1)(2l_2 + 1) (2l_3 + 1)}{4 \pi}} \begin{pmatrix}
-                l_1 & l_2 & l_3 \\
-                0 & 0 & 0
-            \end{pmatrix} \begin{pmatrix}
-                l_1 & l_2 & l_3 \\
-                m_1 & m_2 & m_3 
-            \end{pmatrix} \nonumber
+            \int_0^\pi \int_0^{2\pi} \sin \theta \; d\theta d\phi\;& Y^{m_1}_{{\ell_1}}(\theta, \phi) Y^{m_2}_{{\ell_2}} (\theta, \phi) Y^{m_3}_{{\ell_3}} (\theta, \phi) =\\
+             &\sqrt{\frac{(2\ell_1 + 1)(2\ell_2 + 1) (2\ell_3 + 1)}{4 \pi}} 
+             \renewcommand{\arraystretch}{1.2}\begin{pmatrix} \ell_1 & \ell_2 & \ell_3 \\ 0 & 0 & 0 \end{pmatrix}
+             \renewcommand{\arraystretch}{1.2}\begin{pmatrix} \ell_1 & \ell_2 & \ell_3 \\ m_1 & m_2 & m_3 \end{pmatrix} \nonumber
         \end{align}
 
         \noindent where the set of $6$ parameters inside the brackets at the end of the expression is called a $3$j symbol, which has the following definiton \cite{edmonds_book}:
 
         \begin{align} \label{3j_1}
-            &\begin{pmatrix}
+            & \renewcommand{\arraystretch}{1.2}\begin{pmatrix}
                 j_1 & j_2 & j_3\\
                 m_1 & m_2 & m_3
             \end{pmatrix} = (-1)^{j_1 - j_2 - m_3} \left( 2j_2 + 1\right)^{\frac{1}{2}} \langle j_1, m_1, j_2, m_2 \vert j_1, j_2, j_3 - m_3 \rangle
@@ -184,7 +179,7 @@
         \end{align}
 
         \normalsize
-        This provides a closed form solution to any angular integrals involving three angular momenta. Since the spherical harmonics form a complete set of orthonormal functions, any expression in terms of 3 or more angular momenta is written by substituting linear combinations of spherical harmonics for the angular parts of the integral. The $3-j$ symbols are applied to such a system allowing one to avoid the direct integration and replace it with the closed form solution in equations \eqref{3j_1} and \eqref{3j_2}. 
+        \noindent This provides a closed form solution to any angular integrals involving three angular momenta. Since the spherical harmonics form a complete set of orthonormal functions, any expression in terms of 3 or more angular momenta is written by substituting linear combinations of spherical harmonics for the angular parts of the integral. The $3-j$ symbols are applied to such a system allowing one to avoid the direct integration and replace it with the closed form solution in equations \eqref{3j_1} and \eqref{3j_2}. \\
     
         The ability to substitute the angular part of the integral with a closed form solution in terms of Wigner-3j symbols allows for easy computation providing exact analytic solutions to part of the problem being discussed.
 
@@ -207,7 +202,7 @@
                 \int_0^\infty r^j e^{-\alpha r} dr = \frac{j!}{\alpha^{j + 1}}\;.
             \end{align}
 
-            \noindent Fitting the integrals to the gamma function not only makes the task of computing the integrals significantly easier, but also makes the integration computationally stable. The solution provides a simple formula to implement when calculating radial integrals, and allows one to skip the implementation of well known numerical integration methods such as Euler's method or any Runge-Kutta methods \cite{Numerical_recipes}. While these methods are powerful, they do have significant drawbacks compared to the derived analytical solutions due to error propagation and machine-precision and computation time.
+            \noindent Fitting the integrals to the gamma function not only makes the task of computing the integrals significantly easier, but also makes the integration computationally stable. The solution provides a simple formula to implement when calculating radial integrals, and allows one to skip the implementation of well known numerical integration methods such as Euler's method or any Runge-Kutta methods \cite{Numerical_recipes}. While these methods are powerful, they do have significant drawbacks compared to the derived analytical solutions due to error propagation and machine-precision and computation time.\\
             
             The ability to compute these radial hydrogenic wavefunction integrals exactly is not only a satisfying result mathematically, but opens the door for more difficult problems in atomic physics where machine error is the determining step in the accuracy of a high-precision calculation\footnote{Such problems include the calculation of Hylleraas wavefunctions for three body atomic systems such as H$^-$, He, or Li$^+$, where the radial integrals follow a similar but more complex closed form solution.}.
             
@@ -263,7 +258,7 @@
             E^n = \langle \psi_{n-1} \vert V \vert \psi_0 \rangle\;. \label{eq:Energy_Perturbation}
         \end{align}
 
-        \noindent Similarly to the standard quantum mechanical Hamiltonian, the perturbation equation is a second order partial differential equation. However, the perturbing term in the equation as well as the higher order corrections to the energy serve as inhomogenous terms. To solve this it is assumed that the higher order wavefunction is of the form of a power series in $r$, and the method of Frobenius is used check if a solution of this form exists. This is discussed in the following section. 
+        \noindent Similarly to the standard quantum mechanical Hamiltonian, the perturbation equation is a second order partial differential equation. However, the perturbing term in the equation as well as the higher order corrections to the energy serve as inhomogenous terms. To solve this it is assumed that the higher order wavefunction is of the form of a power series in $r$, and the method of Frobenius is used check if a solution of this form exists. This is discussed in the following section.\\ 
 
         To calculate a higher order correction to the wavefunction, a similar process is repeated. This time starting with the second order equation
         \begin{align}
@@ -279,7 +274,7 @@
             \frac{d^2 u}{dx^2} + \frac{d^2 u}{dy^2} + k^2 u = 0\;.
         \end{align}
 
-        \noindent The method of Frobenius involves assuming the solution is of the form of a power series, and then solving for terminating recursion relations to check if a finite solution exists. The method of solving these recurrence relations is what will be highlighted in this section. 
+        \noindent The method of Frobenius involves assuming the solution is of the form of a power series, and then solving for terminating recursion relations to check if a finite solution exists. The method of solving these recurrence relations is what will be highlighted in this section. \\
 
         A recurrence relation is an equation where the $n^{\text{th}}$ term of a sequence is dependant on some combination of its previous terms in the sequence. A simple example of a recurrence relation is the Fibonacci numbers \cite{Liber_Abaci}.
 

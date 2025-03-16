@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  16 MAR 2025 18:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  16 MAR 2025 19:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -887,7 +887,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4 \chapter
+l.3 \chapter
             {Theoretical Methods} \label{Theoretical_Methods} [1
 
 
@@ -911,7 +911,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
 
@@ -947,7 +947,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [6]
 
-Package natbib Warning: Citation `Bethe_Salpeter_1977' on page 7 undefined on input line 113.
+Package natbib Warning: Citation `Bethe_Salpeter_1977' on page 7 undefined on input line 112.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -961,7 +961,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [7]
 
-LaTeX Warning: Reference `' on page 8 undefined on input line 128.
+LaTeX Warning: Reference `' on page 8 undefined on input line 127.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -975,7 +975,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [8]
 
-Package natbib Warning: Citation `Wigner-3j' on page 9 undefined on input line 154.
+Package natbib Warning: Citation `Wigner-3j' on page 9 undefined on input line 153.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -988,6 +988,11 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [9]
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
+
+ []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -998,6 +1003,11 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [10]
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1008,7 +1018,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
 
  []
 
@@ -1033,6 +1043,11 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [13]
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
+
+ []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1043,6 +1058,11 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [14]
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+
+ []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1063,7 +1083,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 336--337
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
 
@@ -1563,7 +1583,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  76i,15n,85p,1512b,633s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\epetr\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Thesis.pdf (64 pages, 582626 bytes).
+Output written on Thesis.pdf (64 pages, 583056 bytes).
 PDF statistics:
  1025 PDF objects out of 1200 (max. 8388607)
  288 named destinations out of 1000 (max. 500000)
