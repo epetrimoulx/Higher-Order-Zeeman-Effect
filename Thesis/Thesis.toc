@@ -38,14 +38,14 @@
 \contentsline {section}{\numberline {4.4}Future Work}{31}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Theoretical and Practical Impact}{31}{section.4.5}%
 \contentsline {chapter}{\numberline {A}Derivation of the Recursion Relations}{32}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Left-acting Operators}{35}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Special Functions}{36}{appendix.C}%
-\contentsline {section}{\numberline {C.1}Overview}{36}{section.C.1}%
-\contentsline {section}{\numberline {C.2}The gamma function}{36}{section.C.2}%
-\contentsline {section}{\numberline {C.3}Legendre Polynomials}{38}{section.C.3}%
-\contentsline {section}{\numberline {C.4}Laguerre Polynomials}{40}{section.C.4}%
-\contentsline {section}{\numberline {C.5}Spherical Harmonics}{43}{section.C.5}%
-\contentsline {section}{\numberline {C.6}Confluent Hypergeometric Function}{44}{section.C.6}%
-\contentsline {chapter}{\numberline {D}Methods of solving for higher-order perturbations programmatically}{46}{appendix.D}%
-\contentsline {chapter}{REFERENCES}{48}{equation.D.0.4}%
-\contentsline {chapter}{VITA AUCTORIS}{51}{appendix*.9}%
+\contentsline {chapter}{\numberline {B}Left-acting Operators}{38}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Special Functions}{39}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Overview}{39}{section.C.1}%
+\contentsline {section}{\numberline {C.2}The gamma function}{39}{section.C.2}%
+\contentsline {section}{\numberline {C.3}Legendre Polynomials}{41}{section.C.3}%
+\contentsline {section}{\numberline {C.4}Laguerre Polynomials}{43}{section.C.4}%
+\contentsline {section}{\numberline {C.5}Spherical Harmonics}{46}{section.C.5}%
+\contentsline {section}{\numberline {C.6}Confluent Hypergeometric Function}{47}{section.C.6}%
+\contentsline {chapter}{\numberline {D}Methods of solving for higher-order perturbations programmatically}{49}{appendix.D}%
+\contentsline {chapter}{REFERENCES}{51}{equation.D.0.4}%
+\contentsline {chapter}{VITA AUCTORIS}{54}{appendix*.9}%

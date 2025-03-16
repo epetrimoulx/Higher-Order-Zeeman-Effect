@@ -34,7 +34,7 @@ def main() -> None:
     plt.legend(fontsize=12)
     plt.grid(True, linestyle="--", linewidth=0.6)
     plt.show()
-    plt.savefig("../Thesis/Gamma_function.pgf")
+    plt.savefig("../Thesis/Gamma_function.pdf")
 
 if __name__ == '__main__':
     main()

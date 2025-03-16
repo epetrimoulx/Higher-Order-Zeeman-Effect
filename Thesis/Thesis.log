@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  15 MAR 2025 22:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  16 MAR 2025 18:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -887,7 +887,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3 \chapter
+l.4 \chapter
             {Theoretical Methods} \label{Theoretical_Methods} [1
 
 
@@ -911,7 +911,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
@@ -947,7 +947,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [6]
 
-Package natbib Warning: Citation `Bethe_Salpeter_1977' on page 7 undefined on input line 112.
+Package natbib Warning: Citation `Bethe_Salpeter_1977' on page 7 undefined on input line 113.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -961,7 +961,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [7]
 
-LaTeX Warning: Reference `' on page 8 undefined on input line 127.
+LaTeX Warning: Reference `' on page 8 undefined on input line 128.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -975,7 +975,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [8]
 
-Package natbib Warning: Citation `Wigner-3j' on page 9 undefined on input line 153.
+Package natbib Warning: Citation `Wigner-3j' on page 9 undefined on input line 154.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -1008,7 +1008,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
 
  []
 
@@ -1063,7 +1063,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
 
  []
 
@@ -1291,51 +1291,6 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [33]
-sections/Appendix.tex:73: Undefined control sequence.
-<recently read> \dtos 
-                      
-l.73     \end{align}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-sections/Appendix.tex:73: Undefined control sequence.
-<argument> ...^{j - 2} (j + 1) \dots \dtos \dtots 
-                                                  
-l.73     \end{align}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-sections/Appendix.tex:73: Undefined control sequence.
-<recently read> \dtos 
-                      
-l.73     \end{align}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-sections/Appendix.tex:73: Undefined control sequence.
-<argument> ...^{j - 2} (j + 1) \dots \dtos \dtots 
-                                                  
-l.73     \end{align}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1346,13 +1301,48 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [34]
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[35]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[36]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[37]
 APPENDIX B.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[35
+[38
 
 ]
 APPENDIX C.
@@ -1361,14 +1351,14 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[36
+[39
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 117.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 172.
 (C:\Users\epetr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
@@ -1381,48 +1371,14 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[37] (Gamma_function.pgf)
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-[38]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-[39] (Legendre_polynomials.pgf
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 425.
+[40] (Gamma_function.pgf
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 364.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 1147.
+(Font)              size <17.28> substituted on input line 688.
 
 )
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-[40] (Laguerre_polynomials.pgf)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1442,21 +1398,21 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[42]
+[42] (Legendre_polynomials.pgf)
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[43] (Laguerre_polynomials.pgf)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-[43]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1477,13 +1433,47 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [45]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[46]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[47]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[48]
 APPENDIX D.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[46
+[49
 
 ])
 Overfull \hbox (18.39459pt too wide) has occurred while \output is active
@@ -1500,12 +1490,12 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[47] (Thesis.bbl
+[50] (Thesis.bbl
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[48
+[51
 
 
 ]
@@ -1518,7 +1508,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[49])
+[52])
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1528,7 +1518,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[50]
+[53]
 Underfull \hbox (badness 10000) in paragraph at lines 158--158
 []|\OT1/cmr/m/n/12 Windsor On-tario,
  []
@@ -1551,7 +1541,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[51
+[54
 
 ] (Thesis.aux)
 
@@ -1565,17 +1555,17 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: B639DA0CDFECB4E424372760F4A169A6;8371.
  ) 
 Here is how much of TeX's memory you used:
- 37320 strings out of 475281
- 857672 string characters out of 2774064
- 1371506 words of memory out of 3000000
- 57864 multiletter control sequences out of 15000+600000
+ 37315 strings out of 475281
+ 857594 string characters out of 2774064
+ 1371591 words of memory out of 3000000
+ 57863 multiletter control sequences out of 15000+600000
  489492 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  76i,15n,85p,1512b,633s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\epetr\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Thesis.pdf (61 pages, 569164 bytes).
+Output written on Thesis.pdf (64 pages, 582626 bytes).
 PDF statistics:
- 1018 PDF objects out of 1200 (max. 8388607)
- 292 named destinations out of 1000 (max. 500000)
+ 1025 PDF objects out of 1200 (max. 8388607)
+ 288 named destinations out of 1000 (max. 500000)
  421 words of extra memory for PDF output out of 10000 (max. 10000000)
 
