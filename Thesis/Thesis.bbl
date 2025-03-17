@@ -44,6 +44,11 @@ George~B. Arfken, Hans~J. Weber, George~B. Arfken, and Hans-Jurgen Weber.
 \newblock Elsevier Academic Press, Amsterdam, Heidelberg, 6. ed., 5. [print.,
   international ed.] edition, 2008.
 
+\bibitem{Basdevant_Dalibard_2002}
+J.~L. Basdevant and J.~Dalibard.
+\newblock {\em Quantum mechanics: including a CD-ROM by Manuel Joffre}.
+\newblock Advanced texts in physics. Springer, Berlin; New York, 2002.
+
 \bibitem{Drake_1987}
 G.~W.~F. Drake.
 \newblock New variational techniques for the $1snd$ states of helium.
@@ -93,6 +98,12 @@ Daniele Fontanari and Dmitrií~A Sadovskií.
 \newblock {\em Journal of Physics A: Mathematical and Theoretical},
   48(9):095203, Feb 2015.
 
+\bibitem{Foot_2005}
+C.~J. Foot.
+\newblock {\em Atomic physics}.
+\newblock Oxford master series in physics. Oxford University Press, Oxford; New
+  York, 2005.
+
 \bibitem{Griffiths_2018}
 David~J. Griffiths.
 \newblock {\em Introduction to Quantum Mechanics}.
@@ -128,6 +139,11 @@ K.~F. Riley, M.~P. Hobson, and S.~J. Bence.
 \newblock {\em Mathematical methods for physics and engineering}.
 \newblock Cambridge University Press, Cambridge; New York, 3rd ed edition,
   2006.
+
+\bibitem{Sakurai_Napolitano_2020}
+J.~J. Sakurai and Jim Napolitano.
+\newblock {\em Modern Quantum Mechanics}.
+\newblock Cambridge University Press, 3 edition, 2020.
 
 \bibitem{Schrödinger_1926}
 E.~Schrödinger.

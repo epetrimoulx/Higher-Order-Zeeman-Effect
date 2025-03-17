@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  16 MAR 2025 19:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  16 MAR 2025 22:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1110,9 +1110,12 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [18]
 CHAPTER 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
+
+
+LaTeX Warning: Reference `sec:Ordinary_Zeeman' on page 19 undefined on input line 11.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -1124,11 +1127,11 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 22.
+(hyperref)                removing `math shift' on input line 19.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 22.
+(hyperref)                removing `math shift' on input line 19.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -1151,6 +1154,11 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [21]
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
+ []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1161,11 +1169,6 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
-
- []
-
-
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1175,7 +1178,22 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[23] (Graphs/zgraph1.tex
+[23]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+(Graphs/zgraph1.tex
 \tbox=\box84
 \htext=\skip84
 \temp=\skip85
@@ -1188,16 +1206,10 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 \ntext=\count359
 \ftext=\count360
 )
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-[24]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1248,31 +1260,6 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [29]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 299.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 299.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 299.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 299.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 299.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 299.
-
-) (sections/Related-works.tex) (sections/Conclusion.tex
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1283,13 +1270,58 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [30]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 340.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 340.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 340.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 340.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 340.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 340.
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[31]) (sections/Related-works.tex) (sections/Conclusion.tex
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[32]
 CHAPTER 4.
 ) (sections/Appendix.tex
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[31
+[33
 
 ]
 APPENDIX A.
@@ -1298,34 +1330,9 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[32
+[34
 
 ]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-[33]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
-
- []
-
-
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1346,6 +1353,11 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [36]
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1356,13 +1368,33 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [37]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[38]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[39]
 APPENDIX B.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[38
+[40
 
 ]
 APPENDIX C.
@@ -1371,7 +1403,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[39
+[41
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 166--167
@@ -1391,7 +1423,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[40] (Gamma_function.pgf
+[42] (Gamma_function.pgf
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 364.
 
 
@@ -1408,7 +1440,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[41]
+[43]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1418,7 +1450,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[42] (Legendre_polynomials.pgf)
+[44] (Legendre_polynomials.pgf)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1428,31 +1460,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[43] (Laguerre_polynomials.pgf)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-[44]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
- $[]$
- []
-
-[45]
+[45] (Laguerre_polynomials.pgf)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1477,6 +1485,10 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [47]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1487,13 +1499,33 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [48]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[49]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[50]
 APPENDIX D.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[49
+[51
 
 ])
 Overfull \hbox (18.39459pt too wide) has occurred while \output is active
@@ -1510,12 +1542,12 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[50] (Thesis.bbl
+[52] (Thesis.bbl
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[51
+[53
 
 
 ]
@@ -1528,7 +1560,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[52])
+[54]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
@@ -1538,7 +1570,17 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[53]
+[55])
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+ []
+
+[56]
 Underfull \hbox (badness 10000) in paragraph at lines 158--158
 []|\OT1/cmr/m/n/12 Windsor On-tario,
  []
@@ -1561,7 +1603,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  $[]$
  []
 
-[54
+[57
 
 ] (Thesis.aux)
 
@@ -1572,20 +1614,20 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: B639DA0CDFECB4E424372760F4A169A6;8371.
+(rerunfilecheck)             Checksum: 117970950AEE409A27E403CEC4A7CDED;8106.
  ) 
 Here is how much of TeX's memory you used:
- 37315 strings out of 475281
- 857594 string characters out of 2774064
- 1371591 words of memory out of 3000000
- 57863 multiletter control sequences out of 15000+600000
+ 37335 strings out of 475281
+ 858003 string characters out of 2774064
+ 1371552 words of memory out of 3000000
+ 57871 multiletter control sequences out of 15000+600000
  489492 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,15n,85p,1512b,633s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 76i,15n,85p,1512b,677s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\epetr\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Thesis.pdf (64 pages, 583056 bytes).
+Output written on Thesis.pdf (67 pages, 592123 bytes).
 PDF statistics:
- 1025 PDF objects out of 1200 (max. 8388607)
- 288 named destinations out of 1000 (max. 500000)
- 421 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1048 PDF objects out of 1200 (max. 8388607)
+ 300 named destinations out of 1000 (max. 500000)
+ 413 words of extra memory for PDF output out of 10000 (max. 10000000)
 
