@@ -242,10 +242,10 @@
         \begin{align}
             a_0 = \frac{11}{2 Z^4 \sqrt{\pi}} \frac{1}{12}\gamma^2 \;.
         \end{align}
-        \noindent Thus, the full first order correction to the ground state hydrogenic wavefunction for an atom subject to an external magnetic field is 
+        \noindent Thus, the full first order correction to the ground state hydrogenic wavefunction subject to an external magnetic field is 
 
         \begin{align}
-            \vert \psi^{(1)} \rangle = \frac{1}{12}\gamma^2 \frac{1}{\sqrt{\pi}} \left[\frac{11}{2 Z^4} - \frac{1}{Z^2} r^2 -\frac{1}{3Z} r^3 \right] e^{-Zr} \;.
+            \vert \psi^{(1)} \rangle = \frac{1}{12}\gamma^2 \frac{1}{\sqrt{\pi}} \left[\frac{11}{2 Z^4} - \frac{1}{Z^2} r^2 -\frac{1}{3Z} r^3 \right] e^{-Zr} \;. \label{psi_1_result}
         \end{align}
 
 
@@ -305,13 +305,28 @@
                 Q_{M1} = \mu_B \vec{\sigma} \cdot \vec{B} + \frac{4}{3}\frac{\mu_B}{mc^2}\vec{\sigma} \cdot \vec{B} \hat{H} + \frac{5}{3}\mu_B Z \alpha^2 a_0 \vec{\sigma} \cdot \vec{B} \frac{1}{r} \;.
             \end{align}
 
-            \noindent The relativistic magnetic dipole moment operator is then written as a perturbation of $r^{-1}$ to the Hamiltonian. Since the $p^2$ term is written in terms of the original Hamiltonian, there is not a need to perform a perturbation about $p^2$ in order to receive the desired result.
-
-            % THIS SECTION NEEDS STRENGTHENING - IT IS CURRENTLY WEAK
-            % THE JUMP FROM QM1 TO 1/r IS NOT EXPLAINED WELL
+            \noindent The relativistic magnetic dipole moment operator is then written as a perturbation of $r^{-1}$ to the Hamiltonian. Now that the operator has been introduced, the total Zeeman effect for the system can be derived. The total Zeeman effect utilizes not only the electronic Zeeman effect discussed above, but also accounts for the nuclear Zeeman effect. The Hamiltonian for the system now includes the standard definition, the linear electronic Zeeman effect, the quadratic electronic Zeeman effect and the ordinary nuclear Zeeman effect. This is described mathematically as 
 
             \begin{align}
-                \left(H^{(0)} - E^{(0)}\right) \vert \varPsi^{(1)}\rangle = -\left(\frac{5}{3}\mu_B Z \alpha^2 a_0 \frac{1}{r} \vec{\sigma} \cdot \vec{B} - E^{(1)} \right) \frac{e^{-Zr}}{\sqrt{\pi}}
+                \hat{H}_Z = \frac{e\hbar}{2M} g_I  \left[ \vec{B} \cdot \vec{\sigma}_N + \frac{M}{m} \left(\frac{g_s}{g_I} Q_{M1} + \frac{B^2 e}{3g_I \hbar} r^2 \left( P_0(\cos \theta) - P_2(\cos\theta) \right) \right) \right]
+            \end{align}
+
+            \noindent Inserting the $Q_{M1}$ operator into the equation yields          
+            \footnotesize
+            \begin{align}
+                \hat{H}_Z = \frac{e\hbar}{2M} g_I  &\left[ \vec{B} \cdot \vec{\sigma}_N + \frac{M}{m} \left(\frac{g_s}{g_I} \left( \mu_B \vec{\sigma} \cdot \vec{B} + \frac{4}{3}\frac{\mu_B}{mc^2}\vec{\sigma} \cdot \vec{B} \hat{H} + \frac{5}{3}\mu_B Z \alpha^2 a_0 \vec{\sigma} \cdot \vec{B} \frac{1}{r} \right) + \frac{B^2 e}{3g_I \hbar} r^2 \right) \right]
+            \end{align}
+            \normalsize
+
+            \noindent The new Hamiltonian combines previously mentioned effects, and has terms linearly scaling in $B$, as well as quadratically scaling in $B$. Several new factors have arisen due to the inclusion of the nuclear magnetic moment such as $g_I$, the nuclear g-factor, $g_s$, the electron spin g-factor, and $M$, the mass of the nucleus. $\vec{\sigma}_N$ is the nuclear spin operator, which is analgous to the electron spin matrices $\vec{\sigma}$. It's subscript is maintained to help distinguish between the nuclear and electronic effects present in the Hamiltonian. Traditionally, the nuclear contribution is ignored as its effect on the system is significantly smaller than the effect present from the electronic terms. The reason the nuclear effect is so much smaller than the electronic effect is because its impact is supressed by the mass of the nucleus. Since the mass of the electron is so much smaller the the nuclear mass, its impact is a factor of $\frac{M}{m}$ stronger than the nuclear effects.\\
+
+            The inclusion of the $Q_{M1}$ operator in the Zeeman effect adds a linear scaling of $B$ to the overall energy of the system. This operator can be combined with the quadratic Zeeman operator discussed previously to yield a relativistic correction to $^3$He$^+$. This relativistic correction scales with $B^3$ and will be the primary focus of this thesis moving forwards. The inclusion of this higher order Zeeman effect adds a small correction to the Zeeman splitting which has since been unnacounted for in high precision magnetometry. The perturbative effects of the relativistic magnetic dipole moment operator is examined below and explores how it modifies the structure of the Hamiltonian. \\
+            
+            Within the $Q_{M1}$ operator, it has been shown that the $p^2$ term can be written in terms of the original Hamiltonian, there is not a need to perform a perturbation about $p^2$ in order to receive the desired correction to the energy. Thus the perturbation equation for the $Q_{M1}$ operator is
+
+
+            \begin{align}
+                \left(H^{(0)} - E^{(0)}\right) \vert \varPsi^{(1)}\rangle = -\left(\frac{5}{3}\mu_B Z \alpha^2 a_0 \frac{1}{r} \vec{\sigma} \cdot \vec{B} - E^{(1)} \right) \frac{e^{-Zr}}{\sqrt{\pi}}\;.
             \end{align}
 
             \noindent Similarly to Sec.~\ref{sec:quadratic_zeeman}, the first order corrected wavefunction is assumed to be of the form of a power series, so that the method of Frobenius can be applied. This gives a similar result to the quadratic Zeeman derivation, but the inhomogeneous terms on the right hand side of the equation now correlate to different powers of $r$\footnote{Note here that $a_0$ is the Bohr radius, not the zeroeth term in the sum. Similarly to the derivation for the quadratic Zeeman effect, there is no $a_0$ term from the summation, and it is determined later. The conflict in notation is avoided for now.}.
@@ -343,19 +358,89 @@
                 a_0 = -\frac{5}{3} \alpha^2 \bar{a_0} \mu_B \vec{\sigma} \cdot \vec{B} \frac{1}{\sqrt{\pi}} \frac{3}{2}\;.
             \end{align}
 
-            Thus the final expression for the correction to the hydrogenic wavefunction for a perturbation of the relativistic magnetic dipole operator is 
+            \noindent Thus the final expression for the correction to the hydrogenic wavefunction for a perturbation of the relativistic magnetic dipole operator is 
 
             \begin{align}
                 \vert \varPsi^{(1)} \rangle = \frac{5}{3} Z \alpha^2 a_0 \mu_B \vec{\sigma} \cdot \vec{B} \frac{1}{\sqrt{\pi}} e^{-Zr} \left( - \frac{3}{2Z} + r \right)
             \end{align}
 
+            \noindent Now that the $Q_{M1}$ operator 
+
         \subsection{The relativistic correction to $^3$He$^+$}\label{sec:Relativistic_Correction}
             Combining the relativistic magnetic dipole moment with the quadratic Zeeman operator, we can write down the relativistic corrections for $^3$He$^+$. The relativistic correction is
 
             \begin{align}
-                C_{\text{rel}}^{(2)} = \langle \psi^{(0)} \vert Q_{M1} \vert \varPsi^{(1)} \rangle \langle \psi^{(0)} \vert V_Z^{(2)} \vert \psi^{(1)} \rangle
+                C_{\text{rel}}^{(2)} = \sum_{n = 1}^\infty \frac{\langle \psi^0 \vert Q_{M1} \vert \psi^n \rangle \langle \psi^n\vert V_Z^{(2)} \vert \psi^0 \rangle}{E_0 - E_n}\;.
             \end{align}
 
+            \noindent Replacing the infinite sum of the hydrogenic spectrum with the sum over the pseudospectrum for either the quadratic Zeeman operator or the relativistic magnetic dipole operator gives a simplified definition for the relativistic correction. To ensure correctness, both approaches are calculated, and the Dalgarno interchange theorem \ref{sec:Dalgarno_Interchange_Theorem} is used to verify that both solutions are the same. Starting with the quadratic Zeeman operator, define 
+
+            \begin{align}
+                \vert \psi^{(1)} \rangle = \sum_{n = 1}^\infty \frac{\vert \psi^n \rangle \langle \psi^n \vert V_Z^{(2)} \vert \psi^0 \rangle}{E_0 - E_n}\;,
+            \end{align}
+
+            \noindent so that the relativistic correction now reads 
+
+            \begin{align}
+                C_{\text{rel}}^{(2)} = \langle \psi^0 \vert Q_{M1} \vert \psi^{(1)} \rangle\;.
+            \end{align}
+
+            \noindent $\vert \psi^{(1)} \rangle$ is also written in equation \eqref{psi_1_result}, and the solution to $C_{\text{rel}}^{(2)}$ is now just an integral 
+
+            \begin{align}
+                C_{\text{rel}}^{(2)} = \int_0^\infty \int_0^\pi \int_0^{2\pi} r^2 \sin\theta \psi^0 Q_{M1} \psi^{(1)} dr d\theta d\phi\;.
+            \end{align}
+            \noindent expanding $\psi^1$ and $\psi^0$ and simplifying
+            \small
+            \begin{align}
+                C_{\text{rel}}^{(2)} = \int_0^\infty \int_0^\pi \int_0^{2\pi} r \sin \theta \frac{5}{36} \gamma^2 \frac{e^{-2Zr}}{\pi} \left[ \frac{11}{2Z^4} - \frac{1}{Z^2}r^2 - \frac{1}{3Z} r^3 \right]  \mu_B \alpha^2 a_0 \vec{\sigma} \cdot \vec{B} Z^{\frac{5}{2}}  dr d\theta d\phi
+            \end{align}
+            \normalsize
+            \noindent Which after integration gives 
+
+            \begin{align}
+                C_{\text{rel}}^{(2)} = \frac{5}{12} \gamma^2 \mu_B \alpha^2 a_0 Z^{-\frac{7}{2}} \vec{\sigma} \cdot \vec{B} \;. \label{eq:C_rel_1}
+            \end{align}
+
+            \noindent It can be seen that the relativistic correction to $^3$He$^+$ includes a $B^3$ scaling. This electronic effect further splits the energy levels of $^3$He$^+$ when subjected to an external magnetic field. The $\vec{\sigma} \cdot \vec{B}$ term ensures that the splitting is dependent on the magnetic quantum number $m$, so the shift to the energy is a noticeable effect that further increases the splitting between the states. This result is verified using the Dalgarno interchange theorem by defining
+
+            \begin{align}
+                \vert \varphi^{(1)} \rangle = \sum_{n = 1}^\infty \frac{\langle \psi^0 \vert Q_{M1} \vert \psi^n \rangle \langle \psi^n\vert}{E_0 - E_n}\;,
+            \end{align}
+
+            \noindent which means that the relativistic correction can also be defined as 
+
+            \begin{align}
+                C_{\text{rel}}^{(2)} = \langle \varphi \vert V_{Z}^{(2)} \vert \psi^0 \rangle\;.
+            \end{align}
+
+            According to the Dalgarno interchange theorem, this expression for $C_{\text{rel}}^{(2)}$ should be the same as the result found in equation \eqref{eq:C_rel_1}. In integral form this reads 
+
+            \footnotesize
+            \begin{align}
+                C_{\text{rel}}^{(2)} = \int_0^\infty \int_0^\pi \int_0^{2\pi} r^2 \sin\theta \frac{5}{3} Z \alpha^2 a_0 \mu_B \vec{\sigma} \cdot \vec{B} \frac{e^{-Zr}}{\sqrt{\pi}} \left[ - \frac{3}{2Z} + r \right] \frac{1}{12} \gamma^2 r^2 \frac{Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{\pi}} dr d\theta d\phi\;.
+            \end{align}
+
+            \normalsize Which becomes
+
+            \begin{align}
+                C_{\text{rel}}^{(2)} = \frac{5}{12} \gamma^2 \mu_B \alpha^2 a_0 Z^{-\frac{7}{2}} \vec{\sigma} \cdot \vec{B} \;. \label{eq:C_rel_2}
+            \end{align}
+
+            \noindent Thus it has been proven via the Dalgarno interchange theorem that all previous calcualtions have been correct, and the relativistic corrections for $^3$He$^+$ have been successfully derived. Reversing the substitution of all of the physical constants one gets 
+
+            \begin{align}
+                C_{\text{rel}}^{(2)} = \frac{5}{12} \frac{B^3 e^5 \hbar Z^{\frac{-7}{2}}}{m^3 c^3 4\pi \epsilon_0} m_s\;.
+            \end{align}
+
+            \noindent Which has units of energy per tesla. $m_s$ denotes the magnetic quantum number, which can take values of $\pm \frac{1}{2}$. From this, the further splitting of energy states based on magnetic field strength is evident. The relationship behaves like the splitting shown in figure~\ref{fig:c}. This factor is not supressed by the mass of the nucleus like the other effects discussed in the previous section, and thus becomes impactful to the systems behaviour for all magnitudes of magnetic field, regardless of its seemingly small correction. This is demonstrated in Table~\ref{tab:RESULTS_TABLE}.
+
+            \begin{figure}
+                \centering
+                \begin{tabular}{c c }
+                    PUT SOMETHING HERE
+                \end{tabular}
+            \end{figure}
     \section{Results}\label{sec:results}
 
 
