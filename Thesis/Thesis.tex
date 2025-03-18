@@ -61,6 +61,10 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{tikz-cd}
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\MakeUppercase}  % Apply uppercase transformation
+  {\thesection}{1em}{} 
 
 %\usepackage{pgfplots} 
 %\usepackage{subfig}
@@ -93,6 +97,7 @@
 \usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue]{hyperref}
 
 \def\UrlBreaks{\do\/\do-}
+\numberwithin{equation}{chapter}
 \begin{document}
 
 \maketitle
@@ -106,9 +111,9 @@
 
 \dedication{I would like to dedicate this thesis to my parents, for encouraging me to work hard and follow my dreams, and to Helena, for always believing in me and being my biggest supporter.}
 
-\acknowledgements{First and foremost, I would like to thank my supervisor Dr. Drake. Your guidance and encouragement has shaped me into the physicist I am today. You saw me as an eager student in his first year at the university who was willing to learn, and shaped me into the successful academic I am today. You have had a significant impact on my personal and academic abilities for the better, teaching me to work hard, communicate effectively through writing and presentations, and to always prove a concept for myself to ensure a deeper understanding is achieved. Thank you for seeing my potential and giving me the experience of a lifetime through attending various conferences, meeting and listening to Nobel prize winners, and sharing your wide breadth of knowledge about the Universe. Your patience, guidance, and generosity are qualities I strive to obtain as strongly in myself.\\
+\acknowledgements{First and foremost, I would like to thank my supervisor Dr. Drake, your guidance and encouragement has shaped me into the physicist I am today. You saw me as an eager student in his first year at the university who was willing to learn, and helped transform me into the successful academic I am today. You have had a significant impact on my personal and academic abilities for the better, teaching me to work hard, communicate effectively through writing and presenting my research, and to always prove a concept for myself to ensure a deeper understanding is achieved. Thank you for seeing my potential and giving me the experience of a lifetime through attending various conferences, meeting and listening to Nobel prize winners, and sharing your wide breadth of knowledge about the Universe. Your patience, guidance, and generosity are qualities I strive to obtain as strongly in myself.\\
 
-Additionally, I would like to thank Dr. Aaron Bondy for being a wonderful mentor, and a great friend. I could not have become half the person I am today without your help and guidance throughout our time together at this University. You taught me how to manage my classes, prepare for conference presentations, and how to work towards my dreams. Your encouragement and welcoming attitude with an eagerness to help made a huge impact on my university and research experience. This thesis would not be possible without you, and I wish you all the best in your endeavors at Drake University.\\
+Additionally, I would like to thank Dr. Aaron Bondy for being a wonderful mentor, and a great friend. I could not have become half the person I am today without your help and guidance throughout our time together at this university. You taught me how to manage my classes, prepare for conference presentations, and how to work towards my dreams. Your encouragement and welcoming attitude with an eagerness to help made a huge impact on my university and research experience. This thesis would not be possible without you, and I wish you all the best in your endeavors at Drake university.\\
 
 I would like to thank the Physics Department for thier encouragement and support throughout my university experience. Dr. Rehse, thank you for encouraging me to step up and be involved in the Department, your encouragement and enthusiasm with the Physics Club has taught me many valuable skills I will use every day. Dr. Rau, thank you for encouraging my interests in computational physics and pushing me to become the theorist I am today. I would like to also thank Dr. Hammond, for teaching me to use my intuition to solve problems and encouraging creative solutions through programming and experiments.\\
 
@@ -118,10 +123,11 @@ I am especially greatful to Jacob Leboeuf, who has been a great friend to me for
 
 I would like to thank my family for thier continued support throughout my life. Dad, our talks about science and the universe is what has inspired me to be the physicist I am today. Thank you for planting the curiosity and wonder about the universe in me. I couldn't have become the man I am today without your support, encouragement, and care. Mom, thank you for always supporting me, no matter how tough it might be. Thank you for taking care of me and making sure I am in an environment where I can let my ambitions grow while encouraging me along the way. You are always my number one supporter. Hanna, thank you for always believing in me and encouraging me to do more. You always inspire me with your hard work and determination.\\
 
-Helena, thank you for everything. You have always been there to encourage me in my work, believing in me even if I do not. You inspire me to work hard even when I don't think I have any energy left, and your work ethic and drive to do what you love most is an inspiration to me. Thank you for always being there for me when I needed it most, and for pushing me to succeed. I would not be the person I am today without you. I can't wait to be by your side for all of the adventures that will come next in our lives together. This thesis and the rest of my University career would have been possible without you.}
+Helena, thank you for everything. You have always been there to encourage me in my work, believing in me even if I do not. You inspire me to work hard even when I don't think I have any energy left, and your work ethic and drive to do what you love most is an inspiration to me. Thank you for always being there for me when I needed it most, and for pushing me to succeed. I would not be the person I am today without you. I can't wait to be by your side for all of the adventures that will come next in our lives together. This thesis and the rest of my university career wouldn't have been possible without you.}
 
 \tableofcontents
 \listoffigures
+\listoftables
 
 % \clearpage
 \newlist{abbrv}{itemize}{1}
@@ -157,7 +163,7 @@ Windsor Ontario, Canada: &\\
 2003: &  \\
 Highschool Diploma: &
 \vskip1em
-University of Windsor, Undergraduate Honours Physics, Windsor, Ontario, 2025 \\
+university of Windsor, Undergraduate Honours Physics, Windsor, Ontario, 2025 \\
 \end{tabular}
 \end{table}
 }

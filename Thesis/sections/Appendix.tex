@@ -1,61 +1,47 @@
 % FIX GRAPHS NOT APPEARING
 \chapter{Derivation of the Recursion Relations}
     The aim of this section is to guide the reader through a more in depth derivation of the recursion relations for the quadratic zeeman effect as well as the relativistic magnetic dipole operator perturbations to the Hamiltonian. Starting with the first order perturbation equation
-
     \begin{align}
         \left(H^0 - E^0 \right) \vert \psi^1 \rangle = -\left( V - E^1  \right) \vert \psi^0 \rangle\;,
     \end{align}
-
     \noindent $E^1$ can be found by multiplying through by $\langle \psi^0 \vert$
     \begin{align}
         \langle \psi^0 \vert H^0 - E^0 \vert \psi^1 \rangle &= -\langle \psi^0 \vert V - E^1 \vert \psi^0 \rangle \;.
     \end{align}
     \noindent The first term is $0$ due to the orthogonality of states which is imposed and discussed in Sec.~\ref{sec:Zeeman-Effect}. The expression now reads 
-
     \begin{align*}
         &-\langle \psi^0 \vert V - E^1 \vert \psi^0 \rangle = 0 \\
         &\langle \psi^0 \vert V \vert \psi^0 \rangle =  \langle \psi^0 \vert E^1 \vert \psi^0 \rangle\\
         &\langle \psi^0 \vert V \vert \psi^0 \rangle =  E^1 \langle \psi^0 \vert \psi^0 \rangle
     \end{align*}
-
     \noindent So 
-
     \begin{align}
         E^1 = \langle \psi^0 \vert V \vert \psi^0 \rangle\;.
     \end{align}
-
     \noindent For the $r^2$ perturbation, one gets 
-
     \begin{align*}
         E^1 &= \int^\infty_0\int_0^\pi  \int_0^{2\pi} r^2 \sin\theta \frac{2Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{4\pi}} \; \frac{B^2e^2}{12m}r^2\;  \frac{2Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{4\pi}} \;dr\; d\theta\; d\phi\\ \nonumber\\
         E^1 &= {4\pi} \int_0^\infty \frac{Z^3 e^{-2Zr}}{\pi} \; \frac{B^2e^2}{12m}r^4 \;dr\\ \nonumber\\
         E^1 &= \frac{Z^3 B^2 e^2}{3m} \frac{4!}{(2Z)^5} \\ \nonumber \\
         E^1 &= \frac{B^2 e^2}{4Z^2m}
     \end{align*}
-
     \noindent Here, we let $\frac{B^2 e^2}{m} \equiv \gamma^2$ \cite{Killingbeck_1979}, and we end up with the final result for $E^1$ to be 
-
     \begin{align}
         E^1 = \frac{1}{4Z^2} \gamma^2\;.
     \end{align}
-
     \noindent The perturbing potential $V$ also is written in terms of $\gamma^2$
     \begin{align}
         V = \frac{B^2 e^2}{12m} r^2 = \frac{1}{12} \gamma^2 r^2
     \end{align}
-
     \noindent Assuming that $\vert \psi^1 \rangle$ is of the form of a power series 
     \begin{align}
         \vert \psi^1 \rangle = \sum_{j = 0}^\infty Z^{\frac{3}{2}} a_j r^j e^{-Zr}
     \end{align}
     \noindent and substituting both $E^1$ and $\vert \psi^1 \rangle$ into the perturbation equation
-
     \begin{align}
         \left(H^0 - E^0 \right) \sum_{j = 0}^\infty Z^{\frac{3}{2}} a_j r^j e^{-Zr} = \left( \frac{1}{12} \gamma^2 r^2 - \frac{1}{4Z^2} \gamma^2 \right) \frac{Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{\pi}}\;.
     \end{align}
-
     \noindent Substituting the Hamiltonian in atomic units 
-
     \begin{align*}
         \left(\frac{1}{2}\nabla^2 + \frac{Z}{r} - E_0\right) \sum_{j = 0}^\infty a_j r^j e^{-Zr} = \left( \frac{1}{12} \gamma^2 r^2 - \frac{1}{4Z^2} \gamma^2 \right) \frac{Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{\pi}}
     \end{align*}
@@ -65,21 +51,15 @@
     \begin{align*}
         \left( \frac{Z^2}{2} - E^0\right) \sum_{j = 0}^\infty a_j r^j - Zr \sum_{j = 0}^\infty a_j r^{j -2} (j + 1) + \sum_{j = 0}^\infty \frac{j(j+1)}{2} a_j r^{j - 2} \nonumber\\+ Z \sum_{j = 0}^\infty a_j r^{j -1} - E^0 \sum_{j = 0}^\infty a_j r^j = \frac{1}{12} \gamma^2 \left(r^2 - \frac{3}{Z^2} \right) \frac{1}{\sqrt{\pi}}.
     \end{align*}
-
     \noindent Since $E^0 = \frac{Z^2}{2}$, the first term is zero and the equation becomes 
-
     \begin{align*}
         -Zr \sum_{j = 0}^\infty a_j r^{j - 2} (j + 1) + \sum_{j = 0}^\infty \frac{j(j+1)}{2} a_j r^{j - 2} + Z \sum_{j = 0}^\infty a_j r^{j-1} = \frac{1}{12\sqrt{\pi}} \gamma^2 \left(r^2 - \frac{3}{Z^2} \right).
     \end{align*}
-
     \noindent Performing a shift of summation index to group all of the summations together 
-
     \begin{align}
         \sum_{j = 0}^\infty \left[ Z(j-1) a_{j-1} - \frac{j(j+1)}{2} a_j \right] r^{j-2} = -\frac{1}{12} \gamma^2 \left(r^2 - \frac{3}{Z^2} \right) \frac{1}{\sqrt{\pi}}.
     \end{align}
-
     \noindent Which is equation \eqref{eq:Result_r^2_sum} in Sec.~\ref{sec:quadratic_zeeman}. Writing out the first few recursion relations by grouping the powers of $r$ together 
-
     \begin{align*}
         j &= 0 & -Za_{-1} = 0& &a_{-1} = 0\\ \nonumber
         j &= 1 & -a_1 = 0& &a_{1} = 0\\ \nonumber
@@ -89,17 +69,13 @@
         j &= 5 & 4Z_4 - 15a_5 = 0 && a_5 = 0 \\ \nonumber
         & \vdots & \vdots && \vdots \\
     \end{align*}
-
     \noindent It is clearly seen above that all other cases of $a_j$ must be zero after $j = 3$. The recursion relation has been solved and a closed form solution for $\vert \psi^1 \rangle$ can be written in terms of a power series in $r$ using $a_0$, $a_2$, and $a_3$. $a_0$ is an undetermined coefficient here that does not appear in the recursion relation. it is determined by imposing the normalization condition which is shown in Sec.~\ref{sec:quadratic_zeeman}.\\
 
     The identical process is carried out for the relativistic magnetic dipole moment operator perturbation, with the only difference being that the perturbing potential has changed. No operators act on the perturbing potential throughout the perturbation expansion, so the result will remain the same as in the example above. Applying the same process the first order correction to the wavefunction for the relativistic magnetic dipole moment operator is 
-
     \begin{align}
         \sum_{j = 0}^\infty \left[ Z(j-1)a_{j-1} - \frac{j(j+1)}{2} a_j \right] r^{j-2} = -\left(\frac{5}{3} \mu_B Z \alpha^2 a_0 \vec{\sigma} \cdot \vec{B} \frac{1}{r} - E^1 \right) \frac{1}{\sqrt{\pi}}\;.
     \end{align}
-
     \noindent $E^1$ is determined in the standard way\footnote{Note that $a_0$ here is for the Bohr radius. $a_0$ is also the zeroeth term in the summation, but the form of the summation here dictates that there is no $a_0$ term present.}
-
     \begin{align*}
         E^1 &= \langle \psi^0 \vert \frac{5}{3} \mu_B Z \alpha^2 a_0 \vec{\sigma} \cdot \vec{B} \frac{1}{r} \vert \psi^0 \rangle \\ \nonumber \\
         E^1 &= \int_0^\infty \int_0^{2\pi} \int_0^\pi r^2 \sin \theta \frac{2Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{4\pi}} \frac{5}{3} \mu_B Z \alpha^2 a_0 \vec{\sigma} \cdot \vec{B} \frac{1}{r} \frac{2Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{4\pi}}\;dr\;d\theta\;d\phi  \\\nonumber \\
@@ -108,15 +84,11 @@
         E^1 &= \frac{5}{3} 4\pi Z^4 \alpha^2 a_0 \mu_B \vec{\sigma} \cdot \vec{B} \frac{1!}{(2Z)^2} \\\nonumber \\
         E^1 &= \frac{5}{3} Z^2 \alpha^2 a_0 \mu_B \vec{\sigma} \cdot \vec{B}
     \end{align*}
-
     \noindent So the final expression for the recursion relations for the relativistic magnetic dipole moment operator is 
-
     \begin{align}
         \sum_{j = 0}^\infty \left[ Z(j-1)a_{j-1} - \frac{j(j+1)}{2} a_j \right] r^{j-2} = -\frac{5}{3} \alpha^2 Z a_0 \mu_B \left(\frac{1}{r} - Z \right) \frac{1}{\sqrt{\pi}}\; \vec{\sigma} \cdot \vec{B}\;.
     \end{align}
-
     \noindent The series converges after $j = 1$, as shown below.
-
     \begin{align*}
         j &= 0 & -Za_{-1} = 0& &a_{-1} = 0\\ \nonumber
         j &= 1 & -a_1 = -\frac{5}{3} \alpha^2 Z a_0 \mu_B  \frac{1}{\sqrt{\pi}}\; \vec{\sigma} \cdot \vec{B} & &a_{1} = \frac{5}{3} \alpha^2 Z a_0 \mu_B \frac{1}{\sqrt{\pi}}\; \vec{\sigma} \cdot \vec{B}\\ \nonumber
@@ -126,7 +98,6 @@
         j &= 5 & 4Z_4 - 15a_5 = 0 && a_5 = 0 \\ \nonumber
         & \vdots & \vdots && \vdots \\
     \end{align*}
-
     \noindent Thus the recursion relations for the relativistic magnetic dipole moment operator and the quadratic Zeeman operator have been solved, and thier respective first order corrections to the hydrogenic wavefunction have been calculated.
 
 \chapter{Left-acting Operators} \label{sec:Hermitian_Left}
@@ -135,20 +106,15 @@
         \langle \psi \vert \hat{H} \vert \phi \rangle &= \int^\infty_{-\infty} \psi^*(x) \hat{H} \phi(x) dx\\
         \langle \psi \vert \hat{H} \vert \phi \rangle &= \int^\infty_{-\infty} \psi^*(x) -i\hbar\frac{d \phi(x)}{dx} dx\;,
     \end{align}
-
     \noindent applying integration by parts gives 
-
     \begin{align}
         \langle \psi \vert \hat{H} \vert \phi \rangle &= \left[\psi^*(x) \phi(x) \right]^\infty_{-\infty} - \int_{-\infty}^\infty -i\hbar \frac{d\psi^*(x)}{dx} \phi(x) dx\\
         \langle \psi \vert \hat{H} \vert \phi \rangle &= \int_{-\infty}^\infty i\hbar \frac{d\psi^*(x)}{dx} \phi(x) dx\;.
     \end{align}
-
     \noindent Which is the same as writing
-
     \begin{align}
         \langle \psi \vert \hat{H} \vert \phi \rangle = \int^\infty_{-\infty} \phi(x) \hat{H} \psi^*(x) dx
     \end{align}
-
     \noindent So it is shown that the Hamiltonian is capable of acting to the right or to the left, and it is up to the user which way they want to apply the operation.
 \chapter{Special Functions}
     \section{Overview}
@@ -162,85 +128,61 @@
         \begin{align}
             \Gamma(n) = (n - 1)!\;.
         \end{align}
-
         \noindent This is a relation of key importance in Sec.~\ref{sec:The_Radial_Part}, where the radial integral is replaced with a factorial function for positive integers of $j$ in the sum.\\
 
         The gamma function also has an integral definition, which is known as the Euler integral
-
         \begin{align}
             \Gamma(z) = \int_0^\infty e^{-t} t^{z-1} dt, \hspace{1cm} \mathfrak{R}e(z) > 0\;.
         \end{align}
-
         \noindent This integral is defined as long as the real part of $z$ is greater than zero. This integral closely resembles the radial integrals present in Sec.~\ref{sec:The_Radial_Part}, which are of the form
-
         \begin{align}
             I_{\text{radial}} = \int_0^\infty r^j e^{-\alpha r} dr
         \end{align}
-
         \noindent To fit the gamma function, perform a change of variables $t = \alpha r$, $dt = \alpha dr$.
-
         \begin{align}
             I_{\text{radial}} &= \int_0^\infty \left( \frac{t}{\alpha} \right)^j e^{-t} \frac{1}{\alpha} dt
         \end{align}
-        %
         \begin{align}
             I_{\text{radial}} &= \frac{1}{\alpha^{j+1}}\int_0^\infty {t}^j e^{-t} dt
         \end{align}
-
         \noindent So the solution to the radial integral is shown to be 
-
         \begin{align}
             I_{\text{radial}} = \frac{\Gamma(j+1)}{\alpha^{j+1}}
         \end{align}
-
         \noindent if $j \in \mathbb{Z}^+$, the relationship between the gamma function and the factorial function can be used. The values of $j$ are the summation indices for each power of $r$\footnote{See sections \ref{sec:quadratic_zeeman} and \ref{sec:magnetic_dipole_operator} for the summation expressions for each.}. Since the summation indices are constrained to a set of integers from 0 to infinity, it can be said that 
-
         \begin{align}
             \forall j, j \in Z^{0+}
         \end{align}
-
         \noindent Additionally, the $0^{\text{th}}$ power of $r$ (corresponding to $j = 0$) does not appear in the recursion relations of the expanded sum in \ref{sec:magnetic_dipole_operator}, and is zero in \ref{sec:quadratic_zeeman}. This further restricts the set of $j$ indices in both problems to 
-
         \begin{align}
             \forall j, j\in \mathbb{N}
         \end{align}
-
         \noindent Since the set of natural numbers only contains positive integers, the euler integral only evaluates values for positive integer $j$. The gamma function by its original definition is then replaced by the factorial function, giving the solution to the radial integrals used in sections \ref{sec:The_Radial_Part}, \ref{sec:quadratic_zeeman} and \ref{sec:magnetic_dipole_operator}. 
-
         \begin{figure}[ht!]
             \centering
             \resizebox{0.8\linewidth}{!}{\input{Gamma_function.pgf}}
             \caption{Graph of the gamma function compared to the factorial function.}
             \label{img:Gamma_fn_graph}
         \end{figure}
-
     \section{Legendre Polynomials} \label{sec:Legendre_Polynomial}
         The Legendre equation is 
         \begin{align}
             (1 - x^2)P^{\prime \prime}(x) -2xP^\prime(x) + \lambda P(x) = 0\;.
         \end{align}
-
         \noindent This differential equation can be solved with a series solution about $x = 0$ and has a radius of convergence of 1. If $\lambda$ has the value $l(l+1)$, where $l \in \mathbb{Z}$, the series truncates after $x^{l}$. The series solution to this ODE is 
-
         \begin{align}
             g(x, t) = \sum_{l = 0}^\infty P_l(x) t^l 
         \end{align}
-
         \noindent Where $g(x, t)$ is the generating function which produces the possible solutions to the Legendre Equation. Each solution to the Legendre equation generated by $g(x, t)$ is called a Legendre polynomial. These polynomials can be produced with the following equation
-
         \begin{align}
             P_l(x) = \sum_{n = 0}^{\lfloor \frac{l}{2} \rfloor} (-1)^k \frac{(2l - 2k)!}{2^n k! (n - k)!(n - 2k)!}x^{n-2k}
         \end{align}
-
         \noindent where $\lfloor x \rfloor$ is the floor function, which rounds down to the nearest integer value. This formulation is of key importance for programmed implementation, since a discrete formula is simple to compute. A more helpful definition of the Legendre polynomial comes from the Rodriguez formula \cite{Arfken_Weber_Arfken_Weber_2008}
-
         \begin{align}
             P_n(x) = \frac{1}{2^n n!} \left( \frac{d}{dx} \right)^n (x^2 - 1)^n
         \end{align}
-
         \noindent This formulation is much more useful for analytical work. The first few Legendre Polynomials are given below
-
-        \begin{figure}
+        \begin{table}
             \centering
             \begin{tabular}{l}
                 Legendre Polynomials\\
@@ -254,51 +196,39 @@
             \end{tabular}
             \caption{Table of the first few Legendre Polynomials}
             \label{tab:Legendre_Polynomials}
-        \end{figure}
-
+        \end{table}
         \noindent Another key feature of the Legendre polynomials is that they form a complete set of orthogonal basis functions, meaning that for each value of $l$, the associated Legendre polynomial is orthogonal to all other Legendre polynomials with different $l$.
-
         \begin{align}
             \int_{-1}^1 P_l(x) P_l^\prime(x) = \frac{2}{2l + 1}\delta_{l,l^\prime}
         \end{align}
-
         \begin{figure}[ht!]
             \centering
             \resizebox{0.8\linewidth}{!}{\input{Legendre_polynomials.pgf}}
             \caption{Graph of the first few Legendre polynomials}
             \label{img:Legendre_polynomials}
         \end{figure}
-
         \noindent The Legendre polynomials appear in the angular part of the solution to hydrogenic wavefunctions as discussed in Sec.~\ref{sec:The_Angular_Part}. They are also incorporated into the spherical harmonic function discussed in Sec.~\ref{sec:Spherical_Harmonics}.
 
         \section{Laguerre Polynomials} \label{sec:Laguerre_Polynomial}
         The Laguerre ODE is 
-
         \begin{align}
             xy^{\prime \prime}(x) + (1 - x)y^\prime(x) + ny(x) = 0 
         \end{align}
-
-
         \begin{figure}[h]
             \centering
             \resizebox{0.8\linewidth}{!}{\input{Laguerre_polynomials.pgf}}
             \caption{Graph of the first few Laguerre polynomials}
             \label{img:Laguerre_polynomials}
         \end{figure}
-
         \noindent which has unique solutions which are known as Laguerre polynomials. These polynomials can be generated given the following formula 
-
         \begin{align}
             L_n(x) = \frac{e^x}{n!} \left( \frac{d}{dx} \right)^n (x^ne^{-x})\;.
         \end{align}
-
         \noindent Where the generating function $g(x, t)$ is given by \cite{Arfken_Weber_Arfken_Weber_2008}
-
         \begin{align}
             g(x, t) = \frac{e^x}{2\pi i} \oint_C \frac{e^{-z}}{z - x - tz} dz = \frac{e^{\frac{-xt}{(1 - t)}}}{1 - t} = \sum_{n = 0}^\infty L_n(x) t^n
         \end{align}
-
-        \begin{figure}
+        \begin{table}
             \centering 
             \begin{tabular}{l}
                 Laguerre polynomials\\
@@ -310,47 +240,36 @@
                 $L_4(x) = \frac{x^4 - 16x^3 + 72x^2 - 96x + 24}{4!}$\\
                 \hline
             \end{tabular}
-        \end{figure}
-
+            \caption{Table containing the first few Laguerre polynomials}
+            \label{tab:Laguerre_polynomial_table}
+        \end{table}
         \noindent Similarly to the Legendre polynomials and spherical harmonic functions, the Laguerre polynomials also form a complete set of orthogonal basis functions.
-
         \begin{align}
             \int_0^\infty L_n(x) L_m(x) e^{-x} dx = \delta_{m n}
         \end{align}
-
         \noindent The Laguerre polynomials are used to described the radial part of the solution to hydrogenic wavefunctions, as discussed in Sec.~\ref{sec:The_Radial_Part}. 
         \section{Spherical Harmonics} \label{sec:Spherical_Harmonics}
         Spherical harmonics appear most commonly when solving Laplace's equations in spherical coordinates. It is composed of the Legendre polynomials with an additional phase about the azimuthal angle $\phi$ \cite{Riley_Hobson_Bence_2006}. Laplace's equation is 
-
         \begin{align}
             \nabla^2 f(r, \theta, \phi) = 0
         \end{align}
-
         \noindent The solution to this equation is separable, so the angular part of the solution can be written as a product of two functions 
-
         \begin{align}
             \Theta (\theta) \Phi(\phi) = P^m_l(\cos(\theta)) e^{im\phi}\;.
         \end{align}
-
         \noindent The product of these two angular functions is called the spherical harmonic function, it is denoted by 
-
         \begin{align}
             Y^m_l (\theta, \phi) = P^m_l(\cos(\theta)) e^{im\phi}\;.
         \end{align}
-
         \noindent Where $P^l_m(\cos \theta)$ is the associated Legendre polynomial, which is related to the standard Legendre polynomial by 
-
         \begin{align}
             P^m_l(x) = (-1)^m (1-x^2)^{\frac{m}{2}} \frac{d^m}{dx^m} \left(P_l(x) \right)
         \end{align}
-
         The spherical harmonic functions for a complete set of orthogonal basis functions 
-
         \begin{align}
             \int_0^{2\pi} \int_0^\pi Y^m_l(\theta, \phi) Y^{m^\prime}_{l^\prime}(\theta, \phi) d\theta d\phi = \delta_{ll^\prime}\delta_{mm^\prime}
         \end{align}
-
-        \begin{figure}[h]
+        \begin{table}[h]
             \centering 
             \resizebox{\columnwidth}{!}{
                 \begin{tabular}{l l l}
@@ -364,63 +283,46 @@
             }
             \caption{Table of the first few spherical harmonic functions}
             \label{tab:spherical_harmonic}
-        \end{figure}
-
+        \end{table}
         \noindent The spherical harmonic functions play a key role in the solution to the angular part of the hydrogenic wavefunctions in the derivation of the quadratic Zeeman effect and the relativistic magnetic dipole moment operator.
 
         \section{Confluent Hypergeometric Function} \label{sec:Confluent_Hypergeometric_Function}
         The confluent hypergeometric function is a special form of the standard hypergeometric function. The confluent hypergeometric functions are produced from the solution to the differential equation 
-
         \begin{align}
             xy^{\prime \prime} + (c - x)y^\prime - ay = 0
         \end{align}
-
         \noindent where there are two possible solutions 
-
         \begin{align}
             y_1(x) &= 1 + \frac{a}{c} \frac{x}{1!} + \frac{a(a+1)}{c(c+1)}\frac{x^2}{2!} + \dots \equiv M(a, c ;x)\\
             y_2(x) &= x^{1-c}M(a-c + 1, 2 - c; x)\;.
         \end{align}
-
         \noindent The function $M(a, c;x)$ is called the confluent hypergeometric function \cite{Riley_Hobson_Bence_2006}. It can also be described by the following integral 
-
         \begin{align}
             M(a, c; x) = \frac{\Gamma(c)}{\Gamma(a)\Gamma(c - a)} \int_0^1 e^{tx} t^{a-1} (1 - t)^{c - a - 1} dt,
         \end{align}
-
         \noindent which converges so long that $c > a > 0$. The confluent hypergeometric function is a more generalized version of many of the special functions discussed in this chapter, and depending on the choice of $a$ and $c$, are capable of producing the other special functions. For example, the Laguerre polynomials can be expressed in terms of the confluent hypergeometric function as 
-
         \begin{align}
             M(a, b; x) = \frac{\Gamma(1 - a) \Gamma(b)}{\Gamma(b - a)} L_a^{b-1}(x)\;. \label{eq:confluent-hypergeometric}
         \end{align}
-
         \noindent $L_a^{b-1}(x)$ is known as the associated Laguerre polynomial, and is related to the standard Laguerre polynomial discussed in Sec.~\ref{sec:Laguerre_Polynomial} by 
         \begin{align}
             L_n^k(x) = (-1)^k \frac{d^k}{dx^k} L_{n+k}(x)\;.
         \end{align}
-
         \noindent In the relation given in equation \eqref{eq:confluent-hypergeometric}, $k = {b-1}$, and $n = a$. The confluent hypergeometric function is used to represent the radial solutions to the hydrogenic wavefunctions discussed in sections \ref{sec:quadratic_zeeman} and \ref{sec:magnetic_dipole_operator}.
-
 
 \chapter{Methods of solving for higher-order perturbations programmatically} \label{sec:Program_perturbation}
     This section serves as a reference to the codes implemented to solve higher order perturbations for the quadratic Zeeman effect and the relativistic magnetic dipole moment operator. The codes can be found on the authors GitHub page at \href{https://github.com/epetrimoulx/Quadratic-Zeeman-Effect}{epetrimoulx/Higher-Order-Zeeman-Effect}. The code is designed such that the order of the perturbation being considered is decided by the user. The first and second order perturbation equations look like 
-
     \begin{align}
         \left( H^0 - E^0 \right) \vert \psi^{1}\rangle &= \left( V - E^{1}\right) \vert \psi^{0} \rangle \\
         \left( H^0 - E^0 \right) \vert \psi^{2}\rangle &= V \vert \psi^{1}\rangle + E^{1} \vert \psi^{1} \rangle + E^{2} \vert \psi^{0} \rangle
     \end{align}
-
     \noindent The second order perturbation equation is dependant on the answer for $\vert \psi^{(1)} \rangle$ from the first order perturbation equation. However, if the second order solution is expressed in terms of the first order solution
-
     \begin{align}
         \left( H^0 - E^0 \right) \vert \psi^{2}\rangle &= \left(V - E^{1}\right) (H^0 - E^0)^{-1} E^{(1)} |\psi^{(0)}\rangle + E^{2} |\psi^{0}\rangle\;.
     \end{align}
-
     \noindent This can be treated as just solving the first order equation again but with a modified inhomogeneous term on the RHS of the equation. 
-    
     \begin{align}
         \left( H^0 - E^0 \right) \vert \psi^{n} \rangle &= F(V, \psi^{n-1}) + E^{n} \vert \psi^{0} \rangle\;.
     \end{align}
-
     \noindent This ``folding'' of the perturbation equation at higher order onto itself using the previous solutions from the lower order equations allows for the iterative calculation of higher order perturbations. The main issue with this strategy is that the equations become too long for any human to do by hand, but computationally, this can be calculated to $n^\text{th}$ order easily so long that the user carefully accounts for higher order contributing states such as the $d$-states which arise in second order perturbations of $r^2$. 
 
