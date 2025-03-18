@@ -1,6 +1,6 @@
 % FIX GRAPHS NOT APPEARING
 \chapter{Derivation of the Recursion Relations}
-    The aim of this section is to guide the reader through a more in depth derivation of the recursion relations for the quadratic zeeman effect as well as the magnetic dipole operator perturbations to the Hamiltonian. Starting with the first order perturbation equation
+    The aim of this section is to guide the reader through a more in depth derivation of the recursion relations for the quadratic zeeman effect as well as the relativistic magnetic dipole operator perturbations to the Hamiltonian. Starting with the first order perturbation equation
 
     \begin{align}
         \left(H^0 - E^0 \right) \vert \psi^1 \rangle = -\left( V - E^1  \right) \vert \psi^0 \rangle\;,
@@ -27,21 +27,21 @@
     \noindent For the $r^2$ perturbation, one gets 
 
     \begin{align*}
-        E^1 &= \int^\infty_0\int_0^\pi  \int_0^{2\pi} r^2 \sin\theta \frac{2Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{4\pi}} \; \frac{B^2e^2}{8m}r^2\;  \frac{2Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{4\pi}} \;dr\; d\theta\; d\phi\\ \nonumber\\
-        E^1 &= {4\pi} \int_0^\infty \frac{Z^3 e^{-2Zr}}{\pi} \; \frac{B^2e^2}{8m}r^4 \;dr\\ \nonumber\\
-        E^1 &= \frac{Z^3 B^2 e^2}{2m} \frac{4!}{(2Z)^5} \\ \nonumber \\
-        E^1 &= \frac{3 B^2 e^2}{8Z^2m}
+        E^1 &= \int^\infty_0\int_0^\pi  \int_0^{2\pi} r^2 \sin\theta \frac{2Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{4\pi}} \; \frac{B^2e^2}{12m}r^2\;  \frac{2Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{4\pi}} \;dr\; d\theta\; d\phi\\ \nonumber\\
+        E^1 &= {4\pi} \int_0^\infty \frac{Z^3 e^{-2Zr}}{\pi} \; \frac{B^2e^2}{12m}r^4 \;dr\\ \nonumber\\
+        E^1 &= \frac{Z^3 B^2 e^2}{3m} \frac{4!}{(2Z)^5} \\ \nonumber \\
+        E^1 &= \frac{B^2 e^2}{4Z^2m}
     \end{align*}
 
     \noindent Here, we let $\frac{B^2 e^2}{m} \equiv \gamma^2$ \cite{Killingbeck_1979}, and we end up with the final result for $E^1$ to be 
 
     \begin{align}
-        E^1 = \frac{1}{8} \gamma^2 \frac{3}{Z^2}\;.
+        E^1 = \frac{1}{4Z^2} \gamma^2\;.
     \end{align}
 
     \noindent The perturbing potential $V$ also is written in terms of $\gamma^2$
     \begin{align}
-        V = \frac{B^2 e^2}{8m} r^2 = \frac{1}{8} \gamma^2 r^2
+        V = \frac{B^2 e^2}{12m} r^2 = \frac{1}{12} \gamma^2 r^2
     \end{align}
 
     \noindent Assuming that $\vert \psi^1 \rangle$ is of the form of a power series 
@@ -51,31 +51,31 @@
     \noindent and substituting both $E^1$ and $\vert \psi^1 \rangle$ into the perturbation equation
 
     \begin{align}
-        \left(H^0 - E^0 \right) \sum_{j = 0}^\infty Z^{\frac{3}{2}} a_j r^j e^{-Zr} = \left( \frac{1}{8} \gamma^2 r^2 - \frac{1}{8} \gamma^2 \frac{3}{Z^2} \right) \frac{Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{\pi}}\;.
+        \left(H^0 - E^0 \right) \sum_{j = 0}^\infty Z^{\frac{3}{2}} a_j r^j e^{-Zr} = \left( \frac{1}{12} \gamma^2 r^2 - \frac{1}{4Z^2} \gamma^2 \right) \frac{Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{\pi}}\;.
     \end{align}
 
     \noindent Substituting the Hamiltonian in atomic units 
 
     \begin{align*}
-        \left(\frac{1}{2}\nabla^2 + \frac{Z}{r} - E_0\right) \sum_{j = 0}^\infty a_j r^j e^{-Zr} = \left(\frac{1}{8} \gamma^2 r^2 - \frac{1}{8} \gamma^2 \frac{3}{Z^2} \right) \frac{e^{-Zr}}{\sqrt{\pi}}
+        \left(\frac{1}{2}\nabla^2 + \frac{Z}{r} - E_0\right) \sum_{j = 0}^\infty a_j r^j e^{-Zr} = \left( \frac{1}{12} \gamma^2 r^2 - \frac{1}{4Z^2} \gamma^2 \right) \frac{Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{\pi}}
     \end{align*}
     \begin{align*}
-        \frac{1}{2} \frac{1}{r^2} \frac{\partial}{\partial r} \left(r^2 \frac{\partial}{\partial r} \right) \sum_{j = 0}^\infty a_j r^j e^{-Zr} + Z \sum_{j = 0}^\infty a_j r^{j - 1} e^{-Zr} - E^0 \sum_{j = 0}^\infty a_j r^j e^{-Zr} \nonumber\\ = \left(\frac{1}{8} \gamma^2 r^2 - \frac{1}{8} \gamma^2 \frac{3}{Z^2} \right) \frac{e^{-Zr}}{\sqrt{\pi}}\;.
+        \frac{1}{2} \frac{1}{r^2} \frac{\partial}{\partial r} \left(r^2 \frac{\partial}{\partial r} \right) \sum_{j = 0}^\infty a_j r^j e^{-Zr} + Z \sum_{j = 0}^\infty a_j r^{j - 1} e^{-Zr} - E^0 \sum_{j = 0}^\infty a_j r^j e^{-Zr} \nonumber\\ = \left( \frac{1}{12} \gamma^2 r^2 - \frac{1}{4Z^2} \gamma^2 \right) \frac{Z^{\frac{3}{2}} e^{-Zr}}{\sqrt{\pi}}\;.
     \end{align*}
     \begin{align*}
-        \left( \frac{Z^2}{2} - E^0\right) \sum_{j = 0}^\infty a_j r^j - Zr \sum_{j = 0}^\infty a_j r^{j -2} (j + 1) + \sum_{j = 0}^\infty \frac{j(j+1)}{2} a_j r^{j - 2} \nonumber\\+ Z \sum_{j = 0}^\infty a_j r^{j -1} - E^0 \sum_{j = 0}^\infty a_j r^j = \frac{1}{8} \gamma^2 \left(r^2 - \frac{3}{Z^2} \right) \frac{1}{\sqrt{\pi}}.
+        \left( \frac{Z^2}{2} - E^0\right) \sum_{j = 0}^\infty a_j r^j - Zr \sum_{j = 0}^\infty a_j r^{j -2} (j + 1) + \sum_{j = 0}^\infty \frac{j(j+1)}{2} a_j r^{j - 2} \nonumber\\+ Z \sum_{j = 0}^\infty a_j r^{j -1} - E^0 \sum_{j = 0}^\infty a_j r^j = \frac{1}{12} \gamma^2 \left(r^2 - \frac{3}{Z^2} \right) \frac{1}{\sqrt{\pi}}.
     \end{align*}
 
     \noindent Since $E^0 = \frac{Z^2}{2}$, the first term is zero and the equation becomes 
 
     \begin{align*}
-        -Zr \sum_{j = 0}^\infty a_j r^{j - 2} (j + 1) + \sum_{j = 0}^\infty \frac{j(j+1)}{2} a_j r^{j - 2} + Z \sum_{j = 0}^\infty a_j r^{j-1} = \frac{1}{8\sqrt{\pi}} \gamma^2 \left(r^2 - \frac{3}{Z^2} \right).
+        -Zr \sum_{j = 0}^\infty a_j r^{j - 2} (j + 1) + \sum_{j = 0}^\infty \frac{j(j+1)}{2} a_j r^{j - 2} + Z \sum_{j = 0}^\infty a_j r^{j-1} = \frac{1}{12\sqrt{\pi}} \gamma^2 \left(r^2 - \frac{3}{Z^2} \right).
     \end{align*}
 
     \noindent Performing a shift of summation index to group all of the summations together 
 
     \begin{align}
-        \sum_{j = 0}^\infty \left[ Z(j-1) a_{j-1} - \frac{j(j+1)}{2} a_j \right] r^{j-2} = -\frac{1}{8} \gamma^2 \left(r^2 - \frac{3}{Z^2} \right) \frac{1}{\sqrt{\pi}}.
+        \sum_{j = 0}^\infty \left[ Z(j-1) a_{j-1} - \frac{j(j+1)}{2} a_j \right] r^{j-2} = -\frac{1}{12} \gamma^2 \left(r^2 - \frac{3}{Z^2} \right) \frac{1}{\sqrt{\pi}}.
     \end{align}
 
     \noindent Which is equation \eqref{eq:Result_r^2_sum} in Sec.~\ref{sec:quadratic_zeeman}. Writing out the first few recursion relations by grouping the powers of $r$ together 
@@ -83,16 +83,16 @@
     \begin{align*}
         j &= 0 & -Za_{-1} = 0& &a_{-1} = 0\\ \nonumber
         j &= 1 & -a_1 = 0& &a_{1} = 0\\ \nonumber
-        j &= 2 & Za_1 - 3a_2 = \frac{1}{8} \gamma^2 \frac{3}{Z^2}\frac{1}{\sqrt{\pi}} & &a_2 = -\frac{1}{8} \gamma^2 \frac{1}{Z^2 \sqrt{\pi}}\\ \nonumber
-        j &= 3 & 2Za_2 - 6a_3 = 0&& a_3 = -\frac{1}{24Z\sqrt{\pi}} \gamma^2\\ \nonumber
-        j &= 4 & 3Za_3 - 10a_4 = -\frac{1}{8} \gamma^2 \frac{1}{\sqrt{\pi}} && a_4 = 0\\ \nonumber
+        j &= 2 & Za_1 - 3a_2 = \frac{1}{12} \gamma^2 \frac{3}{Z^2}\frac{1}{\sqrt{\pi}} & &a_2 = -\frac{1}{12} \gamma^2 \frac{1}{Z^2 \sqrt{\pi}}\\ \nonumber
+        j &= 3 & 2Za_2 - 6a_3 = 0&& a_3 = -\frac{1}{32Z\sqrt{\pi}} \gamma^2\\ \nonumber
+        j &= 4 & 3Za_3 - 10a_4 = -\frac{1}{12} \gamma^2 \frac{1}{\sqrt{\pi}} && a_4 = 0\\ \nonumber
         j &= 5 & 4Z_4 - 15a_5 = 0 && a_5 = 0 \\ \nonumber
         & \vdots & \vdots && \vdots \\
     \end{align*}
 
     \noindent It is clearly seen above that all other cases of $a_j$ must be zero after $j = 3$. The recursion relation has been solved and a closed form solution for $\vert \psi^1 \rangle$ can be written in terms of a power series in $r$ using $a_0$, $a_2$, and $a_3$. $a_0$ is an undetermined coefficient here that does not appear in the recursion relation. it is determined by imposing the normalization condition which is shown in Sec.~\ref{sec:quadratic_zeeman}.\\
 
-    The identical process is carried out for the magnetic dipole moment operator perturbation, with the only difference being that the perturbing potential has changed. No operators act on the perturbing potential throughout the perturbation expansion, so the result will remain the same as in the example above. Applying the same process the first order correction to the wavefunction for the magnetic dipole moment operator is 
+    The identical process is carried out for the relativistic magnetic dipole moment operator perturbation, with the only difference being that the perturbing potential has changed. No operators act on the perturbing potential throughout the perturbation expansion, so the result will remain the same as in the example above. Applying the same process the first order correction to the wavefunction for the relativistic magnetic dipole moment operator is 
 
     \begin{align}
         \sum_{j = 0}^\infty \left[ Z(j-1)a_{j-1} - \frac{j(j+1)}{2} a_j \right] r^{j-2} = -\left(\frac{5}{3} \mu_B Z \alpha^2 a_0 \vec{\sigma} \cdot \vec{B} \frac{1}{r} - E^1 \right) \frac{1}{\sqrt{\pi}}\;.
@@ -366,7 +366,7 @@
             \label{tab:spherical_harmonic}
         \end{figure}
 
-        \noindent The spherical harmonic functions play a key role in the solution to the angular part of the hydrogenic wavefunctions in the derivation of the quadratic Zeeman effect and the magnetic dipole moment operator.
+        \noindent The spherical harmonic functions play a key role in the solution to the angular part of the hydrogenic wavefunctions in the derivation of the quadratic Zeeman effect and the relativistic magnetic dipole moment operator.
 
         \section{Confluent Hypergeometric Function} \label{sec:Confluent_Hypergeometric_Function}
         The confluent hypergeometric function is a special form of the standard hypergeometric function. The confluent hypergeometric functions are produced from the solution to the differential equation 
@@ -403,7 +403,7 @@
 
 
 \chapter{Methods of solving for higher-order perturbations programmatically} \label{sec:Program_perturbation}
-    This section serves as a reference to the codes implemented to solve higher order perturbations for the quadratic Zeeman effect and the magnetic dipole moment operator. The codes can be found on the authors GitHub page at \href{https://github.com/epetrimoulx/Quadratic-Zeeman-Effect}{epetrimoulx/Higher-Order-Zeeman-Effect}. The code is designed such that the order of the perturbation being considered is decided by the user. The first and second order perturbation equations look like 
+    This section serves as a reference to the codes implemented to solve higher order perturbations for the quadratic Zeeman effect and the relativistic magnetic dipole moment operator. The codes can be found on the authors GitHub page at \href{https://github.com/epetrimoulx/Quadratic-Zeeman-Effect}{epetrimoulx/Higher-Order-Zeeman-Effect}. The code is designed such that the order of the perturbation being considered is decided by the user. The first and second order perturbation equations look like 
 
     \begin{align}
         \left( H^0 - E^0 \right) \vert \psi^{1}\rangle &= \left( V - E^{1}\right) \vert \psi^{0} \rangle \\
