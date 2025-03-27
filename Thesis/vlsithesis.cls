@@ -413,8 +413,7 @@ I declare that this is a true copy of my thesis, including any final revisions, 
          \ssp  
 
         {A \@doctype} \\ 
-      Submitted to the Faculty of Graduate Studies  \\
-through the \@dept\ \\
+      Submitted to the \@dept\ \\
 in Partial Fulfillment of the Requirements for \\
 the Degree of \@degree\ \\
  at the University of Windsor
