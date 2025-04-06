@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-mp.dps = 25  # Set decimal places to 25
+mp.dps = 100  # Set decimal places to 25
 
 FINE_STRUCTURE_CONST = mp.mpf(1) / mp.mpf(137)
 H_GROUND_STATE_ENERGY = mp.mpf(0.5)
@@ -23,6 +23,8 @@ def Graph_Energy(Magnetic_Field, Total_Energy, Labels) -> None:
     plt.title('Higher-order Zeeman Effect Corrections', fontsize=18, weight='bold')
     plt.xlabel(r'$B$ Field [T]', fontsize=14)
     plt.ylabel('Energy [a.u.]', fontsize=14)
+    plt.xlim(49.999999999, 49.9999999999)
+    plt.ylim(0.499, 0.499999)
 
     for i, (energy, label, color, ls) in enumerate(zip(Total_Energy, Labels, colors, linestyles)):
         sns.lineplot(x=list(map(float, Magnetic_Field)), y=list(map(float, energy)), label=label, color=color,
@@ -77,14 +79,14 @@ def Graph_Ratio(Magnetic_Field, Energy_Ratio, Labels) -> None:
     plt.show()
 
 def ratio(Magnetic_Field, electron_spin, nuclear_spin):
-    return (FINE_STRUCTURE_CONST**2 * Magnetic_Field**2 * PROTON_MASS_AU * electron_spin) / (NUCLEAR_G_FACTOR * nuclear_spin * NUCLEAR_CHARGE**mp.mpf('-7') / 2)
+    return (FINE_STRUCTURE_CONST**2 * Magnetic_Field**2 * PROTON_MASS_AU * electron_spin) / (NUCLEAR_G_FACTOR * nuclear_spin * NUCLEAR_CHARGE**mp.mpf('-7/2'))
 
 def ordinary(Magnetic_Field, electron_spin, nuclear_spin):
     return (H_GROUND_STATE_ENERGY + (mp.mpf(1) / (2 * PROTON_MASS_AU)) * NUCLEAR_G_FACTOR * nuclear_spin * Magnetic_Field
             + mp.mpf('0.5') * ELECTRONIC_G_FACTOR * electron_spin * Magnetic_Field)
 
 def New(Magnetic_Field, electron_spin, nuclear_spin):
-    relativistic_contribution = (mp.mpf('0.5') * FINE_STRUCTURE_CONST**2 * Magnetic_Field**3 * NUCLEAR_CHARGE**mp.mpf('-7') / 2 * electron_spin)
+    relativistic_contribution = (mp.mpf('0.5') * FINE_STRUCTURE_CONST**2 * Magnetic_Field**3 * NUCLEAR_CHARGE**mp.mpf('-7/2') * electron_spin)
     return ordinary(Magnetic_Field, electron_spin, nuclear_spin) + relativistic_contribution
 
 def main():
@@ -114,6 +116,11 @@ def main():
         print(mp.nstr(New(B_scaled, 0.5, -0.5), 25))
         print(mp.nstr(New(B_scaled, -0.5, 0.5), 25))
         print(mp.nstr(New(B_scaled, -0.5, -0.5), 25))
+        print("\nDIFFERENCE")
+        print(mp.nstr(New(B_scaled, 0.5, 0.5) - ordinary(B_scaled, 0.5, 0.5), 40))
+        print("\nCONTRIBUTION OF NEW PART")
+        print((mp.mpf('0.5') * FINE_STRUCTURE_CONST**2 * B_scaled**3 * NUCLEAR_CHARGE**mp.mpf('-7/2') * 0.5))
+        print((mp.mpf('0.5') * FINE_STRUCTURE_CONST ** 2 * B_scaled ** 3 * NUCLEAR_CHARGE ** mp.mpf('-7/2') * -0.5))
 
 
 # GRAPHING
@@ -121,14 +128,12 @@ def main():
     Magnetic_Field_scaled = [mp.mpf(B) / mp.mpf('2.3505175e5') for B in Magnetic_Field]
 
     spin_combinations = [(0.5, 0.5), (0.5, -0.5), (-0.5, 0.5), (-0.5, -0.5)]
-    Labels = ["(↑e, ↑n)", "(↑e, ↓n)", "(↓e, ↑n)", "(↓e, ↓n)"]
 
     Energy_Ordinary = [[ordinary(B, e_spin, n_spin) for B in Magnetic_Field_scaled] for e_spin, n_spin in spin_combinations]
     Energy_New = [[New(B, e_spin, n_spin) for B in Magnetic_Field_scaled] for e_spin, n_spin in spin_combinations]
     Ratio_Values = [[ratio(B, e_spin, n_spin) for B in Magnetic_Field_scaled] for e_spin, n_spin in spin_combinations]
 
-    Graph_Energy(Magnetic_Field, Energy_Ordinary, ["Ordinary " + lbl for lbl in Labels])
-    Graph_Energy(Magnetic_Field, Energy_New, ["New " + lbl for lbl in Labels])
+    Graph_Energy(Magnetic_Field, Energy_New, [lbl for lbl in Labels])
     Graph_Ratio(Magnetic_Field, Ratio_Values, Labels)
 
 if __name__ == '__main__':
