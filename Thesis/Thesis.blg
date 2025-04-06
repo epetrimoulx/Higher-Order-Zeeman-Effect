@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Thesis.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 20 items.
+Database file #1: sections/References.bib
+Warning--I didn't find a database entry for "Bethe_Salpeter_1977"
+Warning--I didn't find a database entry for "Wigner-3j"
+Warning--to sort, need author or key in electron_mass_value
+Warning--to sort, need author or key in electron_charge_value
+Warning--to sort, need author or key in fine_structure_value
+Warning--to sort, need author or key in hbar_value
+Warning--to sort, need author or key in speed_of_light_value
+Warning--to sort, need author or key in electric_permittivity_value
+Warning--to sort, need author or key in Atomic_unit_of_field_strength
+Warning--to sort, need author, editor, or key in Atomic_Physics_Handbook
+Warning--to sort, need author or key in Dalgarno_Interchange
+Warning--empty author in Dalgarno_Interchange
+Warning--empty author and editor in Atomic_Physics_Handbook
+Warning--empty publisher in Liber_Abaci
+Warning--empty journal in 2007Drake-Wu
+You've used 36 entries,
+            2118 wiz_defined-function locations,
+            739 strings with 10035 characters,
+and the built_in function-call counts, 9997 in all, are:
+= -- 934
+> -- 427
+< -- 0
++ -- 180
+- -- 140
+* -- 731
+:= -- 1636
+add.period$ -- 96
+call.type$ -- 36
+change.case$ -- 172
+chr.to.int$ -- 0
+cite$ -- 49
+duplicate$ -- 378
+empty$ -- 880
+format.name$ -- 140
+if$ -- 2103
+int.to.chr$ -- 0
+int.to.str$ -- 36
+missing$ -- 38
+newline$ -- 167
+num.names$ -- 54
+pop$ -- 197
+preamble$ -- 1
+purify$ -- 141
+quote$ -- 0
+skip$ -- 273
+stack$ -- 0
+substring$ -- 548
+swap$ -- 35
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 124
+warning$ -- 13
+while$ -- 73
+width$ -- 38
+write$ -- 357
+(There were 15 warnings)
