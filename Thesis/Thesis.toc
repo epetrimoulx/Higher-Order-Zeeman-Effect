@@ -6,48 +6,46 @@
 \contentsline {chapter}{\normalsize LIST OF TABLES}{XII}{Doc-Start}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Background and Motivation}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Overview of Research Projects}{1}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Methodology Overview}{1}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Research Significance}{1}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Dissertation Structure}{1}{section.1.5}%
-\contentsline {chapter}{\numberline {2}Theoretical Methods}{2}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Overview}{2}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Atomic Units}{3}{section.2.2}%
-\contentsline {section}{\numberline {2.3}One-electron Schrödinger equation}{6}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Integration Techniques}{8}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}The angular part}{9}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}The radial part}{10}{subsection.2.4.2}%
-\contentsline {section}{\numberline {2.5}Perturbation Theory}{12}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Recursion relations}{14}{section.2.6}%
-\contentsline {section}{\numberline {2.7}The Dalgarno Interchange Theorem}{16}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Double Perturbation Theory}{17}{section.2.8}%
-\contentsline {chapter}{\numberline {3}The Higher Order Zeeman Effect}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Overview}{19}{section.3.1}%
-\contentsline {section}{\numberline {3.2}History}{20}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Motivation}{20}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}The $g-2$ experiment}{20}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}High-precision magnetometry}{21}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Connection to Atomic Physics}{21}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}The Zeeman effect}{21}{section.3.4}%
-\contentsline {section}{\numberline {3.5}The Cubic Zeeman Effect}{27}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}The relativistic magnetic dipole moment operator}{28}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}The relativistic correction to $^3$He$^+$}{32}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}Results}{34}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Conclusion and Future Work}{36}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Overview}{36}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Consolidation of Results}{36}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Synthesis of Conclusions}{36}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Future Work}{36}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Theoretical and Practical Impact}{36}{section.4.5}%
-\contentsline {chapter}{\numberline {A}Derivation of the Recursion Relations}{37}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Left-acting Operators}{43}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Special Functions}{44}{appendix.C}%
-\contentsline {section}{\numberline {C.1}Overview}{44}{section.C.1}%
-\contentsline {section}{\numberline {C.2}The gamma function}{44}{section.C.2}%
-\contentsline {section}{\numberline {C.3}Legendre Polynomials}{47}{section.C.3}%
-\contentsline {section}{\numberline {C.4}Laguerre Polynomials}{49}{section.C.4}%
-\contentsline {section}{\numberline {C.5}Spherical Harmonics}{50}{section.C.5}%
-\contentsline {section}{\numberline {C.6}Confluent Hypergeometric Function}{51}{section.C.6}%
-\contentsline {chapter}{\numberline {D}Methods of solving for higher-order perturbations programmatically}{53}{appendix.D}%
-\contentsline {chapter}{REFERENCES}{55}{equation.D.4}%
-\contentsline {chapter}{VITA AUCTORIS}{59}{appendix*.10}%
+\contentsline {section}{\numberline {1.2}Research Significance}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Dissertation Structure}{2}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Theoretical Methods}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Overview}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Atomic Units}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}One-electron Schrödinger equation}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Integration Techniques}{9}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}The angular part}{10}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}The radial part}{11}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Perturbation Theory}{13}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Recursion relations}{15}{section.2.6}%
+\contentsline {section}{\numberline {2.7}The Dalgarno Interchange Theorem}{17}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Double Perturbation Theory}{18}{section.2.8}%
+\contentsline {chapter}{\numberline {3}The Higher Order Zeeman Effect}{20}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Overview}{20}{section.3.1}%
+\contentsline {section}{\numberline {3.2}History}{21}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Motivation}{21}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}The $g-2$ experiment}{21}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}High-precision magnetometry}{22}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Connection to Atomic Physics}{22}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}The Zeeman effect}{22}{section.3.4}%
+\contentsline {section}{\numberline {3.5}The Cubic Zeeman Effect}{28}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}The relativistic magnetic dipole moment operator}{29}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}The relativistic correction to $^3$He$^+$}{33}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Results}{35}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Conclusion and Future Work}{37}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Overview}{37}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Consolidation of Results}{37}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Synthesis of Conclusions}{37}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Future Work}{37}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Theoretical and Practical Impact}{37}{section.4.5}%
+\contentsline {chapter}{\numberline {A}Derivation of the Recursion Relations}{38}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Left-acting Operators}{44}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Special Functions}{45}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Overview}{45}{section.C.1}%
+\contentsline {section}{\numberline {C.2}The gamma function}{45}{section.C.2}%
+\contentsline {section}{\numberline {C.3}Legendre Polynomials}{48}{section.C.3}%
+\contentsline {section}{\numberline {C.4}Laguerre Polynomials}{50}{section.C.4}%
+\contentsline {section}{\numberline {C.5}Spherical Harmonics}{51}{section.C.5}%
+\contentsline {section}{\numberline {C.6}Confluent Hypergeometric Function}{52}{section.C.6}%
+\contentsline {chapter}{\numberline {D}Methods of solving for higher-order perturbations programmatically}{54}{appendix.D}%
+\contentsline {chapter}{REFERENCES}{56}{equation.D.4}%
+\contentsline {chapter}{VITA AUCTORIS}{60}{appendix*.10}%

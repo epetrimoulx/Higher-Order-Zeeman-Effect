@@ -1,15 +1,8 @@
-% Make sure to also include Z^{3/2}
-% \sigma \cdot B is the splitting - N term like this in quadratic - no noticable split shift - only shifts both states equally.
-% Remove c's in denominator.
-% Check \ref{sec:Ordinary_Zeeman} --> was removed as a label - Make sure there are no references left to it that are now invalid.
-% FIX CUBIC ZEEMAN EFFECT SECTION - INCLUDE PROPER TERMS FOR V
 % Talk about neutron stars and magnetic white dwarfs
-% Think abour rephrasing the section with the nuclear Zeeman effect to ensure the expression is right. Expand it out and make sure all the terms are there!
 \chapter{The Higher Order Zeeman Effect}\label{sec:Zeeman-Effect}
     \section{Overview}
         In this chapter the Zeeman Effect is introduced, and the motivation, direct applications, and the higher order Zeeman Effect is discussed. The main focus of this chapter is to show the effect of the quadratic Zeeman Effect, and show how using the relativistic magnetic dipole operator in conjunction with the relativistic corrections to $^3$He$^+$ yields a cubic Zeeman Effect. The effects of both the quadratic and cubic corrections are discussed in great detail, and the impact of the effect on high precision measurements is displayed for various magnetic field strengths.\\
 
-        % PUT SOMETHING HERE FOR APPLICATIONS IN AMO
        Sec.~\ref{sec:history} starts with the history of the Zeeman effect, its origins and discovery. Afterwards the motivation for the project in Sec.~\ref{sec:motivation} is discussed. Here, some current experiments in the field such as the $g-2$ experiment conducted at the Max Planck Institute as well as applications to high-precision magnetometry are highlighted. Some additional applications such as the shift in spectral lines of neutron stars and magnetic white dwarfs are introduced as well. In Sec.~\ref{sec:quadratic_zeeman}, the ordinary Zeeman effect and quadratic Zeeman effect are derived using the canonical momentum. Their respective theories are introduced and applications to atomic systems such as $^3$He$^+$ are discussed. Moving towards higher order systems, the cubic Zeeman effect is introduced. Starting with the effects that contribute to the cubic Zeeman effect such as the relativistic magnetic dipole operator in Sec.~\ref{sec:magnetic_dipole_operator} and the quadratic Zeeman effect, the relativistic correction to $^3$He$^+$ is derived and shown in Sec.~\ref{sec:Relativistic_Correction}. these effects are combined to yield a $B^3$ contribution to the energy splitting within the presence of an external magnetic field. Afterwards, Sec.~\ref{sec:results} discusses the results of the calculation and its applications.
 
     \section{History}\label{sec:history}
@@ -275,19 +268,19 @@
             \end{align}
             \noindent Now that the $Q_{M1}$ operator and the quadratic Zeeman operator have been successfully expressed as corrections to the Hamiltonian and its wavefunctions, they can be combined to produce a higher order Zeeman effect scaling with $B^3$. This combination of $Q_{M1}$ and $H_Z^{(2)}$ is called the relativistic correction, and is discussed in Sec.~\ref{sec:Relativistic_Correction}.
         \subsection{The relativistic correction to $^3$He$^+$}\label{sec:Relativistic_Correction}
-            Combining the relativistic magnetic dipole moment with the quadratic Zeeman operator, the relativistic corrections for $^3$He$^+$ is uncovered. The relativistic correction is
+            Combining the relativistic magnetic dipole moment with the quadratic Zeeman operator, the relativistic corrections for $^3$He$^+$ is uncovered. This is done using double perturbation theory, where the operator $V$ and its expansion parameter $\lambda$ correspond to the quadratic Zeeman effect, and the operator $W$ and its expansion parameter $\nu$ correspond to the relativistic magnetic dipole moment operator.
             \begin{align}
-                C_{\text{rel}}^{(2)} = \sum_{n = 1}^\infty \frac{\langle \psi^0 \vert Q_{M1} \vert \psi^n \rangle \langle \psi^n\vert V_Z^{(2)} \vert \psi^0 \rangle}{E_0 - E_n}\;.
+                \left(H_0 + \lambda V + \nu W \right) \psi = E \psi
             \end{align}
-            \noindent Replacing the infinite sum of the hydrogenic spectrum with the sum over the pseudospectrum for either the quadratic Zeeman operator or the relativistic magnetic dipole operator gives a simplified definition for the relativistic correction. To ensure correctness, both approaches are calculated, and the Dalgarno interchange theorem (see Sec.~\ref{sec:Dalgarno_Interchange_Theorem}) is used to verify that both solutions are the same. Starting with the quadratic Zeeman operator, define 
+            \noindent Grouping in powers of $\lambda$ and $\nu$ gives equation \eqref{eq:double_pert_equation}, where it is shown that the cross term between $\lambda^1 \nu^1$ produces a new energy correction $E_{1,1}$. This new energy correction serves as a relativistic correction denoted with $C_{\text{rel}}^{(2)}$, and is derived by multiplying equation \eqref{eq:double_pert_equation} through by $\langle \psi_{0,0} \vert$, giving a sum of two matrix elements
             \begin{align}
-                \vert \psi^{(1)} \rangle = \sum_{n = 1}^\infty \frac{\vert \psi^n \rangle \langle \psi^n \vert V_Z^{(2)} \vert \psi^0 \rangle}{E_0 - E_n}\;,
+                C_{\text{rel}}^{(2)} = \langle \psi_{0,0} \vert V \vert \psi_{0,1} \rangle + \langle \psi_{0,0} \vert W \vert \psi_{1,0} \rangle\;. \label{eq:REL}
             \end{align}
-            \noindent so that the relativistic correction now reads 
+            \noindent Here, $\psi_{0,1}$ corresponds to the first order correction to the wavefunction for the relativistic magnetic dipole moment operator, previously defined using $\varPsi^{(1)}$, and $\psi_{1,0}$ corresponds to the first order correction to the wavefunction for the quadratic Zeeman operator, previously denoted by $\psi^{(1)}$. Using the Dalgarno interchange theorem, the sum of these two matrix elements can be expressed in two equivalent ways. Starting with the relativistic magnetic dipole moment operator
             \begin{align}
-                C_{\text{rel}}^{(2)} = 2\langle \psi^0 \vert Q_{M1} \vert \psi^{(1)} \rangle\;.
+                C_{\text{rel}}^{(2)} = 2\langle \psi_{0,0} \vert Q_{M1} \vert \psi_{1,0} \rangle\;.
             \end{align}
-            \noindent $\vert \psi^{(1)} \rangle$ is also written in equation \eqref{psi_1_result}, and the solution to $C_{\text{rel}}^{(2)}$ is now just an integral 
+            \noindent $\vert \psi_{1,0} \rangle$ is also written in equation \eqref{psi_1_result}, and the solution to $C_{\text{rel}}^{(2)}$ is now just an integral 
             \begin{align}
                 C_{\text{rel}}^{(2)} = 2\int_0^\infty \int_0^\pi \int_0^{2\pi} r^2 \sin\theta \psi^0 Q_{M1} \psi^{(1)} dr d\theta d\phi\;.
             \end{align}
@@ -300,13 +293,9 @@
             \begin{align}
                 C_{\text{rel}}^{(2)} = \frac{1}{2} \gamma^2 \mu_B \alpha^2 a_0 Z^{-\frac{7}{2}} \vec{\sigma} \cdot \vec{B} \;. \label{eq:C_rel_1}
             \end{align}
-            \noindent It can be seen that the relativistic correction to $^3$He$^+$ includes a $B^3$ scaling. This electronic effect further splits the energy levels of $^3$He$^+$ when subjected to an external magnetic field. The $\vec{\sigma} \cdot \vec{B}$ term ensures that the splitting is dependent on the magnetic quantum number $m$, so the shift to the energy is a noticeable effect that further increases the splitting between the states. This result is verified using the Dalgarno interchange theorem by defining
+            \noindent It can be seen that the relativistic correction to $^3$He$^+$ includes a $B^3$ scaling. This electronic effect further splits the energy levels of $^3$He$^+$ when subjected to an external magnetic field. The $\vec{\sigma} \cdot \vec{B}$ term ensures that the splitting is dependent on the magnetic quantum number $m$, so the shift to the energy is a noticeable effect that further increases the splitting between the states. This result is verified using the Dalgarno interchange theorem via calculating the other valid representation for the operator
             \begin{align}
-                \vert \varphi^{(1)} \rangle = \sum_{n = 1}^\infty \frac{\langle \psi^0 \vert Q_{M1} \vert \psi^n \rangle \langle \psi^n\vert}{E_0 - E_n}\;,
-            \end{align}
-            \noindent which means that the relativistic correction can also be defined as 
-            \begin{align}
-                C_{\text{rel}}^{(2)} = 2\langle \varphi \vert V_{Z}^{(2)} \vert \psi^0 \rangle\;.
+                C_{\text{rel}}^{(2)} = 2\langle \psi_{0,0} \vert V_{Z}^{(2)} \vert \psi_{0,1}\rangle\;.
             \end{align}
             According to the Dalgarno interchange theorem, this expression for $C_{\text{rel}}^{(2)}$ should be the same as the result found in equation \eqref{eq:C_rel_1}. In integral form this reads 
             \footnotesize
@@ -317,7 +306,7 @@
             \begin{align}
                 C_{\text{rel}}^{(2)} = -\frac{1}{2} \gamma^2 \mu_B \alpha^2 a_0 Z^{-\frac{7}{2}} \vec{\sigma} \cdot \vec{B} \;. \label{eq:C_rel_2}
             \end{align}
-            \noindent Thus it has been proven via the Dalgarno interchange theorem that all previous calcualtions have been correct, and the relativistic corrections for $^3$He$^+$ have been successfully derived. Reversing the substitution of all of the physical constants one gets 
+            \noindent Thus it has been proven via the Dalgarno interchange theorem that all previous calcualtions have been correct, and the relativistic corrections for any hydrogenic wavefunction have been successfully derived. Reversing the substitution of all of the physical constants one gets 
             \begin{align}
                 C_{\text{rel}}^{(2)} = -\frac{1}{2} \frac{B^3 e^5 \hbar Z^{\frac{-7}{2}}}{m^3 c^3 4\pi \epsilon_0} m_s\;.
             \end{align}
