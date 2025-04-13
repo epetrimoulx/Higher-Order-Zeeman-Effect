@@ -7,6 +7,7 @@ Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: sections/References.bib
 Warning--I didn't find a database entry for "Bethe_Salpeter_1977"
 Warning--I didn't find a database entry for "Wigner-3j"
+Warning--to sort, need author or key in The_quantum_theory_of_the_electron_1928
 Warning--to sort, need author or key in electron_mass_value
 Warning--to sort, need author or key in electron_charge_value
 Warning--to sort, need author or key in fine_structure_value
@@ -16,49 +17,59 @@ Warning--to sort, need author or key in electric_permittivity_value
 Warning--to sort, need author or key in Atomic_unit_of_field_strength
 Warning--to sort, need author, editor, or key in Atomic_Physics_Handbook
 Warning--to sort, need author or key in Dalgarno_Interchange
+Warning--empty author in The_quantum_theory_of_the_electron_1928
+Warning--empty title in The_quantum_theory_of_the_electron_1928
 Warning--empty author in Dalgarno_Interchange
 Warning--empty author and editor in Atomic_Physics_Handbook
+Warning--empty journal in Degrassi_Giudice_1998
+Warning--there's a number but no volume in Degrassi_Giudice_1998
+Warning--empty journal in Djukanovic_Hippel_Kuberski_Meyer_Miller_Ottnad_Parrino_Risch_Wittig_2025
+Warning--there's a number but no volume in Djukanovic_Hippel_Kuberski_Meyer_Miller_Ottnad_Parrino_Risch_Wittig_2025
 Warning--empty publisher in Liber_Abaci
+Warning--empty journal in Kim_2024
+Warning--there's a number but no volume in Kim_2024
+Warning--empty journal in Reisenegger_2001
+Warning--there's a number but no volume in Reisenegger_2001
 Warning--empty journal in 2007Drake-Wu
-You've used 36 entries,
+You've used 44 entries,
             2118 wiz_defined-function locations,
-            739 strings with 10035 characters,
-and the built_in function-call counts, 9997 in all, are:
-= -- 934
-> -- 427
+            793 strings with 11776 characters,
+and the built_in function-call counts, 12517 in all, are:
+= -- 1165
+> -- 561
 < -- 0
-+ -- 180
-- -- 140
-* -- 731
-:= -- 1636
-add.period$ -- 96
-call.type$ -- 36
-change.case$ -- 172
++ -- 236
+- -- 186
+* -- 953
+:= -- 2067
+add.period$ -- 121
+call.type$ -- 44
+change.case$ -- 218
 chr.to.int$ -- 0
-cite$ -- 49
-duplicate$ -- 378
-empty$ -- 880
-format.name$ -- 140
-if$ -- 2103
+cite$ -- 68
+duplicate$ -- 462
+empty$ -- 1061
+format.name$ -- 186
+if$ -- 2599
 int.to.chr$ -- 0
-int.to.str$ -- 36
-missing$ -- 38
-newline$ -- 167
-num.names$ -- 54
-pop$ -- 197
+int.to.str$ -- 44
+missing$ -- 46
+newline$ -- 208
+num.names$ -- 68
+pop$ -- 240
 preamble$ -- 1
-purify$ -- 141
+purify$ -- 180
 quote$ -- 0
-skip$ -- 273
+skip$ -- 327
 stack$ -- 0
-substring$ -- 548
-swap$ -- 35
+substring$ -- 677
+swap$ -- 39
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 124
-warning$ -- 13
-while$ -- 73
-width$ -- 38
-write$ -- 357
-(There were 15 warnings)
+type$ -- 156
+warning$ -- 24
+while$ -- 91
+width$ -- 46
+write$ -- 443
+(There were 26 warnings)
