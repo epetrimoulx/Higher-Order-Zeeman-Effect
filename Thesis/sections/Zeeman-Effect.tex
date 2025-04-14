@@ -1,29 +1,14 @@
 % Talk about neutron stars and magnetic white dwarfs
 \chapter{The Higher Order Zeeman Effect}\label{sec:Zeeman-Effect}
     \section{Overview}
-        In this chapter the Zeeman Effect is introduced, and the motivation, direct applications, and the higher order Zeeman Effect is discussed. The main focus of this chapter is to show the effect of the quadratic Zeeman Effect, and show how using the relativistic magnetic dipole operator in conjunction with the relativistic corrections to $^3$He$^+$ yields a cubic Zeeman Effect. The effects of both the quadratic and cubic corrections are discussed in great detail, and the impact of the effect on high precision measurements is displayed for various magnetic field strengths.\\
+        In this chapter the Zeeman Effect is introduced and the higher order Zeeman Effect is discussed. The main focus of this chapter is to show the effect of the quadratic Zeeman Effect, and show how using the relativistic magnetic dipole operator in conjunction with the relativistic corrections to $^3$He$^+$ yields a cubic Zeeman Effect. The effects of both the quadratic and cubic corrections are discussed in great detail, and the impact of the effect on high precision measurements is displayed for various magnetic field strengths.\\
 
-       Sec.~\ref{sec:history} starts with the history of the Zeeman effect, its origins and discovery. Afterwards the motivation for the project in Sec.~\ref{sec:motivation} is discussed. Here, some current experiments in the field such as the $g-2$ experiment conducted at the Max Planck Institute as well as applications to high-precision magnetometry are highlighted. Some additional applications such as the shift in spectral lines of neutron stars and magnetic white dwarfs are introduced as well. In Sec.~\ref{sec:quadratic_zeeman}, the ordinary Zeeman effect and quadratic Zeeman effect are derived using the canonical momentum. Their respective theories are introduced and applications to atomic systems such as $^3$He$^+$ are discussed. Moving towards higher order systems, the cubic Zeeman effect is introduced. Starting with the effects that contribute to the cubic Zeeman effect such as the relativistic magnetic dipole operator in Sec.~\ref{sec:magnetic_dipole_operator} and the quadratic Zeeman effect, the relativistic correction to $^3$He$^+$ is derived and shown in Sec.~\ref{sec:Relativistic_Correction}. these effects are combined to yield a $B^3$ contribution to the energy splitting within the presence of an external magnetic field. Afterwards, Sec.~\ref{sec:results} discusses the results of the calculation and its applications.
+       Sec.~\ref{sec:history} starts with the history of the Zeeman effect, its origins and discovery. In Sec.~\ref{sec:quadratic_zeeman}, the ordinary Zeeman effect and quadratic Zeeman effect are derived using the canonical momentum. Their respective theories are introduced and applications to atomic systems such as $^3$He$^+$ are discussed. Moving towards higher order systems, the cubic Zeeman effect is introduced. Starting with the effects that contribute to the cubic Zeeman effect such as the relativistic magnetic dipole operator in Sec.~\ref{sec:magnetic_dipole_operator} and the quadratic Zeeman effect, the relativistic correction to $^3$He$^+$ is derived and shown in Sec.~\ref{sec:Relativistic_Correction}. these effects are combined to yield a $B^3$ contribution to the energy splitting within the presence of an external magnetic field. Afterwards, Sec.~\ref{sec:results} discusses the results of the calculation and its applications.
 
     \section{History}\label{sec:history}
         The Zeeman effect was first introduced by Pieter Zeeman, who discovered in 1896 that in the presence of a static magnetic field, spectral lines could be split into many components. After the discovery of quantum mechanics, the behaviour was found to be described as a perturbation of the Hamiltonian using the magnetic moment of the atom and the magnetic field.   \\
     
         Since it's discovery, the Zeeman effect has played a large role in the field of atomic physics and magnetometry, which is the study of the intensity of magnetic field across space and time. There have been several calculations to include the relativistic corrections \cite{2007Drake-Wu, Drake-Yan}, field inhomogeneities, and quadratic effects in hydrogenic systems \cite{Fontanari_Sadovskií_2015}. However, little is known about its behavior in helium atoms such as $^3$He$^+$ and $^3$He, which is of key interest in magnetometry and the muon magnetic moment anomaly $(\mu_g - 2)$, for which there is a 5.0 $\sigma$ discrepancy \cite{aguillard2023measurement} with the standard model prediction.
-
-    \section{Motivation}\label{sec:motivation}
-        \subsection{The $g-2$ experiment}\label{sec:g-2}
-        The Dirac equation is a very successful and well studied equation in quantum mechanics. Its success comes from its ability to predict 2 important phenomena; the existence of antimatter and the magnetic dipole moment of the electron. The Dirac equation predicts that the magnetic dipole of the electron should be twice that of the classical prediction. This result is expressed in terms of the g-factor which the Dirac equation predicts is equal to 2. While the Dirac prediction is much closer to experimental findings, there is still a difference between the experimentally measured value of g and the equations prediction. This is called the $g-2$ anomaly. The anomaly is represented by
-        \begin{align}
-            a = \frac{g - 2}{2}\;.
-        \end{align}
-        \noindent The discrepancy of g is caused by higher-order contributions from quantum field theory and to this day is yet to be properly explained. 
-        \begin{align}
-            a^{\text{SM}}_\mu = a_\mu^{\text{QED}} + a_\mu^{\text{EW}} + a_\mu^{\text{hadron}}
-        \end{align}
-        \noindent The first two terms can be derived from first principles, but the hadronic term cannot be calculated precisely on its own and is estimated from experimental results. The effort to measure the muon magnetic moment precisely is an active area of research. The work presented in this thesis aids in the investigation of the $g-2$ anomaly by providing corrections to the Zeeman splitting in $^3$He$^+$, the element used in the magnetometry experiment to measure the anomaly. Accounting for higher order corrections to the Zeeman effect may help consolidate the discrepancy between theory and experiment and help researchers further understand the muon magnetic moment and its impact on muonic systems.
-
-        \subsection{High-precision magnetometry}\label{sec:High-Precision-magnetometry}
-        \subsection{Connection to Atomic Physics}\label{sec:Connection_To_AMO}
 
     \section{The Zeeman effect}\label{sec:quadratic_zeeman}
         When an atom is placed in an external magnetic field, its energy levels are shifted. The shifting of energy levels is known as the Zeeman effect. The effect is derived from the Schrodinger equation and the canonical momentum. The canonical momentum is a conserved quantity that describes a moving charged particle. It can be written as 
@@ -47,16 +32,16 @@
         \noindent Which when expanded gives
         \small
         \begin{align}
-            \hat{H} = \frac{-\hbar^2 \nabla^2}{2m} - \frac{i\hbar e B}{4mc} \vec{\nabla} \cdot \left[y\hat{i} - x\hat{j} \right] - \frac{i\hbar e B}{4mc} \left[y\hat{i} - x\hat{j} \right] \cdot \vec{\nabla} + \frac{e^2B^2}{8mc} \left(x^2 + y^2\right) - \frac{Ze^2}{4\pi \epsilon_0 r}\;.
+            \hat{H} = \frac{-\hbar^2 \nabla^2}{2m} - \frac{i\hbar e B}{4m} \vec{\nabla} \cdot \left[y\hat{i} - x\hat{j} \right] - \frac{i\hbar e B}{4m} \left[y\hat{i} - x\hat{j} \right] \cdot \vec{\nabla} + \frac{e^2B^2}{8m} \left(x^2 + y^2\right) - \frac{Ze^2}{4\pi \epsilon_0 r}\;.
         \end{align}
         \normalsize
         \noindent This equation is crucial for incorporating elecromagnetic effects into the Hamiltonian. The first term in the expanded Hamiltonian is the standard operator. The first term and last term of the equation can be combined to write the ordinary Hamiltonian 
         \begin{align}
-            \hat{H} =  \hat{H}_{\text{Standard}} - \frac{i\hbar e B}{4mc} \vec{\nabla} \cdot \left[y\hat{i} - x\hat{j} \right] - \frac{i\hbar e B}{4mc} \left[y\hat{i} - x\hat{j} \right] \cdot \vec{\nabla} + \frac{e^2B^2}{8mc} \left(x^2 + y^2\right)\;.
+            \hat{H} =  \hat{H}_{\text{Standard}} - \frac{i\hbar e B}{4m} \vec{\nabla} \cdot \left[y\hat{i} - x\hat{j} \right] - \frac{i\hbar e B}{4m} \left[y\hat{i} - x\hat{j} \right] \cdot \vec{\nabla} + \frac{e^2B^2}{8m} \left(x^2 + y^2\right)\;.
         \end{align}
         \noindent When $\vec{\nabla} \cdot \hat{A} = 0$, it is permitted to replace $\nabla \cdot \hat{A}$ with $\hat{A} \cdot \vec{\nabla}$ \cite{Sakurai_Napolitano_2020}. Performing the dot product in the next term gives 
         \begin{align}
-            \hat{H} =  \hat{H}_{\text{Standard}} - \frac{i\hbar e B}{2mc} \left[y \frac{\partial}{\partial x} - x \frac{\partial}{\partial y} \right]+ \frac{e^2B^2}{8mc} \left(x^2 + y^2\right)\;.
+            \hat{H} =  \hat{H}_{\text{Standard}} - \frac{i\hbar e B}{2m} \left[y \frac{\partial}{\partial x} - x \frac{\partial}{\partial y} \right]+ \frac{e^2B^2}{8m} \left(x^2 + y^2\right)\;.
         \end{align}
         \noindent This term is analgous to the orbital angular momentum operator in the $\hat{k}$ direction 
         \begin{align}
@@ -64,11 +49,11 @@
         \end{align}
         \noindent Substituting this into the expression for the total Hamiltonian
         \begin{align}
-            \hat{H} =  \hat{H}_{\text{Standard}} + \frac{eB}{2mc} L_z + \frac{e^2B^2}{8mc} \left(x^2 + y^2\right)\;.
+            \hat{H} =  \hat{H}_{\text{Standard}} + \frac{eB}{2m} L_z + \frac{e^2B^2}{8m} \left(x^2 + y^2\right)\;.
         \end{align}
         \noindent The middle term is the angular magnetic moment of the system, and the final term containing a $B^2$ is known as the quadratic Zeeman effect $\hat{H}_Z^{(2)}$. The orbital angular magnetic moment is \cite{Basdevant_Dalibard_2002}
         \begin{align}
-            \vec{\mu}_\ell = \frac{e}{2mc} \vec{L}\;.
+            \vec{\mu}_\ell = \frac{e}{2m} \vec{L}\;.
         \end{align}
         \noindent Thus the Hamiltonian for a system subject to an external magnetic field is
         \begin{align}
@@ -80,11 +65,11 @@
         \end{align}
         \noindent Accounting for the intrinsic spin of the electron, an additional term can be added to the Hamiltonian called the spin interaction \cite{Sakurai_Napolitano_2020}
         \begin{align}
-            \hat{H}_{\text{Spin}} = -g_s \frac{eB}{2mc} \vec{S}\;.
+            \hat{H}_{\text{Spin}} = -g_s \frac{eB}{2m} \vec{S}\;.
         \end{align}
         \noindent Where $\vec{S}$ is the spin angular momentum operator. This expression is defined as the spin magnetic moment $\vec{\mu}_s$, and contains the Larmor frequency $\omega = \frac{eB}{2m}$ \cite{Foot_2005}.
         \begin{align}
-            \vec{\mu}_s = g_s \frac{e}{2mc} \vec{S}\;.
+            \vec{\mu}_s = g_s \frac{e}{2m} \vec{S}\;.
         \end{align}
         \noindent Here, $g_s$ is the electron g-factor. The spin magnetic moment and the angular magnetic moment both scale linearly in $B$. The two effects are combined into what is known as the linear Zeeman effect.
         \begin{align}
@@ -196,7 +181,7 @@
             \end{align}
             \noindent Where $\mu_B$ is the Bohr magneton
             \begin{align}
-                \mu_B = \frac{e \hbar}{2mc}
+                \mu_B = \frac{e \hbar}{2m}
             \end{align}
             \noindent The second term in the brackets of the relativistic magnetic dipole moment operator accounts for the relativistic correction to the kinetic energy of the electron, and the third term is the potential energy due to the Coulomb interaction between the electron and the nucleus. The first term corresponds to the ordinary Zeeman Effect, which does not contribute to the sum over states due to orthogonality.\\
 
@@ -308,12 +293,16 @@
             \end{align}
             \noindent Thus it has been proven via the Dalgarno interchange theorem that all previous calcualtions have been correct, and the relativistic corrections for any hydrogenic wavefunction have been successfully derived. Reversing the substitution of all of the physical constants one gets 
             \begin{align}
-                C_{\text{rel}}^{(2)} = -\frac{1}{2} \frac{B^3 e^5 \hbar Z^{\frac{-7}{2}}}{m^3 c^3 4\pi \epsilon_0} m_s\;.
+                C_{\text{rel}}^{(2)} = -\frac{1}{2} \frac{B^3 e^5 \hbar Z^{\frac{-7}{2}}}{m^3 c^2 4\pi \epsilon_0} m_s\;.
             \end{align}
-            \noindent Which has units of energy per tesla. $m_s$ denotes the magnetic quantum number, which can take values of $\pm \frac{1}{2}$. From this, the further splitting of energy states based on magnetic field strength is evident. The relationship behaves like the splitting shown in figure~\ref{fig:c}. This factor is not supressed by the mass of the nucleus like the other effects discussed in the previous section, and thus becomes impactful to the systems behaviour for all magnitudes of magnetic field, regardless of its seemingly small correction.
+            \noindent Which has units of energy per tesla. $m_s$ denotes the magnetic quantum number, which can take values of $\pm \frac{1}{2}$. From this, the further splitting of energy states based on magnetic field strength is evident. The relationship behaves like the splitting shown in figure~\ref{fig:c}.
     \section{Results}\label{sec:results}
-        This section discusses the numerical results obtained from the calculations of the linear and quadratic Zeeman effects, the relativistic magnetic dipole moment, and the relativistic correction to $^3$He$^+$ for various magnetic field strengths. The results will highlight the significance of the $B^3$ term in accounting for the energy level splitting at low and high magnetic field strength.
+        This section discusses the numerical results obtained from the calculations of the linear and quadratic Zeeman effects, the relativistic magnetic dipole moment operator, and the relativistic correction to $^3$He$^+$ for various magnetic field strengths. The results will highlight the significance of the $B^3$ term in accounting for the energy level splitting at low and high magnetic field strength.\\
 
+        The relativistic correction to $^3$He$^+$ in atomic units is
+        \begin{align}
+            C_{\text{rel}}^{(2)} = -\frac{1}{2} \alpha^2 Z^{\frac{-7}{2}} B^3\;,
+        \end{align}
         \begin{table}[h]
             \centering
             \renewcommand{\arraystretch}{1.5} % Adjust row height
