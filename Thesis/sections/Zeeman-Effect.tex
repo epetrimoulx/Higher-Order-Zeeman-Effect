@@ -121,11 +121,11 @@
         \end{align}
         \noindent Where the quadratic Zeeman term is treated as a perturbation. Using the ground state wavefunction of hydrogen for $Z = 2$ for the $^3$He$^+$ atom, the perturbation equation then reads 
         \begin{align}
-            \left(- \frac{\hbar^2}{2m_e} \nabla^2 - \frac{Ze^2}{4\pi \epsilon_0 r} - E^{(0)} \right) \vert \psi^{(1)} \rangle = \left(\frac{B^2e^2}{12m_e}r^2 - E^{(1)} \right) \sqrt{\frac{Z^3}{\pi a_0^3}} e^{-\frac{Zr}{a_0}}\;.
+            \left(- \frac{\hbar^2}{2m_e} \nabla^2 - \frac{Ze^2}{4\pi \epsilon_0 r} - E^{(0)} \right) \psi^{(1)} = \left(\frac{B^2e^2}{12m_e}r^2 - E^{(1)} \right) \sqrt{\frac{Z^3}{\pi a_0^3}} e^{-\frac{Zr}{a_0}}\;.
         \end{align}
         \noindent Where the $P_2(\cos \theta)$ term is zero since the problem involves spherically symmetric $S$ states\footnote{This can be proven by performing the necessary integrals with the $P_2(\cos\theta)$ term included. The result is that the $P_2(\cos \theta)$ integral is 0}. This perturbation equation can be solved using the method of Frobenius, where the form of $\vert \psi^{(1)} \rangle$ is assumed to be of a power series.
         \begin{align}
-            \vert \psi^{(1)} \rangle = \sum_{j = 0}^\infty a_j r^j e^{-\frac{Zr}{a_0}}
+            \psi^{(1)} = \sum_{j = 0}^\infty a_j r^j e^{-\frac{Zr}{a_0}}
         \end{align}
         \noindent Inserting $\vert \psi^{(1)} \rangle$ into the perturbation equation the expression reads 
         \begin{align}
@@ -145,11 +145,11 @@
         \end{align}
         Grouping the powers of $r$ from the LHS and the RHS of the equation produces a set of recursive relations that need to be solved. After substituting the correct integers for $j$ for each equation it is seen that there are only two instances when the series terms are non-zero. These terms are for $j = 2$ and $j = 3$. All other terms in the series are zero and thus non-contributing. The solution for $\vert \psi^{(1)} \rangle$ is thus 
         \begin{align}
-            \vert \psi^{(1)} \rangle = \sum_{j = 0}^\infty a_j r^j e^{-\frac{Zr}{a_0}} = a_0 e^{-\frac{Zr}{a_0}} + a_2 r^2 e^{-\frac{Zr}{a_0}} + a_3 r^3 e^{-\frac{Zr}{a_0}}
+            \psi^{(1)} = \sum_{j = 0}^\infty a_j r^j e^{-\frac{Zr}{a_0}} = a_0 e^{-\frac{Zr}{a_0}} + a_2 r^2 e^{-\frac{Zr}{a_0}} + a_3 r^3 e^{-\frac{Zr}{a_0}}
         \end{align}
         \noindent Plugging in the found values for $a_2$ and $a_3$ yield 
         \begin{align}
-            \vert \psi^{(1)} \rangle = a_0 e^{-\frac{Zr}{a_0}} -\frac{m}{12\hbar^2} \gamma^2 \frac{\bar{a}_0^2}{Z^2} \sqrt{\frac{Z^3}{\pi a_0^3}} r^2 e^{-\frac{Zr}{a_0}} -\frac{m}{\hbar^2}\frac{\bar{a}_0}{36Z}\sqrt{\frac{Z^3}{\pi a_0^3}} \gamma^2 r^3 e^{-\frac{Zr}{a_0}}\;.
+            \psi^{(1)} = a_0 e^{-\frac{Zr}{a_0}} -\frac{m}{12\hbar^2} \gamma^2 \frac{\bar{a}_0^2}{Z^2} \sqrt{\frac{Z^3}{\pi a_0^3}} r^2 e^{-\frac{Zr}{a_0}} -\frac{m}{\hbar^2}\frac{\bar{a}_0}{36Z}\sqrt{\frac{Z^3}{\pi a_0^3}} \gamma^2 r^3 e^{-\frac{Zr}{a_0}}\;.
         \end{align}
         Currently, $a_0$ is still undetermined. It is found by imposing the orthogonality condition between $\vert \psi^{(0)} \rangle$ and $\vert \psi^{(1)} \rangle$
         \begin{align}
@@ -165,7 +165,7 @@
         \end{align}
         \noindent Thus, the full first order correction to the ground state hydrogenic wavefunction subject to an external magnetic field is 
         \begin{align}
-            \vert \psi^{(1)} \rangle = \frac{m}{12 \hbar^2}\frac{\bar{a}_0}{Z}\gamma^2 \sqrt{\frac{Z^3}{\pi \bar{a}_0^3}} \left[\frac{11}{2}\frac{\bar{a}_0^3}{Z^3} - \frac{\bar{a}_0}{Z} r^2 -\frac{1}{3} r^3 \right] e^{-\frac{Zr}{a_0}} \;. \label{psi_1_result}
+            \psi^{(1)} = \frac{m}{12 \hbar^2}\frac{\bar{a}_0}{Z}\gamma^2 \sqrt{\frac{Z^3}{\pi \bar{a}_0^3}} \left[\frac{11}{2}\frac{\bar{a}_0^3}{Z^3} - \frac{\bar{a}_0}{Z} r^2 -\frac{1}{3} r^3 \right] e^{-\frac{Zr}{a_0}} \;. \label{psi_1_result}
         \end{align}
     \section{The Cubic Zeeman Effect}
         The following section discusses the main focus of this thesis, the Cubic Zeeman effect. While the linear Zeeman affect as well as the quadratic Zeeman effect have been studied for hydrogenic systems, little is known about any higher order contributions. This section investigates the combination of the magnetic dipole moment operator and and the quadratic Zeeman effect to determine the relativistic effects of $^3$He$^+$ that when applied, reveal a contribution to the energy shift that is dependant on the cube of the magnetic field strength.\\
@@ -219,7 +219,7 @@
             
             Within the $Q_{M1}$ operator, it has been shown that the $p^2$ term can be written in terms of the original Hamiltonian, there is not a need to perform a perturbation about $p^2$ in order to receive the desired correction to the energy. Thus the perturbation equation for the $Q_{M1}$ operator is
             \begin{align}
-                \left(H^{(0)} - E^{(0)}\right) \vert \varPsi^{(1)}\rangle = \left(\mu_B \frac{\hbar^2 Z}{m^2 c^2 \bar{a}_0 r} \vec{\sigma} \cdot \vec{B} + E^{(1)} \right) \sqrt{\frac{Z^3}{\pi a_0^3}}e^{-\frac{Zr}{a_0}}\;.
+                \left(H^{(0)} - E^{(0)}\right) \varPsi^{(1)} = \left(\mu_B \frac{\hbar^2 Z}{m^2 c^2 \bar{a}_0 r} \vec{\sigma} \cdot \vec{B} + E^{(1)} \right) \sqrt{\frac{Z^3}{\pi a_0^3}}e^{-\frac{Zr}{a_0}}\;.
             \end{align}
             \noindent Similarly to Sec.~\ref{sec:quadratic_zeeman}, the first order corrected wavefunction is assumed to be of the form of a power series so that the method of Frobenius can be applied\footnote{Note here that $a_0$ is the Bohr radius, not the zeroeth term in the sum. Similarly to the derivation for the quadratic Zeeman effect, there is no $a_0$ term from the summation, and it is determined later. The conflict in notation is avoided for now.}. This gives a similar result to the quadratic Zeeman derivation, but the inhomogeneous terms on the right hand side of the equation now correlate to different powers of $r$.\small
             \begin{align}
@@ -236,7 +236,7 @@
             \end{align}
             \noindent The recursion relation is solved once again similarly to that of the quadratic Zeeman perturbation, but this time only a single term in the series appears as nonzero. The first order correction to the hydrogenic wavefunction for a $\frac{1}{r}$ perturbation is 
             \begin{align}
-                \vert \varPsi^{(1)} \rangle = a_0 e^{-\frac{Zr}{a_0}} + a_1 re^{-\frac{Zr}{a_0}}
+                \varPsi^{(1)} = a_0 e^{-\frac{Zr}{a_0}} + a_1 re^{-\frac{Zr}{a_0}}
             \end{align}
             \noindent The $a_0$ term is determined by the orthogonality imposed on the system once again and the integration yields\footnote{Note that due to the conflicting notation, the Bohr radius is denoted as $\bar{a_0}$.}
             \begin{align}
@@ -244,7 +244,7 @@
             \end{align}
             \noindent Thus the final expression for the correction to the hydrogenic wavefunction for a perturbation of the relativistic magnetic dipole operator is 
             \begin{align}
-                \vert \varPsi^{(1)} \rangle = - \frac{\mu_B}{mc^2} \vec{\sigma} \cdot \vec{B} \sqrt{\frac{Z^3}{\pi \bar{a}_0^3}} \frac{Z}{\bar{a}_0} e^{-\frac{Zr}{a_0}} \left( - \frac{3\bar{a}_0}{2Z} + r \right)
+                \varPsi^{(1)} = - \frac{\mu_B}{mc^2} \vec{\sigma} \cdot \vec{B} \sqrt{\frac{Z^3}{\pi \bar{a}_0^3}} \frac{Z}{\bar{a}_0} e^{-\frac{Zr}{a_0}} \left( - \frac{3\bar{a}_0}{2Z} + r \right)
             \end{align}
             \noindent Now that the $Q_{M1}$ operator and the quadratic Zeeman operator have been successfully expressed as corrections to the Hamiltonian and its wavefunctions, they can be combined to produce a higher order Zeeman effect scaling with $B^3$. This combination of $Q_{M1}$ and $H_Z^{(2)}$ is called the relativistic correction, and is discussed in Sec.~\ref{sec:Relativistic_Correction}.
         \subsection{The relativistic correction to $^3$He$^+$}\label{sec:Relativistic_Correction}
@@ -266,7 +266,7 @@
             \end{align}
             \noindent expanding $\psi^1$ and $\psi^0$ and simplifying
             \begin{align}
-                C_{\text{rel}}^{(2)} = -\frac{2}{3} \gamma^2 \frac{\mu_B}{mc^2}\frac{\bar{a}_0^2}{Z^2} \int_0^\infty r e^{-2Zr} \left[ \frac{11 \bar{a}_0^3}{2Z^3} - \frac{\bar{a}_0}{Z}r^2 - \frac{1}{3} r^3 \right] dr \; \vec{\sigma} \cdot \vec{B}
+                C_{\text{rel}}^{(2)} = -\frac{2}{3} \gamma^2 \frac{\mu_B}{mc^2}\frac{\bar{a}_0^2}{Z^2} \int_0^\infty r e^{-\frac{2Zr}{\bar{a}_0}} \left[ \frac{11 \bar{a}_0^3}{2Z^3} - \frac{\bar{a}_0}{Z}r^2 - \frac{1}{3} r^3 \right] dr \; \vec{\sigma} \cdot \vec{B}
             \end{align}
             \normalsize
             \noindent Which after integration gives 
