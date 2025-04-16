@@ -267,12 +267,12 @@
             \end{align}
             \noindent expanding $\psi^1$ and $\psi^0$ and simplifying
             \begin{align}
-                C_{\text{rel}}^{(2)} = -\frac{2}{3} \gamma^2 \frac{\mu_BZ}{\bar{a}_0 mc^2} \sqrt{\frac{Z^3}{\bar{a}_0^3}} \int_0^\infty r e^{-2Zr} \left[ \frac{11 \bar{a}_0^4}{2Z^4} - \frac{\bar{a}_0^2}{Z^2}r^2 - \frac{\bar{a}_0}{3Z} r^3 \right] dr \; \vec{\sigma} \cdot \vec{B}
+                C_{\text{rel}}^{(2)} = -\frac{2}{3} \gamma^2 \frac{\mu_B}{mc^2}\frac{\bar{a}_0^2}{Z^2} \int_0^\infty r e^{-2Zr} \left[ \frac{11 \bar{a}_0^3}{2Z^3} - \frac{\bar{a}_0}{Z}r^2 - \frac{1}{3} r^3 \right] dr \; \vec{\sigma} \cdot \vec{B}
             \end{align}
             \normalsize
             \noindent Which after integration gives 
             \begin{align}
-                C_{\text{rel}}^{(2)} = -\frac{1}{2} \gamma^2 \frac{\mu_B}{mc^2} \left(\frac{\bar{a}_0}{Z}\right)^{\frac{7}{2}} \vec{\sigma} \cdot \vec{B} \;. \label{eq:C_rel_1}
+                C_{\text{rel}}^{(2)} = -\frac{3}{4} \gamma^2 \frac{\mu_B}{mc^2} \frac{\bar{a}_0^2}{Z^2} \vec{\sigma} \cdot \vec{B} \;. \label{eq:C_rel_1}
             \end{align}
             \noindent It can be seen that the relativistic correction to $^3$He$^+$ includes a $B^3$ scaling. This electronic effect further splits the energy levels of $^3$He$^+$ when subjected to an external magnetic field. The $\vec{\sigma} \cdot \vec{B}$ term ensures that the splitting is dependent on the magnetic quantum number $m$, so the shift to the energy is a noticeable effect that further increases the splitting between the states. This result is verified using the Dalgarno interchange theorem via calculating the other valid representation for the operator
             \begin{align}
@@ -281,17 +281,17 @@
             According to the Dalgarno interchange theorem, this expression for $C_{\text{rel}}^{(2)}$ should be the same as the result found in equation \eqref{eq:C_rel_1}. In integral form this reads 
             \footnotesize
             \begin{align}
-                C_{\text{rel}}^{(2)} = -2\int_0^\infty \int_0^\pi \int_0^{2\pi} r^2 \sin\theta \sqrt{\frac{Z^3}{\pi \bar{a}_0^3}}e^{-\frac{Zr}{a_0}} \frac{1}{12} \gamma^2 r^2 \frac{\mu_B}{mc^2}\frac{Z}{\bar{a}_0 \sqrt{\pi}} \vec{\sigma} \cdot \vec{B} \left[ - \frac{3\bar{a}_0}{2Z} + r \right] dr d\theta d\phi\;.
+                C_{\text{rel}}^{(2)} = -2\int_0^\infty \int_0^\pi \int_0^{2\pi} r^2 \sin\theta \sqrt{\frac{Z^3}{\pi \bar{a}_0^3}}e^{-\frac{Zr}{a_0}} \frac{1}{12} \gamma^2 r^2 \frac{\mu_B}{mc^2}\frac{Z}{\bar{a}_0}\sqrt{\frac{Z^3}{\pi \bar{a}_0^3}} \vec{\sigma} \cdot \vec{B} \left[ - \frac{3\bar{a}_0}{2Z} + r \right] e^{-\frac{Zr}{\bar{a}_0}}dr d\theta d\phi\;.
             \end{align}
             \normalsize Which becomes
             \begin{align}
-                C_{\text{rel}}^{(2)} = -\frac{1}{2} \gamma^2 \frac{\mu_B}{mc^2} \frac{\bar{a}_0^2}{Z^2} \vec{\sigma} \cdot \vec{B} \;. \label{eq:C_rel_2}
+                C_{\text{rel}}^{(2)} = -\frac{3}{4} \gamma^2 \frac{\mu_B}{mc^2} \frac{\bar{a}_0^2}{Z^2} \vec{\sigma} \cdot \vec{B} \;. \label{eq:C_rel_2}
             \end{align}
             \noindent Thus it has been proven via the Dalgarno interchange theorem that all previous calcualtions have been correct, and the relativistic corrections for any hydrogenic wavefunction have been successfully derived. The expression is then written by replacing $\vec{\sigma} \cdot \vec{B}$ with its eigenvalue 
             \begin{align}
-                C_{\text{rel}}^{(2)} = -\frac{1}{4} \frac{B^3 e^3 \hbar \bar{a}_0^2 g_s m_s}{Z^2 m^3 c^2}\;.
+                C_{\text{rel}}^{(2)} = -\frac{3}{8} \frac{\bar{a}_0^2}{Z^2}\frac{ e^3 \hbar}{ m^3 c^2}B^3g_s m_s\;.
             \end{align}
-            \noindent Which has units of energy per tesla. $m_s$ denotes the magnetic quantum number, which can take values of $\pm \frac{1}{2}$. From this, the further splitting of energy states based on magnetic field strength is evident. The relationship behaves like the splitting shown in figure~\ref{fig:c}.
+            \noindent Which has units of energy. $m_s$ denotes the magnetic quantum number, which can take values of $\pm \frac{1}{2}$. From this, the further splitting of energy states based on magnetic field strength is evident. The relationship behaves like the splitting shown in figure~\ref{fig:c}.
     \section{Results}\label{sec:results}
         This section discusses the numerical results obtained from the calculations of the linear and quadratic Zeeman effects, the relativistic magnetic dipole moment operator, and the relativistic correction to $^3$He$^+$ for various magnetic field strengths. The results will highlight the significance of the $B^3$ term in accounting for the energy level splitting at low and high magnetic field strength.\\
 
