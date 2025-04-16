@@ -1,26 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{Atomic_unit_of_field_strength}
-Codata value: atomic unit of magnetic flux density.
-
-\bibitem{electron_mass_value}
-Codata value: electron mass.
-
-\bibitem{electron_charge_value}
-Codata value: elementary charge.
-
-\bibitem{fine_structure_value}
-Codata value: fine-structure constant.
-
-\bibitem{hbar_value}
-Codata value: reduced planck constant.
-
-\bibitem{speed_of_light_value}
-Codata value: speed of light in vacuum.
-
-\bibitem{electric_permittivity_value}
-Codata value: vacuum electric permittivity.
-
 \bibitem{The_quantum_theory_of_the_electron_1928}
 {\em Proceedings of the Royal Society of London. Series A, Containing Papers of
   a Mathematical and Physical Character}, 117(778):610--624, February 1928.
@@ -145,6 +124,14 @@ David~J. Griffiths.
 \newblock {\em Introduction to Quantum Mechanics}.
 \newblock Cambridge University Press, Cambridge, 3rd ed edition, 2018.
 
+\bibitem{Hahn_Kim_Kim_Hu_Painter_Dixon_Kim_Bhattarai_Noguchi_Jaroszynski_et_al._2019}
+Seungyong Hahn, Kwanglok Kim, Kwangmin Kim, Xinbo Hu, Thomas Painter, Iain
+  Dixon, Seokho Kim, Kabindra~R. Bhattarai, So~Noguchi, Jan Jaroszynski, and
+  David~C. Larbalestier.
+\newblock 45.5-tesla direct-current magnetic field generated with a
+  high-temperature superconducting magnet.
+\newblock {\em Nature}, 570(7762):496–499, June 2019.
+
 \bibitem{atomic_units_definition}
 D.~R. Hartree.
 \newblock The wave mechanics of an atom with a non-coulomb central field. part
@@ -175,6 +162,13 @@ A.~A. Michelson and E.~W. Morley.
 \newblock On the relative motion of the earth and the luminiferous ether.
 \newblock {\em American Journal of Science}, s3-34(203):333--345, November
   1887.
+
+\bibitem{Mohr_Newell_Taylor_Tiesinga_2024}
+Peter Mohr, David Newell, Barry Taylor, and Eite Tiesinga.
+\newblock Codata recommended values of the fundamental physical constants:
+  2022.
+\newblock (arXiv:2409.03787), August 2024.
+\newblock arXiv:2409.03787.
 
 \bibitem{Numerical_recipes}
 W.H. Press.

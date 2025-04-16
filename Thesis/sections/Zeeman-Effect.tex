@@ -297,22 +297,36 @@
             \end{align}
             \noindent Which has units of energy. $m_s$ denotes the magnetic quantum number, which can take values of $\pm \frac{1}{2}$. From this, the further splitting of energy states based on magnetic field strength is evident. The relationship behaves like the splitting shown in figure~\ref{fig:c}.
     \section{Results}\label{sec:results}
-        This section discusses the numerical results obtained from the calculations of the linear and quadratic Zeeman effects, the relativistic magnetic dipole moment operator, and the relativistic correction to $^3$He$^+$ for various magnetic field strengths. The results will highlight the significance of the $B^3$ term in accounting for the energy level splitting at low and high magnetic field strength.\\
+        This section discusses the numerical results obtained from the calculations of the relativistic correction to $^3$He$^+$ for various magnetic field strengths. The results will highlight the significance of the $B^3$ term in accounting for the energy level splitting at low and high magnetic field strength.\\
 
-        The relativistic correction to $^3$He$^+$ in atomic units is
+        The relativistic correction to any hydrogenic wavefunction is
         \begin{align}
-            C_{\text{rel}}^{(2)} = -\frac{1}{2} \alpha^2 Z^{\frac{-7}{2}} B^3\;,
+            C_{\text{rel}}^{(2)} = - \frac{6\hbar^5 \varepsilon_0^2 \pi^2}{Z^2 m^5 c^2 e} B^3 g_s m_s\;.
         \end{align}
-        \begin{table}[h]
-            \centering
-            \renewcommand{\arraystretch}{1.5} % Adjust row height
-            \begin{tabular}{|c|c|c|c|c|c|}
-                \hline
-                \multicolumn{1}{|c|}{Magnetic Field Strength} & \multicolumn{4}{c|}{Energy} \\ \hline
-                Value & $\hat{H}$ & $\hat{H}_Z$ & $\hat{H}_{\text{Rel}}$ & $\hat{H}_{\text{Total}}$ \\ \hline
-                Test & 1.0 & 2.0 & 3.0 & 6.0 \\ % Example values
-                \hline
-            \end{tabular}
-        \end{table}
-
-        test \cite{Drake_1972}
+        \noindent Where the solution can be easily adapted to any atomic system with one electron by substituting in the desired nuclear charge $Z$. For a system with a muon or tau particle in replacement of the electron, the electron g-factor $g_s$ can be swapped for the desired g-factor of the spin-$\frac{1}{2}$ particle. Since this thesis is mainly concerned with $^3$He$^+$, the result becomes
+        \begin{align}
+            C_{\text{rel}}^{(2)} = - \frac{3}{2}\frac{\hbar^5 \varepsilon_0^2 \pi^2}{ m^5 c^2 e} B^3 g_s m_s\;.
+        \end{align}
+        \begin{figure}[h]
+            \begin{center}
+                \includegraphics[width=0.85\linewidth]{Zeeman_Graph.png}
+                \caption{The Zeeman splitting including all smaller corrections for $B=0T$ to $B=50T$. It can be seen that the higher order effects are sufficiently small, and the linear effects still dominate.}\label{fig:d}
+            \end{center}
+        \end{figure}
+        \noindent The effect and its impact is shown in figure \ref{fig:d} and result is also be expressed numerically for any magnetic field strength and spin $\pm \frac{1}{2}$ as
+        \begin{align}
+            C_{\text{rel}}^{(2)} = \mp 1.677937685(16)\times 10^{-39} \cdot B^3\;.
+        \end{align}
+        \noindent Written in Hz at $1$T
+        \begin{align}
+            C_{\text{rel}}^{(2)} =2.532327297(39)\times 10^{-6} \text{  Hz.}
+        \end{align}
+        \noindent Comparing to the result at the Max Planck institute in Germany, a magnetic field strength of $B = 5.7T$
+        \begin{align}
+            C_{\text{rel}}^{(2)} = 3.107423136(16)\times10^{-37} J\;.
+        \end{align}
+        \noindent Or, written in Hz
+        \begin{align}
+            C_{\text{rel}}^{(2)} = 0.000468969(39) \text{  Hz.}
+        \end{align}
+        \noindent The accuracy of the high precision magnetometer at the Max Planck Institute has an accuracy which is approaching the sub ppb level, with most recent accuracy reported as $\pm 0.26$Hz \cite{Schneider_Sikora_Dickopf_Müller_Oreshkina_Rischka_Valuev_Ulmer_Walz_Harman_et_al._2022}. This calculated value is right on the cusp of an observable phenomenon, and will need to be accounted for if the accuracy of the experiment increases by only 2 orders of magnitude.

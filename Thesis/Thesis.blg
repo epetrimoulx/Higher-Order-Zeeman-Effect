@@ -5,16 +5,10 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: sections/References.bib
+Warning--I didn't find a database entry for "Atomic_unit_of_field_strength"
 Warning--I didn't find a database entry for "Bethe_Salpeter_1977"
 Warning--I didn't find a database entry for "Wigner-3j"
 Warning--to sort, need author or key in The_quantum_theory_of_the_electron_1928
-Warning--to sort, need author or key in electron_mass_value
-Warning--to sort, need author or key in electron_charge_value
-Warning--to sort, need author or key in fine_structure_value
-Warning--to sort, need author or key in hbar_value
-Warning--to sort, need author or key in speed_of_light_value
-Warning--to sort, need author or key in electric_permittivity_value
-Warning--to sort, need author or key in Atomic_unit_of_field_strength
 Warning--to sort, need author, editor, or key in Atomic_Physics_Handbook
 Warning--to sort, need author or key in Dalgarno_Interchange
 Warning--empty author in The_quantum_theory_of_the_electron_1928
@@ -28,48 +22,50 @@ Warning--there's a number but no volume in Djukanovic_Hippel_Kuberski_Meyer_Mill
 Warning--empty publisher in Liber_Abaci
 Warning--empty journal in Kim_2024
 Warning--there's a number but no volume in Kim_2024
+Warning--empty journal in Mohr_Newell_Taylor_Tiesinga_2024
+Warning--there's a number but no volume in Mohr_Newell_Taylor_Tiesinga_2024
 Warning--empty journal in Reisenegger_2001
 Warning--there's a number but no volume in Reisenegger_2001
 Warning--empty journal in 2007Drake-Wu
-You've used 44 entries,
+You've used 39 entries,
             2118 wiz_defined-function locations,
-            793 strings with 11776 characters,
-and the built_in function-call counts, 12517 in all, are:
-= -- 1165
-> -- 561
+            793 strings with 12087 characters,
+and the built_in function-call counts, 12423 in all, are:
+= -- 1161
+> -- 635
 < -- 0
-+ -- 236
-- -- 186
-* -- 953
-:= -- 2067
++ -- 261
+- -- 216
+* -- 1012
+:= -- 2138
 add.period$ -- 121
-call.type$ -- 44
+call.type$ -- 39
 change.case$ -- 218
 chr.to.int$ -- 0
-cite$ -- 68
-duplicate$ -- 462
-empty$ -- 1061
-format.name$ -- 186
-if$ -- 2599
+cite$ -- 58
+duplicate$ -- 434
+empty$ -- 947
+format.name$ -- 216
+if$ -- 2516
 int.to.chr$ -- 0
-int.to.str$ -- 44
-missing$ -- 46
-newline$ -- 208
-num.names$ -- 68
-pop$ -- 240
+int.to.str$ -- 39
+missing$ -- 48
+newline$ -- 198
+num.names$ -- 72
+pop$ -- 203
 preamble$ -- 1
-purify$ -- 180
+purify$ -- 185
 quote$ -- 0
-skip$ -- 327
+skip$ -- 270
 stack$ -- 0
-substring$ -- 677
-swap$ -- 39
+substring$ -- 679
+swap$ -- 33
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 156
-warning$ -- 24
-while$ -- 91
-width$ -- 46
-write$ -- 443
-(There were 26 warnings)
+type$ -- 136
+warning$ -- 19
+while$ -- 96
+width$ -- 41
+write$ -- 431
+(There were 22 warnings)

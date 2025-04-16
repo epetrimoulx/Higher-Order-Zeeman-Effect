@@ -26,20 +26,19 @@
 \contentsline {subsection}{\numberline {3.4.1}The relativistic magnetic dipole moment operator}{30}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}The relativistic correction to $^3$He$^+$}{34}{subsection.3.4.2}%
 \contentsline {section}{\numberline {3.5}Results}{36}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Conclusion and Future Work}{38}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Overview}{38}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Synthesis of Conclusion}{38}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Future Work}{39}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Theoretical and Practical Impact}{39}{section.4.4}%
-\contentsline {chapter}{\numberline {A}Derivation of the Recursion Relations}{40}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Left-acting Operators}{46}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Special Functions}{47}{appendix.C}%
-\contentsline {section}{\numberline {C.1}Overview}{47}{section.C.1}%
-\contentsline {section}{\numberline {C.2}The gamma function}{47}{section.C.2}%
-\contentsline {section}{\numberline {C.3}Legendre Polynomials}{50}{section.C.3}%
-\contentsline {section}{\numberline {C.4}Laguerre Polynomials}{52}{section.C.4}%
-\contentsline {section}{\numberline {C.5}Spherical Harmonics}{53}{section.C.5}%
-\contentsline {section}{\numberline {C.6}Confluent Hypergeometric Function}{54}{section.C.6}%
-\contentsline {chapter}{\numberline {D}Methods of solving for higher-order perturbations programmatically}{56}{appendix.D}%
-\contentsline {chapter}{REFERENCES}{58}{equation.D.4}%
-\contentsline {chapter}{VITA AUCTORIS}{63}{appendix*.10}%
+\contentsline {chapter}{\numberline {4}Conclusion and Future Work}{39}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Overview}{39}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Synthesis of Conclusion}{39}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Future Work}{41}{section.4.3}%
+\contentsline {chapter}{\numberline {A}Derivation of the Recursion Relations}{42}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Left-acting Operators}{48}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Special Functions}{49}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Overview}{49}{section.C.1}%
+\contentsline {section}{\numberline {C.2}The gamma function}{49}{section.C.2}%
+\contentsline {section}{\numberline {C.3}Legendre Polynomials}{52}{section.C.3}%
+\contentsline {section}{\numberline {C.4}Laguerre Polynomials}{54}{section.C.4}%
+\contentsline {section}{\numberline {C.5}Spherical Harmonics}{55}{section.C.5}%
+\contentsline {section}{\numberline {C.6}Confluent Hypergeometric Function}{56}{section.C.6}%
+\contentsline {chapter}{\numberline {D}Methods of solving for higher-order perturbations programmatically}{58}{appendix.D}%
+\contentsline {chapter}{REFERENCES}{60}{equation.D.4}%
+\contentsline {chapter}{VITA AUCTORIS}{65}{appendix*.10}%
