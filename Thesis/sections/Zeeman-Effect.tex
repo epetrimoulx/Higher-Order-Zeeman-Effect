@@ -149,18 +149,16 @@
         \end{align}
         \noindent Plugging in the found values for $a_2$ and $a_3$ yield 
         \begin{align}
-            \vert \psi^{(1)} \rangle = \sum_{j = 0}^\infty a_j r^j e^{-\frac{Zr}{a_0}} = a_0 e^{-\frac{Zr}{a_0}} -\frac{m}{12\hbar^2} \gamma^2 \frac{\bar{a}_0^2}{Z^2} \sqrt{\frac{Z^3}{\pi a_0^3}} r^2 e^{-\frac{Zr}{a_0}} -\frac{m}{\hbar^2}\frac{\bar{a}_0}{36Z}\sqrt{\frac{Z^3}{\pi a_0^3}} \gamma^2 r^3 e^{-\frac{Zr}{a_0}}\;.
+            \vert \psi^{(1)} \rangle = a_0 e^{-\frac{Zr}{a_0}} -\frac{m}{12\hbar^2} \gamma^2 \frac{\bar{a}_0^2}{Z^2} \sqrt{\frac{Z^3}{\pi a_0^3}} r^2 e^{-\frac{Zr}{a_0}} -\frac{m}{\hbar^2}\frac{\bar{a}_0}{36Z}\sqrt{\frac{Z^3}{\pi a_0^3}} \gamma^2 r^3 e^{-\frac{Zr}{a_0}}\;.
         \end{align}
         Currently, $a_0$ is still undetermined. It is found by imposing the orthogonality condition between $\vert \psi^{(0)} \rangle$ and $\vert \psi^{(1)} \rangle$
         \begin{align}
             \langle \psi^{(0)} \vert \psi^{(1)} \rangle = 0\;.
         \end{align}
         This orthogonality relation is a choice, and it not required by any law or rule. It is necessary in order to compute $a_0$ and is only allowed to be chosen due to the nature of the perturbation equation. It exploits the use of the Hermitian property of the Hamiltonian that allows the operator to act to the left instead of the right. Multiplying through the original perturbation equation given in \eqref{eq:r_sqrd_perturbation} ensures that $\left(\hat{H} - E^{(0)} \right)$ is zero, implying that any quantity can be can be added to $\vert \psi^{(1)}\rangle$ and the equation still holds true. Thus, we can add some amount to $\vert \psi^{(1)} \rangle$ to ensure it is orthogonal without breaking the equality. This is a subtle trick, but one that is necessary to compute the full perturbed wavefunction\footnote{Further explanation of the Hermitian operator rule as well as imposing the orthogonality condition is shown in Appendix~.\ref{sec:Hermitian_Left}}. The $a_0$ coefficient can thus be determined by calculating the integral 
-        \small
         \begin{align}
-            \langle \psi^{(0)} \vert \psi^{(1)} \rangle = \int_0^\infty \int_0^\pi \int_0^{2\pi} r^2 \sin \theta \left(a_0 -\frac{m}{\hbar^2 12} \gamma^2 \sqrt{\frac{Z^3}{\pi a_0^3}} \left[\frac{\bar{a}_0^2}{Z^2} r^2 +\frac{\bar{a}_0}{3Z} r^3\right] \right) \sqrt{\frac{Z^3}{\bar{a}_0^3 \pi}}e^{-2\frac{Zr}{\bar{a}_0}}dr\;d\theta\; d\phi = 0\;.
+            \langle \psi^{(0)} \vert \psi^{(1)} \rangle = \int_0^\infty \int_0^\pi \int_0^{2\pi} r^2 \sin \theta \left(a_0 -\frac{m}{\hbar^2 12} \gamma^2 \sqrt{\frac{Z^3}{\pi a_0^3}} \left[\frac{\bar{a}_0^2}{Z^2} r^2 +\frac{\bar{a}_0}{3Z} r^3\right] \right)\\\ \nonumber \times \sqrt{\frac{Z^3}{\bar{a}_0^3 \pi}}e^{-2\frac{Zr}{\bar{a}_0}}dr\;d\theta\; d\phi = 0\;.
         \end{align}
-        \normalsize
         \noindent And so $a_0$ is found to be 
         \begin{align}
             a_0 = \frac{11m}{24 \hbar^2} \gamma^2 \frac{\bar{a}_0^4}{Z^4}\sqrt{\frac{Z^3}{\pi \bar{a}_0^3}} \;.
@@ -223,10 +221,11 @@
             \begin{align}
                 \left(H^{(0)} - E^{(0)}\right) \vert \varPsi^{(1)}\rangle = \left(\mu_B \frac{\hbar^2 Z}{m^2 c^2 \bar{a}_0 r} \vec{\sigma} \cdot \vec{B} + E^{(1)} \right) \sqrt{\frac{Z^3}{\pi a_0^3}}e^{-\frac{Zr}{a_0}}\;.
             \end{align}
-            \noindent Similarly to Sec.~\ref{sec:quadratic_zeeman}, the first order corrected wavefunction is assumed to be of the form of a power series so that the method of Frobenius can be applied\footnote{Note here that $a_0$ is the Bohr radius, not the zeroeth term in the sum. Similarly to the derivation for the quadratic Zeeman effect, there is no $a_0$ term from the summation, and it is determined later. The conflict in notation is avoided for now.}. This gives a similar result to the quadratic Zeeman derivation, but the inhomogeneous terms on the right hand side of the equation now correlate to different powers of $r$.
+            \noindent Similarly to Sec.~\ref{sec:quadratic_zeeman}, the first order corrected wavefunction is assumed to be of the form of a power series so that the method of Frobenius can be applied\footnote{Note here that $a_0$ is the Bohr radius, not the zeroeth term in the sum. Similarly to the derivation for the quadratic Zeeman effect, there is no $a_0$ term from the summation, and it is determined later. The conflict in notation is avoided for now.}. This gives a similar result to the quadratic Zeeman derivation, but the inhomogeneous terms on the right hand side of the equation now correlate to different powers of $r$.\small
             \begin{align}
                 \sum_{j = 0}^\infty \left[ \frac{Z}{\bar{a}_0}(j-1)a_{j-1} - \frac{j(j+1)}{2} a_j \right] r^{j -2} = \left(\mu_B \frac{\hbar^2 Z}{m^2 c^2 \bar{a}_0 r} \vec{\sigma} \cdot \vec{B} + E^{(1)} \right) \frac{m}{\hbar^2}\sqrt{\frac{Z^3}{\pi a_0^3}}
             \end{align}
+            \normalsize
             \noindent Where $E^{(1)}$ is defined by equation \eqref{eq:Energy0_Perturbation}
             \begin{align}
                 E^{(1)} = - \frac{\mu_B \hbar^2}{m^2c^2} \left( \frac{Z}{\bar{a}_0} \right)^2 \vec{\sigma}\cdot \vec{B}
@@ -279,11 +278,10 @@
                 C_{\text{rel}}^{(2)} = 2\langle \psi_{0,0} \vert V_{Z}^{(2)} \vert \psi_{0,1}\rangle\;.
             \end{align}
             According to the Dalgarno interchange theorem, this expression for $C_{\text{rel}}^{(2)}$ should be the same as the result found in equation \eqref{eq:C_rel_1}. In integral form this reads 
-            \footnotesize
             \begin{align}
-                C_{\text{rel}}^{(2)} = -2\int_0^\infty \int_0^\pi \int_0^{2\pi} r^2 \sin\theta \sqrt{\frac{Z^3}{\pi \bar{a}_0^3}}e^{-\frac{Zr}{a_0}} \frac{1}{12} \gamma^2 r^2 \frac{\mu_B}{mc^2}\frac{Z}{\bar{a}_0}\sqrt{\frac{Z^3}{\pi \bar{a}_0^3}} \vec{\sigma} \cdot \vec{B} \left[ - \frac{3\bar{a}_0}{2Z} + r \right] e^{-\frac{Zr}{\bar{a}_0}}dr d\theta d\phi\;.
+                C_{\text{rel}}^{(2)} = -\frac{2}{3} \int_0^\infty r^4 \frac{Z^4}{\bar{a}_0^4}e^{-\frac{Zr}{a_0}} \frac{\mu_B}{mc^2} \gamma^2 \vec{\sigma} \cdot \vec{B} \left[ - \frac{3\bar{a}_0}{2Z} + r \right] e^{-\frac{Zr}{\bar{a}_0}}dr d\theta d\phi\;.
             \end{align}
-            \normalsize Which becomes
+            \noindent Which becomes
             \begin{align}
                 C_{\text{rel}}^{(2)} = -\frac{3}{4} \gamma^2 \frac{\mu_B}{mc^2} \frac{\bar{a}_0^2}{Z^2} \vec{\sigma} \cdot \vec{B} \;. \label{eq:C_rel_2}
             \end{align}

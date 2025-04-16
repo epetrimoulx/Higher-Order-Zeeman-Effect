@@ -5,9 +5,7 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: sections/References.bib
-Warning--I didn't find a database entry for "Atomic_unit_of_field_strength"
 Warning--I didn't find a database entry for "Bethe_Salpeter_1977"
-Warning--I didn't find a database entry for "Wigner-3j"
 Warning--to sort, need author or key in The_quantum_theory_of_the_electron_1928
 Warning--to sort, need author, editor, or key in Atomic_Physics_Handbook
 Warning--to sort, need author or key in Dalgarno_Interchange
@@ -29,7 +27,7 @@ Warning--there's a number but no volume in Reisenegger_2001
 Warning--empty journal in 2007Drake-Wu
 You've used 39 entries,
             2118 wiz_defined-function locations,
-            793 strings with 12087 characters,
+            789 strings with 12011 characters,
 and the built_in function-call counts, 12423 in all, are:
 = -- 1161
 > -- 635
@@ -68,4 +66,4 @@ warning$ -- 19
 while$ -- 96
 width$ -- 41
 write$ -- 431
-(There were 22 warnings)
+(There were 20 warnings)

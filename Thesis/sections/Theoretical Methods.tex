@@ -36,7 +36,7 @@
         %
         \noindent Scaling these units out of the problem greatly simplifies the calculation. Once a result is found, multiplying the unscaled units back into the answer retrieves the desired result in standard SI units. While the use of atomic units can make any work done by hand much simpler to manage, it also benefits numerical work that is done computationally. Machine error is an unavoidable reality of programmed solutions and working in units which avoids extreme values both large and small helps to mitigate the uncertainty present in high precision calculations. In addition, exact analytical results need not be limited by the values of the fundamental constants. This thesis utilizes atomic units both analytically and numerically to simplify the calculation process throughout, but most important values are displayed in SI units for convenience of the reader\footnote{All calculations were done in atomic units, and during the writing of this thesis, were put back into SI units for clarity.}.\\
 
-        A consequence of utilizing atomic units is the need to redefine key fundamental physical quantities in terms of these scaled values. An example of key importance in the investigation of the higher-order Zeeman effect is the atomic unit of magnetic field strength, otherwise referred to as the atomic unit of magnetic flux density \cite{Atomic_unit_of_field_strength}.
+        A consequence of utilizing atomic units is the need to redefine key fundamental physical quantities in terms of these scaled values. An example of key importance in the investigation of the higher-order Zeeman effect is the atomic unit of magnetic field strength, otherwise referred to as the atomic unit of magnetic flux density \cite{Mohr_Newell_Taylor_Tiesinga_2024}.
         \begin{align}
             B_{\text{a.u.}} = \frac{\hbar}{e a_0^2}\;.\label{eq:B_au}
         \end{align}
@@ -44,7 +44,7 @@
         \begin{align}
             a_0 = \frac{4\pi \epsilon_0 \hbar^2}{e^2 m_e} = \frac{\hbar}{m_e c \alpha} \label{eq:bohr_radius}\;.
         \end{align}
-        \noindent The Bohr radius itself is defined using a similar combination of fundamental constants which after applying the rules for atomic units, should equal $1$. It can now be seen that all units in the atomic unit of field strength also become $1$ as intended. At the end of the problem, the desired result in S.I units is retrieved by simply multipling the determined result by the atomic unit of magnetic field strength when its constants are not scaled to $1$. This is equivalent to multiplying the result in atomic units by \cite{Atomic_unit_of_field_strength}.
+        \noindent The Bohr radius itself is defined using a similar combination of fundamental constants which after applying the rules for atomic units, should equal $1$. It can now be seen that all units in the atomic unit of field strength also become $1$ as intended. At the end of the problem, the desired result in S.I units is retrieved by simply multipling the determined result by the atomic unit of magnetic field strength when its constants are not scaled to $1$. This is equivalent to multiplying the result in atomic units by \cite{Mohr_Newell_Taylor_Tiesinga_2024}.
         \begin{align}
             B_{\text{a.u.}} = 2.35051757077(73) \times 10^5 \text{ T}
         \end{align}
@@ -119,7 +119,7 @@
         \begin{align}
             \int_0^\pi \int_0^{2\pi} Y^m_\ell(\theta, \phi) Y^{m^\prime}_{\ell^\prime} (\theta, \phi) \; d\theta d\phi = \delta_{ll^\prime} \delta_{mm^\prime}\label{eq:delta_spherical_harmonic}\;.
         \end{align}
-        \noindent For all angular integrals where the spherical harmonics contain different angular momentum or magnetic quantum numbers, the result is zero. If given a scenario where three spherical harmonics are multiplied together (i.e, there are three spherical harmonic functions to integrate), the result can be expressed in terms of Wigner $3j$-symbols according to \cite{Wigner-3j}
+        \noindent For all angular integrals where the spherical harmonics contain different angular momentum or magnetic quantum numbers, the result is zero. If given a scenario where three spherical harmonics are multiplied together (i.e, there are three spherical harmonic functions to integrate), the result can be expressed in terms of Wigner $3j$-symbols according to \cite{edmonds_book}
         \begin{align}
             \int_0^\pi \int_0^{2\pi} \sin \theta \; d\theta d\phi\;& Y^{m_1}_{{\ell_1}}(\theta, \phi) Y^{m_2}_{{\ell_2}} (\theta, \phi) Y^{m_3}_{{\ell_3}} (\theta, \phi) =\\
              &\sqrt{\frac{(2\ell_1 + 1)(2\ell_2 + 1) (2\ell_3 + 1)}{4 \pi}} 

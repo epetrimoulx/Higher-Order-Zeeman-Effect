@@ -53,7 +53,8 @@
     \end{align*}
     \noindent Since $E^0 = \frac{Z^2}{2}$, the first term is zero and the equation becomes 
     \begin{align*}
-        -\frac{Zr}{\bar{a}_0} \sum_{j = 0}^\infty a_j r^{j - 2} (j + 1) + \sum_{j = 0}^\infty \frac{j(j+1)}{2} a_j r^{j - 2} + \frac{Z}{\bar{a}_0} \sum_{j = 0}^\infty a_j r^{j-1} = \frac{m}{\hbar^2}\frac{1}{12}\sqrt{\frac{Z^3}{\pi \bar{a}_0^3}} \gamma^2 \left(r^2 - \frac{3\bar{a}_0^2}{Z^2} \right).
+        -\frac{Zr}{\bar{a}_0} \sum_{j = 0}^\infty a_j r^{j - 2} (j + 1) + \sum_{j = 0}^\infty \frac{j(j+1)}{2} a_j r^{j - 2} + \frac{Z}{\bar{a}_0} \sum_{j = 0}^\infty a_j r^{j-1} = \frac{m}{\hbar^2}\frac{1}{12}\\
+        \times \; \sqrt{\frac{Z^3}{\pi \bar{a}_0^3}} \gamma^2 \left(r^2 - \frac{3\bar{a}_0^2}{Z^2} \right).
     \end{align*}
     \noindent Performing a shift of summation index to group all of the summations together 
     \begin{align}
@@ -71,10 +72,11 @@
     \end{align*}
     \noindent It is clearly seen above that all other cases of $a_j$ must be zero after $j = 3$. The recursion relation has been solved and a closed form solution for $\vert \psi^1 \rangle$ can be written in terms of a power series in $r$ using $a_0$, $a_2$, and $a_3$. $a_0$ is an undetermined coefficient here that does not appear in the recursion relation. it is determined by imposing the normalization condition which is shown in Sec.~\ref{sec:quadratic_zeeman}.\\
 
-    The identical process is carried out for the relativistic magnetic dipole moment operator perturbation, with the only difference being that the perturbing potential has changed. No operators act on the perturbing potential throughout the perturbation expansion, so the result will remain the same as in the example above. Applying the same process the first order correction to the wavefunction for the relativistic magnetic dipole moment operator is 
+    The identical process is carried out for the relativistic magnetic dipole moment operator perturbation, with the only difference being that the perturbing potential has changed. No operators act on the perturbing potential throughout the perturbation expansion, so the result will remain the same as in the example above. Applying the same process the first order correction to the wavefunction for the relativistic magnetic dipole moment operator is \small
     \begin{align}
         \sum_{j = 0}^\infty \left[ \frac{Z}{\bar{a}_0}(j-1)a_{j-1} - \frac{j(j+1)}{2} a_j \right] r^{j-2} = -\left(- \frac{\mu_B \hbar^2}{m^2c^2} \frac{Z}{\bar{a}_0} \vec{\sigma} \cdot \vec{B} \frac{1}{r} - E^1 \right) \frac{m}{12 \hbar^2}\sqrt{\frac{Z^3}{\pi \bar{a}_0^3}}\;.
     \end{align}
+    \normalsize
     \noindent $E^1$ is determined in the standard way\footnote{Note that $a_0$ here is for the Bohr radius. $a_0$ is also the zeroeth term in the summation, but the form of the summation here dictates that there is no $a_0$ term present.}
     \begin{align*}
         E^1 &= \langle \psi^0 \vert - \mu_B \frac{Z \hbar^2}{\bar{a}_0 m^2 c^2 r} \vec{\sigma} \cdot \vec{B} \vert \psi^0 \rangle \\ \nonumber \\
