@@ -8,7 +8,7 @@
     \section{History}\label{sec:history}
         The Zeeman effect was first introduced by Pieter Zeeman, who discovered in 1896 that in the presence of a static magnetic field, spectral lines could be split into many components. After the discovery of quantum mechanics, the behaviour was found to be described as a perturbation of the Hamiltonian using the magnetic moment of the atom and the magnetic field.   \\
     
-        Since it's discovery, the Zeeman effect has played a large role in the field of atomic physics and magnetometry, which is the study of the intensity of magnetic field across space and time. There have been several calculations to include the relativistic corrections \cite{2007Drake-Wu, Drake-Yan}, field inhomogeneities, and quadratic effects in hydrogenic systems \cite{Fontanari_Sadovskií_2015}. However, little is known about its behavior in helium atoms such as $^3$He$^+$ and $^3$He, which is of key interest in magnetometry and the muon magnetic moment anomaly $(\mu_g - 2)$, for which there is a 5.0 $\sigma$ discrepancy \cite{aguillard2023measurement} with the standard model prediction.
+        Since it's discovery, the Zeeman effect has played a large role in the field of atomic physics and magnetometry, which is the study of the intensity of magnetic field across space and time. There have been several calculations to include the relativistic corrections \cite{2007Drake-Wu, Drake-Yan}, field inhomogeneities, and quadratic effects in hydrogenic systems \cite{Fontanari_Sadovskií_2015}. However, little is known about its behavior in helium atoms such as $^3$He$^+$ and $^3$He, which is of key interest in magnetometry and the muon magnetic moment anomaly $(g_\mu - 2)$, for which there is a 5.0 $\sigma$ discrepancy \cite{aguillard2023measurement} with the standard model prediction.
 
     \section{The Zeeman effect}\label{sec:quadratic_zeeman}
         When an atom is placed in an external magnetic field, its energy levels are shifted. The shifting of energy levels is known as the Zeeman effect. The effect is derived from the Schrodinger equation and the canonical momentum. The canonical momentum is a conserved quantity that describes a moving charged particle. It can be written as 
@@ -35,7 +35,7 @@
             \hat{H} = \frac{-\hbar^2 \nabla^2}{2m} - \frac{i\hbar e B}{4m} \vec{\nabla} \cdot \left[y\hat{i} - x\hat{j} \right] - \frac{i\hbar e B}{4m} \left[y\hat{i} - x\hat{j} \right] \cdot \vec{\nabla} + \frac{e^2B^2}{8m} \left(x^2 + y^2\right) - \frac{Ze^2}{4\pi \epsilon_0 r}\;.
         \end{align}
         \normalsize
-        \noindent This equation is crucial for incorporating elecromagnetic effects into the Hamiltonian. The first term in the expanded Hamiltonian is the standard operator. The first term and last term of the equation can be combined to write the ordinary Hamiltonian 
+        \noindent This equation is crucial for incorporating electromagnetic effects into the Hamiltonian. The first term in the expanded Hamiltonian is the standard operator. The first term and last term of the equation can be combined to write the ordinary Hamiltonian 
         \begin{align}
             \hat{H} =  \hat{H}_{\text{Standard}} - \frac{i\hbar e B}{4m} \vec{\nabla} \cdot \left[y\hat{i} - x\hat{j} \right] - \frac{i\hbar e B}{4m} \left[y\hat{i} - x\hat{j} \right] \cdot \vec{\nabla} + \frac{e^2B^2}{8m} \left(x^2 + y^2\right)\;.
         \end{align}
@@ -43,7 +43,7 @@
         \begin{align}
             \hat{H} =  \hat{H}_{\text{Standard}} - \frac{i\hbar e B}{2m} \left[y \frac{\partial}{\partial x} - x \frac{\partial}{\partial y} \right]+ \frac{e^2B^2}{8m} \left(x^2 + y^2\right)\;.
         \end{align}
-        \noindent This term is analgous to the orbital angular momentum operator in the $\hat{k}$ direction 
+        \noindent This term is analogous to the orbital angular momentum operator in the $\hat{k}$ direction 
         \begin{align}
             L_z = xp_y - yp_x = i\hbar \left[y \frac{\partial}{\partial x} - x \frac{\partial}{\partial y} \right]\;.
         \end{align}
@@ -75,7 +75,7 @@
         \begin{align}
             \hat{H}_Z = - \left(\vec{\mu_\ell} + \vec{\mu_s} \right) \cdot \vec{B}\;.
         \end{align}
-        \noindent The linear Zeeman effect has the following eigen energy solutions 
+        \noindent The linear Zeeman effect has the following eigenenergy solutions 
         \begin{align}
             E_{n, m_s, m_\ell} = - \frac{E_0}{n^2} + \mu_B B(m_\ell + 2m_s)\;.
         \end{align}
@@ -123,11 +123,11 @@
         \begin{align}
             \left(- \frac{\hbar^2}{2m_e} \nabla^2 - \frac{Ze^2}{4\pi \epsilon_0 r} - E^{(0)} \right) \psi^{(1)} = \left(\frac{B^2e^2}{12m_e}r^2 - E^{(1)} \right) \sqrt{\frac{Z^3}{\pi a_0^3}} e^{-\frac{Zr}{a_0}}\;.
         \end{align}
-        \noindent Where the $P_2(\cos \theta)$ term is zero since the problem involves spherically symmetric $S$ states\footnote{This can be proven by performing the necessary integrals with the $P_2(\cos\theta)$ term included. The result is that the $P_2(\cos \theta)$ integral is 0}. This perturbation equation can be solved using the method of Frobenius, where the form of $\vert \psi^{(1)} \rangle$ is assumed to be of a power series.
+        \noindent Where the $P_2(\cos \theta)$ term is zero since the problem involves spherically symmetric $S$ states\footnote{This can be proven by performing the necessary integrals with the $P_2(\cos\theta)$ term included. The result is that the $P_2(\cos \theta)$ integral is 0}. This perturbation equation can be solved using the method of Frobenius, where the form of $\psi^{(1)}$ is assumed to be of a power series.
         \begin{align}
             \psi^{(1)} = \sum_{j = 0}^\infty a_j r^j e^{-\frac{Zr}{a_0}}
         \end{align}
-        \noindent Inserting $\vert \psi^{(1)} \rangle$ into the perturbation equation the expression reads 
+        \noindent Inserting $\psi^{(1)}$ into the perturbation equation the expression reads 
         \begin{align}
             -\frac{\hbar^2}{m_e} \left(\frac{1}{2} \nabla^2 + \frac{Z}{\bar{a}_0 r} - E^{(0)} \right) \sum_{j = 0}^\infty a_j r^j e^{-\frac{Zr}{a_0}} = \left(\frac{B^2e^2}{12m_e}r^2 - E^{(1)} \right) \sqrt{\frac{Z^3}{\pi a_0^3}}e^{-\frac{Zr}{a_0}}\;.
         \end{align}
@@ -151,11 +151,11 @@
         \begin{align}
             \psi^{(1)} = a_0 e^{-\frac{Zr}{a_0}} -\frac{m}{12\hbar^2} \gamma^2 \frac{\bar{a}_0^2}{Z^2} \sqrt{\frac{Z^3}{\pi a_0^3}} r^2 e^{-\frac{Zr}{a_0}} -\frac{m}{\hbar^2}\frac{\bar{a}_0}{36Z}\sqrt{\frac{Z^3}{\pi a_0^3}} \gamma^2 r^3 e^{-\frac{Zr}{a_0}}\;.
         \end{align}
-        Currently, $a_0$ is still undetermined. It is found by imposing the orthogonality condition between $\vert \psi^{(0)} \rangle$ and $\vert \psi^{(1)} \rangle$
+        Currently, $a_0$ is still undetermined. It is found by imposing the orthogonality condition between $\psi^{(0)} $ and $\psi^{(1)}$
         \begin{align}
             \langle \psi^{(0)} \vert \psi^{(1)} \rangle = 0\;.
         \end{align}
-        This orthogonality relation is a choice, and it not required by any law or rule. It is necessary in order to compute $a_0$ and is only allowed to be chosen due to the nature of the perturbation equation. It exploits the use of the Hermitian property of the Hamiltonian that allows the operator to act to the left instead of the right. Multiplying through the original perturbation equation given in \eqref{eq:r_sqrd_perturbation} ensures that $\left(\hat{H} - E^{(0)} \right)$ is zero, implying that any quantity can be can be added to $\vert \psi^{(1)}\rangle$ and the equation still holds true. Thus, we can add some amount to $\vert \psi^{(1)} \rangle$ to ensure it is orthogonal without breaking the equality. This is a subtle trick, but one that is necessary to compute the full perturbed wavefunction\footnote{Further explanation of the Hermitian operator rule as well as imposing the orthogonality condition is shown in Appendix~.\ref{sec:Hermitian_Left}}. The $a_0$ coefficient can thus be determined by calculating the integral 
+        This orthogonality relation is a choice, and it not required by any law or rule. It is necessary in order to compute $a_0$ and is only allowed to be chosen due to the nature of the perturbation equation. It exploits the use of the Hermitian property of the Hamiltonian that allows the operator to act to the left instead of the right. Multiplying through the original perturbation equation given in \eqref{eq:r_sqrd_perturbation} ensures that $\left(\hat{H} - E^{(0)} \right)$ is zero, implying that any quantity can be can be added to $\psi^{(1)}$ and the equation still holds true. Thus, we can add some amount to $\psi^{(1)}$ to ensure it is orthogonal without breaking the equality. This is a subtle trick, but one that is necessary to compute the full perturbed wavefunction\footnote{Further explanation of the Hermitian operator rule as well as imposing the orthogonality condition is shown in Appendix~.\ref{sec:Hermitian_Left}}. The $a_0$ coefficient can thus be determined by calculating the integral 
         \begin{align}
             \langle \psi^{(0)} \vert \psi^{(1)} \rangle = \int_0^\infty \int_0^\pi \int_0^{2\pi} r^2 \sin \theta \left(a_0 -\frac{m}{\hbar^2 12} \gamma^2 \sqrt{\frac{Z^3}{\pi a_0^3}} \left[\frac{\bar{a}_0^2}{Z^2} r^2 +\frac{\bar{a}_0}{3Z} r^3\right] \right)\\\ \nonumber \times \sqrt{\frac{Z^3}{\bar{a}_0^3 \pi}}e^{-2\frac{Zr}{\bar{a}_0}}dr\;d\theta\; d\phi = 0\;.
         \end{align}
@@ -213,7 +213,7 @@
                 \hat{H}_Z = \frac{e\hbar}{2M} g_I  &\left[ \vec{B} \cdot \vec{\sigma}_N + \frac{M}{m} \left(\frac{g_s}{g_I} \vec{\sigma} \cdot \vec{B} \left(1 - \frac{4}{3}\frac{\hat{H}}{mc^2} - \frac{\hbar^2}{m^2 c^2}\frac{Z}{\bar{a}_0 r} \right) + \frac{B^2 e}{3g_I \hbar} r^2 \right) \right]
             \end{align}
             \normalsize
-            \noindent The new Hamiltonian combines previously mentioned effects, and has terms linearly scaling in $B$, as well as quadratically scaling in $B$. Several new factors have arisen due to the inclusion of the nuclear magnetic moment such as $g_I$, the nuclear g-factor, $g_s$, the electron spin g-factor, and $M$, the mass of the nucleus. $\vec{\sigma}_N$ is the nuclear spin operator, which is analgous to the electron spin matrices $\vec{\sigma}$. It's subscript is maintained to help distinguish between the nuclear and electronic effects present in the Hamiltonian. Traditionally, the nuclear contribution is ignored as its effect on the system is significantly smaller than the effect present from the electronic terms. The reason the nuclear effect is so much smaller than the electronic effect is because its impact is supressed by the mass of the nucleus. Since the mass of the electron is so much smaller the the nuclear mass, its impact is a factor of $\frac{M}{m}$ stronger than the nuclear effects.\\
+            \noindent The new Hamiltonian combines previously mentioned effects, and has terms linearly scaling in $B$, as well as quadratically scaling in $B$. Several new factors have arisen due to the inclusion of the nuclear magnetic moment such as $g_I$, the nuclear g-factor, $g_s$, the electron spin g-factor, and $M$, the mass of the nucleus. $\vec{\sigma}_N$ is the nuclear spin operator, which is analogous to the electron spin matrices $\vec{\sigma}$. It's subscript is maintained to help distinguish between the nuclear and electronic effects present in the Hamiltonian. Traditionally, the nuclear contribution is ignored as its effect on the system is significantly smaller than the effect present from the electronic terms. The reason the nuclear effect is so much smaller than the electronic effect is because its impact is supressed by the mass of the nucleus. Since the mass of the electron is so much smaller the the nuclear mass, its impact is a factor of $\frac{M}{m}$ stronger than the nuclear effects.\\
 
             The inclusion of the $Q_{M1}$ operator in the Zeeman effect adds a linear scaling of $B$ to the overall energy of the system. This operator can be combined with the quadratic Zeeman operator discussed previously to yield a relativistic correction to $^3$He$^+$. This relativistic correction scales with $B^3$ and will be the primary focus of this thesis moving forwards. The inclusion of this higher order Zeeman effect adds a small correction to the Zeeman splitting which has since been unnacounted for in high precision magnetometry. The perturbative effects of the relativistic magnetic dipole moment operator is examined below and explores how it modifies the structure of the Hamiltonian. \\
             
@@ -297,7 +297,7 @@
     \section{Results}\label{sec:results}
         This section discusses the numerical results obtained from the calculations of the relativistic correction to $^3$He$^+$ for various magnetic field strengths. The results will highlight the significance of the $B^3$ term in accounting for the energy level splitting at low and high magnetic field strength.\\
 
-        The relativistic correction to any hydrogenic wavefunction is
+        \noindent The derived relativistic correction to any hydrogenic wavefunction is
         \begin{align}
             C_{\text{rel}}^{(2)} = - \frac{6\hbar^5 \varepsilon_0^2 \pi^2}{Z^2 m^5 c^2 e} B^3 g_s m_s\;.
         \end{align}
@@ -315,7 +315,7 @@
         \begin{align}
             C_{\text{rel}}^{(2)} = \mp 1.677937685(16)\times 10^{-39} \cdot B^3\;.
         \end{align}
-        \noindent Written in Hz at $1$T
+        \noindent Which has units of joules per tesla cubed $\left[J \cdot T^{-3}\right]$. Written in Hz at $1$T
         \begin{align}
             C_{\text{rel}}^{(2)} =2.532327297(39)\times 10^{-6} \text{  Hz.}
         \end{align}

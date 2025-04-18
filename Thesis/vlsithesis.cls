@@ -25,7 +25,7 @@
 \newcommand\abstractname{ABSTRACT}
 \newcommand\declarationname{DECLARATION OF ORIGINALITY}
 \newcommand\dedicationname{DEDICATION}
-\newcommand\acknowledgementsname{AKNOWLEDGEMENTS}
+\newcommand\acknowledgementsname{ACKNOWLEDGEMENTS}
 \newcommand\vitaname{VITA AUCTORIS}
 
 \newcommand\@ptsize{}
